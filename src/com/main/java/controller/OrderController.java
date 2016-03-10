@@ -1,13 +1,15 @@
 package com.main.java.controller;
 
+import java.util.Date;
+
 class OrderController extends SearchController{
     public HotelOrder hotelOrder;
     public FlightOrder flightOrder;
     public DayTriporder dayTripOrder;
     public UserInfo user;
     
-    public void FindTripsFromTo( Date from, Date to, String dest, String startLoc ){
-    
+    public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
+
     }
     
     public void RemoveHotelFromBooking( String hotelOrderId ){
@@ -26,7 +28,7 @@ class OrderController extends SearchController{
     }
     
     public Trip GetOldTrip( String orderId ){
-        
+
     }
     
     public HotelOrder GetHotelOrder( String hotelOrderId ){

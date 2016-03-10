@@ -1,5 +1,7 @@
 package com.main.java.controller;
 
+import java.util.Date;
+
 class SearchController{
     public SearchController(){
         
@@ -22,7 +24,7 @@ class SearchController{
         
     }
     
-    public List<T> GetSuggestions( String keyword, Date dateFrom, Date dateTo, String loc ){
+    public List<T> GetSuggestions(String keyword, Date dateFrom, Date dateTo, String loc ){
         
     }
     
