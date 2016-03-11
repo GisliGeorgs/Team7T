@@ -1,6 +1,11 @@
 package com.main.java.controller;
 
+import com.main.java.persistence.DayTrip;
+import com.main.java.persistence.Flight;
+import com.main.java.persistence.Hotel;
+
 import java.util.Date;
+import java.util.List;
 
 class SearchController{
     public SearchController(){
@@ -10,45 +15,56 @@ class SearchController{
     public List<T> GetHistory(){
         
     }
-    
+
     public List<T> GetRecentHistory( int i ){
         
     }
-    public List<T> GetHotelHistory(){
+    public List<Hotel> GetHotelHistory(){
         
     }
-    public List<T> GetFlightHistory(){
+    public List<Hotel> GetFlightHistory(){
         
     }
-    public List<T> GetDayTripHistory(){
-        
-    }
-    
-    public List<T> GetSuggestions(String keyword, Date dateFrom, Date dateTo, String loc ){
+    public List<Hotel> GetDayTripHistory(){
         
     }
     
-    public List<T> FindHotels( String loc, Date dateFrom, Date dateTo, Float price, String[] keyword ){
-        
+    public List<Hotel> GetSuggestionsHotel( String loc, String[] keyword, Date dateFrom, Date dateTo ){
+        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
+        return suggestions;
+    }
+    public List<DayTrip> GetSuggestionsDayTrip( String loc, Date date, String[] keyword ){
+        List<DayTrip> suggestions = null;/* ????? SearchHotels( loc, date, keywords ) */
+        return suggestions;
+    }
+
+    public List<Hotel> FindHotels( String loc, Date dateFrom, Date dateTo, Float price, String[] keywords ){
+        List<Hotel> hotels = null/* ????? SearchHotels( loc, dateFrom, dateTo, price, keywords ) */;
+        return hotels;
     }
     
-    public List<T> FindFlights( String from, String to, Date dateFrom, Date dateTo, Float price ){
-        
+    public List<Flight> FindFlights( String from, String to, Date dateFrom, Date dateTo, Float price ){
+        List<Flight> flights = null/* ????? SearchFlights( from, to, dateFrom, dateTo, price ) */;
+        return flights;
     }
     
-    public List<T> FindDayTrips( String loc, Date date, Float price, String[] keyword ){
-        
+    public List<DayTrip> FindDayTrips( String loc, Date date, Float price, String[] keywords ){
+        List<DayTrip> daytrips = null/* ????? SearchDayTrips( loc, date, price, keywords ) */;
+        return daytrips;
     }
     
-    public List<T> FindCloseHotels( String loc, Float radius ){
-        
+    public List<Hotel> FindCloseHotels( String loc, Float radius ){
+        List<Hotel> closeHotels = null;/* ????? HotelDistanceSearch( loc, radius );*/
+        return closeHotels;
     }
     
-    public List<T> FindCloseDayTrips( String loc, Float radius ){
-        
+    public List<DayTrip> FindCloseDayTrips( String loc, Float radius ){
+        List<DayTrip> closeDayTrips = null;/* ????? DayTripDistanceSerach( loc, radius );*/
+        return closeDayTrips;
     }
     
-    public List<T> FindBetterFlight( String from, String to, Date dateFrom, Date dateTo, Float price ){
-        
+    public List<Flight> FindBetterFlight( String from, String to, Date dateFrom, Date dateTo, Float price ){
+        List<Flight> betterFlights = null;/* ????? FlightSearch( from, to, dateFrom, dateTo, price );*/
+        return betterFlights;
     }
 }
