@@ -10,10 +10,10 @@ public class Order{
     private Date dateFrom;
     private Date dateTo;
 
-    public String OrderNumber(){
+    public String GetOrderNumber(){
         return orderNumber;
     }
-    public void OrderNumber( String id ){
+    public void SetOrderNumber( String id ){
         orderNumber = id;    
     }
     public void DeleteOrder(  ){
