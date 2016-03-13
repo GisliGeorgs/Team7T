@@ -28,6 +28,7 @@ public class UserInfo{
     }
     private void LoadUser(){
         /* Lesa fæl úr MyDocs? */
+        /*   jásæll já  fínt   */
     }
 
     public String GetEmail(){ return email; }
