@@ -18,7 +18,11 @@ class CartController extends SearchController{
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
 
     }
-    
+
+    /**
+     *
+     * @param hotelOrderId
+     */
     public void RemoveHotelFromBooking( String hotelOrderId ){
 
     }
