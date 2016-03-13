@@ -33,7 +33,7 @@ class OrderController extends SearchController{
 
     }
     
-    public TripOrder GetOldTrip( String orderId ){
+    public Order GetOldTrip( String orderId ){
 
     }
     

@@ -63,8 +63,11 @@ class SearchController{
         return closeDayTrips;
     }
     
-    public List<Flight> FindBetterFlight( String from, String to, Date dateFrom, Date dateTo, Float price ){
-        List<Flight> betterFlights = null;/* ????? FlightSearch( from, to, dateFrom, dateTo, price );*/
+    public List<Flight> FindBetterFlight( Flight flight ){
+        List<Flight> betterFlightsUp = null;/* ????? FlightSearch( from, to, dateFrom-2, dateTo-2, price );*/
+        List<Flight> betterFlightsDown = null;/* ????? FlightSearch( from, to, dateFrom+2, dateTo+2, price );*/
+        List<Flight>  betterFlights = betterFlightsUp;
+        betterFlights.addAll( betterFlightsDown );
         return betterFlights;
     }
 }
