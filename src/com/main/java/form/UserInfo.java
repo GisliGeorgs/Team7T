@@ -3,7 +3,7 @@ package com.main.java.form;
 import java.util.ArrayList;
 import java.util.List;
 
-class UserInfo{
+public class UserInfo{
     private String gender;
     private int age;
     private List<String> interests;
@@ -11,7 +11,7 @@ class UserInfo{
     private String email;
     
     public UserInfo( ){
-        
+        LoadUser();
     }
     
     public UserInfo( String email, String gender, int age, List<String> interests ){
@@ -21,10 +21,21 @@ class UserInfo{
         this.interests = interests;
         this.pastOrderNumbers = new ArrayList<String>(){};
     }
-    
-    public String GetGender(){
-        return gender;
+
+    private void SaveUser(){
+        /* Vista breyturnar uppi í MyDocs? */
+
     }
+    private void LoadUser(){
+        /* Lesa fæl úr MyDocs? */
+    }
+
+    public String GetEmail(){ return email; }
+    public void SetEmail( String email ){
+        this.email = email;
+    }
+
+    public String GetGender(){ return gender; }
     public void SetGender( String gender ){
         this.gender = gender;
     }
@@ -40,14 +51,14 @@ class UserInfo{
         return interests;
     }
     public void SetInterests( String interest ){
-        this.interests.push( interest );
+        this.interests.add( interest );
     }
     
     public List<String> GetPastOrderNumbers(){
         return pastOrderNumbers;
     }
     public void SetPastOrderNumber( String order ){
-        this.pastOrderNumbers.push( order );
+        this.pastOrderNumbers.add( order );
     }
     
 }

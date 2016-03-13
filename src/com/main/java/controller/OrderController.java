@@ -1,19 +1,25 @@
 package com.main.java.controller;
 
+import com.main.java.persistence.*;
+import com.main.java.form.*;
 import java.util.Date;
 
 class OrderController extends SearchController{
     public HotelOrder hotelOrder;
     public FlightOrder flightOrder;
-    public DayTriporder dayTripOrder;
+    public DayTripOrder dayTripOrder;
     public UserInfo user;
+
+    public OrderController(){
+        user = GetUser();
+    }
     
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
 
     }
     
     public void RemoveHotelFromBooking( String hotelOrderId ){
-                
+
     }
     
     public void RemoveFlightFromBooking( String flightOrderId ){
@@ -24,10 +30,10 @@ class OrderController extends SearchController{
     }
     
     public String NewTrip(){
-        
+
     }
     
-    public Trip GetOldTrip( String orderId ){
+    public TripOrder GetOldTrip( String orderId ){
 
     }
     
@@ -37,11 +43,11 @@ class OrderController extends SearchController{
     public FlightOrder GetFlightOrder( String flightOrderId ){
         
     }
-    public DayTriporder GetDayTripOrder( String dayTripOrderId ){
+    public DayTripOrder GetDayTripOrder( String dayTripOrderId ){
         
     }
-    
+
     public UserInfo GetUser(){
-        
+        user = new UserInfo();
     }
 }

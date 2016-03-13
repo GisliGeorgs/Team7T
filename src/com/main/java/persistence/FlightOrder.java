@@ -1,6 +1,6 @@
 package com.main.java.persistence;
 
-class FlightOrder extends TripOrder{
+public class FlightOrder extends TripOrder{
     private Flight flight;
     
     public FlightOrder(){

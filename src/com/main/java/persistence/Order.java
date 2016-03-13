@@ -1,6 +1,6 @@
 package com.main.java.persistence;
 
-class Order{
+public class Order{
     
     private String orderNumber;
     

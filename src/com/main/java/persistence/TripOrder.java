@@ -2,7 +2,7 @@ package com.main.java.persistence;
 
 import java.util.Date;
 
-class TripOrder extends Order{
+public class TripOrder extends Order{
     private Date dateFrom;
     private Date dateTo;
     
