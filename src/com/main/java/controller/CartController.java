@@ -5,6 +5,7 @@ import com.main.java.form.*;
 import java.util.Date;
 
 class CartController extends SearchController{
+
     public HotelOrder hotelOrder;
     public FlightOrder flightOrder;
     public DayTripOrder dayTripOrder;
@@ -30,24 +31,24 @@ class CartController extends SearchController{
     }
     
     public String NewTrip(){
-
+        return "";
     }
     
     public Order GetOldTrip( String orderId ){
-
+        return null;
     }
     
     public HotelOrder GetHotelOrder( String hotelOrderId ){
-        
+        return null;
     }
     public FlightOrder GetFlightOrder( String flightOrderId ){
-        
+        return null;
     }
     public DayTripOrder GetDayTripOrder( String dayTripOrderId ){
-        
+        return null;
     }
 
     public UserInfo GetUser(){
-        user = new UserInfo();
+        return new UserInfo();
     }
 }

@@ -7,33 +7,41 @@ import com.main.java.persistence.Hotel;
 import java.util.Date;
 import java.util.List;
 
-class SearchController{
+public class SearchController{
     public SearchController(){
-        
-    }
-    
-    public List<T> GetHistory(){
-        
+
     }
 
-    public List<T> GetRecentHistory( int i ){
-        
+    public List<Hotel> GetHotelHistory( int i ){
+        return null;
     }
-    public List<Hotel> GetHotelHistory(){
-        
+    public List<Flight> GetFlightHistory( int i ){
+        return null;
     }
-    public List<Hotel> GetFlightHistory(){
-        
-    }
-    public List<Hotel> GetDayTripHistory(){
-        
+    public List<DayTrip> GetDayTripHistory( int i ){
+        return null;
     }
     
-    public List<Hotel> GetSuggestionsHotel( String loc, String[] keyword, Date dateFrom, Date dateTo ){
+    public List<Hotel> GetSuggestionsHotel( Date dateFrom, Date dateTo, String loc ){
         List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
         return suggestions;
     }
-    public List<DayTrip> GetSuggestionsDayTrip( String loc, Date date, String[] keyword ){
+
+    public List<Hotel> GetSuggestionsHotel( Date dateFrom, Date dateTo, String loc, Float price){
+        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
+        return suggestions;
+    }
+
+    public List<Hotel> GetSuggestionsHotel(  Date dateFrom, Date dateTo, String loc, Float price, String[] keywords  ){
+        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
+        return suggestions;
+    }
+
+    public List<Hotel> GetSuggestionsHotel(  Date dateFrom, Date dateTo, String loc, String[] keywords  ){
+        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
+        return suggestions;
+    }
+    public List<DayTrip> GetSuggestionsDayTrip( String loc, Date date, String[] keywords ){
         List<DayTrip> suggestions = null;/* ????? SearchHotels( loc, date, keywords ) */
         return suggestions;
     }
