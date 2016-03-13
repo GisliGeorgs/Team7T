@@ -4,13 +4,13 @@ import com.main.java.persistence.*;
 import com.main.java.form.*;
 import java.util.Date;
 
-class OrderController extends SearchController{
+class CartController extends SearchController{
     public HotelOrder hotelOrder;
     public FlightOrder flightOrder;
     public DayTripOrder dayTripOrder;
     public UserInfo user;
 
-    public OrderController(){
+    public CartController(){
         user = GetUser();
     }
     
