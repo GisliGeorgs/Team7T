@@ -6,9 +6,9 @@ import java.util.Date;
 
 class CartController extends SearchController{
 
-    public HotelOrder hotelOrder;
-    public FlightOrder flightOrder;
-    public DayTripOrder dayTripOrder;
+    public List<HotelOrder> hotelOrders;
+    public List<FlightOrder> flightOrders;
+    public List<DayTripOrder> dayTripOrders;
     public UserInfo user;
 
     public CartController(){
@@ -46,6 +46,19 @@ class CartController extends SearchController{
     }
     public DayTripOrder GetDayTripOrder( String dayTripOrderId ){
         return null;
+    }
+
+    /**
+     *
+     * @return Master order id
+     */
+    public String CreateCartOrder( List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders ){
+        this.dayTripOrders = dayTripOrders;
+        /*
+        ...
+        ..
+         */
+
     }
 
     public UserInfo GetUser(){
