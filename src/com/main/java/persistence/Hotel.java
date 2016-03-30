@@ -11,7 +11,7 @@ public class Hotel {
     private String[] keywords;
 
     public Hotel(){
-
+    	
     }
     public Hotel( String loc, Date dateFrom, Date dateTo, Float price, String[] keywords ){
         this.location = loc;
