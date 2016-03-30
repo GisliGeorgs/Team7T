@@ -1,4 +1,4 @@
-package com.main.java.controller;
+package coolAbed.controller;
 
 import com.main.java.persistence.*;
 import com.main.java.form.*;
