@@ -5,6 +5,8 @@ import com.main.java.persistence.Flight;
 import com.main.java.persistence.Hotel;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -13,13 +15,25 @@ public class SearchController{
 	public SearchController(){
 		
     }
+	/**
+	 * B�r til test hotelin sem eru notu� � testum.
+	 */
+	public static void/*List<Hotel>*/ TestHotels(){
+		hoteltest1 = new ArrayList<Hotel>();
+		
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Fun", "Old", "Golf" }  ));
+		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Fun", "Young", "Hip" }  ));
+		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
+		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Extreme", "Boring", "Beachy" }  ));
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Free Wifi", "Adventure", "Tennis" }  ));
+		hoteltest1.add(new Hotel( "203", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Kids", "Drinking", "Relaxing" }  ));
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Kids", "Beach", "Spa" }  ));
+		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Bar", "Old", "Party" }  ));
+        
+	}
 
     public static List<Hotel> GetHotelHistory( int i ){
-    	hoteltest1 = new ArrayList<Hotel>();
-		hoteltest1.add(new Hotel());
-		hoteltest1.add(new Hotel());
-		hoteltest1.add(new Hotel());
-        return hoteltest1;
+    	return hoteltest1	;
     }
     public static List<Flight> GetFlightHistory( int i ){
         return null;
@@ -28,7 +42,7 @@ public class SearchController{
         return null;
     }
     
-    public static List<Hotel> GetSuggestionsHotel( Date dateFrom, Date dateTo, String loc ){
+    public static List<Hotel> GetSuggestionsHotel( Calendar dateFrom, Calendar dateTo, String loc ){
         List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
         return suggestions;
     }

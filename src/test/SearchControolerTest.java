@@ -3,6 +3,8 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.main.java.controller.*;
@@ -19,10 +21,7 @@ public class SearchControolerTest {
 	/*List<Hotel> hoteltest1;*/
 	@Before
 	public void setUp() throws Exception {
-		 /*hoteltest1 = new ArrayList<Hotel>();
-		 hoteltest1.add(new Hotel());
-		 hoteltest1.add(new Hotel());
-		 hoteltest1.add(new Hotel());*/
+		 SearchController.TestHotels();
 	}
 
 	@After
@@ -45,7 +44,9 @@ public class SearchControolerTest {
 	
 	@Test
 	public void testGetSuggestionsHotelDateDateString() {
-		fail("Not yet implemented");
+		List<Hotel> test = SearchController.GetSuggestionsHotel( new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), "108");
+		Assert.assertEquals( 2 , test.size() );
+		//fail("Not yet implemented");
 	}
 
 	@Test
