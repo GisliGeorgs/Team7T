@@ -43,8 +43,17 @@ public class SearchController{
     }
     
     public static List<Hotel> GetSuggestionsHotel( Calendar dateFrom, Calendar dateTo, String loc ){
-        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
-        return suggestions;
+    	List<Hotel> ret = new ArrayList<Hotel>();
+    	for( int i = 0; i < hoteltest1.size(); i++ ){
+    		Hotel hotel = hoteltest1.get(i);
+    		int from = hotel.getDateFrom().compareTo(dateFrom);;
+    		int to = hotel.getDateTo().compareTo(dateTo);
+    		int location = hotel.getLocation().compareTo(loc);
+    		if( from == 0 && to == 0 && location == 0 ){
+    			ret.add(hotel);
+    		}
+    	}
+    	return ret;
     }
 
     public static List<Hotel> GetSuggestionsHotel( Date dateFrom, Date dateTo, String loc, Float price){
