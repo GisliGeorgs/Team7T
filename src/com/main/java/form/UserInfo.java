@@ -1,7 +1,16 @@
 package com.main.java.form;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+ 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+ 
 
 public class UserInfo{
     private String gender;
@@ -9,7 +18,7 @@ public class UserInfo{
     private List<String> interests;
     private List<String> pastOrderNumbers;
     private String email;
-    
+        
     public UserInfo( ){
         LoadUser();
     }
@@ -22,13 +31,72 @@ public class UserInfo{
         this.pastOrderNumbers = new ArrayList<String>(){};
     }
 
-    private void SaveUser(){
+    public void SaveUser() throws IOException{
         /* Vista breyturnar uppi í MyDocs? */
-
+    	JSONObject obj = new JSONObject();
+		obj.put("Gender", gender);
+		obj.put("Age", age);
+		obj.put("Email", email);
+ 
+		JSONArray jInterest = new JSONArray();
+		for(int k = 0; k < interests.size(); k++)
+		{
+			jInterest.add(interests.get(k));			
+		}
+		obj.put("Interests", jInterest);
+ 
+		JSONArray jPastOrderNumbers = new JSONArray();
+		for(int i = 0; i < pastOrderNumbers.size(); i++)
+		{
+			jPastOrderNumbers.add(pastOrderNumbers.get(i));			
+		}
+		obj.put("Past Order Numbers", jPastOrderNumbers);
+        
+        String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";
+ 
+		// try-with-resources statement based on post comment below :)
+		try (FileWriter file = new FileWriter(homeLoc)) {
+			file.write(obj.toJSONString());
+			System.out.println("Successfully Copied JSON Object to File...");
+			System.out.println("\nJSON Object: " + obj);
+		}
     }
-    private void LoadUser(){
+    public void LoadUser(){
         /* Lesa fæl úr MyDocs? */
-        /*   jásæll já  fínt   */
+        String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";
+    	
+    	JSONParser parser = new JSONParser();
+ 
+        try {
+ 
+            Object obj = parser.parse(new FileReader(homeLoc));
+ 
+            JSONObject jsonObject = (JSONObject) obj;
+ 
+            email = (String) jsonObject.get("Email");
+            gender = (String) jsonObject.get("Gender");
+            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
+            interests = (JSONArray) jsonObject.get("Interests");
+            pastOrderNumbers = (JSONArray) jsonObject.get("Past Order Numbers");
+ 
+            System.out.println("Mail: " + email);
+            System.out.println("Gender: " + gender);
+            System.out.println("Age: " + age);
+            System.out.println("\nInterests:");
+            Iterator<String> iterator = interests.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+
+            System.out.println("\nPastOrderNumbers:");
+            Iterator<String> iterator2 = pastOrderNumbers.iterator();
+            while (iterator2.hasNext()) {
+                System.out.println(iterator2.next());
+            }
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String GetEmail(){ return email; }
