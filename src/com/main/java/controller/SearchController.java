@@ -21,14 +21,14 @@ public class SearchController{
 	public static void/*List<Hotel>*/ TestHotels(){
 		hoteltest1 = new ArrayList<Hotel>();
 		
-		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Fun", "Old", "Golf" }  ));
-		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Fun", "Young", "Hip" }  ));
-		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
-		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Extreme", "Boring", "Beachy" }  ));
-		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Free Wifi", "Adventure", "Tennis" }  ));
-		hoteltest1.add(new Hotel( "203", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Kids", "Drinking", "Relaxing" }  ));
-		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Kids", "Beach", "Spa" }  ));
-		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100f, new String[]{ "Bar", "Old", "Party" }  ));
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));
+		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 20000f, new String[]{ "Fun", "Young", "Hip" }  ));
+		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 25000f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
+		hoteltest1.add(new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 11000f, new String[]{ "Extreme", "Boring", "Beachy" }  ));
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Free Wifi", "Adventure", "Tennis" }  ));
+		hoteltest1.add(new Hotel( "203", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 12200f, new String[]{ "Kids", "Drinking", "Relaxing" }  ));
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 11100f, new String[]{ "Kids", "Beach", "Spa" }  ));
+		hoteltest1.add(new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 100000f, new String[]{ "Bar", "Old", "Party" }  ));
         
 	}
 
@@ -56,9 +56,19 @@ public class SearchController{
     	return ret;
     }
 
-    public static List<Hotel> GetSuggestionsHotel( Date dateFrom, Date dateTo, String loc, Float price){
-        List<Hotel> suggestions = null;/* ????? SearchHotels( loc, dateFrom, dateTo, keywords ) */
-        return suggestions;
+    public static List<Hotel> GetSuggestionsHotel( Calendar dateFrom, Calendar dateTo, String loc, Float price){
+    	List<Hotel> ret = new ArrayList<Hotel>();
+    	for( int i = 0; i < hoteltest1.size(); i++ ){
+    		Hotel hotel = hoteltest1.get(i);
+    		int from = hotel.getDateFrom().compareTo(dateFrom);;
+    		int to = hotel.getDateTo().compareTo(dateTo);
+    		int location = hotel.getLocation().compareTo(loc);
+    		float cost = hotel.getPrice();
+    		if( from == 0 && to == 0 && location == 0 && cost <= price){
+    			ret.add(hotel);
+    		}
+    	}
+    	return ret;
     }
 
     public static List<Hotel> GetSuggestionsHotel(  Date dateFrom, Date dateTo, String loc, Float price, String[] keywords  ){

@@ -45,13 +45,18 @@ public class SearchControolerTest {
 	@Test
 	public void testGetSuggestionsHotelDateDateString() {
 		List<Hotel> test = SearchController.GetSuggestionsHotel( new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), "108");
-		Assert.assertEquals( 2 , test.size() );
+		
+		Assert.assertEquals( 2 , test.size());
+		
 		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetSuggestionsHotelDateDateStringFloat() {
-		fail("Not yet implemented");
+		List<Hotel> test = SearchController.GetSuggestionsHotel( new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), "108", 15000f);
+		
+		Assert.assertEquals( 1 , test.size());
+		//fail("Not yet implemented");
 	}
 
 	@Test
