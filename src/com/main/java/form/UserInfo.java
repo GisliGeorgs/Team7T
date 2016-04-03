@@ -1,6 +1,7 @@
 package com.main.java.form;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.io.File;
@@ -26,7 +27,7 @@ public class UserInfo{
     public DayTripOrder tripOrder;
         
     public UserInfo( ){
-        //LoadUser();
+        LoadUser();
     }
     
     public UserInfo( String email, String gender, int age, List<String> interests ){
@@ -46,7 +47,7 @@ public class UserInfo{
 		JSONArray jInterest = new JSONArray();
 		for(int k = 0; k < interests.size(); k++)
 		{
-			jInterest.add(interests.get(k));			
+			jInterest.add(interests.get(k));
 		}
 		obj.put("Interests", jInterest);
  
@@ -142,21 +143,9 @@ public class UserInfo{
     public void SaveOrder( String orderN, DayTripOrder trip, FlightOrder flight, HotelOrder hotel ) throws IOException{
         /* Vista breyturnar uppi í MyDocs? */  
         String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
-    	JSONObject object = new JSONObject();
-    	File f = new File(homeLoc);
-        if(f.exists() && !f.isDirectory()) {        
-	    	JSONParser parser = new JSONParser();	 
-	        try {	 
-	            Object obj = parser.parse(new FileReader(homeLoc));	 
-	            object = (JSONObject) obj;	 	 
-        	} catch (Exception e) {
-            	e.printStackTrace();
-        	}
-        }
-        //Add stuff
-        object.put(orderN + "F", flight);
-        object.put(orderN + "D", trip);
-        object.put(orderN + "H", hotel);
+    	JSONObject object = SaveHotels(orderN, hotel);
+        //Add stuff     
+        
         //End of Add Stuff
 		// try-with-resources statement based on post comment below :)
 		try (FileWriter file = new FileWriter(homeLoc)) {
@@ -168,22 +157,62 @@ public class UserInfo{
         /* Lesa fæl úr MyDocs? */
         String homeLoc = System.getProperty("user.home") + "/readme2.txt";    	
         File f = new File(homeLoc);
-        if(f.exists() && !f.isDirectory()) {        
-	    	JSONParser parser = new JSONParser();	 
-	        try {	 
+        if(f.exists() && !f.isDirectory()) {     	 
+	        try {	    
+		    	JSONParser parser = new JSONParser();
 	            Object obj = parser.parse(new FileReader(homeLoc));	 
 	            JSONObject jsonObject = (JSONObject) obj;
-	 
-	            flightOrder = (FlightOrder) jsonObject.get(orderNum + "F");
-	            hotelOrder = (HotelOrder) jsonObject.get(orderNum + "H");
-	            tripOrder = (DayTripOrder) jsonObject.get(orderNum + "D");
-	            	 
+	            
+	            //Hotels
+	            HotelOrder hotelorderMini = new HotelOrder();
+	            ArrayList hotelObject = (ArrayList) jsonObject.get(orderNum + "H");
+	            for(int i = 0; i < hotelObject.size(); i++){
+	            	ArrayList temp = (ArrayList) hotelObject.get(i);
+	            	GregorianCalendar greg = new GregorianCalendar(Integer.parseInt(temp.get(2).toString()), Integer.parseInt(temp.get(1).toString()), Integer.parseInt(temp.get(0).toString()));
+	            	
+	            }
+	            	            	 
         	} catch (Exception e) {
             	e.printStackTrace();
         	}
         }
     }
-
+    
+    private JSONObject SaveHotels(String Ordernumr, HotelOrder hotel){    
+    	JSONObject obj = new JSONObject();
+        String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
+    	File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {	 
+	            Object obje = parser.parse(new FileReader(homeLoc));	 
+	            obj = (JSONObject) obje;	 	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }
+		JSONArray jHotels = new JSONArray();
+		for(int k = 0; k < hotel.GetHotel().size() ; k++)
+		{
+			JSONArray jHotel = new JSONArray();
+			jHotel.add(hotel.GetHotel().get(k).getDateFrom().MONTH);
+			jHotel.add(hotel.GetHotel().get(k).getDateFrom().DATE);
+			jHotel.add(hotel.GetHotel().get(k).getDateFrom().YEAR);
+			jHotel.add(hotel.GetHotel().get(k).getDateTo().MONTH);
+			jHotel.add(hotel.GetHotel().get(k).getDateTo().DATE);
+			jHotel.add(hotel.GetHotel().get(k).getDateTo().YEAR);
+			jHotel.add(hotel.GetHotel().get(k).getLocation());
+			jHotel.add(hotel.GetHotel().get(k).getPrice());
+			JSONArray jKeywords = new JSONArray();
+			for(int i = 0; i < hotel.GetHotel().get(k).getKeywords().length; i++ ){
+				jKeywords.add(hotel.GetHotel().get(k).getKeywords()[i]);
+			}
+			jHotel.add(jKeywords);
+			jHotels.add(jHotel);
+		}
+		obj.put(Ordernumr + "H", jHotels);
+		return obj;
+    }
     
     
     
