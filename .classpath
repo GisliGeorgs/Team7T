@@ -6,13 +6,20 @@
 	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Lenovo/git/Team7T/src/imports/json-simple-1.1.1.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Egill Orn/Desktop/7TTera/tera/src/imports/json-simple-1.1.1.jar"/>
+>>>>>>> 1645f87b7249ad9f3725b8dc1171e7bcd639fcfc
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="jcalendar-1.4.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jgoodies-common-1.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jgoodies-looks-2.4.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/junit-4.6.jar"/>
 	<classpathentry kind="lib" path="src/imports/json-simple-1.1.1.jar"/>
+=======
+>>>>>>> 1645f87b7249ad9f3725b8dc1171e7bcd639fcfc
 	<classpathentry kind="output" path="bin"/>
 </classpath>

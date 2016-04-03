@@ -20,16 +20,16 @@ public class UserinfoTests {
     public static void main( String[] args)
     {    	
     	UserinfoTests k = new UserinfoTests();	
-    	k.stuff();
+    	k.stuff3();
     }
     
-    public void stuffyiuuyiuyi()
+    public void stuff1()
     {
     	List<String> origList = new ArrayList<>();
         origList.add("a");
         origList.add("b");
         
-    	uuser = new UserInfo("meru@meee.isadsfadsf", "hvorugkguuuuuuuuuuu", 150, origList );
+    	uuser = new UserInfo("meru@meee.isadsfadsbnkf", "hvorugkguuuuuuuuuuu", 150, origList );
     	
     	try {
 			uuser.SaveUser();
@@ -39,7 +39,7 @@ public class UserinfoTests {
 		}
     }
     
-    public void stuff2hjhkhkj()
+    public void stuff2()
     {
     	List<String> origList = new ArrayList<>();
         origList.add("a");
@@ -50,10 +50,9 @@ public class UserinfoTests {
     	uuser.LoadUser();
     }
     
-    public void stuff()
+    public void stuff3()
     {
-		System.out.println("fundujb");
-    	List<String> origList = new ArrayList<>();
+		List<String> origList = new ArrayList<>();
         origList.add("a");
         origList.add("b");
         
@@ -61,7 +60,8 @@ public class UserinfoTests {
     	
     	List<Hotel> hoteltest1 = new ArrayList<Hotel>();		
 		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));
-    	HotelOrder hoe = new HotelOrder(hoteltest1);
+		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));
+	    HotelOrder hoe = new HotelOrder(hoteltest1);
     	
     	List<Flight> flighttest1 = new ArrayList<Flight>();
     	flighttest1.add(new Flight());
@@ -78,7 +78,7 @@ public class UserinfoTests {
 			e.printStackTrace();
 		}
 		uuser.LoadOrder("9894AA");
-		System.out.println("Stuff3: " + uuser.hotelOrder);
+		System.out.println("Stuff3: " + uuser.hotelOrder.GetHotel().size());
     }
     
 }

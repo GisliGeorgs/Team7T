@@ -1,6 +1,7 @@
 package com.main.java.persistence;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Calendar;
 
 public class Hotel {
@@ -13,11 +14,11 @@ public class Hotel {
         this.location = location;
     }
 
-    public Calendar getDateFrom() {
+    public GregorianCalendar getDateFrom() {
         return dateFrom;
     }
 
-    public void setDateFrom(Calendar dateFrom) {
+    public void setDateFrom(GregorianCalendar dateFrom) {
         this.dateFrom = dateFrom;
     }
 
@@ -46,7 +47,7 @@ public class Hotel {
     }
 
     private String location;
-    private Calendar dateFrom;
+    private GregorianCalendar dateFrom;
     private Calendar dateTo;
     private Float price;
     private String[] keywords;
@@ -54,7 +55,7 @@ public class Hotel {
     public Hotel(){
     	
     }
-    public Hotel( String loc,Calendar dateFrom, Calendar dateTo, Float price, String[] keywords ){
+    public Hotel( String loc,GregorianCalendar dateFrom, Calendar dateTo, Float price, String[] keywords ){
         this.location = loc;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
