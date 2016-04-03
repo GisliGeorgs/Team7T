@@ -6,6 +6,16 @@ public class FlightOrder extends Order{
     public FlightOrder(){
         
     }
+    public FlightOrder( Flight flight ){
+    	this.flight = flight
+    }
+    
+    public Flight GetFlight(){
+    	return flight;
+    }
+    public void SetFlight( Flight flight ){
+    	this.flight = flight;
+    }
     
     public void CreateFlightOrder(){
             

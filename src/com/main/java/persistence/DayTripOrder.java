@@ -11,6 +11,16 @@ public class DayTripOrder extends Order{
     public DayTripOrder(){
         
     }
+    public DayTripOrder( DayTrip dayTrip ){
+    	this.dayTrip = dayTrip;
+    }
+    
+    public DayTrip GetDayTrip(){
+    	return dayTrip;
+    }
+    public void SetDayTrip( DayTrip dayTrip ){
+    	this.dayTrip = dayTrip;
+    }
     
     public void CreateDayTriprder(){
             

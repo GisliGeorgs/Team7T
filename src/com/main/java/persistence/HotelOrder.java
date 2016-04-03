@@ -9,6 +9,17 @@ public class HotelOrder extends Order{
     public HotelOrder(){
 
     }
+    public HotelOrder( Hotel hotel ){
+    	this.hotel = hotel;
+    }
+    
+    public Hotel GetHotel(){
+    	return hotel;
+    }
+    
+    public void SetHotel( Hotel hotel ){
+    	this.hotel = hotel;
+    }
     
     public void CreateHotelOrder(){
             
