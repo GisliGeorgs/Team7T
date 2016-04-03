@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import com.main.java.persistence.*;
  
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -19,6 +21,9 @@ public class UserInfo{
     private List<String> interests;
     private List<String> pastOrderNumbers;
     private String email;
+    private List<HotelOrder> hotelOrder;
+    private List<FlightOrder> flightOrder;
+    private List<DayTripOrder> tripOrder;
         
     public UserInfo( ){
         LoadUser();
@@ -133,5 +138,54 @@ public class UserInfo{
     public void SetPastOrderNumber( String order ){
         this.pastOrderNumbers.add( order );
     }
+    
+    
+    public void SaveOrder( String orderN, List<DayTripOrder> trip, List<FlightOrder> flight, List<HotelOrder> hotel ) throws IOException{
+        /* Vista breyturnar uppi í MyDocs? */  
+        String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
+    	JSONObject object = new JSONObject();
+    	File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {	 
+	            Object obj = parser.parse(new FileReader(homeLoc));	 
+	            object = (JSONObject) obj;	 	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }
+        //Add stuff
+        object.put(orderN + "F", flight);
+        object.put(orderN + "D", trip);
+        object.put(orderN + "H", hotel);
+        //End of Add Stuff
+		// try-with-resources statement based on post comment below :)
+		try (FileWriter file = new FileWriter(homeLoc)) {
+			file.write(object.toJSONString());
+			System.out.println("Successfully Copied JSON Object to File...");
+		}
+    }
+    public void LoadOrder(String orderNum){
+        /* Lesa fæl úr MyDocs? */
+        String homeLoc = System.getProperty("user.home") + "/readme2.txt";    	
+        File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {	 
+	            Object obj = parser.parse(new FileReader(homeLoc));	 
+	            JSONObject jsonObject = (JSONObject) obj;
+	 
+	            flightOrder = (List<FlightOrder>) jsonObject.get(orderNum + "F");
+	            hotelOrder = (List<HotelOrder>) jsonObject.get(orderNum + "H");
+	            tripOrder = (List<DayTripOrder>) jsonObject.get(orderNum + "D");
+	            	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }
+    }
+
+    
+    
     
 }
