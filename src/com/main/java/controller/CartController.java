@@ -6,16 +6,16 @@ import com.main.java.form.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 class CartController extends SearchController{
-
     public List<HotelOrder> hotelOrders = new ArrayList<HotelOrder>();
     public List<FlightOrder> flightOrders = new ArrayList<FlightOrder>();
     public List<DayTripOrder> dayTripOrders = new ArrayList<DayTripOrder>();
     public UserInfo user;
 
     public CartController(){
-        user = GetUser();
+        GetUser();
     }
     
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
@@ -59,14 +59,17 @@ class CartController extends SearchController{
         return null;
     }
     
-    public HotelOrder GetHotelOrder( String hotelOrderId ){
-        return null;
+    public List<HotelOrder> GetHotelOrder( String orderId ){
+        user.LoadOrder( orderId );
+    	return user.GetHotelOrders;
     }
-    public FlightOrder GetFlightOrder( String flightOrderId ){
-        return null;
+    public List<FlightOrder> GetFlightOrder( String orderId ){
+        user.LoadOrder( orderId );
+        return user.GetFlightOrders();
     }
-    public DayTripOrder GetDayTripOrder( String dayTripOrderId ){
-        return null;
+    public List<DayTripOrder> GetDayTripOrder( String orderId ){
+        user.LoadOrder( orderId );
+        return user.getDayTripOrders();
     }
 
     /**
@@ -74,16 +77,16 @@ class CartController extends SearchController{
      * @return Master order id
      */
     public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
-        String orderId = "";
+        String orderNum = "";
+        String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for( int i = 0; i < 9; i++ ){
+        	Random rand = new Random();
+        	int i2 = rand.nextInt(a.length());
+        	orderNum += a.substring( i2, i2+1 );
+        }
         
-        // Generata random string
-        // Bæta honum við í UserInfo pastOrders
-        // 
-        
-        
-    	
-        user.SetPastOrderNumber( orderId );
-        return "";
+        user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );      	
+        return orderNum;
     }
 
     public void GetUser(){
