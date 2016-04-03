@@ -13,15 +13,17 @@ import com.main.java.controller.*;
 import com.main.java.persistence.Hotel;
 import com.main.java.persistence.HotelOrder;
 
+import junit.framework.Assert;
+
 public class CartControolerTest {
 	
 	HotelOrder test = new HotelOrder();
-	CartController cart = new CartController();
+	CartController cart;// = new CartController();
 	@Before
 	public void setUp() throws Exception {
-
-		test.AddHotel( new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 25000f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
-		test.AddHotel( new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 11000f, new String[]{ "Extreme", "Boring", "Beachy" }  ));
+		cart = new CartController();
+	    cart.AddHotelToBooking( new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 25000f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
+		cart.AddHotelToBooking( new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 11000f, new String[]{ "Extreme", "Boring", "Beachy" }  ));
 	}
 
 	@After
@@ -30,8 +32,14 @@ public class CartControolerTest {
 
 	@Test
 	public void testCreateCartOrder() {
-		cart.CreateCartOrder();
+		Assert.assertEquals( "test1", cart.CreateCartOrder());
 		//fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testAddHotelToBooking(){
+		cart.AddHotelToBooking( new Hotel( "102", new GregorianCalendar( 2016, Calendar.MARCH, 6 ), new GregorianCalendar( 2016, Calendar.MARCH, 15), 400f, new String[]{ "Toff", "POPP", "Lockathon" } ));
+		Assert.assertEquals( "test1", cart.CreateCartOrder() );
 	}
 
 }

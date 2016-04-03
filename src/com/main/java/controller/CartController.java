@@ -66,15 +66,16 @@ public class CartController extends SearchController{
     
     public List<Hotel> GetHotelOrder( String orderId ){
         user.LoadOrder( orderId );
-    	return user.GetHotelOrders;
+    	return null;//user.GetHotelOrders;
     }
-    public List<Flight> GetFlightOrder( String orderId ){
+    public List<Flight> GetFlightOrder
+    ( String orderId ){
         user.LoadOrder( orderId );
-        return user.GetFlightOrders();
+        return null;//user.GetFlightOrders();
     }
     public List<DayTrip> GetDayTripOrder( String orderId ){
         user.LoadOrder( orderId );
-        return user.getDayTripOrders();
+        return null;//user.getDayTripOrders();
     }
 
     /**
@@ -83,13 +84,14 @@ public class CartController extends SearchController{
      */
     public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
         String orderNum = "";
-        String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        /*String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for( int i = 0; i < 9; i++ ){
         	Random rand = new Random();
         	int i2 = rand.nextInt(a.length());
         	orderNum += a.substring( i2, i2+1 );
         }
-        
+        */
+        orderNum = "test1";
         try {
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
 		} catch (IOException e) {

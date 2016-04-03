@@ -58,8 +58,8 @@ public class Cart extends JFrame {
 		btnFinsihOrder.setIcon(new ImageIcon(imgLogin));
 		btnFinsihOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				YourOrderNumberIs YONI=new YourOrderNumberIs();
-				YONI.setVisible(true);
+				Pay Payment=new Pay();
+				Payment.setVisible(true);
 				dispose();
 			}
 		});

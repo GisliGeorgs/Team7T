@@ -61,6 +61,7 @@ public class UserInfo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				OrderNumber OrderN=new OrderNumber();
 				OrderN.setVisible(true);
+				dispose();
 			}
 		});
 		btnSaveUser.setBounds(45, 337, 127, 33);
@@ -83,6 +84,7 @@ public class UserInfo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				OrderNumber OrderN=new OrderNumber();
 				OrderN.setVisible(true);
+				dispose();
 			}
 		});
 		btnCancel.setBounds(194, 337, 127, 33);

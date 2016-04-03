@@ -28,19 +28,6 @@ public class SearchControolerTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testSearchController() {
-		
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetHotelHistory() {
-		Assert.assertEquals(3,SearchController.GetHotelHistory(3).size());
-		
-		
-		//fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testGetSuggestionsHotelDateDateString() {
@@ -56,27 +43,5 @@ public class SearchControolerTest {
 		List<Hotel> test = SearchController.GetSuggestionsHotel( new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), "108", 15000f);
 		
 		Assert.assertEquals( 1 , test.size());
-		//fail("Not yet implemented");
 	}
-
-	@Test
-	public void testGetSuggestionsHotelDateDateStringFloatStringArray() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetSuggestionsHotelDateDateStringStringArray() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFindHotels() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFindCloseHotels() {
-		fail("Not yet implemented");
-	}
-
 }

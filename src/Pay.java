@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JRadioButton;
+import com.toedter.calendar.JMonthChooser;
+import com.toedter.calendar.JYearChooser;
 
 public class Pay extends JFrame {
 
@@ -64,9 +66,10 @@ public class Pay extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				YourOrderNumberIs YONI=new YourOrderNumberIs();
 				YONI.setVisible(true);
+				dispose();
 			}
 		});
-		btnPay.setBounds(35, 256, 116, 26);
+		btnPay.setBounds(97, 256, 116, 26);
 		contentPane.add(btnPay);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -76,9 +79,10 @@ public class Pay extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Cart BacktoCart=new Cart();
 				BacktoCart.setVisible(true);
+				dispose();
 			}
 		});
-		btnCancel.setBounds(182, 257, 116, 25);
+		btnCancel.setBounds(271, 257, 116, 25);
 		contentPane.add(btnCancel);
 		
 		JLabel lblCardNumber = new JLabel("Card number:");
@@ -101,10 +105,6 @@ public class Pay extends JFrame {
 		contentPane.add(Cardnum);
 		Cardnum.setColumns(10);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(12, 125, 116, 22);
-		contentPane.add(dateChooser);
-		
 		CVCnum = new JTextField();
 		CVCnum.setBounds(12, 189, 49, 22);
 		contentPane.add(CVCnum);
@@ -120,16 +120,24 @@ public class Pay extends JFrame {
 		rdbtnMastercard.setBounds(259, 100, 25, 25);
 		contentPane.add(rdbtnMastercard);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel VisaPic = new JLabel("New label");
 		Image img = new ImageIcon(this.getClass().getResource("/VisaPic.png")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(292, 30, 95, 43);
-		contentPane.add(lblNewLabel);
+		VisaPic.setIcon(new ImageIcon(img));
+		VisaPic.setBounds(292, 30, 95, 43);
+		contentPane.add(VisaPic);
 		
 		JLabel MasterCardPic = new JLabel("");
 		Image img2 = new ImageIcon(this.getClass().getResource("/Master-Card.png")).getImage();
 		MasterCardPic.setIcon(new ImageIcon(img2));
 		MasterCardPic.setBounds(292, 86, 106, 61);
 		contentPane.add(MasterCardPic);
+		
+		JYearChooser yearChooser = new JYearChooser();
+		yearChooser.setBounds(127, 132, 51, 22);
+		contentPane.add(yearChooser);
+		
+		JMonthChooser monthChooser = new JMonthChooser();
+		monthChooser.setBounds(12, 132, 111, 22);
+		contentPane.add(monthChooser);
 	}
 }

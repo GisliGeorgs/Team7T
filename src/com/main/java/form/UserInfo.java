@@ -28,7 +28,7 @@ public class UserInfo{
     public DayTripOrder tripOrder;
         
     public UserInfo( ){
-        LoadUser();
+        //LoadUser();
     }
     
     public UserInfo( String email, String gender, int age, List<String> interests ){
@@ -75,11 +75,13 @@ public class UserInfo{
         if(f.exists() && !f.isDirectory()) {        
 	    	JSONParser parser = new JSONParser();	 
 	        try {
+	    		System.out.println( 000 );
 	 
 	            Object obj = parser.parse(new FileReader(homeLoc));
 	 
 	            JSONObject jsonObject = (JSONObject) obj;
-	 
+
+	    		System.out.println( 000 );
 	            email = (String) jsonObject.get("Email");
 	            gender = (String) jsonObject.get("Gender");
 	            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
@@ -91,18 +93,23 @@ public class UserInfo{
 	            System.out.println("Age: " + age);
 	            System.out.println("\nInterests:");
 	            */
+	    		System.out.println( 000 );
 	            Iterator<String> iterator = interests.iterator();
-	            while (iterator.hasNext()) 
+	           /* while (iterator.hasNext()) 
 	            {
+
+	        		System.out.println( 000 );
 	                //System.out.println(iterator.next());
-	            }
-	
+	            }*/
+
+	    		System.out.println( 000 );
 	            System.out.println("\nPastOrderNumbers:");
 	            Iterator<String> iterator2 = pastOrderNumbers.iterator();
 	            while (iterator2.hasNext()) 
 	            {
 	                //System.out.println(iterator2.next());
 	            }	 
+	    		System.out.println( 000 );
         	} catch (Exception e) {
             	e.printStackTrace();
         	}
