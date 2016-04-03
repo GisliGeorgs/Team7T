@@ -32,7 +32,6 @@ public class UserInfo{
     }
 
     public void SaveUser() throws IOException{
-        /* Vista breyturnar uppi í MyDocs? */
     	JSONObject obj = new JSONObject();
 		obj.put("Gender", gender);
 		obj.put("Age", age);
@@ -62,7 +61,6 @@ public class UserInfo{
 		}
     }
     public void LoadUser(){
-        /* Lesa fæl úr MyDocs? */
         String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";
     	
     	JSONParser parser = new JSONParser();

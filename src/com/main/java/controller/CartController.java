@@ -2,14 +2,16 @@ package com.main.java.controller;
 
 import com.main.java.persistence.*;
 import com.main.java.form.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 class CartController extends SearchController{
 
-    public List<HotelOrder> hotelOrders;
-    public List<FlightOrder> flightOrders;
-    public List<DayTripOrder> dayTripOrders;
+    public List<HotelOrder> hotelOrders = new ArrayList<HotelOrder>();
+    public List<FlightOrder> flightOrders = new ArrayList<FlightOrder>();
+    public List<DayTripOrder> dayTripOrders = new ArrayList<DayTripOrder>();
     public UserInfo user;
 
     public CartController(){
@@ -19,20 +21,34 @@ class CartController extends SearchController{
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
 
     }
-
     /**
-     *
-     * @param hotelOrderId
+     * Hendir dagsferðarpöntun úr cartinu
+     * Á að skila orderinu sem þú hentir út?
+     * @param daytriporder
      */
-    public void RemoveHotelFromBooking( String hotelOrderId ){
-
+    public void RemoveDayTripFromBooking( DayTripOrder daytriporder ){
+    	dayTripOrders.remove( daytriporder );
+	}
+    public void RemoveHotelFromBooking( HotelOrder hotelorder ){
+    	
+    }    
+    public void RemoveFlightFromBooking( FlightOrder flightorder ){
     }
     
-    public void RemoveFlightFromBooking( String flightOrderId ){
+    /**
+     * Bætir við dagsferðarpöntun í Cart-ið
+     * @param daytriporder
+     */
+    public void AddDayTripToBooking( DayTripOrder daytriporder ){
+    	dayTripOrders.add( daytriporder );
     }
-        
-    public void RemoveDayTripFromBooking( String dayTripOrderId ){
-        
+    
+    public void AddHotelToBooking( HotelOrder hotelorder ){
+    	
+    }
+    
+    public void AddFlightToBooking( FlightOrder flightorder ){
+    	
     }
     
     public String NewTrip(){
@@ -54,19 +70,23 @@ class CartController extends SearchController{
     }
 
     /**
-     *
+     * Pantar allt dótið sem er í cart-inu
      * @return Master order id
      */
-    public String CreateCartOrder( List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders ){
-        this.dayTripOrders = dayTripOrders;
-        /*
-        ...
-        ..
-         */
+    public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
+        String orderId = "";
+        
+        // Generata random string
+        // Bæta honum við í UserInfo pastOrders
+        // 
+        
+        
+    	
+        user.SetPastOrderNumber( orderId );
         return "";
     }
 
-    public UserInfo GetUser(){
-        return new UserInfo();
+    public void GetUser(){
+        user = new UserInfo();
     }
 }
