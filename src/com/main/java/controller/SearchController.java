@@ -12,6 +12,7 @@ import java.util.List;
 
 public class SearchController{
 	static List<Hotel> hoteltest1;
+	static List<Flight> flighttest1;
 	public SearchController(){
 		
     }

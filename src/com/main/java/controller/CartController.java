@@ -69,7 +69,7 @@ class CartController extends SearchController{
     }
     public List<DayTripOrder> GetDayTripOrder( String orderId ){
         user.LoadOrder( orderId );
-        return user.getDayTripOrders();
+        return user.getDayTripOrders()
     }
 
     /**

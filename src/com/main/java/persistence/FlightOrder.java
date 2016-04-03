@@ -11,11 +11,7 @@ public class FlightOrder extends Order{
     public FlightOrder(){
         
     }
-<<<<<<< HEAD
-    public FlightOrder( Flight flight ){
-=======
     public FlightOrder( List<Flight> flight ){
->>>>>>> f0a1fcd77b780d0b7960fb348f21e30e5918ffc2
     	this.flight = flight;
     }
     
