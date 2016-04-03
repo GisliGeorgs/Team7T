@@ -1,7 +1,12 @@
 package com.main.java.persistence;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class HotelOrder extends Order{
-    private Hotel hotel;
+    private List<Hotel> hotel;
 
     /**
      *
@@ -9,15 +14,15 @@ public class HotelOrder extends Order{
     public HotelOrder(){
 
     }
-    public HotelOrder( Hotel hotel ){
+    public HotelOrder( List<Hotel> hotel ){
     	this.hotel = hotel;
     }
     
-    public Hotel GetHotel(){
+    public List<Hotel> GetHotel(){
     	return hotel;
     }
     
-    public void SetHotel( Hotel hotel ){
+    public void SetHotel( List<Hotel> hotel ){
     	this.hotel = hotel;
     }
     

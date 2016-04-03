@@ -1,24 +1,29 @@
 package com.main.java.persistence;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 import java.util.Date;
 
 public class DayTripOrder extends Order{
     /**
      *
      */
-    private DayTrip dayTrip;
+    private List<DayTrip> dayTrip;
     
     public DayTripOrder(){
         
     }
-    public DayTripOrder( DayTrip dayTrip ){
+    public DayTripOrder( List<DayTrip> dayTrip ){
     	this.dayTrip = dayTrip;
     }
     
-    public DayTrip GetDayTrip(){
+    public List<DayTrip> GetDayTrip(){
     	return dayTrip;
     }
-    public void SetDayTrip( DayTrip dayTrip ){
+    public void SetDayTrip( List<DayTrip> dayTrip ){
     	this.dayTrip = dayTrip;
     }
     

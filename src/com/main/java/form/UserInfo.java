@@ -21,12 +21,12 @@ public class UserInfo{
     private List<String> interests;
     private List<String> pastOrderNumbers;
     private String email;
-    private List<HotelOrder> hotelOrder;
-    private List<FlightOrder> flightOrder;
-    private List<DayTripOrder> tripOrder;
+    public HotelOrder hotelOrder;
+    public FlightOrder flightOrder;
+    public DayTripOrder tripOrder;
         
     public UserInfo( ){
-        LoadUser();
+        //LoadUser();
     }
     
     public UserInfo( String email, String gender, int age, List<String> interests ){
@@ -63,7 +63,7 @@ public class UserInfo{
 		try (FileWriter file = new FileWriter(homeLoc)) {
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
-			System.out.println("\nJSON Object: " + obj);
+			//System.out.println("\nJSON Object: " + obj);
 		}
     }
     public void LoadUser(){
@@ -83,22 +83,23 @@ public class UserInfo{
 	            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
 	            interests = (JSONArray) jsonObject.get("Interests");
 	            pastOrderNumbers = (JSONArray) jsonObject.get("Past Order Numbers");
-	 
+	            /*
 	            System.out.println("Mail: " + email);
 	            System.out.println("Gender: " + gender);
 	            System.out.println("Age: " + age);
 	            System.out.println("\nInterests:");
+	            */
 	            Iterator<String> iterator = interests.iterator();
 	            while (iterator.hasNext()) 
 	            {
-	                System.out.println(iterator.next());
+	                //System.out.println(iterator.next());
 	            }
 	
 	            System.out.println("\nPastOrderNumbers:");
 	            Iterator<String> iterator2 = pastOrderNumbers.iterator();
 	            while (iterator2.hasNext()) 
 	            {
-	                System.out.println(iterator2.next());
+	                //System.out.println(iterator2.next());
 	            }	 
         	} catch (Exception e) {
             	e.printStackTrace();
@@ -138,7 +139,7 @@ public class UserInfo{
     }
     
     
-    public void SaveOrder( String orderN, List<DayTripOrder> trip, List<FlightOrder> flight, List<HotelOrder> hotel ) throws IOException{
+    public void SaveOrder( String orderN, DayTripOrder trip, FlightOrder flight, HotelOrder hotel ) throws IOException{
         /* Vista breyturnar uppi í MyDocs? */  
         String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
     	JSONObject object = new JSONObject();
@@ -173,9 +174,9 @@ public class UserInfo{
 	            Object obj = parser.parse(new FileReader(homeLoc));	 
 	            JSONObject jsonObject = (JSONObject) obj;
 	 
-	            flightOrder = (List<FlightOrder>) jsonObject.get(orderNum + "F");
-	            hotelOrder = (List<HotelOrder>) jsonObject.get(orderNum + "H");
-	            tripOrder = (List<DayTripOrder>) jsonObject.get(orderNum + "D");
+	            flightOrder = (FlightOrder) jsonObject.get(orderNum + "F");
+	            hotelOrder = (HotelOrder) jsonObject.get(orderNum + "H");
+	            tripOrder = (DayTripOrder) jsonObject.get(orderNum + "D");
 	            	 
         	} catch (Exception e) {
             	e.printStackTrace();
