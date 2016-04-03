@@ -7,7 +7,7 @@ public class FlightOrder extends Order{
         
     }
     public FlightOrder( Flight flight ){
-    	this.flight = flight
+    	this.flight = flight;
     }
     
     public Flight GetFlight(){
