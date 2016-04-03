@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Random;
 
 class CartController extends SearchController{
-    public List<HotelOrder> hotelOrders = new ArrayList<HotelOrder>();
-    public List<FlightOrder> flightOrders = new ArrayList<FlightOrder>();
-    public List<DayTripOrder> dayTripOrders = new ArrayList<DayTripOrder>();
+    public HotelOrder hotelOrders = new HotelOrder();
+    public FlightOrder flightOrders = new FlightOrder();
+    public DayTripOrder dayTripOrders = new DayTripOrder();
     public UserInfo user;
 
     public CartController(){
@@ -26,29 +26,30 @@ class CartController extends SearchController{
      * Á að skila orderinu sem þú hentir út?
      * @param daytriporder
      */
-    public void RemoveDayTripFromBooking( DayTripOrder daytriporder ){
-    	dayTripOrders.remove( daytriporder );
+    public void RemoveDayTripFromBooking( DayTrip daytrip ){
+    	dayTripOrders.RemoveDayTrip( daytrip );
 	}
-    public void RemoveHotelFromBooking( HotelOrder hotelorder ){
-    	
+    public void RemoveHotelFromBooking( Hotel hotel ){
+    	hotelOrders.RemoveHotel( hotel);
     }    
-    public void RemoveFlightFromBooking( FlightOrder flightorder ){
+    public void RemoveFlightFromBooking( Flight flight ){
+    	flightOrders.RemoveFlight( flight );
     }
     
     /**
      * Bætir við dagsferðarpöntun í Cart-ið
      * @param daytriporder
      */
-    public void AddDayTripToBooking( DayTripOrder daytriporder ){
-    	dayTripOrders.add( daytriporder );
+    public void AddDayTripToBooking( DayTrip daytrip ){
+    	dayTripOrders.AddDayTrip( daytrip );
     }
     
-    public void AddHotelToBooking( HotelOrder hotelorder ){
-    	
+    public void AddHotelToBooking( Hotel hotel ){
+    	hotelOrders.AddHotel( hotel );
     }
     
-    public void AddFlightToBooking( FlightOrder flightorder ){
-    	
+    public void AddFlightToBooking( Flight flight ){
+    	flightOrders.AddFlight( flight );
     }
     
     public String NewTrip(){

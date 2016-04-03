@@ -9,7 +9,7 @@ public class FlightOrder extends Order{
     private List<Flight> flight;
     
     public FlightOrder(){
-        
+    	flight = new ArrayList<Flight>();        
     }
     public FlightOrder( List<Flight> flight ){
     	this.flight = flight;
@@ -20,6 +20,12 @@ public class FlightOrder extends Order{
     }
     public void SetFlight( List<Flight> flight ){
     	this.flight = flight;
+    }
+    public void AddFlight( Flight flight ){
+    	this.flight.add( flight );
+    }
+    public void RemoveFlight( Flight flight ){
+    	this.flight.remove( flight );
     }
     
     public void CreateFlightOrder(){
