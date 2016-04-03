@@ -1,6 +1,7 @@
 package com.main.java.form;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
@@ -155,6 +156,7 @@ public class UserInfo{
     }
     public void LoadOrder(String orderNum){
         /* Lesa fæl úr MyDocs? */
+    	hotelOrder = new HotelOrder();
         String homeLoc = System.getProperty("user.home") + "/readme2.txt";    	
         File f = new File(homeLoc);
         if(f.exists() && !f.isDirectory()) {     	 
@@ -168,8 +170,15 @@ public class UserInfo{
 	            ArrayList hotelObject = (ArrayList) jsonObject.get(orderNum + "H");
 	            for(int i = 0; i < hotelObject.size(); i++){
 	            	ArrayList temp = (ArrayList) hotelObject.get(i);
+	            	double fff = (double) temp.get(7);
+	            	float kkk = (float) fff;
+	            	JSONArray hola = (JSONArray) temp.get(8);
+	            	String[] arr = hola.toString().replace("},{", " ,").split(" ");
 	            	GregorianCalendar greg = new GregorianCalendar(Integer.parseInt(temp.get(2).toString()), Integer.parseInt(temp.get(1).toString()), Integer.parseInt(temp.get(0).toString()));
-	            	
+	            	GregorianCalendar greg2 = new GregorianCalendar(Integer.parseInt(temp.get(5).toString()), Integer.parseInt(temp.get(4).toString()), Integer.parseInt(temp.get(3).toString()));
+	            	Hotel hoe = new Hotel((String) temp.get(6), greg, greg2, kkk, arr);
+	            	hotelOrder.AddHotel(hoe);
+	            	//public Hotel( String loc,GregorianCalendar dateFrom, Calendar dateTo, Float price, String[] keywords )
 	            }
 	            	            	 
         	} catch (Exception e) {

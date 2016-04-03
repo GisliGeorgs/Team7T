@@ -52,7 +52,7 @@ public class UserinfoTests {
     
     public void stuff3()
     {
-    	List<String> origList = new ArrayList<>();
+		List<String> origList = new ArrayList<>();
         origList.add("a");
         origList.add("b");
         
@@ -78,7 +78,7 @@ public class UserinfoTests {
 			e.printStackTrace();
 		}
 		uuser.LoadOrder("9894AA");
-		//System.out.println("Stuff3: " + uuser.hotelOrder);
+		System.out.println("Stuff3: " + uuser.hotelOrder.GetHotel().size());
     }
     
 }
