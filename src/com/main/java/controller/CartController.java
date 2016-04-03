@@ -84,15 +84,16 @@ public class CartController extends SearchController{
      */
     public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
         String orderNum = "";
-        /*String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for( int i = 0; i < 9; i++ ){
         	Random rand = new Random();
         	int i2 = rand.nextInt(a.length());
         	orderNum += a.substring( i2, i2+1 );
         }
-        */
-        orderNum = "test1";
+        
+        //orderNum = "test1";
         try {
+        	System.out.println(1111111);
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

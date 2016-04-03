@@ -28,7 +28,7 @@ public class UserInfo{
     public DayTripOrder tripOrder;
         
     public UserInfo( ){
-        //LoadUser();
+        LoadUser();
     }
     
     public UserInfo( String email, String gender, int age, List<String> interests ){
@@ -159,6 +159,7 @@ public class UserInfo{
 		try (FileWriter file = new FileWriter(homeLoc)) {
 			file.write(object.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
+			pastOrderNumbers.add(orderN);
 		}
     }
     public void LoadOrder(String orderNum){
