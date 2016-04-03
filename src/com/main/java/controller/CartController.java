@@ -3,12 +3,13 @@ package com.main.java.controller;
 import com.main.java.persistence.*;
 import com.main.java.form.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-class CartController extends SearchController{
+public class CartController extends SearchController{
     public HotelOrder hotelOrders = new HotelOrder();
     public FlightOrder flightOrders = new FlightOrder();
     public DayTripOrder dayTripOrders = new DayTripOrder();
@@ -16,6 +17,9 @@ class CartController extends SearchController{
 
     public CartController(){
         GetUser();
+        hotelOrders = new HotelOrder();
+        flightOrders = new FlightOrder();
+        dayTripOrders = new DayTripOrder();
     }
     
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
@@ -60,17 +64,17 @@ class CartController extends SearchController{
         return null;
     }
     
-    public List<HotelOrder> GetHotelOrder( String orderId ){
+    public List<Hotel> GetHotelOrder( String orderId ){
         user.LoadOrder( orderId );
     	return user.GetHotelOrders;
     }
-    public List<FlightOrder> GetFlightOrder( String orderId ){
+    public List<Flight> GetFlightOrder( String orderId ){
         user.LoadOrder( orderId );
         return user.GetFlightOrders();
     }
-    public List<DayTripOrder> GetDayTripOrder( String orderId ){
+    public List<DayTrip> GetDayTripOrder( String orderId ){
         user.LoadOrder( orderId );
-        return user.getDayTripOrders()
+        return user.getDayTripOrders();
     }
 
     /**
@@ -86,7 +90,12 @@ class CartController extends SearchController{
         	orderNum += a.substring( i2, i2+1 );
         }
         
-        user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );      	
+        try {
+			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}      	
         return orderNum;
     }
 
