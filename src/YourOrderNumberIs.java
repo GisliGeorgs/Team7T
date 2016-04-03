@@ -38,6 +38,7 @@ public class YourOrderNumberIs extends JFrame {
 	 * Create the frame.
 	 */
 	public YourOrderNumberIs() {
+		setTitle("Team 7T - Your order number");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 430, 255);
 		contentPane = new JPanel();

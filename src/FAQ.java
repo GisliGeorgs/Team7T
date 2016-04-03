@@ -6,13 +6,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JScrollBar;
 import java.awt.Color;
 import java.awt.event.AdjustmentListener;
 import java.awt.event.AdjustmentEvent;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class FAQ extends JFrame {
 
@@ -39,6 +44,7 @@ public class FAQ extends JFrame {
 	 * Create the frame.
 	 */
 	public FAQ() {
+		setTitle("Team 7T - FAQ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 545, 483);
 		contentPane = new JPanel();
@@ -53,6 +59,8 @@ public class FAQ extends JFrame {
 		contentPane.add(lblFrequentlyAskedQuestions);
 		
 		JButton btnHome = new JButton("Home");
+		Image imgLogin2 = new ImageIcon(this.getClass().getResource("/home.png")).getImage();
+		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FrontFrame Home=new FrontFrame();

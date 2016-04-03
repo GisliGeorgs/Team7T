@@ -45,8 +45,11 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextPane;
 import javax.swing.JTree;
 import javax.swing.JFormattedTextField;
+import com.toedter.calendar.JCalendar;
+import com.toedter.components.JSpinField;
+import com.toedter.calendar.JDateChooser;
 
-public class FrontFrame extends JPanel
+public class FrontFrame extends JFrame
 {
 
 	/*public FrontFrame(){
@@ -54,7 +57,7 @@ public class FrontFrame extends JPanel
 		setIcon();
 	} */
 	
-	private JFrame frame;
+	private JFrame frmTeamt;
 	private JTextField SearchTextField;
 
 	/**
@@ -65,7 +68,7 @@ public class FrontFrame extends JPanel
 			public void run() {
 				try {
 					FrontFrame window = new FrontFrame();
-					window.frame.setVisible(true);
+					window.frmTeamt.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -84,13 +87,14 @@ public class FrontFrame extends JPanel
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(173, 216, 230));
-		frame.getContentPane().setLayout(null);
+		frmTeamt = new JFrame();
+		frmTeamt.setTitle("Team 7T - Home");
+		frmTeamt.getContentPane().setBackground(new Color(173, 216, 230));
+		frmTeamt.getContentPane().setLayout(null);
 		
 		SearchTextField = new JTextField();
 		SearchTextField.setBounds(151, 41, 659, 30);
-		frame.getContentPane().add(SearchTextField);
+		frmTeamt.getContentPane().add(SearchTextField);
 		SearchTextField.setColumns(10);
 		
 		JButton SearchButton = new JButton("");
@@ -101,7 +105,7 @@ public class FrontFrame extends JPanel
 			}
 		});
 		SearchButton.setBounds(811, 41, 38, 30);
-		frame.getContentPane().add(SearchButton);
+		frmTeamt.getContentPane().add(SearchButton);
 		
 		JButton btnAddCart = new JButton("Add to cart");
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
@@ -113,121 +117,114 @@ public class FrontFrame extends JPanel
 			}
 		});
 		btnAddCart.setBounds(379, 546, 168, 40);
-		frame.getContentPane().add(btnAddCart);
+		frmTeamt.getContentPane().add(btnAddCart);
 		
 		JCheckBox chckbxFlight = new JCheckBox("Flight");
 		chckbxFlight.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxFlight.setBackground(new Color(173, 216, 230));
 		chckbxFlight.setBounds(151, 7, 113, 25);
-		frame.getContentPane().add(chckbxFlight);
+		frmTeamt.getContentPane().add(chckbxFlight);
 		
 		JCheckBox chckbxHotel = new JCheckBox("Hotel");
 		chckbxHotel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxHotel.setBackground(new Color(173, 216, 230));
 		chckbxHotel.setBounds(434, 7, 113, 25);
-		frame.getContentPane().add(chckbxHotel);
+		frmTeamt.getContentPane().add(chckbxHotel);
 		
 		JCheckBox chckbxDaytrip = new JCheckBox("Daytrip");
 		chckbxDaytrip.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxDaytrip.setBackground(new Color(173, 216, 230));
 		chckbxDaytrip.setBounds(697, 7, 113, 25);
-		frame.getContentPane().add(chckbxDaytrip);
+		frmTeamt.getContentPane().add(chckbxDaytrip);
 		
 		JLabel lblForFlight = new JLabel("For flight");
 		lblForFlight.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblForFlight.setBounds(12, 73, 115, 16);
-		frame.getContentPane().add(lblForFlight);
+		frmTeamt.getContentPane().add(lblForFlight);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 		spinner.setBounds(12, 170, 115, 25);
-		frame.getContentPane().add(spinner);
+		frmTeamt.getContentPane().add(spinner);
 		
 		JLabel lblAdaults = new JLabel("Adaults:");
 		lblAdaults.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblAdaults.setBounds(12, 153, 115, 16);
-		frame.getContentPane().add(lblAdaults);
+		frmTeamt.getContentPane().add(lblAdaults);
 		
 		JLabel lblChildrens = new JLabel("Childrens:");
 		lblChildrens.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblChildrens.setBounds(12, 205, 115, 16);
-		frame.getContentPane().add(lblChildrens);
+		frmTeamt.getContentPane().add(lblChildrens);
 		
 		JSpinner spinner_1 = new JSpinner();
 		spinner_1.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 		spinner_1.setBounds(12, 223, 115, 25);
-		frame.getContentPane().add(spinner_1);
+		frmTeamt.getContentPane().add(spinner_1);
 		
 		JRadioButton rdbtnOneWay = new JRadioButton("One way");
 		rdbtnOneWay.setBackground(new Color(173, 216, 230));
 		rdbtnOneWay.setBounds(12, 93, 127, 25);
-		frame.getContentPane().add(rdbtnOneWay);
+		frmTeamt.getContentPane().add(rdbtnOneWay);
 		
 		JRadioButton rdbtnBothWays = new JRadioButton("Both ways");
 		rdbtnBothWays.setBackground(new Color(173, 216, 230));
 		rdbtnBothWays.setBounds(12, 118, 127, 25);
-		frame.getContentPane().add(rdbtnBothWays);
+		frmTeamt.getContentPane().add(rdbtnBothWays);
 		
 		JLabel lblInterests = new JLabel("Interests");
 		lblInterests.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblInterests.setBounds(12, 261, 87, 25);
-		frame.getContentPane().add(lblInterests);
+		frmTeamt.getContentPane().add(lblInterests);
 		
 		JRadioButton rdbtnGolfing = new JRadioButton("Golfing");
 		rdbtnGolfing.setBackground(new Color(173, 216, 230));
 		rdbtnGolfing.setBounds(12, 284, 127, 25);
-		frame.getContentPane().add(rdbtnGolfing);
+		frmTeamt.getContentPane().add(rdbtnGolfing);
 		
 		JRadioButton rdbtnRelaxing = new JRadioButton("Relaxing");
 		rdbtnRelaxing.setBackground(new Color(173, 216, 230));
 		rdbtnRelaxing.setBounds(12, 306, 127, 25);
-		frame.getContentPane().add(rdbtnRelaxing);
+		frmTeamt.getContentPane().add(rdbtnRelaxing);
 		
 		JRadioButton rdbtnParty = new JRadioButton("Party");
 		rdbtnParty.setBackground(new Color(173, 216, 230));
 		rdbtnParty.setBounds(12, 331, 127, 25);
-		frame.getContentPane().add(rdbtnParty);
+		frmTeamt.getContentPane().add(rdbtnParty);
 		
 		JRadioButton rdbtnSunshine = new JRadioButton("Sunshine");
 		rdbtnSunshine.setBackground(new Color(173, 216, 230));
 		rdbtnSunshine.setBounds(12, 352, 127, 25);
-		frame.getContentPane().add(rdbtnSunshine);
+		frmTeamt.getContentPane().add(rdbtnSunshine);
 		
 		JRadioButton rdbtnShopping = new JRadioButton("Shopping");
 		rdbtnShopping.setBackground(new Color(173, 216, 230));
 		rdbtnShopping.setBounds(12, 373, 127, 25);
-		frame.getContentPane().add(rdbtnShopping);
+		frmTeamt.getContentPane().add(rdbtnShopping);
 		
-		JLabel lblDate = new JLabel("Date:");
-		lblDate.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblDate.setBounds(22, 407, 56, 16);
-		frame.getContentPane().add(lblDate);
+		JLabel lblDateFrom = new JLabel("Date from:");
+		lblDateFrom.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDateFrom.setBounds(12, 400, 127, 16);
+		frmTeamt.getContentPane().add(lblDateFrom);
 		
-		JLabel lblFrom = new JLabel("From:");
-		lblFrom.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblFrom.setBounds(12, 435, 56, 16);
-		frame.getContentPane().add(lblFrom);
+		JLabel lblDateTo = new JLabel("Date to:");
+		lblDateTo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDateTo.setBounds(12, 464, 69, 16);
+		frmTeamt.getContentPane().add(lblDateTo);
 		
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setModel(new SpinnerDateModel(new Date(1459641600000L), null, null, Calendar.DAY_OF_YEAR));
-		spinner_2.setBounds(12, 456, 115, 22);
-		frame.getContentPane().add(spinner_2);
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(12, 429, 76, 22);
+		frmTeamt.getContentPane().add(dateChooser);
 		
-		JLabel lblTo = new JLabel("To:");
-		lblTo.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblTo.setBounds(12, 491, 56, 16);
-		frame.getContentPane().add(lblTo);
-		
-		JSpinner spinner_3 = new JSpinner();
-		spinner_3.setModel(new SpinnerDateModel(new Date(1459641600000L), null, null, Calendar.DAY_OF_YEAR));
-		spinner_3.setBounds(12, 508, 115, 22);
-		frame.getContentPane().add(spinner_3);
-		frame.setBackground(new Color(255, 182, 193));
-		frame.setBounds(100, 100, 912, 697);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(12, 493, 76, 22);
+		frmTeamt.getContentPane().add(dateChooser_1);
+		frmTeamt.setBackground(new Color(255, 182, 193));
+		frmTeamt.setBounds(100, 100, 912, 697);
+		frmTeamt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		frmTeamt.setJMenuBar(menuBar);
 		
 		JMenuItem AboutUs = new JMenuItem("About us");
 		AboutUs.addActionListener(new ActionListener() {
@@ -248,13 +245,22 @@ public class FrontFrame extends JPanel
 		JMenuItem mntmOrders = new JMenuItem("Orders");
 		mntmOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginOrder Log=new LoginOrder();
+				OrderLogin Log=new OrderLogin();
 				Log.setVisible(true);
 			}
 		});
 		menuBar.add(mntmOrders);
 		menuBar.add(FAQ);
 		menuBar.add(AboutUs);
+		
+		JMenuItem mntmCart = new JMenuItem("Cart");
+		mntmCart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Cart GotoCart=new Cart();
+				GotoCart.setVisible(true);
+			}
+		});
+		menuBar.add(mntmCart);
 	}
 	
 	/*private void setIcon(){

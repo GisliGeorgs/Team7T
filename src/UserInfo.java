@@ -43,6 +43,7 @@ public class UserInfo extends JFrame {
 	 * Create the frame.
 	 */
 	public UserInfo() {
+		setTitle("Team 7T - User");
 		getContentPane().setBackground(new Color(173, 216, 230));
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

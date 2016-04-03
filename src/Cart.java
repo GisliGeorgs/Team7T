@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class Cart extends JFrame {
 
@@ -38,8 +39,9 @@ public class Cart extends JFrame {
 	 * Create the frame.
 	 */
 	public Cart() {
+		setTitle("Team 7T - Cart");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 579, 391);
+		setBounds(100, 100, 656, 557);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,7 +50,7 @@ public class Cart extends JFrame {
 		
 		JLabel lblYourCart = new JLabel("Your Cart");
 		lblYourCart.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblYourCart.setBounds(211, 13, 138, 25);
+		lblYourCart.setBounds(256, 13, 138, 25);
 		contentPane.add(lblYourCart);
 		
 		JButton btnFinsihOrder = new JButton("Finsih Order");
@@ -61,7 +63,7 @@ public class Cart extends JFrame {
 				dispose();
 			}
 		});
-		btnFinsihOrder.setBounds(94, 292, 174, 39);
+		btnFinsihOrder.setBounds(148, 458, 174, 39);
 		contentPane.add(btnFinsihOrder);
 		
 		JButton btngobacktoSearch = new JButton("Go back to search");
@@ -74,7 +76,7 @@ public class Cart extends JFrame {
 				//dispose();
 			}
 		});
-		btngobacktoSearch.setBounds(289, 293, 174, 36);
+		btngobacktoSearch.setBounds(334, 459, 174, 36);
 		contentPane.add(btngobacktoSearch);
 	}
 

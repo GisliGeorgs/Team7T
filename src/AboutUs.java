@@ -10,6 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AboutUs extends JFrame {
 
@@ -35,8 +39,9 @@ public class AboutUs extends JFrame {
 	 * Create the frame.
 	 */
 	public AboutUs() {
+		setTitle("Team 7T - About us");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 445, 490);
+		setBounds(100, 100, 445, 519);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,5 +83,17 @@ public class AboutUs extends JFrame {
 		hiPicture.setIcon(new ImageIcon(imgHI));
 		hiPicture.setBounds(59, 210, 332, 221);
 		contentPane.add(hiPicture);
+		
+		JButton btnHome = new JButton("Home");
+		Image imgLogin2 = new ImageIcon(this.getClass().getResource("/home.png")).getImage();
+		btnHome.setIcon(new ImageIcon(imgLogin2));
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FrontFrame FF=new FrontFrame();
+				FF.setVisible(true);
+			}
+		});
+		btnHome.setBounds(150, 426, 105, 33);
+		contentPane.add(btnHome);
 	}
 }

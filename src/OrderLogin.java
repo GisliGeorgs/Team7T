@@ -15,6 +15,7 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class OrderLogin extends JFrame {
 
@@ -42,6 +43,7 @@ public class OrderLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public OrderLogin() {
+		setTitle("Team 7T - Order Number");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 418, 240);
 		contentPane = new JPanel();
@@ -77,7 +79,7 @@ public class OrderLogin extends JFrame {
 		frame.getContentPane().add(button_1);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		contentPane.add(frame);
+		//contentPane.add(frame);
 		
 		JButton LoginOrderButton = new JButton("Login");
 		LoginOrderButton.addActionListener(new ActionListener() {
@@ -96,8 +98,8 @@ public class OrderLogin extends JFrame {
 		CancelLoginButton.setIcon(new ImageIcon(imgCancel));
 		CancelLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
+				FrontFrame FrontFr=new FrontFrame();
+				FrontFr.setVisible(true);
 			}
 		});
 		CancelLoginButton.setBounds(261, 123, 106, 35);
