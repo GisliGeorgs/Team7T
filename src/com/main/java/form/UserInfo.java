@@ -3,6 +3,7 @@ package com.main.java.form;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,37 +64,40 @@ public class UserInfo{
     public void LoadUser(){
         String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";
     	
-    	JSONParser parser = new JSONParser();
- 
-        try {
- 
-            Object obj = parser.parse(new FileReader(homeLoc));
- 
-            JSONObject jsonObject = (JSONObject) obj;
- 
-            email = (String) jsonObject.get("Email");
-            gender = (String) jsonObject.get("Gender");
-            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
-            interests = (JSONArray) jsonObject.get("Interests");
-            pastOrderNumbers = (JSONArray) jsonObject.get("Past Order Numbers");
- 
-            System.out.println("Mail: " + email);
-            System.out.println("Gender: " + gender);
-            System.out.println("Age: " + age);
-            System.out.println("\nInterests:");
-            Iterator<String> iterator = interests.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
-
-            System.out.println("\nPastOrderNumbers:");
-            Iterator<String> iterator2 = pastOrderNumbers.iterator();
-            while (iterator2.hasNext()) {
-                System.out.println(iterator2.next());
-            }
- 
-        } catch (Exception e) {
-            e.printStackTrace();
+        File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {
+	 
+	            Object obj = parser.parse(new FileReader(homeLoc));
+	 
+	            JSONObject jsonObject = (JSONObject) obj;
+	 
+	            email = (String) jsonObject.get("Email");
+	            gender = (String) jsonObject.get("Gender");
+	            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
+	            interests = (JSONArray) jsonObject.get("Interests");
+	            pastOrderNumbers = (JSONArray) jsonObject.get("Past Order Numbers");
+	 
+	            System.out.println("Mail: " + email);
+	            System.out.println("Gender: " + gender);
+	            System.out.println("Age: " + age);
+	            System.out.println("\nInterests:");
+	            Iterator<String> iterator = interests.iterator();
+	            while (iterator.hasNext()) 
+	            {
+	                System.out.println(iterator.next());
+	            }
+	
+	            System.out.println("\nPastOrderNumbers:");
+	            Iterator<String> iterator2 = pastOrderNumbers.iterator();
+	            while (iterator2.hasNext()) 
+	            {
+	                System.out.println(iterator2.next());
+	            }	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
         }
     }
 

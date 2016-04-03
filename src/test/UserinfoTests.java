@@ -22,7 +22,7 @@ public class UserinfoTests {
         origList.add("a");
         origList.add("b");
         
-    	uuser = new UserInfo("meru@meee.is", "hvorugkg", 100, origList );
+    	uuser = new UserInfo("meru@meee.isadsfadsf", "hvorugkguuuuuuuuuuu", 150, origList );
     	
     	try {
 			uuser.SaveUser();
