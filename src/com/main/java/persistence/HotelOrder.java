@@ -12,7 +12,7 @@ public class HotelOrder extends Order{
      *
      */
     public HotelOrder(){
-
+    	hotel = new ArrayList<Hotel>();
     }
     public HotelOrder( List<Hotel> hotel ){
     	this.hotel = hotel;
@@ -25,7 +25,13 @@ public class HotelOrder extends Order{
     public void SetHotel( List<Hotel> hotel ){
     	this.hotel = hotel;
     }
+    public void AddHotel( Hotel hotel ){
+    	this.hotel.add( hotel );
+    }
     
+    public void RemoveHotel( Hotel hotel ){
+    	this.hotel.remove( hotel );
+    }
     public void CreateHotelOrder(){
             
     }

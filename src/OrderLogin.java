@@ -76,6 +76,7 @@ public class OrderLogin extends JFrame {
 		button_1.setBounds(221, 122, 115, 37);
 		frame.getContentPane().add(button_1);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		contentPane.add(frame);
 		
 		JButton LoginOrderButton = new JButton("Login");

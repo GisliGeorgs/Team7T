@@ -9,5 +9,10 @@
 	<classpathentry kind="lib" path="C:/Users/Egill Orn/Desktop/7TTera/tera/src/imports/json-simple-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="src/imports/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/JCalendar/junit-4.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

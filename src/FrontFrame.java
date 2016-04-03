@@ -16,6 +16,7 @@ import java.awt.Component;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -40,8 +41,12 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SpinnerDateModel;
 import java.util.Date;
 import java.util.Calendar;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextPane;
+import javax.swing.JTree;
+import javax.swing.JFormattedTextField;
 
-public class FrontFrame //extends javax.swing.JFrame 
+public class FrontFrame extends JPanel
 {
 
 	/*public FrontFrame(){
@@ -107,7 +112,7 @@ public class FrontFrame //extends javax.swing.JFrame
 				YourCart.setVisible(true);
 			}
 		});
-		btnAddCart.setBounds(333, 533, 148, 25);
+		btnAddCart.setBounds(379, 546, 168, 40);
 		frame.getContentPane().add(btnAddCart);
 		
 		JCheckBox chckbxFlight = new JCheckBox("Flight");
@@ -134,7 +139,7 @@ public class FrontFrame //extends javax.swing.JFrame
 		frame.getContentPane().add(lblForFlight);
 		
 		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(0, null, 10, 1));
+		spinner.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 		spinner.setBounds(12, 170, 115, 25);
 		frame.getContentPane().add(spinner);
 		
@@ -149,7 +154,7 @@ public class FrontFrame //extends javax.swing.JFrame
 		frame.getContentPane().add(lblChildrens);
 		
 		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerNumberModel(0, null, 10, 1));
+		spinner_1.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 		spinner_1.setBounds(12, 223, 115, 25);
 		frame.getContentPane().add(spinner_1);
 		
@@ -163,30 +168,66 @@ public class FrontFrame //extends javax.swing.JFrame
 		rdbtnBothWays.setBounds(12, 118, 127, 25);
 		frame.getContentPane().add(rdbtnBothWays);
 		
+		JLabel lblInterests = new JLabel("Interests");
+		lblInterests.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblInterests.setBounds(12, 261, 87, 25);
+		frame.getContentPane().add(lblInterests);
+		
+		JRadioButton rdbtnGolfing = new JRadioButton("Golfing");
+		rdbtnGolfing.setBackground(new Color(173, 216, 230));
+		rdbtnGolfing.setBounds(12, 284, 127, 25);
+		frame.getContentPane().add(rdbtnGolfing);
+		
+		JRadioButton rdbtnRelaxing = new JRadioButton("Relaxing");
+		rdbtnRelaxing.setBackground(new Color(173, 216, 230));
+		rdbtnRelaxing.setBounds(12, 306, 127, 25);
+		frame.getContentPane().add(rdbtnRelaxing);
+		
+		JRadioButton rdbtnParty = new JRadioButton("Party");
+		rdbtnParty.setBackground(new Color(173, 216, 230));
+		rdbtnParty.setBounds(12, 331, 127, 25);
+		frame.getContentPane().add(rdbtnParty);
+		
+		JRadioButton rdbtnSunshine = new JRadioButton("Sunshine");
+		rdbtnSunshine.setBackground(new Color(173, 216, 230));
+		rdbtnSunshine.setBounds(12, 352, 127, 25);
+		frame.getContentPane().add(rdbtnSunshine);
+		
+		JRadioButton rdbtnShopping = new JRadioButton("Shopping");
+		rdbtnShopping.setBackground(new Color(173, 216, 230));
+		rdbtnShopping.setBounds(12, 373, 127, 25);
+		frame.getContentPane().add(rdbtnShopping);
+		
 		JLabel lblDate = new JLabel("Date:");
-		lblDate.setBounds(12, 261, 56, 16);
+		lblDate.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDate.setBounds(22, 407, 56, 16);
 		frame.getContentPane().add(lblDate);
 		
+		JLabel lblFrom = new JLabel("From:");
+		lblFrom.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblFrom.setBounds(12, 435, 56, 16);
+		frame.getContentPane().add(lblFrom);
+		
 		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setModel(new SpinnerDateModel(new Date(1459641600000L), new Date(1459641600000L), new Date(1462233600000L), Calendar.DAY_OF_YEAR));
-		spinner_2.setBounds(12, 290, 115, 22);
+		spinner_2.setModel(new SpinnerDateModel(new Date(1459641600000L), null, null, Calendar.DAY_OF_YEAR));
+		spinner_2.setBounds(12, 456, 115, 22);
 		frame.getContentPane().add(spinner_2);
+		
+		JLabel lblTo = new JLabel("To:");
+		lblTo.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTo.setBounds(12, 491, 56, 16);
+		frame.getContentPane().add(lblTo);
+		
+		JSpinner spinner_3 = new JSpinner();
+		spinner_3.setModel(new SpinnerDateModel(new Date(1459641600000L), null, null, Calendar.DAY_OF_YEAR));
+		spinner_3.setBounds(12, 508, 115, 22);
+		frame.getContentPane().add(spinner_3);
 		frame.setBackground(new Color(255, 182, 193));
 		frame.setBounds(100, 100, 912, 697);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
-		
-		JMenuItem MyOrdersNavbar = new JMenuItem("My Orders");
-		MyOrdersNavbar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				OrderLogin OrderL=new OrderLogin();
-				OrderL.setVisible(true);
-			}
-		});
-		menuBar.add(MyOrdersNavbar);
 		
 		JMenuItem AboutUs = new JMenuItem("About us");
 		AboutUs.addActionListener(new ActionListener() {
@@ -203,6 +244,15 @@ public class FrontFrame //extends javax.swing.JFrame
 				FreqAQuest.setVisible(true);
 			}
 		});
+		
+		JMenuItem mntmOrders = new JMenuItem("Orders");
+		mntmOrders.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginOrder Log=new LoginOrder();
+				Log.setVisible(true);
+			}
+		});
+		menuBar.add(mntmOrders);
 		menuBar.add(FAQ);
 		menuBar.add(AboutUs);
 	}
