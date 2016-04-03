@@ -8,6 +8,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JScrollBar;
 import java.awt.Color;
+import java.awt.event.AdjustmentListener;
+import java.awt.event.AdjustmentEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FAQ extends JFrame {
 
@@ -35,24 +40,54 @@ public class FAQ extends JFrame {
 	 */
 	public FAQ() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 537, 539);
+		setBounds(100, 100, 545, 483);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel FAQ = new JLabel("FAQ");
-		FAQ.setBounds(25, 56, 446, 416);
-		contentPane.add(FAQ);
-		
 		JLabel lblFrequentlyAskedQuestions = new JLabel("Frequently Asked Questions");
 		lblFrequentlyAskedQuestions.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
 		lblFrequentlyAskedQuestions.setBounds(135, 0, 241, 40);
 		contentPane.add(lblFrequentlyAskedQuestions);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(498, 0, 21, 493);
-		contentPane.add(scrollBar);
+		JButton btnHome = new JButton("Home");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FrontFrame Home=new FrontFrame();
+				Home.setVisible(true);
+				//dispose();
+			}
+		});
+		btnHome.setBounds(211, 398, 97, 25);
+		contentPane.add(btnHome);
+		
+		JLabel lblWhyIsThe = new JLabel("Why is the sky blue?");
+		lblWhyIsThe.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblWhyIsThe.setBounds(32, 64, 199, 16);
+		contentPane.add(lblWhyIsThe);
+		
+		JLabel lblAClearCloudless = new JLabel("You can Google it yourself");
+		lblAClearCloudless.setBounds(32, 93, 199, 16);
+		contentPane.add(lblAClearCloudless);
+		
+		JLabel lblHereIsA = new JLabel("Here is a question");
+		lblHereIsA.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHereIsA.setBounds(32, 137, 204, 16);
+		contentPane.add(lblHereIsA);
+		
+		JLabel lblHereIsAn = new JLabel("Here is an answer");
+		lblHereIsAn.setBounds(31, 166, 200, 16);
+		contentPane.add(lblHereIsAn);
+		
+		JLabel lblHereIsA_1 = new JLabel("Here is a common question");
+		lblHereIsA_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHereIsA_1.setBounds(32, 210, 199, 16);
+		contentPane.add(lblHereIsA_1);
+		
+		JLabel lblHereIsA_2 = new JLabel("Here is a really good answer to the question");
+		lblHereIsA_2.setBounds(32, 239, 289, 16);
+		contentPane.add(lblHereIsA_2);
 	}
 }

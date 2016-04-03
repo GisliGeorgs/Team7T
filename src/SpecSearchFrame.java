@@ -28,8 +28,8 @@ public class SpecSearchFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SpecSearchFrame frame = new SpecSearchFrame();
-					frame.setVisible(true);
+					SpecSearchFrame Specframe = new SpecSearchFrame();
+					Specframe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -84,18 +84,18 @@ public class SpecSearchFrame extends JFrame {
 		BothWays.setBounds(565, 338, 86, 25);
 		contentPane.add(BothWays);
 		
-		JButton OrderButton = new JButton("Submit Order");
+		JButton SubmitButton = new JButton("Submit search");
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
-		OrderButton.setIcon(new ImageIcon(imgLogin));
-		OrderButton.addActionListener(new ActionListener() {
+		SubmitButton.setIcon(new ImageIcon(imgLogin));
+		SubmitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//YourOrderNumberIs YONI = YourOrderNumberIs();
-				//YONI.setVisible(true);
+				Search Sea=new Search();
+				Sea.setVisible(true);
 			}
 		});
-		OrderButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		OrderButton.setBounds(163, 419, 153, 40);
-		contentPane.add(OrderButton);
+		SubmitButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		SubmitButton.setBounds(139, 419, 177, 40);
+		contentPane.add(SubmitButton);
 		
 		JLabel lblSpecificSearch = new JLabel("Specific Search");
 		lblSpecificSearch.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
@@ -151,10 +151,12 @@ public class SpecSearchFrame extends JFrame {
 		btnCancel.setIcon(new ImageIcon(imgCancel));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				FrontFrame FrontF=new FrontFrame();
+				FrontF.setVisible(true);
 			}
 		});
 		btnCancel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnCancel.setBounds(344, 419, 153, 40);
+		btnCancel.setBounds(336, 419, 177, 40);
 		contentPane.add(btnCancel);
 	}
 
