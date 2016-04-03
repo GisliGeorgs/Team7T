@@ -29,8 +29,8 @@ public class OrderLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OrderLogin frame = new OrderLogin();
-					frame.setVisible(true);
+					OrderLogin OrderLog = new OrderLogin();
+					OrderLog.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -81,9 +81,8 @@ public class OrderLogin extends JFrame {
 		JButton LoginOrderButton = new JButton("Login");
 		LoginOrderButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				OrderNumber ON = new OrderNumber();
-				ON.setVisible(true);
+				OrderNumber YourOrders = new OrderNumber();
+				YourOrders.setVisible(true);
 			}
 		});
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
@@ -97,8 +96,6 @@ public class OrderLogin extends JFrame {
 		CancelLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-					OrderNumber OrderN=new OrderNumber();
-					OrderN.setVisible(true);
 				
 			}
 		});
