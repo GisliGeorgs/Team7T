@@ -1,68 +1,110 @@
 package com.main.java.persistence;
 
+import java.lang.reflect.Array;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Calendar;
+import java.util.ArrayList;
 
 public class Hotel {
 
-    public String getLocation() {
-        return location;
+    // TODO Fá klasan beint frá hinum hópnum
+    //private Review[] reviews;
+    private String name;
+    private String address;
+    private String type;
+
+    private String phoneNumber;
+    private String description;
+    private double starCount;
+    private double rating;
+    private HotelRoom[] room;
+    private int numerOfRooms;
+    private String[] tags;
+    private double avgPrice;
+    private GregorianCalendar checkoutTime;
+    private ArrayList<DayTrip> dayTours;
+
+
+    //public Review[] getReviews() {
+        return reviews;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    //public void setReviews(Review[] reviews) {
+        this.reviews = reviews;
     }
 
-    public GregorianCalendar getDateFrom() {
-        return dateFrom;
+    public String[] getTags() {
+        return tags;
     }
 
-    public void setDateFrom(GregorianCalendar dateFrom) {
-        this.dateFrom = dateFrom;
+    public void setTags(String[] tags) {
+        this.tags = tags;
     }
 
-    public Calendar getDateTo() {
-        return dateTo;
+    public double getStarCount() {
+        return starCount;
     }
 
-    public void setDateTo(Calendar dateTo) {
-        this.dateTo = dateTo;
+    public void setStarCount(double starCount) {
+        this.starCount = starCount;
     }
 
-    public Float getPrice() {
-        return price;
+    public double getRating() {
+        return rating;
     }
 
-    public void setPrice(Float price) {
-        this.price = price;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public String[] getKeywords() {
-        return keywords;
+    public String getName() {
+        return name;
     }
 
-    public void setKeywords(String[] keywords) {
-        this.keywords = keywords;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    private String location;
-    private GregorianCalendar dateFrom;
-    private Calendar dateTo;
-    private Float price;
-    private String[] keywords;
-
-    public Hotel(){
-    	
-    }
-    public Hotel( String loc,GregorianCalendar dateFrom, Calendar dateTo, Float price, String[] keywords ){
-        this.location = loc;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
-        this.price = price;
-        this.keywords = keywords;
+    public String getDescription() {
+        return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public HotelRoom[] getRoom() {
+        return room;
+    }
+
+    public int getNumerOfRooms() {
+        return numerOfRooms;
+    }
+
+    public double getAvgPrice() {
+        return avgPrice;
+    }
+
+    public GregorianCalendar getCheckoutTime() {
+        return checkoutTime;
+    }
+
+    public ArrayList<DayTrip> getDayTours() {
+        return dayTours;
+    }
 
 
 }

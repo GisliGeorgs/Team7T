@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Random;
 
 public class CartController extends SearchController{
-    public HotelOrder hotelOrders = new HotelOrder();
-    public FlightOrder flightOrders = new FlightOrder();
-    public DayTripOrder dayTripOrders = new DayTripOrder();
+    public HotelOrder hotelOrders;
+    public FlightOrder flightOrders;
+    public DayTripOrder dayTripOrders;
     public UserInfo user;
 
     public CartController(){
@@ -22,13 +22,19 @@ public class CartController extends SearchController{
         dayTripOrders = new DayTripOrder();
     }
     
+    /**
+     * Er þetta á réttum stað?
+     * @param from
+     * @param to
+     * @param dest
+     * @param startLoc
+     */
     public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
 
     }
     /**
-     * Hendir dagsferðarpöntun úr cartinu
-     * Á að skila orderinu sem þú hentir út?
-     * @param daytriporder
+     * Hendir dagsferð úr bókuninni.
+     * @param daytriporder Dagsferðin sem á að henda.
      */
     public void RemoveDayTripFromBooking( DayTrip daytrip ){
     	dayTripOrders.RemoveDayTrip( daytrip );
@@ -56,12 +62,25 @@ public class CartController extends SearchController{
     	flightOrders.AddFlight( flight );
     }
     
+    /**
+     * Þarf þetta?
+     * @return
+     */
     public String NewTrip(){
         return "";
     }
     
-    public Order GetOldTrip( String orderId ){
-        return null;
+    /**
+     * Nær í gamla bókun.
+     * @param orderId Pöntunin sem á að sækja.
+      */
+    public void GetOldTrip( String orderId ){
+        if( user == null ){
+        	GetUser();
+        }
+        hotelOrders = new HotelOrder();
+        flightOrders = new FlightOrder();
+        dayTripOrders = new DayTripOrder();
     }
     
     public List<Hotel> GetHotelOrder( String orderId ){
@@ -82,7 +101,7 @@ public class CartController extends SearchController{
      * Pantar allt dótið sem er í cart-inu
      * @return Master order id
      */
-    public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
+    public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders*/ ){
         String orderNum = "";
         String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for( int i = 0; i < 9; i++ ){
@@ -90,8 +109,6 @@ public class CartController extends SearchController{
         	int i2 = rand.nextInt(a.length());
         	orderNum += a.substring( i2, i2+1 );
         }
-        
-        //orderNum = "test1";
         try {
         	System.out.println(1111111);
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
@@ -101,7 +118,9 @@ public class CartController extends SearchController{
 		}      	
         return orderNum;
     }
-
+    /**
+     * Nær í UserInfo.
+     */
     public void GetUser(){
         user = new UserInfo();
     }
