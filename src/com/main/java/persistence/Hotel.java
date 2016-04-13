@@ -26,13 +26,13 @@ public class Hotel {
     private ArrayList<DayTrip> dayTours;
 
 
-    //public Review[] getReviews() {
+    /*public Review[] getReviews() {
         return reviews;
-    }
+    }*/
 
-    //public void setReviews(Review[] reviews) {
+    /*public void setReviews(Review[] reviews) {
         this.reviews = reviews;
-    }
+    }*/
 
     public String[] getTags() {
         return tags;

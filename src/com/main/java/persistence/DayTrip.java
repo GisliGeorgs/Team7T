@@ -39,7 +39,7 @@ public class DayTrip {
     }
 
     private String location;
-    private Date date;
+    private GregorianCalendar date;
     private Float price;
     private String[] keywords;
 

@@ -13,7 +13,7 @@ public class CartController extends SearchController{
     public HotelOrder hotelOrders;
     public FlightOrder flightOrders;
     public DayTripOrder dayTripOrders;
-    public UserInfo user;
+    public User user;
 
     public CartController(){
         GetUser();

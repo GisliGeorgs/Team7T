@@ -4,6 +4,7 @@ import com.main.java.persistence.DayTrip;
 import com.main.java.persistence.Flight;
 import com.main.java.persistence.Hotel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.GregorianCalendar;
@@ -24,7 +25,16 @@ public class SearchController{
     }
 
     //region Hótel leit
-    // TODO Pointless eins og er, allar staðsetningar eru strengir.
+
+    //======================================================================================================================
+    //
+    //
+    // Hotel[] = findHotelWithAvailableRooms( startDate, endDate, guestCount, location, minimumStars, maxPrice )
+    //
+    //
+    //
+    //======================================================================================================================
+    // TODO Pointless? allar staðsetningar eru strengir.
     public static ArrayList<Hotel> FindCloseHotels( String loc, Float radius ){
         ArrayList<Hotel> closeHotels = null;/* ????? HotelDistanceSearch( loc, radius );*/
         return closeHotels;
@@ -36,20 +46,20 @@ public class SearchController{
     }
 
     public static ArrayList<Hotel> GetSuggestionsHotel( GregorianCalendar dateFrom, GregorianCalendar dateTo, int numPeople, String loc ){
-        Hotel[] resArr = HotelController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, 1000000 );
+        Hotel[] resArr = HotelSearchController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, 1000000 );
         ArrayList<Hotel> res = new ArrayList<Hotel>(Arrays.asList( resArr ) );
     	return res;
     }
 
     public static ArrayList<Hotel> GetSuggestionsHotel( GregorianCalendar dateFrom, GregorianCalendar dateTo, int numPeople, String loc, Float price){
-        Hotel[] resArr = HotelController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, price );
+        Hotel[] resArr = HotelSearchController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, price );
         ArrayList<Hotel> res = new ArrayList<Hotel>( Arrays.asList( resArr ) );
         return res;
     }
 
     public static ArrayList<Hotel> GetSuggestionsHotel( GregorianCalendar dateFrom, GregorianCalendar dateTo, int numPeople, String loc, Float price, String[] keywords  ){
         // Ná í hótel frá hotel component
-        Hotel[] resArr = HotelController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, price );
+        Hotel[] resArr = HotelSearchController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, price );
         // Búa til lista úr þeim
         ArrayList<Hotel> mid = new ArrayList<Hotel>(Arrays.asList( resArr ) );
         // Niðurstöðu listi því
@@ -74,7 +84,7 @@ public class SearchController{
 
     public static ArrayList<Hotel> GetSuggestionsHotel( GregorianCalendar dateFrom, GregorianCalendar dateTo, int numPeople, String loc, String[] keywords  ){
         // Ná í hótel frá hotel component
-        Hotel[] resArr = HotelController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, 1000000 );
+        Hotel[] resArr = HotelSearchController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, 1000000 );
         // Búa til lista úr þeim
         ArrayList<Hotel> mid = new ArrayList<>(Arrays.asList( resArr ) );
         // Niðurstöðu listi því
@@ -99,25 +109,62 @@ public class SearchController{
     //endregion
 
     //region Dagsferðarleit
-    public static ArrayList<DayTrip> FindDayTrips( String loc, GregorianCalendar date, Float price, String[] keywords ){
-        ArrayList<DayTrip> daytrips = null/* ????? SearchDayTrips( loc, date, price, keywords ) */;
-        return daytrips;
-    }
-    public static ArrayList<DayTrip> GetSuggestionsDayTrip( String loc, GregorianCalendar date, String[] keywords ){
-        ArrayList<DayTrip> suggestions = null;/* ????? SearchHotels( loc, date, keywords ) */
-        return suggestions;
-    }
-    //endregion
 
-    //region Flugleit
-    public static ArrayList<Flight> FindFlights( String from, String to, GregorianCalendar dateFrom, GregorianCalendar dateTo, Float price ){
-        ArrayList<Flight> flights = null/* ????? SearchFlights( from, to, dateFrom, dateTo, price ) */;
-        return flights;
+    //======================================================================================================================
+    // Veit ekki = search( Date date, Date date2, String name, String type, int size, int length, String location )
+    //
+    // TODO Hverju skilar DayTrip search?
+    //
+    // TODO Hvað er týpa og hvað gerir það
+    // TODO Hvað segir stærð til um
+    // TODO Er verð hæsta verð? nákvæmt verð? lægsta verð?
+    // TODO Hvað segir lengd til um
+    //
+    // TODO Fleiri dagsferðar leitir?????
+    //======================================================================================================================
+
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc ){
+
     }
+
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc, int price ){
+
+    }
+
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc, String[] keywords ){
+
+    }
+    // TODO þurfum sjálfir að finna daytrips með viðeigandi keywords. Daytrip geymir streng info.
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc, int prce, String[] keywords ){
+
+    }
+
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc,  ){
+
+    }
+
+    // TODO Pointless? allar staðsetningar eru strengir.
     public static ArrayList<DayTrip> FindCloseDayTrips( String loc, Float radius ){
         ArrayList<DayTrip> closeDayTrips = null;/* ????? DayTripDistanceSerach( loc, radius );*/
         return closeDayTrips;
     }
+
+
+
+    //endregion
+
+    //region Flugleit
+    //======================================================================================================================
+    //
+    // TODO Hvernig virkar flug leitin?
+    //
+    // searchCtrl ctrl = new searchCtrl( String from, String to, String dateFrom, String dateTo, int price, boolean flex, boolean roundTrip )
+    //
+    //======================================================================================================================
+    public static ArrayList<Flight> FindFlights( String from, String to, GregorianCalendar dateFrom, GregorianCalendar dateTo, int numTickets, boolean round ){
+        FlightSearchCtrl search = new FlightSearchCtrl( from, to, dateFrom, dateTo, 1000000, true, round );
+    }
+
     
     public static ArrayList<Flight> FindBetterFlight( Flight flight ){
         ArrayList<Flight> betterFlightsUp = null;/* ????? FlightSearch( from, to, dateFrom-2, dateTo-2, price );*/
