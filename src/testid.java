@@ -42,14 +42,14 @@ public class testid extends JFrame {
 		
 		textField = new JTextField();
 		JTextField jtf = new JTextField(6);
-        jtf.setInputVerifier(new InputVerifier() 
+        jtf.setInputVerifier(new InputVerifier()
         {   
                 public boolean verify(JComponent input) 
                 {   
                     JTextField tField = (JTextField) input;   
                     return (tField.getText().trim().length() == 6);
                 }
-        }
+        });
        
 		
 		textField.setBounds(75, 117, 116, 22);

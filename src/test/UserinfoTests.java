@@ -11,11 +11,11 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.main.java.form.UserInfo;
+import com.main.java.form.User;
 
 public class UserinfoTests {
 	
-	public UserInfo uuser;
+	public User uuser;
 	
     public static void main( String[] args)
     {    	
@@ -29,7 +29,7 @@ public class UserinfoTests {
         origList.add("a");
         origList.add("b");
         
-    	uuser = new UserInfo("meru@meee.isadsfadsbnkf", "hvorugkguuuuuuuuuuu", 150, origList );
+    	uuser = new User("meru@meee.isadsfadsbnkf", "hvorugkguuuuuuuuuuu", 150, origList );
     	
     	try {
 			uuser.SaveUser();
@@ -45,7 +45,7 @@ public class UserinfoTests {
         origList.add("a");
         origList.add("b");
         
-    	uuser = new UserInfo("meru@meee.is", "hvorugkyh", 100, origList );
+    	uuser = new User("meru@meee.is", "hvorugkyh", 100, origList );
     	
     	uuser.LoadUser();
     }
@@ -56,7 +56,7 @@ public class UserinfoTests {
         origList.add("a");
         origList.add("b");
         
-    	uuser = new UserInfo("meru@meee.isadsfadsf", "hvorugkguuuuuuuuuuu", 150, origList );
+    	uuser = new User("meru@meee.isadsfadsf", "hvorugkguuuuuuuuuuu", 150, origList );
     	
     	List<Hotel> hoteltest1 = new ArrayList<Hotel>();		
 		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));

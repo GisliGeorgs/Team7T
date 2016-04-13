@@ -96,7 +96,7 @@ public class OrderNumber extends JFrame {
 		JButton btnUser = new JButton("User");
 		btnUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UserInfo UI=new UserInfo();
+				UserInfoChange UI=new UserInfoChange();
 				UI.setVisible(true);
 				dispose();
 			}

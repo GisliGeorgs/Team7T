@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
+import com.main.java.form.*;
+
 public class Cart extends JFrame {
 
 	private JPanel contentPane;
@@ -53,14 +55,23 @@ public class Cart extends JFrame {
 		lblYourCart.setBounds(256, 13, 138, 25);
 		contentPane.add(lblYourCart);
 		
-		JButton btnFinsihOrder = new JButton("Finsih Order");
+		JButton btnFinsihOrder = new JButton("Finnish Order");
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
 		btnFinsihOrder.setIcon(new ImageIcon(imgLogin));
 		btnFinsihOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Pay Payment=new Pay();
-				Payment.setVisible(true);
-				dispose();
+				User user = new User();
+				boolean UserExists = user.GetEmail().isEmpty();
+				if (UserExists ){
+					Pay Payment=new Pay();
+					Payment.setVisible(true);
+					dispose();	
+				}
+				else{
+					UserInfoNew uin = new UserInfoNew();
+					uin.setVisible( true );
+					dispose();
+				}
 			}
 		});
 		btnFinsihOrder.setBounds(148, 458, 174, 39);

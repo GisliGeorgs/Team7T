@@ -13,7 +13,7 @@ public class CartController extends SearchController{
     public HotelOrder hotelOrders = new HotelOrder();
     public FlightOrder flightOrders = new FlightOrder();
     public DayTripOrder dayTripOrders = new DayTripOrder();
-    public UserInfo user;
+    public User user;
 
     public CartController(){
         GetUser();
@@ -103,6 +103,6 @@ public class CartController extends SearchController{
     }
 
     public void GetUser(){
-        user = new UserInfo();
+        user = new User();
     }
 }
