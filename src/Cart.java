@@ -71,9 +71,9 @@ public class Cart extends JFrame {
 		btngobacktoSearch.setIcon(new ImageIcon(imgLogin2));
 		btngobacktoSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FrontFrame FrontFr=new FrontFrame();
+				FF FrontFr=new FF();
 				FrontFr.setVisible(true);
-				//dispose();
+				dispose();
 			}
 		});
 		btngobacktoSearch.setBounds(334, 459, 174, 36);

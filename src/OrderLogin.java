@@ -86,6 +86,7 @@ public class OrderLogin extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				OrderNumber YourOrders = new OrderNumber();
 				YourOrders.setVisible(true);
+				dispose();
 			}
 		});
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
@@ -98,8 +99,9 @@ public class OrderLogin extends JFrame {
 		CancelLoginButton.setIcon(new ImageIcon(imgCancel));
 		CancelLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FrontFrame FrontFr=new FrontFrame();
-				FrontFr.setVisible(true);
+				FF Front=new FF();
+				Front.setVisible(true);
+				dispose();
 			}
 		});
 		CancelLoginButton.setBounds(261, 123, 106, 35);

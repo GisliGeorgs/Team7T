@@ -19,6 +19,7 @@ public class UserInfotest2 {
 	public void setUp() throws Exception {
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testSaveOrder() {
 		List<String> interests = new ArrayList<String>();

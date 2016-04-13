@@ -108,8 +108,8 @@ public class SearchController{
     
     public static List<DayTrip> FindCloseDayTrips( String loc, Float radius ){
         List<DayTrip> closeDayTrips = null;/* ????? DayTripDistanceSerach( loc, radius );*/
-        return closeDayTrips;
-    }
+        return closeDayTrips;	
+    }	
     
     public static List<Flight> FindBetterFlight( Flight flight ){
         List<Flight> betterFlightsUp = null;/* ????? FlightSearch( from, to, dateFrom-2, dateTo-2, price );*/
