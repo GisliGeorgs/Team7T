@@ -21,14 +21,13 @@ public class CartController extends SearchController{
         flightOrders = new FlightOrder();
         dayTripOrders = new DayTripOrder();
     }
-    
-    public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
 
-    }
+
+
     /**
-     * Hendir dagsferðarpöntun úr cartinu
-     * Á að skila orderinu sem þú hentir út?
-     * @param daytriporder
+     * Hendir dagsferï¿½arpï¿½ntun ï¿½r cartinu
+     * ï¿½ aï¿½ skila orderinu sem ï¿½ï¿½ hentir ï¿½t?
+     * @param daytrip
      */
     public void RemoveDayTripFromBooking( DayTrip daytrip ){
     	dayTripOrders.RemoveDayTrip( daytrip );
@@ -41,48 +40,42 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Bætir við dagsferðarpöntun í Cart-ið
-     * @param daytriporder
+     * Bï¿½tir viï¿½ dagsferï¿½arpï¿½ntun ï¿½ Cart-iï¿½
+     * @param daytrip
      */
-    public void AddDayTripToBooking( DayTrip daytrip ){
-    	dayTripOrders.AddDayTrip( daytrip );
-    }
-    
+    public void AddDayTripToBooking( DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }
     public void AddHotelToBooking( Hotel hotel ){
     	hotelOrders.AddHotel( hotel );
     }
-    
     public void AddFlightToBooking( Flight flight ){
     	flightOrders.AddFlight( flight );
     }
     
-    public String NewTrip(){
-        return "";
+    public void GetOldTrip( String orderId ){
+        GetHotelOrder( orderId );
+        GetFlightOrder( orderId );
+        GetDayTripOrder( orderId );
     }
     
-    public Order GetOldTrip( String orderId ){
-        return null;
-    }
-    
-    public List<Hotel> GetHotelOrder( String orderId ){
+    public void GetHotelOrder( String orderId ){
         user.LoadOrder( orderId );
-    	return null;//user.GetHotelOrders;
+        hotelOrders = user.hotelOrder;
+
     }
-    public List<Flight> GetFlightOrder
-    ( String orderId ){
+    public void GetFlightOrder( String orderId ){
         user.LoadOrder( orderId );
-        return null;//user.GetFlightOrders();
+        flightOrders = user.flightOrder;
     }
-    public List<DayTrip> GetDayTripOrder( String orderId ){
+    public void GetDayTripOrder( String orderId ){
         user.LoadOrder( orderId );
-        return null;//user.getDayTripOrders();
+        dayTripOrders = user.tripOrder;
     }
 
     /**
-     * Pantar allt dótið sem er í cart-inu
+     * Pantar allt dï¿½tiï¿½ sem er ï¿½ cart-inu
      * @return Master order id
      */
-    public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders */){
+    public String CreateCartOrder( ){
         String orderNum = "";
         String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for( int i = 0; i < 9; i++ ){
@@ -90,10 +83,7 @@ public class CartController extends SearchController{
         	int i2 = rand.nextInt(a.length());
         	orderNum += a.substring( i2, i2+1 );
         }
-        
-        //orderNum = "test1";
         try {
-        	System.out.println(1111111);
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
