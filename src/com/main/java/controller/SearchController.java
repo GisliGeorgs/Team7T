@@ -111,7 +111,8 @@ public class SearchController{
     //region Dagsferðarleit
 
     //======================================================================================================================
-    // Veit ekki = search( Date date, Date date2, String name, String type, int size, int length, String location )
+    // Veit ekki hverju þetta skilar, ef einhverju
+    // search( Date date, Date date2, String name, String type, int size, int length, String location )
     //
     // TODO Hverju skilar DayTrip search?
     //
