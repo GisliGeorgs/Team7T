@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -119,6 +120,10 @@ public class Pay extends JFrame {
 		rdbtnMastercard.setBackground(new Color(173, 216, 230));
 		rdbtnMastercard.setBounds(259, 100, 25, 25);
 		contentPane.add(rdbtnMastercard);
+		
+		ButtonGroup group=new ButtonGroup();
+		group.add(rdbtnVisa);
+		group.add(rdbtnMastercard);
 		
 		JLabel VisaPic = new JLabel("New label");
 		Image img = new ImageIcon(this.getClass().getResource("/VisaPic.png")).getImage();

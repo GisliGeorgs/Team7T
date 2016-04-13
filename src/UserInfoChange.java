@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
@@ -17,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 
-public class UserInfo extends JFrame {
+public class UserInfoChange extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField email;
@@ -30,7 +31,7 @@ public class UserInfo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UserInfo UI = new UserInfo();
+					UserInfoChange UI = new UserInfoChange();
 					UI.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,12 +43,12 @@ public class UserInfo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UserInfo() {
+	public UserInfoChange() {
 		setTitle("Team 7T - User");
 		getContentPane().setBackground(new Color(173, 216, 230));
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 483, 460);
+		setBounds(100, 100, 445, 456);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,6 +77,10 @@ public class UserInfo extends JFrame {
 		rdbtnFemale.setBackground(new Color(173, 216, 230));
 		rdbtnFemale.setBounds(45, 267, 127, 25);
 		contentPane.add(rdbtnFemale);
+		
+		ButtonGroup group=new ButtonGroup();
+		group.add(rdbtnFemale);
+		group.add(rdbtnMale);
 		
 		JButton btnCancel = new JButton("Cancel");
 		Image imgCancel = new ImageIcon(this.getClass().getResource("/Close-2-icon.png")).getImage();

@@ -17,7 +17,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
  
 
-public class UserInfo{
+public class User{
     private String gender;
     private int age;
     private List<String> interests;
@@ -27,11 +27,11 @@ public class UserInfo{
     public FlightOrder flightOrder;
     public DayTripOrder tripOrder;
         
-    public UserInfo( ){
+    public User( ){
         LoadUser();
     }
     
-    public UserInfo( String email, String gender, int age, List<String> interests ){
+    public User( String email, String gender, int age, List<String> interests ){
         this.email = email;
         this.gender = gender;
         this.age = age;

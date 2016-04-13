@@ -14,18 +14,19 @@ import com.main.java.form.*;
 import junit.framework.Assert;
 
 public class UserInfotest2 {
-	UserInfo user;
+	User user;
 	@Before
 	public void setUp() throws Exception {
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testSaveOrder() {
 		List<String> interests = new ArrayList<String>();
 		interests.add("Such");
 		interests.add("and");
 		interests.add("things");
-		user = new UserInfo( "test@lol.is", "HVK", 0, interests );
+		user = new User( "test@lol.is", "HVK", 0, interests );
 		try {
 			user.SaveUser();
 		} catch (IOException e) {
@@ -44,7 +45,7 @@ public class UserInfotest2 {
 
 	@Test
 	public void testLoadOrder() {
-		user = new UserInfo();
+		user = new User();
 		user.LoadUser();
 		Assert.assertEquals( 0, user.GetAge() );
 	}

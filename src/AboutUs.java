@@ -89,8 +89,9 @@ public class AboutUs extends JFrame {
 		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FrontFrame FF=new FrontFrame();
-				FF.setVisible(true);
+				FF FrontF=new FF();
+				FrontF.setVisible(true);
+				dispose();
 			}
 		});
 		btnHome.setBounds(150, 426, 105, 33);

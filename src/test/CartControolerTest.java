@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.main.java.controller.*;
-import com.main.java.form.UserInfo;
+import com.main.java.form.User;
 import com.main.java.persistence.Hotel;
 import com.main.java.persistence.HotelOrder;
 
@@ -18,12 +18,12 @@ import junit.framework.Assert;
 
 public class CartControolerTest {
 	
-	UserInfo user;
+	User user;
 	HotelOrder test = new HotelOrder();
 	CartController cart;// = new CartController();
 	@Before
 	public void setUp() throws Exception {
-		user = new UserInfo();
+		user = new User();
 		cart = new CartController();
 	    cart.AddHotelToBooking( new Hotel( "109", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 25000f, new String[]{ "Relaxing", "Adventure", "Golf" }  ));
 		cart.AddHotelToBooking( new Hotel( "108", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 11000f, new String[]{ "Extreme", "Boring", "Beachy" }  ));

@@ -63,9 +63,9 @@ public class FAQ extends JFrame {
 		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FrontFrame Home=new FrontFrame();
-				Home.setVisible(true);
-				//dispose();
+				FF Front=new FF();
+				Front.setVisible(true);
+				dispose();
 			}
 		});
 		btnHome.setBounds(211, 398, 97, 25);

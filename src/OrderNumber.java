@@ -80,8 +80,9 @@ public class OrderNumber extends JFrame {
 		DoneViewingOrder.setIcon(new ImageIcon(imgLogin));
 		DoneViewingOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FrontFrame FF=new FrontFrame();
-				FF.setVisible(true);
+				FF FrontF=new FF();
+				FrontF.setVisible(true);
+				dispose();
 			}
 		});
 		DoneViewingOrder.setBounds(196, 491, 176, 49);
@@ -95,7 +96,7 @@ public class OrderNumber extends JFrame {
 		JButton btnUser = new JButton("User");
 		btnUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UserInfo UI=new UserInfo();
+				UserInfoChange UI=new UserInfoChange();
 				UI.setVisible(true);
 				dispose();
 			}
