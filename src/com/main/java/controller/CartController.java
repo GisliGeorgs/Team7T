@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Random;
 
 public class CartController extends SearchController{
-    public HotelOrder hotelOrders = new HotelOrder();
-    public FlightOrder flightOrders = new FlightOrder();
-    public DayTripOrder dayTripOrders = new DayTripOrder();
+    public HotelOrder hotelOrders;
+    public FlightOrder flightOrders;
+    public DayTripOrder dayTripOrders;
     public User user;
 
     public CartController(){
@@ -21,13 +21,20 @@ public class CartController extends SearchController{
         flightOrders = new FlightOrder();
         dayTripOrders = new DayTripOrder();
     }
-
-
-
+    
     /**
-     * Hendir dagsferï¿½arpï¿½ntun ï¿½r cartinu
-     * ï¿½ aï¿½ skila orderinu sem ï¿½ï¿½ hentir ï¿½t?
-     * @param daytrip
+     * Er þetta á réttum stað?
+     * @param from
+     * @param to
+     * @param dest
+     * @param startLoc
+     */
+    public void FindTripsFromTo(Date from, Date to, String dest, String startLoc ){
+
+    }
+    /**
+     * Hendir dagsferð úr bókuninni.
+     * @param daytriporder Dagsferðin sem á að henda.
      */
     public void RemoveDayTripFromBooking( DayTrip daytrip ){
     	dayTripOrders.RemoveDayTrip( daytrip );
@@ -40,42 +47,61 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Bï¿½tir viï¿½ dagsferï¿½arpï¿½ntun ï¿½ Cart-iï¿½
-     * @param daytrip
+     * Bætir við dagsferðarpöntun í Cart-ið
+     * @param daytriporder
      */
-    public void AddDayTripToBooking( DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }
+    public void AddDayTripToBooking( DayTrip daytrip ){
+    	dayTripOrders.AddDayTrip( daytrip );
+    }
+    
     public void AddHotelToBooking( Hotel hotel ){
     	hotelOrders.AddHotel( hotel );
     }
+    
     public void AddFlightToBooking( Flight flight ){
     	flightOrders.AddFlight( flight );
     }
     
-    public void GetOldTrip( String orderId ){
-        GetHotelOrder( orderId );
-        GetFlightOrder( orderId );
-        GetDayTripOrder( orderId );
+    /**
+     * Þarf þetta?
+     * @return
+     */
+    public String NewTrip(){
+        return "";
     }
     
-    public void GetHotelOrder( String orderId ){
-        user.LoadOrder( orderId );
-        hotelOrders = user.hotelOrder;
-
+    /**
+     * Nær í gamla bókun.
+     * @param orderId Pöntunin sem á að sækja.
+      */
+    public void GetOldTrip( String orderId ){
+        if( user == null ){
+        	GetUser();
+        }
+        hotelOrders = new HotelOrder();
+        flightOrders = new FlightOrder();
+        dayTripOrders = new DayTripOrder();
     }
-    public void GetFlightOrder( String orderId ){
+    
+    public List<Hotel> GetHotelOrder( String orderId ){
         user.LoadOrder( orderId );
-        flightOrders = user.flightOrder;
+    	return null;//user.GetHotelOrders;
     }
-    public void GetDayTripOrder( String orderId ){
+    public List<Flight> GetFlightOrder
+    ( String orderId ){
         user.LoadOrder( orderId );
-        dayTripOrders = user.tripOrder;
+        return null;//user.GetFlightOrders();
+    }
+    public List<DayTrip> GetDayTripOrder( String orderId ){
+        user.LoadOrder( orderId );
+        return null;//user.getDayTripOrders();
     }
 
     /**
-     * Pantar allt dï¿½tiï¿½ sem er ï¿½ cart-inu
+     * Pantar allt dótið sem er í cart-inu
      * @return Master order id
      */
-    public String CreateCartOrder( ){
+    public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders*/ ){
         String orderNum = "";
         String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for( int i = 0; i < 9; i++ ){
@@ -84,6 +110,7 @@ public class CartController extends SearchController{
         	orderNum += a.substring( i2, i2+1 );
         }
         try {
+        	System.out.println(1111111);
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -91,8 +118,10 @@ public class CartController extends SearchController{
 		}      	
         return orderNum;
     }
-
+    /**
+     * Nær í UserInfo.
+     */
     public void GetUser(){
-        user = new User();
+        user = new UserInfo();
     }
 }
