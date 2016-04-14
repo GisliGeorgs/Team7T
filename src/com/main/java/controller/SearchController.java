@@ -111,14 +111,8 @@ public class SearchController{
     //region Dagsferðarleit
 
     //======================================================================================================================
-    // Veit ekki = search( Date date, Date date2, String name, String type, int size, int length, String location )
-    //
-    // TODO Hverju skilar DayTrip search?
-    //
-    // TODO Hvað er týpa og hvað gerir það
-    // TODO Hvað segir stærð til um
-    // TODO Er verð hæsta verð? nákvæmt verð? lægsta verð?
-    // TODO Hvað segir lengd til um
+    // Veit ekki hverju þetta skilar, ef einhverju
+    // List<DayTrip> =search( Date date, Date date2, String name, String type, int maxsize, int maxprice, int maxlength, String location )
     //
     // TODO Fleiri dagsferðar leitir?????
     //======================================================================================================================
