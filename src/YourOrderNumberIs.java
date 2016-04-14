@@ -39,7 +39,7 @@ public class YourOrderNumberIs extends JFrame {
 	 */
 	public YourOrderNumberIs() {
 		setTitle("Team 7T - Your order number");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 430, 255);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
