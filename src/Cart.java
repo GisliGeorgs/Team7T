@@ -42,7 +42,7 @@ public class Cart extends JFrame {
 	 */
 	public Cart() {
 		setTitle("Team 7T - Cart");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 656, 557);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));

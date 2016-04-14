@@ -47,7 +47,7 @@ public class Pay extends JFrame {
 	 */
 	public Pay() {
 		setTitle("Team 7T - Payments");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 505, 358);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));

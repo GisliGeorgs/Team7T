@@ -61,7 +61,7 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				OrderLogin OrderLog=new OrderLogin();
 				OrderLog.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
 		menuBar.add(mntmPreviousOrders);
@@ -71,7 +71,7 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				FAQ FreqAQ=new FAQ();
 				FreqAQ.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
 		menuBar.add(mntmFaq);
@@ -81,7 +81,7 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				AboutUs About=new AboutUs();
 				About.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
 		menuBar.add(mntmAboutUs);
@@ -91,7 +91,7 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Cart YourCart=new Cart();
 				YourCart.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
 		menuBar.add(mntmCart);
@@ -101,7 +101,7 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				UserInfoChange UI=new UserInfoChange();
 				UI.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
 		menuBar.add(mntmUser);
@@ -205,10 +205,10 @@ public class FF extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Cart AddtoCart=new Cart();
 				AddtoCart.setVisible(true);
-				dispose();
+				//dispose();
 			}
 		});
-		btnAddToCart.setBounds(338, 542, 138, 33);
+		btnAddToCart.setBounds(338, 542, 162, 33);
 		contentPane.add(btnAddToCart);
 		
 		SearchTextfield = new JTextField();

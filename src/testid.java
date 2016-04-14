@@ -1,12 +1,18 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.InputVerifier;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class testid extends JFrame {
 
@@ -17,6 +23,9 @@ public class testid extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,6 +49,7 @@ public class testid extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		textField = new JTextField();
 		JTextField jtf = new JTextField(6);
         jtf.setInputVerifier(new InputVerifier()
@@ -50,11 +60,26 @@ public class testid extends JFrame {
                     return (tField.getText().trim().length() == 6);
                 }
         });
+        
+        
        
 		
 		textField.setBounds(75, 117, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		JLabel lblFlottur = new JLabel("flottur");
+		lblFlottur.setBounds(94, 47, 177, 16);
+		contentPane.add(lblFlottur);
+		
+		JButton btnToffari = new JButton("toffari");
+		btnToffari.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblFlottur.setText("hrikalega flottur");
+			}
+		});
+		btnToffari.setBounds(195, 185, 97, 25);
+		contentPane.add(btnToffari);
 	}
 
 }
