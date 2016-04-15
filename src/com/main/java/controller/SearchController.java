@@ -26,7 +26,7 @@ public class SearchController{
     	GregorianCalendar gregFrom = new GregorianCalendar();
     	GregorianCalendar gregTo = new GregorianCalendar();
     	gregFrom.setTime( dateFrom );
-    	gregTo.setTime( dateTo )
+    	gregTo.setTime( dateTo );
         String[] keywords = searchValues.toArray( new String[0] );
 
     	if( type == 0 ){
@@ -157,7 +157,7 @@ public class SearchController{
         return res;
     }
 
-    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc, int price, String[] keywords ){{
+    public static ArrayList<DayTrip> FindDayTrips( GregorianCalendar dateFrom, GregorianCalendar dateTo, String loc, int price, String[] keywords ){
         ArrayList<DayTrip> mid = DayTripSearchConnection.search( dateFrom, dateTo, "", "", 9999, price, loc );
         ArrayList<DayTrip> res = new ArrayList<>();
         for ( int i = 0; i < mid.size(); i++ ) {
