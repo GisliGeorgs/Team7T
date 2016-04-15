@@ -2,13 +2,12 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.main.java.controller.*;
-import com.main.java.persistence.Hotel;
+import Hotel.Hotel;
 
 import junit.framework.Assert;
 

@@ -78,7 +78,7 @@ public class Pay extends JFrame {
 		btnCancel.setIcon(new ImageIcon(imgLogin2));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart BacktoCart=new Cart();
+				Cart BacktoCart=new Cart( cartController );
 				BacktoCart.setVisible(true);
 				dispose();
 			}

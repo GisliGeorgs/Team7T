@@ -1,4 +1,4 @@
-package com.main.java.persistence;
+package Flight;
 
 import java.util.Calendar;
 import java.util.Date;

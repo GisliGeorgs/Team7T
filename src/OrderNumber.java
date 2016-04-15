@@ -42,27 +42,12 @@ public class OrderNumber extends JFrame {
 	public OrderNumber() {
 		setTitle("Team 7T - Your orders");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 809, 612);
+		setBounds(100, 100, 754, 559);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JRadioButton HotelRadioButton = new JRadioButton("Hotel");
-		HotelRadioButton.setBackground(new Color(173, 216, 230));
-		HotelRadioButton.setBounds(45, 237, 127, 25);
-		contentPane.add(HotelRadioButton);
-		
-		JRadioButton FlightRadioButton_1 = new JRadioButton("Flight");
-		FlightRadioButton_1.setBackground(new Color(173, 216, 230));
-		FlightRadioButton_1.setBounds(45, 278, 127, 25);
-		contentPane.add(FlightRadioButton_1);
-		
-		JRadioButton DayTripRadioButton_2 = new JRadioButton("Daytrip");
-		DayTripRadioButton_2.setBackground(new Color(173, 216, 230));
-		DayTripRadioButton_2.setBounds(45, 319, 127, 25);
-		contentPane.add(DayTripRadioButton_2);
 		
 		JButton btnCancel = new JButton("Cancel");
 		Image imgCancel = new ImageIcon(this.getClass().getResource("/Close-2-icon.png")).getImage();
@@ -72,7 +57,7 @@ public class OrderNumber extends JFrame {
 				JOptionPane.showMessageDialog(null, "Your Order has been canceled!","Message", JOptionPane.ERROR_MESSAGE);
 			}
 		});
-		btnCancel.setBounds(407, 491, 176, 49);
+		btnCancel.setBounds(399, 416, 176, 49);
 		contentPane.add(btnCancel);
 		
 		JButton DoneViewingOrder = new JButton("Finished");
@@ -85,12 +70,12 @@ public class OrderNumber extends JFrame {
 				dispose();
 			}
 		});
-		DoneViewingOrder.setBounds(196, 491, 176, 49);
+		DoneViewingOrder.setBounds(177, 416, 176, 49);
 		contentPane.add(DoneViewingOrder);
 		
 		JLabel lblYourOrders = new JLabel("Your Orders");
 		lblYourOrders.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblYourOrders.setBounds(331, 0, 116, 57);
+		lblYourOrders.setBounds(283, 0, 116, 57);
 		contentPane.add(lblYourOrders);
 		
 		JButton btnUser = new JButton("User");
@@ -101,18 +86,12 @@ public class OrderNumber extends JFrame {
 				dispose();
 			}
 		});
-		btnUser.setBounds(663, 35, 116, 39);
+		btnUser.setBounds(608, 10, 116, 39);
 		contentPane.add(btnUser);
 		
-		JButton btnCart = new JButton("Cart");
-		btnCart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Cart YourCart=new Cart();
-				YourCart.setVisible(true);
-				dispose();
-			}
-		});
-		btnCart.setBounds(663, 87, 116, 32);
-		contentPane.add(btnCart);
+		JPanel PanelSeeYourOrders = new JPanel();
+		PanelSeeYourOrders.setBackground(new Color(176, 224, 230));
+		PanelSeeYourOrders.setBounds(80, 74, 571, 329);
+		contentPane.add(PanelSeeYourOrders);
 	}
 }

@@ -1,34 +1,53 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JSpinner;
+
+import DayTrip.DayTrip;
+import Flight.Flight;
+import Hotel.Hotel;
+import com.main.java.controller.CartController;
+import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JCheckBox;
+
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.JTable;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class FF extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField SearchTextfield;
 	private JTextField txtLocation;
+	private final ButtonGroup radioButtonGroupType = new ButtonGroup();
+	
+	/**
+	 * 0 = flight
+	 * 1 = hotel
+	 * 2 = daytrip
+	 */
+	private int typeSelected;
+	
+	private String loc;
+	private Date dateFrom;
+	private Date dateTo;
+	private boolean roundTrip;
+	private int numPeople;
+	private int price;
+	private String[] interests = new String[]{ "Golfing", "Relaxing", "Party", "Sunshine", "Shopping" };
+    CartController cart;
+
+	private ArrayList<String> search;
 
 	/**
 	 * Launch the application.
@@ -53,6 +72,9 @@ public class FF extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 801, 672);
 		
+		typeSelected = 0;
+		cart = new CartController();
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -89,7 +111,7 @@ public class FF extends JFrame {
 		JMenuItem mntmCart = new JMenuItem(Messages.getString("FF.Cart")); //$NON-NLS-1$
 		mntmCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart YourCart=new Cart();
+				Cart YourCart=new Cart( cart );
 				YourCart.setVisible(true);
 				//dispose();
 			}
@@ -111,91 +133,117 @@ public class FF extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+
 		JLabel lblForFlight = new JLabel(Messages.getString("FF.ForFLight")); //$NON-NLS-1$
 		lblForFlight.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblForFlight.setBounds(12, 218, 77, 16);
-		contentPane.add(lblForFlight);
+
+		JLabel lblForFlight1 = new JLabel("For flight");
+		lblForFlight1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblForFlight1.setBounds(14, 258, 77, 16);
+
+		contentPane.add(lblForFlight1);
 		
 		JRadioButton rdbtnOneWay = new JRadioButton(Messages.getString("FF.OneWay")); //$NON-NLS-1$
 		rdbtnOneWay.setBackground(new Color(173, 216, 230));
-		rdbtnOneWay.setBounds(4, 235, 113, 25);
+		rdbtnOneWay.setBounds(14, 274, 97, 25);
 		contentPane.add(rdbtnOneWay);
 		
 		JRadioButton rdbtnBothWays = new JRadioButton(Messages.getString("FF.BothWays")); //$NON-NLS-1$
 		rdbtnBothWays.setBackground(new Color(173, 216, 230));
-		rdbtnBothWays.setBounds(4, 265, 113, 25);
+		rdbtnBothWays.setBounds(14, 304, 105, 25);
 		contentPane.add(rdbtnBothWays);
 		
-		ButtonGroup group=new ButtonGroup();
-		group.add(rdbtnOneWay);
-		group.add(rdbtnBothWays);
+		ButtonGroup radioButtonGroupRoundTrip=new ButtonGroup();
+		radioButtonGroupRoundTrip.add(rdbtnOneWay);
+		radioButtonGroupRoundTrip.add(rdbtnBothWays);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(0, 0, 10, 1));
-		spinner.setBounds(12, 316, 77, 22);
+		spinner.setBounds(12, 356, 77, 22);
 		contentPane.add(spinner);
 		
+
 		JLabel lblAdaults = new JLabel(Messages.getString("FF.Adults")); //$NON-NLS-1$
 		lblAdaults.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
-		lblAdaults.setBounds(12, 296, 77, 16);
+		lblAdaults.setBounds(14, 338, 77, 16);
 		contentPane.add(lblAdaults);
 		
 		JLabel lblChildrens = new JLabel(Messages.getString("FF.Children")); //$NON-NLS-1$
 		lblChildrens.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblChildrens.setBounds(12, 344, 77, 16);
-		contentPane.add(lblChildrens);
+		
+		JLabel lblChildrens1 = new JLabel("Childrens:");
+		lblChildrens1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblChildrens1.setBounds(12, 378, 77, 16);
+		contentPane.add(lblChildrens1);
 		
 		JSpinner spinner_1 = new JSpinner();
 		spinner_1.setModel(new SpinnerNumberModel(0, 0, 10, 1));
-		spinner_1.setBounds(12, 362, 77, 22);
+		spinner_1.setBounds(12, 396, 77, 22);
 		contentPane.add(spinner_1);
 		
+
 		JLabel lblInterests = new JLabel(Messages.getString("FF.Interests")); //$NON-NLS-1$
 		lblInterests.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblInterests.setBounds(12, 391, 77, 25);
-		contentPane.add(lblInterests);
+
+		JLabel lblInterests1 = new JLabel("Interests:");
+		lblInterests1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblInterests1.setBounds(12, 418, 77, 25);
+		contentPane.add(lblInterests1);
 		
 		JRadioButton rdbtnGolfing = new JRadioButton(Messages.getString("FF.Golf")); //$NON-NLS-1$
 		rdbtnGolfing.setBackground(new Color(173, 216, 230));
-		rdbtnGolfing.setBounds(12, 425, 107, 25);
+		rdbtnGolfing.setBounds(12, 438, 107, 25);
 		contentPane.add(rdbtnGolfing);
 		
 		JRadioButton rdbtnRelaxing = new JRadioButton(Messages.getString("FF.Relax")); //$NON-NLS-1$
 		rdbtnRelaxing.setBackground(new Color(173, 216, 230));
-		rdbtnRelaxing.setBounds(12, 455, 109, 25);
+		rdbtnRelaxing.setBounds(12, 466, 109, 25);
 		contentPane.add(rdbtnRelaxing);
 		
 		JRadioButton rdbtnParty = new JRadioButton(Messages.getString("FF.Party")); //$NON-NLS-1$
 		rdbtnParty.setBackground(new Color(173, 216, 230));
-		rdbtnParty.setBounds(12, 485, 99, 25);
+		rdbtnParty.setBounds(12, 494, 99, 25);
 		contentPane.add(rdbtnParty);
 		
 		JRadioButton rdbtnSunshine = new JRadioButton(Messages.getString("FF.Sunshine")); //$NON-NLS-1$
 		rdbtnSunshine.setBackground(new Color(173, 216, 230));
-		rdbtnSunshine.setBounds(12, 515, 99, 25);
+		rdbtnSunshine.setBounds(12, 522, 99, 25);
 		contentPane.add(rdbtnSunshine);
 		
 		JRadioButton rdbtnShopping = new JRadioButton(Messages.getString("FF.Shop")); //$NON-NLS-1$
 		rdbtnShopping.setBackground(new Color(173, 216, 230));
-		rdbtnShopping.setBounds(12, 545, 99, 25);
+		rdbtnShopping.setBounds(12, 550, 99, 25);
 		contentPane.add(rdbtnShopping);
 		
+
 		JLabel lblDateFrom = new JLabel(Messages.getString("FF.DateFrom")); //$NON-NLS-1$
 		lblDateFrom.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblDateFrom.setBounds(12, 122, 99, 16);
-		contentPane.add(lblDateFrom);
+
+		JLabel lblDateFrom1 = new JLabel("Date from:");
+		lblDateFrom1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDateFrom1.setBounds(14, 178, 99, 16);
+		contentPane.add(lblDateFrom1);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(13, 138, 76, 22);
+		dateChooser.setBounds(15, 194, 76, 22);
 		contentPane.add(dateChooser);
 		
+
 		JLabel lblDateTo = new JLabel(Messages.getString("FF.DateTo")); //$NON-NLS-1$
 		lblDateTo.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblDateTo.setBounds(12, 173, 56, 16);
-		contentPane.add(lblDateTo);
+
+		JLabel lblDateTo1 = new JLabel("Date to:");
+		lblDateTo1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDateTo1.setBounds(14, 213, 56, 16);
+		contentPane.add(lblDateTo1);
 		
 		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(12, 189, 76, 22);
+		dateChooser_1.setBounds(14, 230, 76, 22);
 		contentPane.add(dateChooser_1);
 		
 		JButton btnAddToCart = new JButton(Messages.getString("FF.AddToCart")); //$NON-NLS-1$
@@ -203,7 +251,7 @@ public class FF extends JFrame {
 		btnAddToCart.setIcon(new ImageIcon(imgLogin));
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart AddtoCart=new Cart();
+				Cart AddtoCart=new Cart( cart );
 				AddtoCart.setVisible(true);
 				//dispose();
 			}
@@ -215,6 +263,7 @@ public class FF extends JFrame {
 		SearchTextfield.setBounds(120, 43, 549, 25);
 		contentPane.add(SearchTextfield);
 		SearchTextfield.setColumns(10);
+
 		
 		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
 		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage(); //$NON-NLS-1$
@@ -230,6 +279,12 @@ public class FF extends JFrame {
 		panelResault.setBackground(new Color(176, 224, 230));
 		panelResault.setBounds(120, 89, 597, 437);
 		contentPane.add(panelResault);
+
+		JPanel panelResult = new JPanel();
+		panelResult.setBackground(new Color(176, 224, 230));
+		panelResult.setBounds(120, 89, 597, 437);
+		contentPane.add(panelResult);
+
 		
 		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
 		EnglishButton.setBackground(new Color(173, 216, 230));
@@ -242,6 +297,49 @@ public class FF extends JFrame {
 		});
 		EnglishButton.setBounds(691, 9, 34, 24);
 		contentPane.add(EnglishButton);
+
+		
+		JButton ButtonSearch1 = new JButton("");
+		Image imgSearch1 = new ImageIcon(this.getClass().getResource("/search.png")).getImage();
+		ButtonSearch1.setIcon(new ImageIcon(imgSearch1));
+		ButtonSearch1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
+				loc = txtLocation.getText();
+				dateFrom = dateChooser.getDate();
+				dateTo = dateChooser_1.getDate();
+				roundTrip = rdbtnBothWays.isSelected(); 
+				// TODO laga �etta
+				price = 1000000;//(Integer)spinnerPrice.getValue();
+				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
+				
+				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
+                if( res.size() > 0 ){
+                    JPanel[] resPanel = new JPanel[res.size()];
+                    for ( int i = 0; i < res.size(); i++ ) {
+                        resPanel[i] = createJPanel( typeSelected, res.get( i ) );
+                        panelResult.add( resPanel[i] );
+                        /*resPanel[i] = new JPanel();
+                        final int index = i;
+                        resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
+                        JButton addToCart = new JButton( "Add to Cart" );
+                        addToCart.addActionListener(new ActionListener() {
+                            public void actionPerformed(ActionEvent arg0) {
+                                if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
+                                if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
+                                if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
+                            }
+                        });
+                    resPanel[i].add( addToCart );
+                    */
+                        validate();
+                        repaint();
+                    }
+                }
+			}
+		});
+		ButtonSearch1.setBounds(670, 42, 47, 25);
+		contentPane.add(ButtonSearch1);
 		
 		JButton IcelandicButton = new JButton(""); //$NON-NLS-1$
 		IcelandicButton.setBackground(new Color(173, 216, 230));
@@ -255,32 +353,148 @@ public class FF extends JFrame {
 		IcelandicButton.setBounds(737, 9, 34, 24);
 		contentPane.add(IcelandicButton);
 		
+
 		JRadioButton rdbtnFlight = new JRadioButton(Messages.getString("FF.FlightCheck")); //$NON-NLS-1$
 		rdbtnFlight.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
-		rdbtnFlight.setBackground(new Color(173, 216, 230));
-		rdbtnFlight.setBounds(153, 9, 127, 25);
-		contentPane.add(rdbtnFlight);
 		
+		JRadioButton rdbtnFlight1 = new JRadioButton("Flight");
+		rdbtnFlight1.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				if( rdbtnFlight1.isSelected() ){
+					typeSelected = 0;					
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnFlight1);
+		rdbtnFlight1.setFont(new Font("Tahoma", Font.BOLD, 16));
+
+		rdbtnFlight1.setBackground(new Color(173, 216, 230));
+		rdbtnFlight1.setBounds(153, 9, 127, 25);
+		rdbtnFlight1.setSelected(true);
+		contentPane.add(rdbtnFlight1);
+		
+
 		JRadioButton rdbtnHotel = new JRadioButton(Messages.getString("FF.HotelCheck")); //$NON-NLS-1$
 		rdbtnHotel.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
-		rdbtnHotel.setBackground(new Color(173, 216, 230));
-		rdbtnHotel.setBounds(324, 9, 127, 25);
-		contentPane.add(rdbtnHotel);
+
+		JRadioButton rdbtnHotel1 = new JRadioButton("Hotel");
+		rdbtnHotel1.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(rdbtnHotel1.isSelected()){
+					typeSelected = 1;
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnHotel1);
+		rdbtnHotel1.setFont(new Font("Tahoma", Font.BOLD, 16));
+
+		rdbtnHotel1.setBackground(new Color(173, 216, 230));
+		rdbtnHotel1.setBounds(324, 9, 127, 25);
+		contentPane.add(rdbtnHotel1);
 		
+
 		JRadioButton rdbtnDaytrip = new JRadioButton(Messages.getString("FF.DayTripCheck")); //$NON-NLS-1$
-		rdbtnDaytrip.setBackground(new Color(173, 216, 230));
-		rdbtnDaytrip.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
-		rdbtnDaytrip.setBounds(485, 9, 127, 25);
-		contentPane.add(rdbtnDaytrip);
+
+		JRadioButton rdbtnDaytrip1 = new JRadioButton("Daytrip");
+		rdbtnDaytrip1.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(rdbtnDaytrip1.isSelected()){
+					typeSelected = 2;					
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnDaytrip1);
+
+		rdbtnDaytrip1.setBackground(new Color(173, 216, 230));
+		rdbtnDaytrip1.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
+		rdbtnDaytrip1.setBounds(485, 9, 127, 25);
+		contentPane.add(rdbtnDaytrip1);
 		
+
 		JLabel lblLocation = new JLabel(Messages.getString("FF.Location")); //$NON-NLS-1$
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblLocation.setBounds(12, 70, 77, 16);
-		contentPane.add(lblLocation);
+
+		JLabel lblLocation1 = new JLabel("Location:");
+		lblLocation1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblLocation1.setBounds(14, 134, 77, 16);
+
+		contentPane.add(lblLocation1);
 		
 		txtLocation = new JTextField();
-		txtLocation.setBounds(12, 89, 105, 25);
+		txtLocation.setBounds(14, 152, 105, 25);
 		contentPane.add(txtLocation);
 		txtLocation.setColumns(10);
+		
+		JSpinner spinnerPrice = new JSpinner();
+		spinnerPrice.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
+		spinnerPrice.setBounds(14, 100, 77, 22);
+		contentPane.add(spinnerPrice);
+		
+		JLabel labelPrice = new JLabel("Price");
+		labelPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
+		labelPrice.setBounds(14, 81, 77, 16);
+		contentPane.add(labelPrice);
 	}
+
+    private JPanel createJPanel( int type, Object object ){
+        if( type == 0 ){
+            return flightPanel( (Flight)object );
+        }
+        else if( type == 1 ){
+            return hotelPanel( (Hotel)object );
+        }
+        else if( type == 2 ){
+            return daytripPanel( (DayTrip)object );
+        }
+        else{
+            return null;
+        }
+    }
+
+    private JPanel flightPanel( Flight flight ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( "Flug .1.1.1." ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                cart.AddFlightToBooking( flight );
+            }
+        });
+        return panel;
+    }
+
+    private JPanel hotelPanel( Hotel hotel ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( hotel.getName() ) );
+        panel.add( new JLabel( hotel.getAddress() ) );
+        panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
+        panel.add( new JLabel( hotel.getDescription() ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                cart.AddHotelToBooking( hotel );
+            }
+        });
+        return panel;
+    }
+
+    private JPanel daytripPanel( DayTrip daytrip ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( daytrip.getName() ) );
+        panel.add( new JLabel( daytrip.getLocation() ) );
+        panel.add( new JLabel( daytrip.getType() ) );
+        panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) { cart.AddDayTripToBooking( daytrip ); }
+        });
+        return panel;
+    }
 }

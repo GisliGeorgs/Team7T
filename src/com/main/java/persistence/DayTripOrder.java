@@ -1,11 +1,9 @@
 package com.main.java.persistence;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import DayTrip.DayTrip;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DayTripOrder extends Order{
     /**
