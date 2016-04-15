@@ -246,7 +246,7 @@ public class FF extends JFrame {
 				dateFrom = dateChooser.getDate();
 				dateTo = dateChooser_1.getDate();
 				roundTrip = rdbtnBothWays.isSelected(); 
-				// TODO laga þetta
+				// TODO laga ï¿½etta
 				price = 1000000;//(Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
 				
@@ -265,6 +265,9 @@ public class FF extends JFrame {
                         }
                     });
                     resPanel[i].add( addToCart );
+
+					validate();
+                    repaint();
 				}
 				
 				//com.main.java.controller.SearchController.
