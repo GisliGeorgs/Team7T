@@ -21,9 +21,9 @@ public class DayTrip {
         return type;
     }
 
-    public TravelAgency getAgency() {
+    /*public TravelAgency getAgency() {
         return agency;
-    }
+    }*/
 
     public int getPrice() {
         return price;
@@ -45,9 +45,9 @@ public class DayTrip {
         return extraInfo;
     }
 
-    public List<Trip> getTrips() {
+    /*public List<Trip> getTrips() {
         return trips;
-    }
+    }*/
 
     public Date[] getDate() {
         return date;
@@ -59,13 +59,13 @@ public class DayTrip {
 
     private int length;
     private String type;
-    private TravelAgency agency;
+    //private TravelAgency agency;
     private int price;
     private String location;
     private int size;
     private double rating;
     private String extraInfo;
-    private List<Trip> trips;
+    //private List<Trip> trips;
     private Date[] date;
     private int rateCounter;
 

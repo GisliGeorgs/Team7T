@@ -124,6 +124,6 @@ public class CartController extends SearchController{
      * N�r � UserInfo.
      */
     public void GetUser(){
-        user = new UserInfo();
+        user = new User();
     }
 }

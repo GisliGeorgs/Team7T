@@ -1,17 +1,15 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JSpinner;
+
+import DayTrip.DayTrip;
+import com.main.java.controller.CartController;
+import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JCheckBox;
+
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -21,12 +19,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.JTable;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 
@@ -44,13 +36,14 @@ public class FF extends JFrame {
 	 */
 	private int typeSelected;
 	
-	private String location;
+	private String loc;
 	private Date dateFrom;
 	private Date dateTo;
 	private boolean roundTrip;
 	private int numPeople;
 	private int price;
 	private String[] interests = new String[]{ "Golfing", "Relaxing", "Party", "Sunshine", "Shopping" };
+    CartController cart;
 
 	private ArrayList<String> search;
 
@@ -78,7 +71,8 @@ public class FF extends JFrame {
 		setBounds(100, 100, 801, 672);
 		
 		typeSelected = 0;
-		
+		cart = new CartController();
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -248,12 +242,30 @@ public class FF extends JFrame {
 		ButtonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
-				location = txtLocation.getText();
+				loc = txtLocation.getText();
 				dateFrom = dateChooser.getDate();
 				dateTo = dateChooser_1.getDate();
 				roundTrip = rdbtnBothWays.isSelected(); 
-				price = (Integer)spinnerPrice.getValue();
+				// TODO laga þetta
+				price = 1000000;//(Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
+				
+				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
+                JPanel[] resPanel = new JPanel[res.size()];
+				for ( int i = 0; i < res.size(); i++ ) {
+					resPanel[i] = new JPanel();
+                    final int index = i;
+                    resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
+                    JButton addToCart = new JButton( "Add to Cart" );
+                    addToCart.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent arg0) {
+                            if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
+                            if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
+                            if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
+                        }
+                    });
+                    resPanel[i].add( addToCart );
+				}
 				
 				//com.main.java.controller.SearchController.
 			}
