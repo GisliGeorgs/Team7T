@@ -13,6 +13,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
@@ -46,6 +47,9 @@ public class Pay extends JFrame {
 	 * Create the frame.
 	 */
 	public Pay() {
+		setIconImage(
+				new ImageIcon(getClass().getResource("/7.png")).getImage()
+			);
 		setTitle("Team 7T - Payments");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 505, 358);
@@ -105,11 +109,27 @@ public class Pay extends JFrame {
 		Cardnum.setBounds(12, 68, 217, 22);
 		contentPane.add(Cardnum);
 		Cardnum.setColumns(10);
+		Cardnum.addKeyListener(new java.awt.event.KeyAdapter() {
+		    public void keyTyped(java.awt.event.KeyEvent evt) {
+		        if(Cardnum.getText().length()>=16&&!(evt.getKeyChar()==KeyEvent.VK_DELETE||evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)) {
+		            getToolkit().beep();
+		            evt.consume();
+		         }
+		     }
+		});
 		
 		CVCnum = new JTextField();
 		CVCnum.setBounds(12, 189, 49, 22);
 		contentPane.add(CVCnum);
 		CVCnum.setColumns(10);
+		CVCnum.addKeyListener(new java.awt.event.KeyAdapter() {
+		    public void keyTyped(java.awt.event.KeyEvent evt) {
+		        if(CVCnum.getText().length()>=3&&!(evt.getKeyChar()==KeyEvent.VK_DELETE||evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)) {
+		            getToolkit().beep();
+		            evt.consume();
+		         }
+		     }
+		});
 		
 		JRadioButton rdbtnVisa = new JRadioButton("");
 		rdbtnVisa.setBackground(new Color(173, 216, 230));

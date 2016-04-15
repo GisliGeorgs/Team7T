@@ -44,6 +44,9 @@ public class UserInfoChange extends JFrame {
 	 * Create the frame.
 	 */
 	public UserInfoChange() {
+		setIconImage(
+				new ImageIcon(getClass().getResource("/7.png")).getImage()
+			);
 		setTitle("Team 7T - User");
 		getContentPane().setBackground(new Color(173, 216, 230));
 		getContentPane().setLayout(null);

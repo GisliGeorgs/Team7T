@@ -69,6 +69,9 @@ public class FF extends JFrame {
 	 * Create the frame.
 	 */
 	public FF() {
+		setIconImage(
+			new ImageIcon(getClass().getResource("/7.png")).getImage()
+		);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 801, 672);
 		

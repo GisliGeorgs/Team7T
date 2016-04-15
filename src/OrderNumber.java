@@ -40,6 +40,9 @@ public class OrderNumber extends JFrame {
 	 * Create the frame.
 	 */
 	public OrderNumber() {
+		setIconImage(
+				new ImageIcon(getClass().getResource("/7.png")).getImage()
+			);
 		setTitle("Team 7T - Your orders");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 754, 559);

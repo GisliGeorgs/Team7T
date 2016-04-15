@@ -44,6 +44,9 @@ public class UserInfoNew extends JFrame {
 	 * Create the frame.
 	 */
 	public UserInfoNew() {
+		setIconImage(
+				new ImageIcon(getClass().getResource("/7.png")).getImage()
+			);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 419, 453);
 		contentPane = new JPanel();
