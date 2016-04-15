@@ -257,7 +257,7 @@ public class FF extends JFrame {
 				for ( int i = 0; i < res.size(); i++ ) {
 					resPanel[i] = createJPanel( typeSelected, res.get( i ) );
 					///////////
-					resPanel[i] = new JPanel();
+					/*resPanel[i] = new JPanel();
                     final int index = i;
                     resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
                     JButton addToCart = new JButton( "Add to Cart" );
@@ -269,11 +269,13 @@ public class FF extends JFrame {
                         }
                     });
                     resPanel[i].add( addToCart );
-
+                    */
 					validate();
                     repaint();
 				}
-				panelResult.add( resPanel );
+                panelResult.add( resPanel );
+                validate();
+                repaint();
 			}
 		});
 		ButtonSearch.setBounds(670, 42, 47, 25);
