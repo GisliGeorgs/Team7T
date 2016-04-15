@@ -50,9 +50,10 @@ public class Cart extends JFrame {
         Setup();
 	}
     public Cart(){
+    	cartController = new CartController();
         Setup();
     }
-
+    JPanel panelCart;
     private void Setup(){
     	setIconImage(
     			new ImageIcon(getClass().getResource("/7.png")).getImage()
@@ -79,12 +80,12 @@ public class Cart extends JFrame {
                 User user = new User();
                 boolean UserExists = user.GetEmail().isEmpty();
                 if (UserExists ){
-                    Pay Payment=new Pay();
+                    Pay Payment=new Pay( cartController );
                     Payment.setVisible(true);
                     dispose();
                 }
                 else{
-                    UserInfoNew uin = new UserInfoNew();
+                    UserInfoNew uin = new UserInfoNew( cartController );
                     uin.setVisible( true );
                     dispose();
                 }
@@ -98,28 +99,46 @@ public class Cart extends JFrame {
         btngobacktoSearch.setIcon(new ImageIcon(imgLogin2));
         btngobacktoSearch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FF FrontFr=new FF();
-                FrontFr.setVisible(true);
+                //FF FrontFr=new FF();
+                //FrontFr.setVisible(true);
                 dispose();
             }
         });
         btngobacktoSearch.setBounds(334, 459, 174, 36);
         contentPane.add(btngobacktoSearch);
 
+<<<<<<< HEAD
         JPanel panelCart = new JPanel();
         panelCart.setBackground(new Color(176, 224, 230));
+=======
+        panelCart = new JPanel();
+>>>>>>> 95a8bd66a4fcfea064c2f27c7e54941138da8b76
         panelCart.setBounds(65, 49, 510, 393);
+        UpdateCart();
         contentPane.add(panelCart);
+    }
 
-        for ( int i = 0; i < cartController.getFlightOrders().GetFlight().size(); i++ ) {
-            panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight().get( i ) ) );
+    private void UpdateCart(){
+        panelCart.removeAll();
+        panelCart.revalidate();
+        panelCart.repaint();
+        if( cartController.getFlightOrders().GetFlight().size() > 0 ){
+            for ( int i = 0; i < cartController.getFlightOrders().GetFlight().size(); i++ ) {
+                panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight().get( i ) ) );
+            }
         }
-        for ( int i = 0; i < cartController.getHotelOrders().GetHotel().size(); i++ ) {
-            panelCart.add( hotelPanel( cartController.getHotelOrders().GetHotel().get( i ) ) );
+        if( cartController.getHotelOrders().GetHotel().size() > 0 ){
+            for ( int i = 0; i < cartController.getHotelOrders().GetHotel().size(); i++ ) {
+                panelCart.add( hotelPanel( cartController.getHotelOrders().GetHotel().get( i ) ) );
+            }
         }
-        for ( int i = 0; i < cartController.getDayTripOrders().GetDayTrip().size(); i++ ) {
-            panelCart.add( daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) ) );
+        if( cartController.getDayTripOrders().GetDayTrip().size() > 0 ){
+            for ( int i = 0; i < cartController.getDayTripOrders().GetDayTrip().size(); i++ ) {
+                panelCart.add( daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) ) );
+            }
         }
+        panelCart.revalidate();
+        panelCart.repaint();
     }
 
 
@@ -154,7 +173,7 @@ public class Cart extends JFrame {
 		return panel;
 	}
 
-	private JPanel daytripPanel( DayTrip daytrip ){
+	private JPanel daytripPanel( DayTrip daytrip  ){
 		JPanel panel = new JPanel();
 
 		panel.add( new JLabel( daytrip.getName() ) );
@@ -164,7 +183,9 @@ public class Cart extends JFrame {
 
 		JButton addToCart = new JButton( "Add to Cart" );
 		addToCart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) { cartController.RemoveDayTripFromBooking( daytrip ); }
+			public void actionPerformed(ActionEvent arg0) {
+                cartController.RemoveDayTripFromBooking( daytrip );
+            }
 		});
 		return panel;
 	}

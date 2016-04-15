@@ -63,8 +63,8 @@ public class UserInfoChange extends JFrame {
 		btnSaveUser.setIcon(new ImageIcon(imgLogin));
 		btnSaveUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OrderNumber OrderN=new OrderNumber();
-				OrderN.setVisible(true);
+				//OrderNumber OrderN=new OrderNumber();
+				//OrderN.setVisible(true);
 				dispose();
 			}
 		});
@@ -90,8 +90,8 @@ public class UserInfoChange extends JFrame {
 		btnCancel.setIcon(new ImageIcon(imgCancel));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				OrderNumber OrderN=new OrderNumber();
-				OrderN.setVisible(true);
+				//OrderNumber OrderN=new OrderNumber();
+				//OrderN.setVisible(true);
 				dispose();
 			}
 		});
