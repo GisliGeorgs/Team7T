@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import DayTrip.DayTrip;
+import Flight.Flight;
+import Hotel.Hotel;
 import com.main.java.persistence.*;
-import com.main.java.form.*;
-import java.util.Date;
+
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import com.main.java.form.User;
 
@@ -58,7 +59,7 @@ public class UserinfoTests {
         
     	uuser = new User("meru@meee.isadsfadsf", "hvorugkguuuuuuuuuuu", 150, origList );
     	
-    	List<Hotel> hoteltest1 = new ArrayList<Hotel>();		
+    	List<Hotel> hoteltest1 = new ArrayList<Hotel>();
 		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));
 		hoteltest1.add(new Hotel( "102", new GregorianCalendar(2016, Calendar.FEBRUARY, 10), new GregorianCalendar(2016, Calendar.FEBRUARY, 20), 10000f, new String[]{ "Fun", "Old", "Golf" }  ));
 	    HotelOrder hoe = new HotelOrder(hoteltest1);

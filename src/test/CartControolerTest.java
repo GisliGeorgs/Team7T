@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.main.java.controller.*;
 import com.main.java.form.User;
-import com.main.java.persistence.Hotel;
+import Hotel.Hotel;
 import com.main.java.persistence.HotelOrder;
 
 import junit.framework.Assert;

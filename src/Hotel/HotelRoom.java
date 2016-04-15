@@ -1,4 +1,4 @@
-package com.main.java.persistence;
+package Hotel;
 
 /**
  * Created by Gísli on 13/4/2016.

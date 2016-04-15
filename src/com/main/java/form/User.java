@@ -1,21 +1,19 @@
 package com.main.java.form;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Iterator;
 import java.util.List;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import Hotel.Hotel;
 import com.main.java.persistence.*;
  
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
- 
 
 public class User{
     private String gender;
@@ -38,7 +36,10 @@ public class User{
         this.interests = interests;
         this.pastOrderNumbers = new ArrayList<String>(){};
     }
-
+    /**
+     * Saver userinn
+     * @throws IOException
+     */
     public void SaveUser() throws IOException{
     	JSONObject obj = new JSONObject();
 		obj.put("Gender", gender);
@@ -74,14 +75,11 @@ public class User{
         File f = new File(homeLoc);
         if(f.exists() && !f.isDirectory()) {        
 	    	JSONParser parser = new JSONParser();	 
-	        try {
-	    		System.out.println( 000 );
-	 
+	        try {	 
 	            Object obj = parser.parse(new FileReader(homeLoc));
 	 
 	            JSONObject jsonObject = (JSONObject) obj;
 
-	    		System.out.println( 000 );
 	            email = (String) jsonObject.get("Email");
 	            gender = (String) jsonObject.get("Gender");
 	            age = (Integer) Integer.parseInt(jsonObject.get("Age").toString());
@@ -92,24 +90,19 @@ public class User{
 	            System.out.println("Gender: " + gender);
 	            System.out.println("Age: " + age);
 	            System.out.println("\nInterests:");
-	            */
-	    		System.out.println( 000 );
+	            
 	            Iterator<String> iterator = interests.iterator();
-	           /* while (iterator.hasNext()) 
+	            while (iterator.hasNext()) 
 	            {
-
-	        		System.out.println( 000 );
 	                //System.out.println(iterator.next());
-	            }*/
+	            }
 
-	    		System.out.println( 000 );
 	            System.out.println("\nPastOrderNumbers:");
 	            Iterator<String> iterator2 = pastOrderNumbers.iterator();
 	            while (iterator2.hasNext()) 
 	            {
 	                //System.out.println(iterator2.next());
-	            }	 
-	    		System.out.println( 000 );
+	            }*/
         	} catch (Exception e) {
             	e.printStackTrace();
         	}

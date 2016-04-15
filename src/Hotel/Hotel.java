@@ -1,9 +1,8 @@
-package com.main.java.persistence;
+package Hotel;
 
-import java.lang.reflect.Array;
-import java.util.Date;
+import DayTrip.DayTrip;
+
 import java.util.GregorianCalendar;
-import java.util.Calendar;
 import java.util.ArrayList;
 
 public class Hotel {

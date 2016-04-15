@@ -1,8 +1,8 @@
 package com.main.java.persistence;
 
-import java.io.IOException;
+import Flight.Flight;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class FlightOrder extends Order{

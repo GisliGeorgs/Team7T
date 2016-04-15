@@ -1,8 +1,8 @@
 package com.main.java.persistence;
 
-import java.io.IOException;
+import Hotel.Hotel;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class HotelOrder extends Order{

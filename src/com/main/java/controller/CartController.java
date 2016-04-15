@@ -1,10 +1,12 @@
 package com.main.java.controller;
 
+import DayTrip.DayTrip;
+import Flight.Flight;
+import Hotel.Hotel;
 import com.main.java.persistence.*;
 import com.main.java.form.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -23,7 +25,7 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Er þetta á réttum stað?
+     * Er ï¿½etta ï¿½ rï¿½ttum staï¿½?
      * @param from
      * @param to
      * @param dest
@@ -33,8 +35,8 @@ public class CartController extends SearchController{
 
     }
     /**
-     * Hendir dagsferð úr bókuninni.
-     * @param daytriporder Dagsferðin sem á að henda.
+     * Hendir dagsferï¿½ ï¿½r bï¿½kuninni.
+     * @param daytriporder Dagsferï¿½in sem ï¿½ aï¿½ henda.
      */
     public void RemoveDayTripFromBooking( DayTrip daytrip ){
     	dayTripOrders.RemoveDayTrip( daytrip );
@@ -47,7 +49,7 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Bætir við dagsferðarpöntun í Cart-ið
+     * Bï¿½tir viï¿½ dagsferï¿½arpï¿½ntun ï¿½ Cart-iï¿½
      * @param daytriporder
      */
     public void AddDayTripToBooking( DayTrip daytrip ){
@@ -63,7 +65,7 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Þarf þetta?
+     * ï¿½arf ï¿½etta?
      * @return
      */
     public String NewTrip(){
@@ -71,8 +73,8 @@ public class CartController extends SearchController{
     }
     
     /**
-     * Nær í gamla bókun.
-     * @param orderId Pöntunin sem á að sækja.
+     * Nï¿½r ï¿½ gamla bï¿½kun.
+     * @param orderId Pï¿½ntunin sem ï¿½ aï¿½ sï¿½kja.
       */
     public void GetOldTrip( String orderId ){
         if( user == null ){
@@ -98,7 +100,7 @@ public class CartController extends SearchController{
     }
 
     /**
-     * Pantar allt dótið sem er í cart-inu
+     * Pantar allt dï¿½tiï¿½ sem er ï¿½ cart-inu
      * @return Master order id
      */
     public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders*/ ){
@@ -119,7 +121,7 @@ public class CartController extends SearchController{
         return orderNum;
     }
     /**
-     * Nær í UserInfo.
+     * Nï¿½r ï¿½ UserInfo.
      */
     public void GetUser(){
         user = new UserInfo();
