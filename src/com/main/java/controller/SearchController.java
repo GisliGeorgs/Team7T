@@ -7,7 +7,9 @@ import Hotel.Hotel;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class SearchController{
 
@@ -17,11 +19,28 @@ public class SearchController{
 
     // TODO ?????
     public static ArrayList<Hotel> GetHotelHistory( int i ){ return null; }
-    public static ArrayList<Flight> GetFlightHistory( int i ){
-        return null;
-    }
-    public ArrayList<DayTrip> GetDayTripHistory( int i ){
-        return null;
+    public static ArrayList<Flight> GetFlightHistory( int i ){ return null; }
+    public ArrayList<DayTrip> GetDayTripHistory( int i ){ return null; }
+    
+    public static List Search( int type, ArrayList<String> searchValues, String loc, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ){
+    	GregorianCalendar gregFrom = new GregorianCalendar();
+    	GregorianCalendar gregTo = new GregorianCalendar();
+    	gregFrom.setTime( dateFrom );
+    	gregTo.setTime( dateTo )
+        String[] keywords = searchValues.toArray( new String[0] );
+
+    	if( type == 0 ){
+    		return null;
+    	}
+    	else if( type == 1 ){
+    		return FindHotels( gregFrom, gregTo, numPeople, loc, (float)price, keywords );
+    	}
+    	else if( type == 2 ){
+    		return FindDayTrips( gregFrom, gregTo, loc, price, keywords );
+    	}
+    	else{
+    		return null;
+    	} 	
     }
 
     //region Hótel leit
@@ -31,7 +50,7 @@ public class SearchController{
     //
     // Hotel[] = findHotelWithAvailableRooms( startDate, endDate, guestCount, location, minimumStars, maxPrice )
     //
-    //
+    // TODO ??hafa bara FindHotels með date, date, numpeople, loc, price, keywords??
     //
     //======================================================================================================================
 

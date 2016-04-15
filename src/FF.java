@@ -15,6 +15,10 @@ import javax.swing.JCheckBox;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 
 import javax.swing.ButtonGroup;
@@ -23,12 +27,32 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JTable;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class FF extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField SearchTextfield;
 	private JTextField txtLocation;
+	private final ButtonGroup radioButtonGroupType = new ButtonGroup();
+	
+	/**
+	 * 0 = flight
+	 * 1 = hotel
+	 * 2 = daytrip
+	 */
+	private int typeSelected;
+	
+	private String location;
+	private Date dateFrom;
+	private Date dateTo;
+	private boolean roundTrip;
+	private int numPeople;
+	private int price;
+	private String[] interests = new String[]{ "Golfing", "Relaxing", "Party", "Sunshine", "Shopping" };
+
+	private ArrayList<String> search;
 
 	/**
 	 * Launch the application.
@@ -52,6 +76,8 @@ public class FF extends JFrame {
 	public FF() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 801, 672);
+		
+		typeSelected = 0;
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -113,89 +139,89 @@ public class FF extends JFrame {
 		
 		JLabel lblForFlight = new JLabel("For flight");
 		lblForFlight.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblForFlight.setBounds(12, 218, 77, 16);
+		lblForFlight.setBounds(14, 263, 77, 16);
 		contentPane.add(lblForFlight);
 		
 		JRadioButton rdbtnOneWay = new JRadioButton("One way");
 		rdbtnOneWay.setBackground(new Color(173, 216, 230));
-		rdbtnOneWay.setBounds(4, 235, 113, 25);
+		rdbtnOneWay.setBounds(14, 276, 77, 25);
 		contentPane.add(rdbtnOneWay);
 		
 		JRadioButton rdbtnBothWays = new JRadioButton("Both ways");
 		rdbtnBothWays.setBackground(new Color(173, 216, 230));
-		rdbtnBothWays.setBounds(4, 265, 113, 25);
+		rdbtnBothWays.setBounds(14, 304, 84, 25);
 		contentPane.add(rdbtnBothWays);
 		
-		ButtonGroup group=new ButtonGroup();
-		group.add(rdbtnOneWay);
-		group.add(rdbtnBothWays);
+		ButtonGroup radioButtonGroupRoundTrip=new ButtonGroup();
+		radioButtonGroupRoundTrip.add(rdbtnOneWay);
+		radioButtonGroupRoundTrip.add(rdbtnBothWays);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(0, 0, 10, 1));
-		spinner.setBounds(12, 316, 77, 22);
+		spinner.setBounds(12, 356, 77, 22);
 		contentPane.add(spinner);
 		
-		JLabel lblAdaults = new JLabel("Adaults:");
+		JLabel lblAdaults = new JLabel("Adults");
 		lblAdaults.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblAdaults.setBounds(12, 296, 77, 16);
+		lblAdaults.setBounds(12, 336, 77, 16);
 		contentPane.add(lblAdaults);
 		
 		JLabel lblChildrens = new JLabel("Childrens:");
 		lblChildrens.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblChildrens.setBounds(12, 344, 77, 16);
+		lblChildrens.setBounds(12, 378, 77, 16);
 		contentPane.add(lblChildrens);
 		
 		JSpinner spinner_1 = new JSpinner();
 		spinner_1.setModel(new SpinnerNumberModel(0, 0, 10, 1));
-		spinner_1.setBounds(12, 362, 77, 22);
+		spinner_1.setBounds(12, 396, 77, 22);
 		contentPane.add(spinner_1);
 		
 		JLabel lblInterests = new JLabel("Interests:");
 		lblInterests.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblInterests.setBounds(12, 391, 77, 25);
+		lblInterests.setBounds(12, 418, 77, 25);
 		contentPane.add(lblInterests);
 		
 		JRadioButton rdbtnGolfing = new JRadioButton("Golfing");
 		rdbtnGolfing.setBackground(new Color(173, 216, 230));
-		rdbtnGolfing.setBounds(12, 425, 107, 25);
+		rdbtnGolfing.setBounds(12, 438, 107, 25);
 		contentPane.add(rdbtnGolfing);
 		
 		JRadioButton rdbtnRelaxing = new JRadioButton("Relaxing");
 		rdbtnRelaxing.setBackground(new Color(173, 216, 230));
-		rdbtnRelaxing.setBounds(12, 455, 109, 25);
+		rdbtnRelaxing.setBounds(12, 466, 109, 25);
 		contentPane.add(rdbtnRelaxing);
 		
 		JRadioButton rdbtnParty = new JRadioButton("Party");
 		rdbtnParty.setBackground(new Color(173, 216, 230));
-		rdbtnParty.setBounds(12, 485, 99, 25);
+		rdbtnParty.setBounds(12, 494, 99, 25);
 		contentPane.add(rdbtnParty);
 		
 		JRadioButton rdbtnSunshine = new JRadioButton("Sunshine");
 		rdbtnSunshine.setBackground(new Color(173, 216, 230));
-		rdbtnSunshine.setBounds(12, 515, 99, 25);
+		rdbtnSunshine.setBounds(12, 522, 99, 25);
 		contentPane.add(rdbtnSunshine);
 		
 		JRadioButton rdbtnShopping = new JRadioButton("Shopping");
 		rdbtnShopping.setBackground(new Color(173, 216, 230));
-		rdbtnShopping.setBounds(12, 545, 99, 25);
+		rdbtnShopping.setBounds(12, 550, 99, 25);
 		contentPane.add(rdbtnShopping);
 		
 		JLabel lblDateFrom = new JLabel("Date from:");
 		lblDateFrom.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblDateFrom.setBounds(12, 122, 99, 16);
+		lblDateFrom.setBounds(14, 183, 99, 16);
 		contentPane.add(lblDateFrom);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(13, 138, 76, 22);
+		dateChooser.setBounds(14, 202, 76, 22);
 		contentPane.add(dateChooser);
 		
 		JLabel lblDateTo = new JLabel("Date to:");
 		lblDateTo.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblDateTo.setBounds(12, 173, 56, 16);
+		lblDateTo.setBounds(14, 224, 56, 16);
 		contentPane.add(lblDateTo);
 		
 		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(12, 189, 76, 22);
+		dateChooser_1.setBounds(14, 241, 76, 22);
 		contentPane.add(dateChooser_1);
 		
 		JButton btnAddToCart = new JButton("Add to cart");
@@ -221,6 +247,15 @@ public class FF extends JFrame {
 		ButtonSearch.setIcon(new ImageIcon(imgSearch));
 		ButtonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
+				location = txtLocation.getText();
+				dateFrom = dateChooser.getDate();
+				dateTo = dateChooser_1.getDate();
+				roundTrip = rdbtnBothWays.isSelected(); 
+				price = (Integer)spinnerPrice.getValue();
+				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
+				
+				//com.main.java.controller.SearchController.
 			}
 		});
 		ButtonSearch.setBounds(670, 42, 47, 25);
@@ -256,18 +291,43 @@ public class FF extends JFrame {
 		contentPane.add(IcelandicButton);
 		
 		JRadioButton rdbtnFlight = new JRadioButton("Flight");
+		rdbtnFlight.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				if( rdbtnFlight.isSelected() ){
+					typeSelected = 0;					
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnFlight);
 		rdbtnFlight.setFont(new Font("Tahoma", Font.BOLD, 16));
 		rdbtnFlight.setBackground(new Color(173, 216, 230));
 		rdbtnFlight.setBounds(153, 9, 127, 25);
+		rdbtnFlight.setSelected(true);
 		contentPane.add(rdbtnFlight);
 		
 		JRadioButton rdbtnHotel = new JRadioButton("Hotel");
+		rdbtnHotel.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(rdbtnHotel.isSelected()){
+					typeSelected = 1;
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnHotel);
 		rdbtnHotel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		rdbtnHotel.setBackground(new Color(173, 216, 230));
 		rdbtnHotel.setBounds(324, 9, 127, 25);
 		contentPane.add(rdbtnHotel);
 		
 		JRadioButton rdbtnDaytrip = new JRadioButton("Daytrip");
+		rdbtnDaytrip.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(rdbtnDaytrip.isSelected()){
+					typeSelected = 2;					
+				}
+			}
+		});
+		radioButtonGroupType.add(rdbtnDaytrip);
 		rdbtnDaytrip.setBackground(new Color(173, 216, 230));
 		rdbtnDaytrip.setFont(new Font("Tahoma", Font.BOLD, 16));
 		rdbtnDaytrip.setBounds(485, 9, 127, 25);
@@ -275,12 +335,22 @@ public class FF extends JFrame {
 		
 		JLabel lblLocation = new JLabel("Location:");
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblLocation.setBounds(12, 70, 77, 16);
+		lblLocation.setBounds(14, 135, 77, 16);
 		contentPane.add(lblLocation);
 		
 		txtLocation = new JTextField();
-		txtLocation.setBounds(12, 89, 105, 25);
+		txtLocation.setBounds(14, 152, 105, 25);
 		contentPane.add(txtLocation);
 		txtLocation.setColumns(10);
+		
+		JSpinner spinnerPrice = new JSpinner();
+		spinnerPrice.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
+		spinnerPrice.setBounds(14, 102, 77, 22);
+		contentPane.add(spinnerPrice);
+		
+		JLabel labelPrice = new JLabel("Price");
+		labelPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
+		labelPrice.setBounds(14, 85, 77, 16);
+		contentPane.add(labelPrice);
 	}
 }
