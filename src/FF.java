@@ -111,7 +111,7 @@ public class FF extends JFrame {
 		JMenuItem mntmCart = new JMenuItem("Cart");
 		mntmCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart YourCart=new Cart();
+				Cart YourCart=new Cart( cart );
 				YourCart.setVisible(true);
 				//dispose();
 			}
@@ -225,7 +225,7 @@ public class FF extends JFrame {
 		btnAddToCart.setIcon(new ImageIcon(imgLogin));
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart AddtoCart=new Cart();
+				Cart AddtoCart=new Cart( cart );
 				AddtoCart.setVisible(true);
 				//dispose();
 			}
@@ -237,50 +237,6 @@ public class FF extends JFrame {
 		SearchTextfield.setBounds(120, 43, 549, 25);
 		contentPane.add(SearchTextfield);
 		SearchTextfield.setColumns(10);
-		
-		JButton ButtonSearch = new JButton("");
-		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage();
-		ButtonSearch.setIcon(new ImageIcon(imgSearch));
-		ButtonSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
-				loc = txtLocation.getText();
-				dateFrom = dateChooser.getDate();
-				dateTo = dateChooser_1.getDate();
-				roundTrip = rdbtnBothWays.isSelected(); 
-				// TODO laga �etta
-				price = 1000000;//(Integer)spinnerPrice.getValue();
-				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
-				
-				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
-                JPanel[] resPanel = new JPanel[res.size()];
-				for ( int i = 0; i < res.size(); i++ ) {
-					resPanel[i] = createJPanel( typeSelected, res.get( i ) );
-					///////////
-					/*resPanel[i] = new JPanel();
-                    final int index = i;
-                    resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
-                    JButton addToCart = new JButton( "Add to Cart" );
-                    addToCart.addActionListener(new ActionListener() {
-                        public void actionPerformed(ActionEvent arg0) {
-                            if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
-                            if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
-                            if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
-                        }
-                    });
-                    resPanel[i].add( addToCart );
-                    */
-					validate();
-                    repaint();
-				}
-                panelResult.add( resPanel );
-                validate();
-                repaint();
-			}
-		});
-		ButtonSearch.setBounds(670, 42, 47, 25);
-		contentPane.add(ButtonSearch);
-		
 		JPanel panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
 		panelResult.setBounds(120, 89, 597, 437);
@@ -297,6 +253,49 @@ public class FF extends JFrame {
 		});
 		EnglishButton.setBounds(691, 9, 34, 24);
 		contentPane.add(EnglishButton);
+
+		
+		JButton ButtonSearch = new JButton("");
+		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage();
+		ButtonSearch.setIcon(new ImageIcon(imgSearch));
+		ButtonSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
+				loc = txtLocation.getText();
+				dateFrom = dateChooser.getDate();
+				dateTo = dateChooser_1.getDate();
+				roundTrip = rdbtnBothWays.isSelected(); 
+				// TODO laga �etta
+				price = 1000000;//(Integer)spinnerPrice.getValue();
+				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
+				
+				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
+                if( res.size() > 0 ){
+                    JPanel[] resPanel = new JPanel[res.size()];
+                    for ( int i = 0; i < res.size(); i++ ) {
+                        resPanel[i] = createJPanel( typeSelected, res.get( i ) );
+                        panelResult.add( resPanel[i] );
+                        /*resPanel[i] = new JPanel();
+                        final int index = i;
+                        resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
+                        JButton addToCart = new JButton( "Add to Cart" );
+                        addToCart.addActionListener(new ActionListener() {
+                            public void actionPerformed(ActionEvent arg0) {
+                                if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
+                                if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
+                                if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
+                            }
+                        });
+                    resPanel[i].add( addToCart );
+                    */
+                        validate();
+                        repaint();
+                    }
+                }
+			}
+		});
+		ButtonSearch.setBounds(670, 42, 47, 25);
+		contentPane.add(ButtonSearch);
 		
 		JButton IcelandicButton = new JButton("");
 		IcelandicButton.setBackground(new Color(173, 216, 230));

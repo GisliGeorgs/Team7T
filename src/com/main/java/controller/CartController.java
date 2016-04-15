@@ -13,6 +13,8 @@ import java.util.Random;
 
 public class CartController extends SearchController{
     public HotelOrder hotelOrders;
+
+
     public FlightOrder flightOrders;
     public DayTripOrder dayTripOrders;
     public User user;
@@ -41,13 +43,21 @@ public class CartController extends SearchController{
     public void RemoveDayTripFromBooking( DayTrip daytrip ){
     	dayTripOrders.RemoveDayTrip( daytrip );
 	}
-    public void RemoveHotelFromBooking( Hotel hotel ){
-    	hotelOrders.RemoveHotel( hotel);
-    }    
+    public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
     public void RemoveFlightFromBooking( Flight flight ){
     	flightOrders.RemoveFlight( flight );
     }
-    
+
+
+    public FlightOrder getFlightOrders() {
+        return flightOrders;
+    }
+    public HotelOrder getHotelOrders() {
+        return hotelOrders;
+    }
+    public DayTripOrder getDayTripOrders() {
+        return dayTripOrders;
+    }
     /**
      * B�tir vi� dagsfer�arp�ntun � Cart-i�
      * @param daytriporder
@@ -63,7 +73,7 @@ public class CartController extends SearchController{
     public void AddFlightToBooking( Flight flight ){
     	flightOrders.AddFlight( flight );
     }
-    
+
     /**
      * �arf �etta?
      * @return
@@ -89,8 +99,7 @@ public class CartController extends SearchController{
         user.LoadOrder( orderId );
     	return null;//user.GetHotelOrders;
     }
-    public List<Flight> GetFlightOrder
-    ( String orderId ){
+    public List<Flight> GetFlightOrder( String orderId ){
         user.LoadOrder( orderId );
         return null;//user.GetFlightOrders();
     }

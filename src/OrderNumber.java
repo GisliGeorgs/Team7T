@@ -107,7 +107,7 @@ public class OrderNumber extends JFrame {
 		JButton btnCart = new JButton("Cart");
 		btnCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart YourCart=new Cart();
+				Cart YourCart=new Cart( cartController );
 				YourCart.setVisible(true);
 				dispose();
 			}
