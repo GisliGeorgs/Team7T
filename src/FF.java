@@ -6,6 +6,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
 import DayTrip.DayTrip;
+import Flight.Flight;
+import Hotel.Hotel;
 import com.main.java.controller.CartController;
 import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
@@ -253,6 +255,8 @@ public class FF extends JFrame {
 				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
                 JPanel[] resPanel = new JPanel[res.size()];
 				for ( int i = 0; i < res.size(); i++ ) {
+					resPanel[i] = createJPanel( typeSelected, res.get( i ) );
+					///////////
 					resPanel[i] = new JPanel();
                     final int index = i;
                     resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
@@ -269,17 +273,16 @@ public class FF extends JFrame {
 					validate();
                     repaint();
 				}
-				
-				//com.main.java.controller.SearchController.
+				panelResult.add( resPanel );
 			}
 		});
 		ButtonSearch.setBounds(670, 42, 47, 25);
 		contentPane.add(ButtonSearch);
 		
-		JPanel panelResault = new JPanel();
-		panelResault.setBackground(new Color(176, 224, 230));
-		panelResault.setBounds(120, 89, 597, 437);
-		contentPane.add(panelResault);
+		JPanel panelResult = new JPanel();
+		panelResult.setBackground(new Color(176, 224, 230));
+		panelResult.setBounds(120, 89, 597, 437);
+		contentPane.add(panelResult);
 		
 		JButton EnglishButton = new JButton("");
 		EnglishButton.setBackground(new Color(173, 216, 230));
@@ -368,4 +371,65 @@ public class FF extends JFrame {
 		labelPrice.setBounds(14, 85, 77, 16);
 		contentPane.add(labelPrice);
 	}
+
+    private JPanel createJPanel( int type, Object object ){
+        if( type == 0 ){
+            return flightPanel( (Flight)object );
+        }
+        else if( type == 1 ){
+            return hotelPanel( (Hotel)object );
+        }
+        else if( type == 2 ){
+            return daytripPanel( (DayTrip)object );
+        }
+        else{
+            return null;
+        }
+    }
+
+    private JPanel flightPanel( Flight flight ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( "Flug .1.1.1." ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                cart.AddFlightToBooking( flight );
+            }
+        });
+        return panel;
+    }
+
+    private JPanel hotelPanel( Hotel hotel ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( hotel.getName() ) );
+        panel.add( new JLabel( hotel.getAddress() ) );
+        panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
+        panel.add( new JLabel( hotel.getDescription() ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                cart.AddHotelToBooking( hotel );
+            }
+        });
+        return panel;
+    }
+
+    private JPanel daytripPanel( DayTrip daytrip ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( daytrip.getName() ) );
+        panel.add( new JLabel( daytrip.getLocation() ) );
+        panel.add( new JLabel( daytrip.getType() ) );
+        panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) { cart.AddDayTripToBooking( daytrip ); }
+        });
+        return panel;
+    }
 }
