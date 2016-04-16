@@ -1,9 +1,8 @@
-package Hotel;
-
 import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.Date;
 import java.sql.*;
+
 /**
  * Created by thordis on 16/03/16.
  */

@@ -1,13 +1,13 @@
-package Hotel;
+
 /**
  * Created by Svava Hildur on 16/03/16.
  */
-
 public class Hotel {
     private Review[] reviews;
     private int id;
     private String name;
     private String address;
+    private String place;
     private String type;
     private String phoneNumber;
     private String description;
@@ -58,6 +58,10 @@ public class Hotel {
 
         this.address = address;
     }
+
+    public String getPlace() { return place; }
+
+    public void setPlace(String place) { this.place = place; }
 
     public String getType() {
 
