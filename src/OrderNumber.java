@@ -101,7 +101,7 @@ public class OrderNumber extends JFrame {
 		PanelSeeYourOrders.setBounds(80, 74, 571, 329);
 		contentPane.add(PanelSeeYourOrders);
 	}
-=======
+
     public OrderNumber(){
         Setup();
     }
@@ -156,5 +156,4 @@ public class OrderNumber extends JFrame {
         btnUser.setBounds(663, 35, 116, 39);
         contentPane.add(btnUser);
     }
->>>>>>> 95a8bd66a4fcfea064c2f27c7e54941138da8b76
 }

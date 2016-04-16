@@ -46,7 +46,7 @@ public class UserInfoNew extends JFrame {
 	 * Create the frame.
 	 */
 	public UserInfoNew() {
-<<<<<<< HEAD
+
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
@@ -117,9 +117,7 @@ public class UserInfoNew extends JFrame {
 		});
 		btnSave.setBounds(143, 342, 97, 25);
 		contentPane.add(btnSave);
-=======
 		Setup();
->>>>>>> 95a8bd66a4fcfea064c2f27c7e54941138da8b76
 	}
     public UserInfoNew( CartController cart ) {
         this.cart = cart;
