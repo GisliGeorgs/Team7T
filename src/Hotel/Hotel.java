@@ -1,109 +1,160 @@
-package Hotel;
 
-import DayTrip.DayTrip;
-
-import java.util.GregorianCalendar;
-import java.util.ArrayList;
-
+/**
+ * Created by Svava Hildur on 16/03/16.
+ */
 public class Hotel {
-
-    // TODO Fá klasan beint frá hinum hópnum
-    //private Review[] reviews;
+    private Review[] reviews;
+    private int id;
     private String name;
     private String address;
     private String type;
-
     private String phoneNumber;
     private String description;
     private double starCount;
     private double rating;
-    private HotelRoom[] room;
-    private int numerOfRooms;
+    private Room[] rooms;
     private String[] tags;
     private double avgPrice;
-    private GregorianCalendar checkoutTime;
-    private ArrayList<DayTrip> dayTours;
+    private String checkoutTime;
 
+    public Hotel() {
+        reviews = new Review[0];
+        rooms = new Room[0];
+    }
 
-    /*public Review[] getReviews() {
+    public void setId(int id) { this.id = id; }
+
+    public Review[] getReviews() {
+
         return reviews;
-    }*/
+    }
 
-    /*public void setReviews(Review[] reviews) {
+    public int getId() {
+        return id;
+    }
+
+    public void setReviews(Review[] reviews) {
+
         this.reviews = reviews;
-    }*/
-
-    public String[] getTags() {
-        return tags;
-    }
-
-    public void setTags(String[] tags) {
-        this.tags = tags;
-    }
-
-    public double getStarCount() {
-        return starCount;
-    }
-
-    public void setStarCount(double starCount) {
-        this.starCount = starCount;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
+    public String getAddress() {
+
+        return address;
+    }
+
+    public void setAddress(String address) {
+
+        this.address = address;
+    }
+
+    public String getType() {
+
+        return type;
+    }
+
+    public void setType(String type) {
+
+        this.type = type;
+    }
+
+    public String getPhoneNumber() {
+
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
-    public String getAddress() {
-        return address;
+    public double getStarCount() {
+
+        return starCount;
     }
 
-    public String getType() {
-        return type;
+    public void setStarCount(double starCount) {
+
+        this.starCount = starCount;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public double getRating() {
+
+        return rating;
     }
 
-    public HotelRoom[] getRoom() {
-        return room;
+    public void setRating(double rating) {
+
+        this.rating = rating;
     }
 
-    public int getNumerOfRooms() {
-        return numerOfRooms;
+    public Room[] getRooms() {
+
+        return rooms;
+    }
+
+    public void setRooms(Room[] rooms) {
+
+        this.rooms = rooms;
+    }
+
+    public int getNumberOfRooms() {
+
+        return rooms.length;
+    }
+
+    public String[] getTags() {
+
+        return tags;
+    }
+
+    public void setTags(String[] tags) {
+
+        this.tags = tags;
     }
 
     public double getAvgPrice() {
+
         return avgPrice;
     }
 
-    public GregorianCalendar getCheckoutTime() {
+    public void setAvgPrice(double avgPrice) {
+
+        this.avgPrice = avgPrice;
+    }
+
+    public String getCheckoutTime() {
+
         return checkoutTime;
     }
 
-    public ArrayList<DayTrip> getDayTours() {
-        return dayTours;
+    public void setCheckoutTime(String checkoutTime) {
+
+        this.checkoutTime = checkoutTime;
     }
 
-
+    public void updateRating(double newrating) {
+        int count = reviews.length;
+        rating = (rating+newrating)/(count+1);
+    }
 }
