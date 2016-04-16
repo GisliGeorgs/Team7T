@@ -1,0 +1,1325 @@
+{"results":
+[
+{"date":
+"23. Mar","flightNumber":
+"WW815","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"00:
+40","realArrival":
+"Landed 00:
+33","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW617","airline":
+"WOW air","from":
+"Alicante","plannedArrival":
+"01:
+30","realArrival":
+"Landed 01:
+23","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW126","airline":
+"WOW air","from":
+"Boston","plannedArrival":
+"04:
+05","realArrival":
+"Landed 04:
+23","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI622","airline":
+"Icelandair","from":
+"New York Newark","plannedArrival":
+"06:
+35","realArrival":
+"Landed 06:
+15","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI644","airline":
+"Icelandair","from":
+"Washington Dulles","plannedArrival":
+"06:
+30","realArrival":
+"Landed 06:
+22","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI688","airline":
+"Icelandair","from":
+"Orlando","plannedArrival":
+"06:
+10","realArrival":
+"Landed 06:
+29","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI614","airline":
+"Icelandair","from":
+"New York JFK","plannedArrival":
+"06:
+45","realArrival":
+"Landed 06:
+38","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI630","airline":
+"Icelandair","from":
+"Boston","plannedArrival":
+"06:
+40","realArrival":
+"Landed 06:
+43","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI602","airline":
+"Icelandair","from":
+"Toronto","plannedArrival":
+"06:
+25","realArrival":
+"Landed 06:
+46","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI680","airline":
+"Icelandair","from":
+"Seattle","plannedArrival":
+"06:
+45","realArrival":
+"Landed 06:
+57","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI741","airline":
+"Icelandair (cargo)","from":
+"Liege","plannedArrival":
+"07:
+40","realArrival":
+"Landed 07:
+32","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"BBD6810","airline":
+"Bluebird ehf. (cargo)","from":
+"Dublin","plannedArrival":
+"08:
+20","realArrival":
+"Landed 08:
+03","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"EZY1805","airline":
+"easyJet","from":
+"Manchester","plannedArrival":
+"10:
+35","realArrival":
+"Landed 10:
+12","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"EZY2295","airline":
+"easyJet","from":
+"London Luton","plannedArrival":
+"10:
+50","realArrival":
+"Landed 10:
+34","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"SK4787","airline":
+"SAS","from":
+"Oslo","plannedArrival":
+"12:
+00","realArrival":
+"Landed 11:
+48","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW853","airline":
+"WOW air","from":
+"Dublin","plannedArrival":
+"13:
+35","realArrival":
+"Landed 13:
+35","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW811","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"14:
+25","realArrival":
+"Landed 14:
+23","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW903","airline":
+"WOW air","from":
+"Copenhagen","plannedArrival":
+"14:
+25","realArrival":
+"Landed 14:
+35","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"BA800","airline":
+"British Airways","from":
+"London Heathrow","plannedArrival":
+"14:
+35","realArrival":
+"Landed 14:
+25","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"WW405","airline":
+"WOW air","from":
+"Paris Charles De Gaulle","plannedArrival":
+"14:
+05","realArrival":
+"Landed 14:
+33","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI441","airline":
+"Icelandair","from":
+"Manchester","plannedArrival":
+"15:
+00","realArrival":
+"Landed 14:
+50","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI425","airline":
+"Icelandair","from":
+"Aberdeen","plannedArrival":
+"15:
+30","realArrival":
+"Landed 15:
+20","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI507","airline":
+"Icelandair","from":
+"Amsterdam","plannedArrival":
+"15:
+05","realArrival":
+"Landed 15:
+22","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI501","airline":
+"Icelandair","from":
+"Amsterdam","plannedArrival":
+"15:
+30","realArrival":
+"Landed 15:
+33","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI205","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"15:
+30","realArrival":
+"Landed 15:
+40","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"EZY3033","airline":
+"easyJet","from":
+"London Stansted","plannedArrival":
+"15:
+40","realArrival":
+"Landed 15:
+32","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI543","airline":
+"Icelandair","from":
+"Paris Charles De Gaulle","plannedArrival":
+"15:
+50","realArrival":
+"Landed 15:
+41","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI471","airline":
+"Icelandair","from":
+"London Gatwick","plannedArrival":
+"15:
+30","realArrival":
+"Landed 15:
+46","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI319","airline":
+"Icelandair","from":
+"Oslo","plannedArrival":
+"15:
+45","realArrival":
+"Landed 15:
+54","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"DY1172","airline":
+"Norwegian Air","from":
+"Bergen","plannedArrival":
+"15:
+50","realArrival":
+"Landed 15:
+56","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI451","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"16:
+00","realArrival":
+"Landed 16:
+02","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI307","airline":
+"Icelandair","from":
+"Stockholm","plannedArrival":
+"15:
+45","realArrival":
+"Landed 16:
+06","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI343","airline":
+"Icelandair","from":
+"Helsinki","plannedArrival":
+"15:
+55","realArrival":
+"Landed 16:
+12","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI521","airline":
+"Icelandair","from":
+"Frankfurt","plannedArrival":
+"16:
+10","realArrival":
+"Landed 16:
+15","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"6F124","airline":
+"Primera Air","from":
+"Barcelona","plannedArrival":
+"17:
+30","realArrival":
+"Landed 18:
+01","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"EZY8507","airline":
+"easyJet","from":
+"London Gatwick","plannedArrival":
+"18:
+35","realArrival":
+"Landed 18:
+47","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI782","airline":
+"Icelandair (cargo)","from":
+"New York JFK","plannedArrival":
+"19:
+45","realArrival":
+"Confirm. 21:
+33","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI213","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"22:
+20","realArrival":
+"Confirm. 22:
+23","status":
+null},
+{"date":
+"23. Mar","flightNumber":
+"FI455","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"23:
+35","realArrival":
+"Confirm. 23:
+36","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW126","airline":
+"WOW air","from":
+"Boston","plannedArrival":
+"04:
+05","realArrival":
+"Landed 04:
+09","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW118","airline":
+"WOW air","from":
+"Baltimore Washington","plannedArrival":
+"05:
+10","realArrival":
+"Confirm. 05:
+09","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI614","airline":
+"Icelandair","from":
+"New York JFK","plannedArrival":
+"06:
+45","realArrival":
+"Confirm. 06:
+04","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI688","airline":
+"Icelandair","from":
+"Orlando","plannedArrival":
+"06:
+10","realArrival":
+"Confirm. 06:
+05","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI644","airline":
+"Icelandair","from":
+"Washington Dulles","plannedArrival":
+"06:
+30","realArrival":
+"Confirm. 06:
+09","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI783","airline":
+"Icelandair (cargo)","from":
+"Liege","plannedArrival":
+"04:
+50","realArrival":
+"Confirm. 06:
+30","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI630","airline":
+"Icelandair","from":
+"Boston","plannedArrival":
+"06:
+40","realArrival":
+"Confirm. 06:
+35","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI602","airline":
+"Icelandair","from":
+"Toronto","plannedArrival":
+"06:
+25","realArrival":
+"Confirm. 06:
+37","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI680","airline":
+"Icelandair","from":
+"Seattle","plannedArrival":
+"06:
+45","realArrival":
+"Confirm. 06:
+38","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI692","airline":
+"Icelandair","from":
+"Edmonton","plannedArrival":
+"06:
+40","realArrival":
+"Confirm. 06:
+47","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI852","airline":
+"Icelandair","from":
+"Chicago","plannedArrival":
+"06:
+35","realArrival":
+"Confirm. 07:
+35","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI741","airline":
+"Icelandair (cargo)","from":
+"East Midlands","plannedArrival":
+"07:
+40","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"BBD6810","airline":
+"Bluebird ehf. (cargo)","from":
+"Dublin","plannedArrival":
+"08:
+20","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZS1523","airline":
+"easyJet","from":
+"Geneva","plannedArrival":
+"09:
+10","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZY1805","airline":
+"easyJet","from":
+"Manchester","plannedArrival":
+"10:
+35","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"SK595","airline":
+"SAS","from":
+"Copenhagen","plannedArrival":
+"10:
+45","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI670","airline":
+"Icelandair","from":
+"Denver","plannedArrival":
+"06:
+35","realArrival":
+"Confirm. 10:
+48","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZY2295","airline":
+"easyJet","from":
+"London Luton","plannedArrival":
+"10:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZY6001","airline":
+"easyJet","from":
+"Bristol","plannedArrival":
+"10:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"AB3546","airline":
+"Air Berlin","from":
+"Berlin Tegel","plannedArrival":
+"11:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"SK4787","airline":
+"SAS","from":
+"Oslo","plannedArrival":
+"12:
+00","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI1509","airline":
+"Icelandair","from":
+"Dublin","plannedArrival":
+"12:
+30","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW443","airline":
+"WOW air","from":
+"Amsterdam","plannedArrival":
+"13:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"RC401","airline":
+"Atlantic Airways","from":
+"Vagar","plannedArrival":
+"13:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW405","airline":
+"WOW air","from":
+"Paris Charles De Gaulle","plannedArrival":
+"14:
+05","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW721","airline":
+"WOW air","from":
+"Berlin Schoenefeld","plannedArrival":
+"14:
+25","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW903","airline":
+"WOW air","from":
+"Copenhagen","plannedArrival":
+"14:
+25","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW811","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"14:
+25","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI441","airline":
+"Icelandair","from":
+"Manchester","plannedArrival":
+"15:
+00","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI545","airline":
+"Icelandair","from":
+"Paris Charles De Gaulle","plannedArrival":
+"15:
+10","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI495","airline":
+"Icelandair","from":
+"Birmingham","plannedArrival":
+"15:
+10","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI431","airline":
+"Icelandair","from":
+"Glasgow","plannedArrival":
+"15:
+40","realArrival":
+"Estimat. 15:
+25","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI205","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"15:
+30","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI471","airline":
+"Icelandair","from":
+"London Gatwick","plannedArrival":
+"15:
+30","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI501","airline":
+"Icelandair","from":
+"Amsterdam","plannedArrival":
+"15:
+30","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI307","airline":
+"Icelandair","from":
+"Stockholm","plannedArrival":
+"15:
+45","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI319","airline":
+"Icelandair","from":
+"Oslo","plannedArrival":
+"15:
+45","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI569","airline":
+"Icelandair","from":
+"Zurich","plannedArrival":
+"15:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI543","airline":
+"Icelandair","from":
+"Paris Charles De Gaulle","plannedArrival":
+"15:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI343","airline":
+"Icelandair","from":
+"Helsinki","plannedArrival":
+"15:
+55","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI451","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"16:
+00","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI533","airline":
+"Icelandair","from":
+"Munich ","plannedArrival":
+"16:
+00","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI521","airline":
+"Icelandair","from":
+"Frankfurt","plannedArrival":
+"16:
+10","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"W62427","airline":
+"Wizz Air","from":
+"Budapest Ferihegy","plannedArrival":
+"16:
+40","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZY2297","airline":
+"easyJet","from":
+"London Luton","plannedArrival":
+"17:
+40","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"DY1170","airline":
+"Norwegian Air","from":
+"Oslo","plannedArrival":
+"18:
+35","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"EZY6941","airline":
+"easyJet","from":
+"Edinburgh","plannedArrival":
+"18:
+55","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI213","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"22:
+20","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"WW815","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"22:
+50","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"FI455","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"23:
+35","realArrival":
+"","status":
+null},
+{"date":
+"24. Mar","flightNumber":
+"AB3928","airline":
+"Air Berlin","from":
+"Dusseldorf","plannedArrival":
+"23:
+50","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI477","airline":
+"Icelandair","from":
+"London Gatwick","plannedArrival":
+"23:
+10","realArrival":
+"Landed 00:
+37","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW126","airline":
+"WOW air","from":
+"Boston","plannedArrival":
+"04:
+30","realArrival":
+"Landed 04:
+10","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI771","airline":
+"Icelandair (cargo)","from":
+"Liege","plannedArrival":
+"04:
+40","realArrival":
+"Landed 04:
+35","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW118","airline":
+"WOW air","from":
+"Baltimore Washington","plannedArrival":
+"04:
+55","realArrival":
+"Landed 04:
+58","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI670","airline":
+"Icelandair","from":
+"Denver","plannedArrival":
+"06:
+35","realArrival":
+"Landed 06:
+23","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI614","airline":
+"Icelandair","from":
+"New York JFK","plannedArrival":
+"06:
+15","realArrival":
+"Landed 06:
+22","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI644","airline":
+"Icelandair","from":
+"Washington Dulles","plannedArrival":
+"06:
+20","realArrival":
+"Landed 06:
+28","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI630","airline":
+"Icelandair","from":
+"Boston","plannedArrival":
+"06:
+30","realArrival":
+"Landed 06:
+39","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI680","airline":
+"Icelandair","from":
+"Seattle","plannedArrival":
+"06:
+45","realArrival":
+"Landed 06:
+46","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI852","airline":
+"Icelandair","from":
+"Chicago","plannedArrival":
+"06:
+35","realArrival":
+"Landed 06:
+56","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"BBD6810","airline":
+"Bluebird ehf. (cargo)","from":
+"Dublin","plannedArrival":
+"07:
+20","realArrival":
+"Cancelled","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI602","airline":
+"Icelandair","from":
+"Toronto","plannedArrival":
+"06:
+20","realArrival":
+"Landed 07:
+58","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"SK595","airline":
+"SAS","from":
+"Copenhagen","plannedArrival":
+"09:
+45","realArrival":
+"Landed 09:
+38","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"EZY2295","airline":
+"easyJet","from":
+"London Luton","plannedArrival":
+"09:
+35","realArrival":
+"Landed 09:
+39","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"EZY8507","airline":
+"easyJet","from":
+"London Gatwick","plannedArrival":
+"08:
+45","realArrival":
+"Landed 09:
+41","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"DY1172","airline":
+"Norwegian Air","from":
+"Bergen","plannedArrival":
+"10:
+35","realArrival":
+"Landed 10:
+37","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"SK4787","airline":
+"SAS","from":
+"Oslo","plannedArrival":
+"10:
+55","realArrival":
+"Landed 10:
+45","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"EI4960","airline":
+"Aer Lingus","from":
+"Dublin","plannedArrival":
+"11:
+30","realArrival":
+"Landed 11:
+34","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW853","airline":
+"WOW air","from":
+"Dublin","plannedArrival":
+"13:
+55","realArrival":
+"Landed 13:
+35","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW443","airline":
+"WOW air","from":
+"Amsterdam","plannedArrival":
+"13:
+50","realArrival":
+"Landed 13:
+49","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW405","airline":
+"WOW air","from":
+"Paris Charles De Gaulle","plannedArrival":
+"14:
+05","realArrival":
+"Landed 13:
+55","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW811","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"14:
+10","realArrival":
+"Landed 13:
+57","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW903","airline":
+"WOW air","from":
+"Copenhagen","plannedArrival":
+"14:
+25","realArrival":
+"Landed 14:
+10","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI495","airline":
+"Icelandair","from":
+"Birmingham","plannedArrival":
+"15:
+10","realArrival":
+"Landed 14:
+52","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI501","airline":
+"Icelandair","from":
+"Amsterdam","plannedArrival":
+"15:
+10","realArrival":
+"Landed 14:
+58","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI441","airline":
+"Icelandair","from":
+"Manchester","plannedArrival":
+"15:
+00","realArrival":
+"Landed 14:
+58","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI205","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"15:
+10","realArrival":
+"Landed 15:
+12","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI319","airline":
+"Icelandair","from":
+"Oslo","plannedArrival":
+"15:
+25","realArrival":
+"Landed 15:
+18","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI471","airline":
+"Icelandair","from":
+"London Gatwick","plannedArrival":
+"15:
+10","realArrival":
+"Confirm. 15:
+14","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI425","airline":
+"Icelandair","from":
+"Aberdeen","plannedArrival":
+"15:
+30","realArrival":
+"Confirm. 15:
+15","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI543","airline":
+"Icelandair","from":
+"Paris Charles De Gaulle","plannedArrival":
+"15:
+40","realArrival":
+"Confirm. 15:
+15","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI307","airline":
+"Icelandair","from":
+"Stockholm","plannedArrival":
+"15:
+30","realArrival":
+"Landed 15:
+16","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI451","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"15:
+10","realArrival":
+"Confirm. 15:
+20","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI521","airline":
+"Icelandair","from":
+"Frankfurt","plannedArrival":
+"15:
+35","realArrival":
+"Confirm. 15:
+20","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI549","airline":
+"Icelandair","from":
+"Paris Orly","plannedArrival":
+"15:
+45","realArrival":
+"Confirm. 15:
+42","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI343","airline":
+"Icelandair","from":
+"Helsinki","plannedArrival":
+"16:
+00","realArrival":
+"Confirm. 15:
+51","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW503","airline":
+"WOW air","from":
+"Warsaw","plannedArrival":
+"16:
+00","realArrival":
+"Confirm. 16:
+00","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI533","airline":
+"Icelandair","from":
+"Munich ","plannedArrival":
+"16:
+00","realArrival":
+"Confirm. 16:
+08","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"6F128","airline":
+"Primera Air","from":
+"Jerez De La Frontera","plannedArrival":
+"16:
+20","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI1543","airline":
+"Icelandair","from":
+"Faro","plannedArrival":
+"16:
+30","realArrival":
+"Confirm. 17:
+34","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"W61773","airline":
+"Wizz Air","from":
+"Gdansk","plannedArrival":
+"20:
+50","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI213","airline":
+"Icelandair","from":
+"Copenhagen","plannedArrival":
+"20:
+55","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI1511","airline":
+"Icelandair","from":
+"Dublin","plannedArrival":
+"22:
+20","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"WW815","airline":
+"WOW air","from":
+"London Gatwick","plannedArrival":
+"22:
+50","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"FI455","airline":
+"Icelandair","from":
+"London Heathrow","plannedArrival":
+"23:
+10","realArrival":
+"","status":
+null},
+{"date":
+"28. Mar","flightNumber":
+"SK4791","airline":
+"SAS","from":
+"Oslo","plannedArrival":
+"23:
+35","realArrival":
+"","status":
+null},
+{"date":"29. Mar","flightNumber":"WW617","airline":"WOW air","from":"Alicante","plannedArrival":"01:30","realArrival":"Landed 03:38","status":null},{"date":"29. Mar","flightNumber":"VY8560","airline":"Vueling Airlines","from":"Barcelona","plannedArrival":"01:45","realArrival":"Landed 03:39","status":null},{"date":"29. Mar","flightNumber":"6F124","airline":"Primera Air","from":"Barcelona","plannedArrival":"03:25","realArrival":"Landed 03:43","status":null},{"date":"29. Mar","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 03:53","status":null},{"date":"29. Mar","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 05:03","status":null},{"date":"29. Mar","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 05:58","status":null},{"date":"29. Mar","flightNumber":"FI632","airline":"Icelandair","from":"Boston","plannedArrival":"05:45","realArrival":"Landed 06:08","status":null},{"date":"29. Mar","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:14","status":null},{"date":"29. Mar","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 06:18","status":null},{"date":"29. Mar","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 06:21","status":null},{"date":"29. Mar","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 06:28","status":null},{"date":"29. Mar","flightNumber":"FI692","airline":"Icelandair","from":"Edmonton","plannedArrival":"06:40","realArrival":"Landed 06:33","status":null},{"date":"29. Mar","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:34","status":null},{"date":"29. Mar","flightNumber":"FI852","airline":"Icelandair","from":"Chicago","plannedArrival":"06:35","realArrival":"Landed 06:39","status":null},{"date":"29. Mar","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 07:06","status":null},{"date":"29. Mar","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:12","status":null},{"date":"29. Mar","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"07:45","realArrival":"Landed 07:34","status":null},{"date":"29. Mar","flightNumber":"FI741","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"06:40","realArrival":"Landed 07:48","status":null},{"date":"29. Mar","flightNumber":"EZS1245","airline":"easyJet","from":"Basel Mulhouse","plannedArrival":"08:00","realArrival":"Landed 07:42","status":null},{"date":"29. Mar","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"08:40","realArrival":"Landed 08:35","status":null},{"date":"29. Mar","flightNumber":"EZY6001","airline":"easyJet","from":"Bristol","plannedArrival":"09:05","realArrival":"Landed 08:59","status":null},{"date":"29. Mar","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:45","status":null},{"date":"29. Mar","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Landed 10:59","status":null},{"date":"29. Mar","flightNumber":"DY1170","airline":"Norwegian Air","from":"Oslo","plannedArrival":"11:25","realArrival":"Landed 11:10","status":null},{"date":"29. Mar","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 14:03","status":null},{"date":"29. Mar","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"Landed 14:13","status":null},{"date":"29. Mar","flightNumber":"WW405","airline":"WOW air","from":"Paris Charles De Gaulle","plannedArrival":"14:10","realArrival":"Landed 14:13","status":null},{"date":"29. Mar","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Landed 14:20","status":null},{"date":"29. Mar","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Landed 15:02","status":null},{"date":"29. Mar","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Landed 15:06","status":null},{"date":"29. Mar","flightNumber":"FI495","airline":"Icelandair","from":"Birmingham","plannedArrival":"15:10","realArrival":"Landed 15:11","status":null},{"date":"29. Mar","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"Landed 15:07","status":null},{"date":"29. Mar","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Landed 15:16","status":null},{"date":"29. Mar","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Landed 15:16","status":null},{"date":"29. Mar","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Landed 15:17","status":null},{"date":"29. Mar","flightNumber":"FI555","airline":"Icelandair","from":"Brussels","plannedArrival":"15:15","realArrival":"Cancelled","status":null},{"date":"29. Mar","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Landed 15:30","status":null},{"date":"29. Mar","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Landed 15:34","status":null},{"date":"29. Mar","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Landed 15:36","status":null},{"date":"29. Mar","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Landed 15:47","status":null},{"date":"29. Mar","flightNumber":"FI569","airline":"Icelandair","from":"Zurich","plannedArrival":"15:50","realArrival":"Landed 15:45","status":null},{"date":"29. Mar","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"Landed 15:56","status":null},{"date":"29. Mar","flightNumber":"FI533","airline":"Icelandair","from":"Munich ","plannedArrival":"16:00","realArrival":"Landed 16:08","status":null},{"date":"29. Mar","flightNumber":"FI1583","airline":"Icelandair","from":"Alicante","plannedArrival":"17:50","realArrival":"Landed 18:25","status":null},{"date":"29. Mar","flightNumber":"6F108","airline":"Primera Air","from":"Alicante","plannedArrival":"18:20","realArrival":"Landed 18:29","status":null},{"date":"29. Mar","flightNumber":"EZY6941","airline":"easyJet","from":"Edinburgh","plannedArrival":"19:50","realArrival":"Landed 19:50","status":null},{"date":"29. Mar","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"Landed 20:47","status":null},{"date":"29. Mar","flightNumber":"FI1515","airline":"Icelandair","from":"Tenerife","plannedArrival":"21:00","realArrival":"Landed 21:46","status":null},{"date":"29. Mar","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"22:30","realArrival":"Confirm. 22:38","status":null},{"date":"29. Mar","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"Confirm. 23:24","status":null},
+{"date":"30. Mar","flightNumber":"WW617","airline":"WOW air","from":"Alicante","plannedArrival":"01:30","realArrival":"Landed 02:05","status":null},{"date":"30. Mar","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 04:17","status":null},{"date":"30. Mar","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 04:44","status":null},{"date":"30. Mar","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 05:58","status":null},{"date":"30. Mar","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:19","status":null},{"date":"30. Mar","flightNumber":"FI644","airline":"Icelandair","from":"Washington Dulles","plannedArrival":"06:20","realArrival":"Landed 06:29","status":null},{"date":"30. Mar","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:25","realArrival":"Landed 06:35","status":null},{"date":"30. Mar","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 06:36","status":null},{"date":"30. Mar","flightNumber":"FI741","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"06:40","realArrival":"Landed 06:40","status":null},{"date":"30. Mar","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 07:02","status":null},{"date":"30. Mar","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:57","status":null},{"date":"30. Mar","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:16","status":null},{"date":"30. Mar","flightNumber":"EZS1521","airline":"easyJet","from":"Geneva","plannedArrival":"08:35","realArrival":"Landed 08:18","status":null},{"date":"30. Mar","flightNumber":"EZY8507","airline":"easyJet","from":"London Gatwick","plannedArrival":"08:45","realArrival":"Landed 08:30","status":null},{"date":"30. Mar","flightNumber":"EZY3033","airline":"easyJet","from":"London Stansted","plannedArrival":"09:15","realArrival":"Landed 09:01","status":null},{"date":"30. Mar","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:35","realArrival":"Landed 09:20","status":null},{"date":"30. Mar","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:42","status":null},{"date":"30. Mar","flightNumber":"BA800","airline":"British Airways","from":"London Heathrow","plannedArrival":"10:15","realArrival":"Landed 10:19","status":null},{"date":"30. Mar","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Confirm. 11:07","status":null},{"date":"30. Mar","flightNumber":"EZY6747","airline":"easyJet","from":"Belfast","plannedArrival":"11:30","realArrival":"Confirm. 11:19","status":null},{"date":"30. Mar","flightNumber":"WW443","airline":"WOW air","from":"Amsterdam","plannedArrival":"13:50","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"WW405","airline":"WOW air","from":"Paris Charles De Gaulle","plannedArrival":"14:10","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"GL710","airline":"Air Greenland","from":"Nuuk","plannedArrival":"15:05","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI507","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:05","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:25","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Estimat. 15:25","status":null},{"date":"30. Mar","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI425","airline":"Icelandair","from":"Aberdeen","plannedArrival":"15:30","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"W62427","airline":"Wizz Air","from":"Budapest Ferihegy","plannedArrival":"16:45","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"18:20","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI782","airline":"Icelandair (cargo)","from":"New York JFK","plannedArrival":"19:00","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"6F104","airline":"Primera Air","from":"Tenerife","plannedArrival":"20:20","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI1513","airline":"Icelandair","from":"Las Palmas","plannedArrival":"21:00","realArrival":"Estimat. 21:30","status":null},{"date":"30. Mar","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"23:05","realArrival":"","status":null},{"date":"30. Mar","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"","status":null},
+{"date":"31. Mar","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 04:16","status":null},{"date":"31. Mar","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 05:07","status":null},{"date":"31. Mar","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:15","status":null},{"date":"31. Mar","flightNumber":"FI783","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"05:00","realArrival":"Landed 06:19","status":null},{"date":"31. Mar","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 06:22","status":null},{"date":"31. Mar","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 06:36","status":null},{"date":"31. Mar","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:32","status":null},{"date":"31. Mar","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 06:38","status":null},{"date":"31. Mar","flightNumber":"FI692","airline":"Icelandair","from":"Edmonton","plannedArrival":"06:40","realArrival":"Landed 06:50","status":null},{"date":"31. Mar","flightNumber":"FI741","airline":"Icelandair (cargo)","from":"East Midlands","plannedArrival":"06:40","realArrival":"Landed 06:59","status":null},{"date":"31. Mar","flightNumber":"FI852","airline":"Icelandair","from":"Chicago","plannedArrival":"06:40","realArrival":"Landed 07:01","status":null},{"date":"31. Mar","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 07:17","status":null},{"date":"31. Mar","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:23","status":null},{"date":"31. Mar","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"08:45","realArrival":"Landed 08:37","status":null},{"date":"31. Mar","flightNumber":"EZY6001","airline":"easyJet","from":"Bristol","plannedArrival":"09:05","realArrival":"Landed 08:57","status":null},{"date":"31. Mar","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:35","realArrival":"Landed 09:36","status":null},{"date":"31. Mar","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:51","status":null},{"date":"31. Mar","flightNumber":"PF1501","airline":"Primera Air","from":"Copenhagen","plannedArrival":"10:35","realArrival":"Landed 10:04","status":null},{"date":"31. Mar","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:15","realArrival":"Landed 10:18","status":null},{"date":"31. Mar","flightNumber":"AB3546","airline":"Air Berlin","from":"Berlin Tegel","plannedArrival":"10:50","realArrival":"Landed 10:49","status":null},{"date":"31. Mar","flightNumber":"DY1170","airline":"Norwegian Air","from":"Oslo","plannedArrival":"11:25","realArrival":"Landed 11:21","status":null},{"date":"31. Mar","flightNumber":"WW443","airline":"WOW air","from":"Amsterdam","plannedArrival":"13:25","realArrival":"Landed 13:33","status":null},{"date":"31. Mar","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"Landed 14:23","status":null},{"date":"31. Mar","flightNumber":"WW405","airline":"WOW air","from":"Paris Charles De Gaulle","plannedArrival":"14:10","realArrival":"Landed 14:22","status":null},{"date":"31. Mar","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 14:32","status":null},{"date":"31. Mar","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Landed 14:29","status":null},{"date":"31. Mar","flightNumber":"EI4960","airline":"Aer Lingus","from":"Dublin","plannedArrival":"14:30","realArrival":"Landed 14:35","status":null},{"date":"31. Mar","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Confirm. 15:06","status":null},{"date":"31. Mar","flightNumber":"FI495","airline":"Icelandair","from":"Birmingham","plannedArrival":"15:10","realArrival":"Confirm. 15:08","status":null},{"date":"31. Mar","flightNumber":"FI555","airline":"Icelandair","from":"Brussels","plannedArrival":"15:15","realArrival":"Cancelled","status":null},{"date":"31. Mar","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Confirm. 15:15","status":null},{"date":"31. Mar","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Confirm. 15:20","status":null},{"date":"31. Mar","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Confirm. 15:20","status":null},{"date":"31. Mar","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Confirm. 15:26","status":null},{"date":"31. Mar","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Confirm. 15:27","status":null},{"date":"31. Mar","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Confirm. 15:30","status":null},{"date":"31. Mar","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"Confirm. 15:34","status":null},{"date":"31. Mar","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Confirm. 15:38","status":null},{"date":"31. Mar","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"Confirm. 15:52","status":null},{"date":"31. Mar","flightNumber":"FI569","airline":"Icelandair","from":"Zurich","plannedArrival":"15:50","realArrival":"Confirm. 15:59","status":null},{"date":"31. Mar","flightNumber":"FI549","airline":"Icelandair","from":"Paris Orly","plannedArrival":"15:45","realArrival":"Confirm. 16:06","status":null},{"date":"31. Mar","flightNumber":"FI533","airline":"Icelandair","from":"Munich ","plannedArrival":"16:00","realArrival":"Confirm. 16:10","status":null},{"date":"31. Mar","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Confirm. 16:12","status":null},{"date":"31. Mar","flightNumber":"6F172","airline":"Primera Air","from":"Las Palmas","plannedArrival":"17:20","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"EZY6941","airline":"easyJet","from":"Edinburgh","plannedArrival":"19:50","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"22:50","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"AB3928","airline":"Air Berlin","from":"Dusseldorf","plannedArrival":"22:50","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"WW907","airline":"WOW air","from":"Copenhagen","plannedArrival":"23:05","realArrival":"","status":null},{"date":"31. Mar","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"","status":null},
+{"date":"2. Apr","flightNumber":"VY8560","airline":"Vueling Airlines","from":"Barcelona","plannedArrival":"00:15","realArrival":"Landed 01:31","status":null},{"date":"2. Apr","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 03:53","status":null},{"date":"2. Apr","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 05:50","status":null},{"date":"2. Apr","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 05:55","status":null},{"date":"2. Apr","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:15","status":null},{"date":"2. Apr","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 06:18","status":null},{"date":"2. Apr","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:28","status":null},{"date":"2. Apr","flightNumber":"FI692","airline":"Icelandair","from":"Edmonton","plannedArrival":"06:40","realArrival":"Landed 06:38","status":null},{"date":"2. Apr","flightNumber":"FI852","airline":"Icelandair","from":"Chicago","plannedArrival":"06:35","realArrival":"Landed 06:41","status":null},{"date":"2. Apr","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 06:44","status":null},{"date":"2. Apr","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 06:53","status":null},{"date":"2. Apr","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 07:07","status":null},{"date":"2. Apr","flightNumber":"EZY6747","airline":"easyJet","from":"Belfast","plannedArrival":"08:20","realArrival":"Landed 08:00","status":null},{"date":"2. Apr","flightNumber":"EZY3033","airline":"easyJet","from":"London Stansted","plannedArrival":"09:15","realArrival":"Landed 08:57","status":null},{"date":"2. Apr","flightNumber":"DL446","airline":"Delta Air Lines","from":"New York JFK","plannedArrival":"07:00","realArrival":"Landed 09:15","status":null},{"date":"2. Apr","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:46","status":null},{"date":"2. Apr","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Landed 10:52","status":null},{"date":"2. Apr","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Landed 14:46","status":null},{"date":"2. Apr","flightNumber":"FI495","airline":"Icelandair","from":"Birmingham","plannedArrival":"15:10","realArrival":"Landed 14:56","status":null},{"date":"2. Apr","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Landed 15:00","status":null},{"date":"2. Apr","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Landed 14:59","status":null},{"date":"2. Apr","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Landed 15:04","status":null},{"date":"2. Apr","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Landed 15:10","status":null},{"date":"2. Apr","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"Landed 15:19","status":null},{"date":"2. Apr","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 15:20","status":null},{"date":"2. Apr","flightNumber":"FI507","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:05","realArrival":"Landed 15:33","status":null},{"date":"2. Apr","flightNumber":"GL710","airline":"Air Greenland","from":"Nuuk","plannedArrival":"15:05","realArrival":"Landed 15:38","status":null},{"date":"2. Apr","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Landed 15:35","status":null},{"date":"2. Apr","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Landed 15:41","status":null},{"date":"2. Apr","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Landed 15:41","status":null},{"date":"2. Apr","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Landed 15:46","status":null},{"date":"2. Apr","flightNumber":"WW503","airline":"WOW air","from":"Warsaw","plannedArrival":"15:40","realArrival":"Landed 15:49","status":null},{"date":"2. Apr","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Landed 15:56","status":null},{"date":"2. Apr","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"Confirm. 16:00","status":null},{"date":"2. Apr","flightNumber":"FI569","airline":"Icelandair","from":"Zurich","plannedArrival":"15:50","realArrival":"Landed 16:00","status":null},{"date":"2. Apr","flightNumber":"EZS1521","airline":"easyJet","from":"Geneva","plannedArrival":"16:10","realArrival":"Confirm. 16:03","status":null},{"date":"2. Apr","flightNumber":"EZS1245","airline":"easyJet","from":"Basel Mulhouse","plannedArrival":"16:30","realArrival":"Confirm. 16:05","status":null},{"date":"2. Apr","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"17:20","realArrival":"Confirm. 17:17","status":null},{"date":"2. Apr","flightNumber":"6F108","airline":"Primera Air","from":"Alicante","plannedArrival":"18:20","realArrival":"Confirm. 18:05","status":null},{"date":"2. Apr","flightNumber":"EZY8507","airline":"easyJet","from":"London Gatwick","plannedArrival":"19:20","realArrival":"","status":null},{"date":"2. Apr","flightNumber":"WW635","airline":"WOW air","from":"Tenerife","plannedArrival":"21:05","realArrival":"Confirm. 20:49","status":null},{"date":"2. Apr","flightNumber":"FI1515","airline":"Icelandair","from":"Tenerife","plannedArrival":"21:00","realArrival":"","status":null},{"date":"2. Apr","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"22:30","realArrival":"","status":null},{"date":"2. Apr","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"Estimat. 22:55","status":null},
+{"date":"3. Apr","flightNumber":"FI784","airline":"Icelandair (cargo)","from":"New York JFK","plannedArrival":"02:00","realArrival":"Landed 01:29","status":null},{"date":"3. Apr","flightNumber":"WW617","airline":"WOW air","from":"Alicante","plannedArrival":"01:30","realArrival":"Landed 02:32","status":null},{"date":"3. Apr","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 05:27","status":null},{"date":"3. Apr","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 05:30","status":null},{"date":"3. Apr","flightNumber":"FI644","airline":"Icelandair","from":"Washington Dulles","plannedArrival":"06:20","realArrival":"Landed 05:48","status":null},{"date":"3. Apr","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:01","status":null},{"date":"3. Apr","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 06:17","status":null},{"date":"3. Apr","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 06:17","status":null},{"date":"3. Apr","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:24","status":null},{"date":"3. Apr","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 06:35","status":null},{"date":"3. Apr","flightNumber":"DL446","airline":"Delta Air Lines","from":"New York JFK","plannedArrival":"07:00","realArrival":"Landed 06:36","status":null},{"date":"3. Apr","flightNumber":"FI692","airline":"Icelandair","from":"Edmonton","plannedArrival":"06:40","realArrival":"Landed 06:38","status":null},{"date":"3. Apr","flightNumber":"FI682","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 06:45","status":null},{"date":"3. Apr","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"08:10","realArrival":"Landed 07:52","status":null},{"date":"3. Apr","flightNumber":"EZY6001","airline":"easyJet","from":"Bristol","plannedArrival":"08:25","realArrival":"Landed 08:05","status":null},{"date":"3. Apr","flightNumber":"EZY8507","airline":"easyJet","from":"London Gatwick","plannedArrival":"08:45","realArrival":"Landed 08:23","status":null},{"date":"3. Apr","flightNumber":"DY1170","airline":"Norwegian Air","from":"Oslo","plannedArrival":"09:25","realArrival":"Landed 09:29","status":null},{"date":"3. Apr","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:45","status":null},{"date":"3. Apr","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:15","realArrival":"Landed 09:47","status":null},{"date":"3. Apr","flightNumber":"BA800","airline":"British Airways","from":"London Heathrow","plannedArrival":"10:15","realArrival":"Landed 10:05","status":null},{"date":"3. Apr","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:50","realArrival":"Landed 10:41","status":null},{"date":"3. Apr","flightNumber":"WW443","airline":"WOW air","from":"Amsterdam","plannedArrival":"13:50","realArrival":"Landed 13:40","status":null},{"date":"3. Apr","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 13:54","status":null},{"date":"3. Apr","flightNumber":"WW405","airline":"WOW air","from":"Paris Charles De Gaulle","plannedArrival":"14:10","realArrival":"Landed 13:56","status":null},{"date":"3. Apr","flightNumber":"AB3546","airline":"Air Berlin","from":"Berlin Tegel","plannedArrival":"14:30","realArrival":"Landed 14:09","status":null},{"date":"3. Apr","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"Landed 14:12","status":null},{"date":"3. Apr","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Landed 14:59","status":null},{"date":"3. Apr","flightNumber":"FI507","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:05","realArrival":"Landed 15:04","status":null},{"date":"3. Apr","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Landed 15:06","status":null},{"date":"3. Apr","flightNumber":"FI425","airline":"Icelandair","from":"Aberdeen","plannedArrival":"15:30","realArrival":"Landed 15:11","status":null},{"date":"3. Apr","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Landed 15:16","status":null},{"date":"3. Apr","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Landed 15:14","status":null},{"date":"3. Apr","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Landed 15:22","status":null},{"date":"3. Apr","flightNumber":"FI555","airline":"Icelandair","from":"Brussels","plannedArrival":"15:15","realArrival":"Cancelled","status":null},{"date":"3. Apr","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"Confirm. 15:15","status":null},{"date":"3. Apr","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Confirm. 15:20","status":null},{"date":"3. Apr","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Confirm. 15:20","status":null},{"date":"3. Apr","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Confirm. 15:22","status":null},{"date":"3. Apr","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Confirm. 15:28","status":null},{"date":"3. Apr","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"Confirm. 16:08","status":null},{"date":"3. Apr","flightNumber":"FI533","airline":"Icelandair","from":"Munich ","plannedArrival":"16:00","realArrival":"Confirm. 16:12","status":null},{"date":"3. Apr","flightNumber":"W62427","airline":"Wizz Air","from":"Budapest Ferihegy","plannedArrival":"16:45","realArrival":"Confirm. 16:18","status":null},{"date":"3. Apr","flightNumber":"FI775","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"16:10","realArrival":"Confirm. 17:00","status":null},{"date":"3. Apr","flightNumber":"EZY6941","airline":"easyJet","from":"Edinburgh","plannedArrival":"19:20","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Estimat. 22:15","status":null},{"date":"3. Apr","flightNumber":"FI325","airline":"Icelandair","from":"Oslo","plannedArrival":"22:35","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"22:50","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"AB3928","airline":"Air Berlin","from":"Dusseldorf","plannedArrival":"22:50","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"FI477","airline":"Icelandair","from":"London Gatwick","plannedArrival":"23:10","realArrival":"Estimat. 22:55","status":null},{"date":"3. Apr","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"Estimat. 22:55","status":null},{"date":"3. Apr","flightNumber":"WW637","airline":"WOW air","from":"Las Palmas","plannedArrival":"21:20","realArrival":"Estimat. 23:00","status":null},{"date":"3. Apr","flightNumber":"FI313","airline":"Icelandair","from":"Stockholm","plannedArrival":"23:30","realArrival":"","status":null},{"date":"3. Apr","flightNumber":"FI217","airline":"Icelandair","from":"Copenhagen","plannedArrival":"23:40","realArrival":"","status":null},
+{"date":"4. Apr","flightNumber":"WW637","airline":"WOW air","from":"Las Palmas","plannedArrival":"21:20","realArrival":"Landed 00:48","status":null},{"date":"4. Apr","flightNumber":"FI771","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"04:40","realArrival":"Landed 04:36","status":null},{"date":"4. Apr","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 04:41","status":null},{"date":"4. Apr","flightNumber":"WW907","airline":"WOW air","from":"Copenhagen","plannedArrival":"23:05","realArrival":"Landed 04:30","status":null},{"date":"4. Apr","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 05:10","status":null},{"date":"4. Apr","flightNumber":"FI644","airline":"Icelandair","from":"Washington Dulles","plannedArrival":"06:20","realArrival":"Landed 05:57","status":null},{"date":"4. Apr","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:10","status":null},{"date":"4. Apr","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 06:18","status":null},{"date":"4. Apr","flightNumber":"FI852","airline":"Icelandair","from":"Chicago","plannedArrival":"06:35","realArrival":"Landed 06:28","status":null},{"date":"4. Apr","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 06:39","status":null},{"date":"4. Apr","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 06:56","status":null},{"date":"4. Apr","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:45","status":null},{"date":"4. Apr","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:11","status":null},{"date":"4. Apr","flightNumber":"EZY8507","airline":"easyJet","from":"London Gatwick","plannedArrival":"08:45","realArrival":"Landed 08:24","status":null},{"date":"4. Apr","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:35","realArrival":"Confirm. 09:35","status":null},{"date":"4. Apr","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Confirm. 09:45","status":null},{"date":"4. Apr","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Confirm. 10:40","status":null},{"date":"4. Apr","flightNumber":"DY1172","airline":"Norwegian Air","from":"Bergen","plannedArrival":"10:35","realArrival":"Confirm. 10:40","status":null},{"date":"4. Apr","flightNumber":"EI4960","airline":"Aer Lingus","from":"Dublin","plannedArrival":"11:30","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW443","airline":"WOW air","from":"Amsterdam","plannedArrival":"13:50","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW853","airline":"WOW air","from":"Dublin","plannedArrival":"13:55","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW405","airline":"WOW air","from":"Paris Charles De Gaulle","plannedArrival":"14:05","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Estimat. 14:55","status":null},{"date":"4. Apr","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI495","airline":"Icelandair","from":"Birmingham","plannedArrival":"15:10","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Estimat. 15:10","status":null},{"date":"4. Apr","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI425","airline":"Icelandair","from":"Aberdeen","plannedArrival":"15:30","realArrival":"Estimat. 15:10","status":null},{"date":"4. Apr","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Estimat. 15:20","status":null},{"date":"4. Apr","flightNumber":"FI543","airline":"Icelandair","from":"Paris Charles De Gaulle","plannedArrival":"15:40","realArrival":"Estimat. 15:20","status":null},{"date":"4. Apr","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI549","airline":"Icelandair","from":"Paris Orly","plannedArrival":"15:45","realArrival":"Estimat. 15:25","status":null},{"date":"4. Apr","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI533","airline":"Icelandair","from":"Munich ","plannedArrival":"16:00","realArrival":"Estimat. 15:45","status":null},{"date":"4. Apr","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"W61773","airline":"Wizz Air","from":"Gdansk","plannedArrival":"20:50","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"22:50","realArrival":"","status":null},{"date":"4. Apr","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"","status":null},
+{"date":"5. Apr","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 04:38","status":null},{"date":"5. Apr","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 05:14","status":null},{"date":"5. Apr","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 06:04","status":null},{"date":"5. Apr","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 06:08","status":null},{"date":"5. Apr","flightNumber":"FI632","airline":"Icelandair","from":"Boston","plannedArrival":"05:45","realArrival":"Landed 06:29","status":null},{"date":"5. Apr","flightNumber":"FI602","airline":"Icelandair","from":"Toronto","plannedArrival":"06:20","realArrival":"Landed 06:31","status":null},{"date":"5. Apr","flightNumber":"FI741","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"06:40","realArrival":"Landed 06:38","status":null},{"date":"5. Apr","flightNumber":"FI692","airline":"Icelandair","from":"Edmonton","plannedArrival":"06:40","realArrival":"Landed 06:42","status":null},{"date":"5. Apr","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 06:55","status":null},{"date":"5. Apr","flightNumber":"FI852","airline":"Icelandair","from":"Chicago","plannedArrival":"06:35","realArrival":"Landed 06:54","status":null},{"date":"5. Apr","flightNumber":"FI670","airline":"Icelandair","from":"Denver","plannedArrival":"06:35","realArrival":"Landed 07:19","status":null},{"date":"5. Apr","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"07:45","realArrival":"Landed 07:47","status":null},{"date":"5. Apr","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:47","status":null},{"date":"5. Apr","flightNumber":"EZS1245","airline":"easyJet","from":"Basel Mulhouse","plannedArrival":"08:00","realArrival":"Landed 07:57","status":null},{"date":"5. Apr","flightNumber":"EZY6001","airline":"easyJet","from":"Bristol","plannedArrival":"09:05","realArrival":"Landed 08:46","status":null},{"date":"5. Apr","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:35","realArrival":"Landed 09:38","status":null},{"date":"5. Apr","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:43","status":null},{"date":"5. Apr","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Landed 11:09","status":null},{"date":"5. Apr","flightNumber":"DY1170","airline":"Norwegian Air","from":"Oslo","plannedArrival":"11:25","realArrival":"Landed 11:12","status":null},{"date":"5. Apr","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"Landed 14:12","status":null},{"date":"5. Apr","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 14:08","status":null},{"date":"5. Apr","flightNumber":"WW405","airline":"WOW air","from":"Paris CDG","plannedArrival":"14:10","realArrival":"Landed 14:19","status":null},{"date":"5. Apr","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Landed 14:17","status":null},{"date":"5. Apr","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Landed 15:00","status":null},{"date":"5. Apr","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Landed 15:02","status":null},{"date":"5. Apr","flightNumber":"FI495","airline":"Icelandair","from":"Birmingham","plannedArrival":"15:10","realArrival":"Landed 15:08","status":null},{"date":"5. Apr","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Cancelled","status":null},{"date":"5. Apr","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:10","realArrival":"Landed 15:15","status":null},{"date":"5. Apr","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Landed 15:17","status":null},{"date":"5. Apr","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Landed 15:09","status":null},{"date":"5. Apr","flightNumber":"FI431","airline":"Icelandair","from":"Glasgow","plannedArrival":"15:25","realArrival":"Landed 15:20","status":null},{"date":"5. Apr","flightNumber":"FI555","airline":"Icelandair","from":"Brussels","plannedArrival":"15:15","realArrival":"Cancelled","status":null},{"date":"5. Apr","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Landed 15:30","status":null},{"date":"5. Apr","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Landed 15:30","status":null},{"date":"5. Apr","flightNumber":"FI543","airline":"Icelandair","from":"Paris CDG","plannedArrival":"15:40","realArrival":"Landed 15:35","status":null},{"date":"5. Apr","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Landed 15:46","status":null},{"date":"5. Apr","flightNumber":"FI569","airline":"Icelandair","from":"Zurich","plannedArrival":"15:50","realArrival":"Landed 15:52","status":null},{"date":"5. Apr","flightNumber":"FI533","airline":"Icelandair","from":"Munich ","plannedArrival":"16:00","realArrival":"Landed 16:01","status":null},{"date":"5. Apr","flightNumber":"FI1583","airline":"Icelandair","from":"Alicante","plannedArrival":"17:50","realArrival":"Landed 18:22","status":null},{"date":"5. Apr","flightNumber":"WW615","airline":"WOW air","from":"Alicante","plannedArrival":"19:15","realArrival":"Landed 19:38","status":null},{"date":"5. Apr","flightNumber":"EZY6941","airline":"easyJet","from":"Edinburgh","plannedArrival":"19:50","realArrival":"Landed 19:34","status":null},{"date":"5. Apr","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"Landed 20:53","status":null},{"date":"5. Apr","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"Landed 23:04","status":null},
+{"date":"6. Apr","flightNumber":"WW126","airline":"WOW air","from":"Boston","plannedArrival":"04:30","realArrival":"Landed 04:23","status":null},{"date":"6. Apr","flightNumber":"WW118","airline":"WOW air","from":"Baltimore Washington","plannedArrival":"04:55","realArrival":"Landed 04:53","status":null},{"date":"6. Apr","flightNumber":"FI636","airline":"Icelandair","from":"Boston","plannedArrival":"05:30","realArrival":"Landed 05:38","status":null},{"date":"6. Apr","flightNumber":"FI614","airline":"Icelandair","from":"New York JFK","plannedArrival":"06:15","realArrival":"Landed 05:54","status":null},{"date":"6. Apr","flightNumber":"FI644","airline":"Icelandair","from":"Washington Dulles","plannedArrival":"06:20","realArrival":"Landed 06:12","status":null},{"date":"6. Apr","flightNumber":"FI688","airline":"Icelandair","from":"Orlando","plannedArrival":"06:10","realArrival":"Landed 06:32","status":null},{"date":"6. Apr","flightNumber":"FI741","airline":"Icelandair (cargo)","from":"Liege","plannedArrival":"06:40","realArrival":"Landed 06:30","status":null},{"date":"6. Apr","flightNumber":"FI630","airline":"Icelandair","from":"Boston","plannedArrival":"06:30","realArrival":"Landed 06:49","status":null},{"date":"6. Apr","flightNumber":"FI680","airline":"Icelandair","from":"Seattle","plannedArrival":"06:45","realArrival":"Landed 07:09","status":null},{"date":"6. Apr","flightNumber":"FI622","airline":"Icelandair","from":"New York Newark","plannedArrival":"06:15","realArrival":"Landed 07:35","status":null},{"date":"6. Apr","flightNumber":"BBD6810","airline":"Bluebird ehf. (cargo)","from":"Dublin","plannedArrival":"07:20","realArrival":"Landed 07:39","status":null},{"date":"6. Apr","flightNumber":"EZS1521","airline":"easyJet","from":"Geneva","plannedArrival":"08:35","realArrival":"Landed 08:16","status":null},{"date":"6. Apr","flightNumber":"EZY8507","airline":"easyJet","from":"London Gatwick","plannedArrival":"08:45","realArrival":"Landed 08:26","status":null},{"date":"6. Apr","flightNumber":"EZY3033","airline":"easyJet","from":"London Stansted","plannedArrival":"09:15","realArrival":"Landed 08:45","status":null},{"date":"6. Apr","flightNumber":"EZY2295","airline":"easyJet","from":"London Luton","plannedArrival":"09:35","realArrival":"Landed 09:22","status":null},{"date":"6. Apr","flightNumber":"SK595","airline":"SAS","from":"Copenhagen","plannedArrival":"09:45","realArrival":"Landed 09:38","status":null},{"date":"6. Apr","flightNumber":"BA800","airline":"British Airways","from":"London Heathrow","plannedArrival":"10:15","realArrival":"Landed 09:58","status":null},{"date":"6. Apr","flightNumber":"SK4787","airline":"SAS","from":"Oslo","plannedArrival":"10:55","realArrival":"Landed 11:01","status":null},{"date":"6. Apr","flightNumber":"EZY6747","airline":"easyJet","from":"Belfast","plannedArrival":"11:30","realArrival":"Landed 11:17","status":null},{"date":"6. Apr","flightNumber":"WW443","airline":"WOW air","from":"Amsterdam","plannedArrival":"13:50","realArrival":"Landed 13:51","status":null},{"date":"6. Apr","flightNumber":"WW811","airline":"WOW air","from":"London Gatwick","plannedArrival":"14:10","realArrival":"Landed 14:00","status":null},{"date":"6. Apr","flightNumber":"WW405","airline":"WOW air","from":"Paris CDG","plannedArrival":"14:10","realArrival":"Landed 14:02","status":null},{"date":"6. Apr","flightNumber":"WW903","airline":"WOW air","from":"Copenhagen","plannedArrival":"14:25","realArrival":"Landed 14:10","status":null},{"date":"6. Apr","flightNumber":"WW721","airline":"WOW air","from":"Berlin Schoenefeld","plannedArrival":"14:25","realArrival":"Landed 14:16","status":null},{"date":"6. Apr","flightNumber":"FI441","airline":"Icelandair","from":"Manchester","plannedArrival":"15:00","realArrival":"Confirm. 14:43","status":null},{"date":"6. Apr","flightNumber":"GL710","airline":"Air Greenland","from":"Nuuk","plannedArrival":"15:05","realArrival":"Confirm. 14:58","status":null},{"date":"6. Apr","flightNumber":"FI425","airline":"Icelandair","from":"Aberdeen","plannedArrival":"15:30","realArrival":"Confirm. 15:01","status":null},{"date":"6. Apr","flightNumber":"FI501","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:10","realArrival":"Confirm. 15:04","status":null},{"date":"6. Apr","flightNumber":"FI471","airline":"Icelandair","from":"London Gatwick","plannedArrival":"15:25","realArrival":"Confirm. 15:11","status":null},{"date":"6. Apr","flightNumber":"FI507","airline":"Icelandair","from":"Amsterdam","plannedArrival":"15:05","realArrival":"Confirm. 15:15","status":null},{"date":"6. Apr","flightNumber":"FI205","airline":"Icelandair","from":"Copenhagen","plannedArrival":"15:10","realArrival":"Confirm. 15:16","status":null},{"date":"6. Apr","flightNumber":"FI451","airline":"Icelandair","from":"London Heathrow","plannedArrival":"15:10","realArrival":"Confirm. 15:23","status":null},{"date":"6. Apr","flightNumber":"FI521","airline":"Icelandair","from":"Frankfurt","plannedArrival":"15:35","realArrival":"Confirm. 15:28","status":null},{"date":"6. Apr","flightNumber":"FI307","airline":"Icelandair","from":"Stockholm","plannedArrival":"15:30","realArrival":"Confirm. 15:29","status":null},{"date":"6. Apr","flightNumber":"FI543","airline":"Icelandair","from":"Paris CDG","plannedArrival":"15:40","realArrival":"Confirm. 15:33","status":null},{"date":"6. Apr","flightNumber":"FI319","airline":"Icelandair","from":"Oslo","plannedArrival":"15:25","realArrival":"Confirm. 15:35","status":null},{"date":"6. Apr","flightNumber":"FI343","airline":"Icelandair","from":"Helsinki","plannedArrival":"16:00","realArrival":"Confirm. 15:53","status":null},{"date":"6. Apr","flightNumber":"W62427","airline":"Wizz Air","from":"Budapest","plannedArrival":"16:45","realArrival":"Confirm. 16:25","status":null},{"date":"6. Apr","flightNumber":"EZY1805","airline":"easyJet","from":"Manchester","plannedArrival":"18:20","realArrival":"","status":null},{"date":"6. Apr","flightNumber":"6F128","airline":"Primera Air","from":"Jerez De La Frontera","plannedArrival":"18:35","realArrival":"","status":null},{"date":"6. Apr","flightNumber":"FI782","airline":"Icelandair (cargo)","from":"New York JFK","plannedArrival":"19:00","realArrival":"","status":null},{"date":"6. Apr","flightNumber":"FI213","airline":"Icelandair","from":"Copenhagen","plannedArrival":"20:55","realArrival":"","status":null},{"date":"6. Apr","flightNumber":"WW815","airline":"WOW air","from":"London Gatwick","plannedArrival":"23:05","realArrival":"","status":null},{"date":"6. Apr","flightNumber":"FI455","airline":"Icelandair","from":"London Heathrow","plannedArrival":"23:10","realArrival":"","status":null}
+]}
