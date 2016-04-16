@@ -182,7 +182,32 @@ public class SearchController{
     //======================================================================================================================
     //
     // TODO Hvernig virkar flug leitin?
-    //
+    /* Eins og ég skil þetta
+
+        Búa fyrst til user.
+        Flight.User user = new Flight.User( fnafn, enafn, kortanumer, passportnumer );
+        int i = user.createUser;// 1 ef gekk, -1 ef gekk ekki.
+
+        Til að leita að flugum
+        SearchCtrl search = new SearchCtrl( from, to, dateFrom, dateTo, numTickets, price, flex, roundtrip );
+        Object[] res = search.search();
+
+        res[0] = Flight[] - contains flights out
+        res[1] = Flight[] - contains flights home
+
+        Til að bóka flug
+        Booking boka = new Booking( flug, user );
+        flug er fengið í search,
+        flug = Flight[2], Flight[0] = flug út, Flight[1] = flug heim
+        user er fengið í user að ofan,
+        user = User[n], Væntanlega 1 hjá okkur.
+
+        int i = boka.confirm();// i = reference number
+
+        searchCtrl ctrl = new searchCtrl( String from, String to, String dateFrom, String dateTo, int price, boolean flex, boolean roundTrip )
+
+
+    */
     // searchCtrl ctrl = new searchCtrl( String from, String to, String dateFrom, String dateTo, int price, boolean flex, boolean roundTrip )
     //
     //======================================================================================================================
