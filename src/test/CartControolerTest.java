@@ -17,7 +17,7 @@ import com.main.java.persistence.HotelOrder;
 import junit.framework.Assert;
 
 public class CartControolerTest {
-	
+	/*
 	User user;
 	HotelOrder test = new HotelOrder();
 	CartController cart;// = new CartController();
@@ -46,5 +46,5 @@ public class CartControolerTest {
 		String testt = cart.CreateCartOrder();		
 		Assert.assertEquals( true,  cart.user.GetPastOrderNumbers().contains(testt));
 	}
-
+*/
 }

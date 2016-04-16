@@ -17,7 +17,7 @@ import com.main.java.form.User;
 public class UserinfoTests {
 	
 	public User uuser;
-	
+	/*
     public static void main( String[] args)
     {    	
     	UserinfoTests k = new UserinfoTests();	
@@ -80,6 +80,6 @@ public class UserinfoTests {
 		}
 		uuser.LoadOrder("9894AA");
 		System.out.println("Stuff3: " + uuser.hotelOrder.GetHotel().size());
-    }
+    }*/
     
 }

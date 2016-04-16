@@ -40,15 +40,19 @@ public class CartController extends SearchController{
      * Hendir dagsfer� �r b�kuninni.
      * @param daytriporder Dagsfer�in sem � a� henda.
      */
-    public void RemoveDayTripFromBooking( DayTrip daytrip ){
-    	dayTripOrders.RemoveDayTrip( daytrip );
-	}
+    public void RemoveDayTripFromBooking( DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); } 
     public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
-    public void RemoveOutFlight( ){
-    	flightOrders.RemoveOutFlight();
-    }
+    public void RemoveOutFlight( ){ flightOrders.RemoveOutFlight(); }
     public void RemoveHomeFlight(){ flightOrders.RemoveHomeFlight(); }
 
+    /**
+     * B�tir vi� dagsfer�arp�ntun � Cart-i�
+     * @param daytriporder
+     */
+    public void AddDayTripToBooking( DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }    
+    public void AddHotelToBooking( Hotel hotel ){ hotelOrders.AddHotel( hotel ); }    
+    public void AddFlightHomeToBooking( Flight flight ){ flightOrders.SetHomeFlight(flight); }
+    public void AddFlightOutToBooking( Flight flight ){ flightOrders.SetOutFlight(flight); }
 
     public FlightOrder getFlightOrders() {
         return flightOrders;
@@ -58,21 +62,6 @@ public class CartController extends SearchController{
     }
     public DayTripOrder getDayTripOrders() {
         return dayTripOrders;
-    }
-    /**
-     * B�tir vi� dagsfer�arp�ntun � Cart-i�
-     * @param daytriporder
-     */
-    public void AddDayTripToBooking( DayTrip daytrip ){
-    	dayTripOrders.AddDayTrip( daytrip );
-    }
-    
-    public void AddHotelToBooking( Hotel hotel ){
-    	hotelOrders.AddHotel( hotel );
-    }
-    
-    public void AddFlightToBooking( Flight flight ){
-    	flightOrders.AddFlight( flight );
     }
 
     /**

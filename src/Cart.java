@@ -121,10 +121,11 @@ public class Cart extends JFrame {
         panelCart.removeAll();
         panelCart.revalidate();
         panelCart.repaint();
-        if( cartController.getFlightOrders().GetFlight().size() > 0 ){
-            for ( int i = 0; i < cartController.getFlightOrders().GetFlight().size(); i++ ) {
-                panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight().get( i ) ) );
-            }
+        if( cartController.getFlightOrders().GetFlight()[0] != null ){
+            panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[0], 0 ) );
+        }
+        if( cartController.getFlightOrders().GetFlight()[1] != null ){
+            panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[1], 1 ) );
         }
         if( cartController.getHotelOrders().GetHotel().size() > 0 ){
             for ( int i = 0; i < cartController.getHotelOrders().GetHotel().size(); i++ ) {
@@ -141,7 +142,7 @@ public class Cart extends JFrame {
     }
 
 
-	private JPanel flightPanel( Flight flight ){
+	private JPanel flightPanel( Flight flight, int index ){
 		JPanel panel = new JPanel();
 
 		panel.add( new JLabel( "Flug .1.1.1." ) );
@@ -149,7 +150,12 @@ public class Cart extends JFrame {
 		JButton addToCart = new JButton( "Add to Cart" );
 		addToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-                cartController.RemoveFlightFromBooking( flight );
+				if( index == 0 ){
+					cartController.RemoveOutFlight();
+				}
+				if( index == 1 ){
+					cartController.RemoveHomeFlight();
+				}
 			}
 		});
 		return panel;

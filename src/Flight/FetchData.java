@@ -32,7 +32,8 @@ public class FetchData {
 			try 
 			{
 				Class.forName("org.postgresql.Driver");
-				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+				Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
+				//Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 				String date;
 				String flightNo;
 				String airline;
@@ -52,7 +53,7 @@ public class FetchData {
 					arrDest  = (String) flight.get("to");
 					depDate  = (String) flight.get("plannedArrival");
 					String newdate=buildDate(date);
-					String sql = "insert into flight(flightno, destfrom, destto, seatsleft, price, departuredate,departureTime, airline) values (?,?,?,?,?,?,?,?)";
+					String sql = "insert into \"FlightFlight\"(flightno, destfrom, destto, seatsleft, price, departuredate,departureTime, airline) values (?,?,?,?,?,?,?,?)";
 					PreparedStatement pst = con.prepareStatement(sql);
 					pst.setString(1, flightNo);
 					pst.setString(2, depDest);
@@ -88,7 +89,8 @@ public class FetchData {
 			try 
 			{
 				Class.forName("org.postgresql.Driver");
-				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");				
+				Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
+				//Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");				
 				String date;
 				String flightNo;
 				String airline;
@@ -108,7 +110,7 @@ public class FetchData {
 					depDest  = (String) flight.get("from");
 					depDate  = (String) flight.get("plannedArrival");
 					String newdate=buildDate(date);
-					String sql = "insert into flight(flightno, destfrom, destto, seatsleft, price, departuredate,departureTime, airline) values (?,?,?,?,?,?,?,?)";
+					String sql = "insert into \"FlightFlight\"(flightno, destfrom, destto, seatsleft, price, departuredate,departureTime, airline) values (?,?,?,?,?,?,?,?)";
 					PreparedStatement pst = con.prepareStatement(sql);
 					pst.setString(1, flightNo);
 					pst.setString(2, depDest);

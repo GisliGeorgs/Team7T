@@ -502,7 +502,8 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                cart.AddFlightToBooking( flight );
+                // TODO Láta vera flug heim eða út?
+            	//cart.AddFlightToBooking( flight );
             }
         });
         return panel;
