@@ -38,7 +38,7 @@ public class CartController extends SearchController{
     }
     /**
      * Hendir dagsfer� �r b�kuninni.
-     * @param daytriporder Dagsfer�in sem � a� henda.
+     * @param daytrip Dagsfer�in sem � a� henda.
      */
     public void RemoveDayTripFromBooking( DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); } 
     public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
@@ -114,7 +114,7 @@ public class CartController extends SearchController{
         	System.out.println(1111111);
 			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// Auto-generated catch block
 			e.printStackTrace();
 		}      	
         return orderNum;

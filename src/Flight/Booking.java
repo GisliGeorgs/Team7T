@@ -15,7 +15,6 @@ public class Booking {
 	 */
 	User[] users;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 	/**

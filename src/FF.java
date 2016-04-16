@@ -296,7 +296,6 @@ public class FF extends JFrame {
 				roundTrip = rdbtnBothWays.isSelected();
                 flightFrom = TextFieldFlightFrom.getText();
                 flightTo = TextFieldFlightTo.getText();
-				// TODO laga ï¿½etta
 				price = 1000000;//(Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
 
@@ -502,7 +501,7 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                // TODO Láta vera flug heim eða út?
+                // TODO Lï¿½ta vera flug heim eï¿½a ï¿½t?
             	//cart.AddFlightToBooking( flight );
             }
         });

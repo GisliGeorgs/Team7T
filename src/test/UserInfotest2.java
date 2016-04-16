@@ -30,7 +30,6 @@ public class UserInfotest2 {
 		try {
 			user.SaveUser();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";

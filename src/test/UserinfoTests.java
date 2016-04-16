@@ -35,7 +35,6 @@ public class UserinfoTests {
     	try {
 			uuser.SaveUser();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -75,7 +74,6 @@ public class UserinfoTests {
 		try {
 			uuser.SaveOrder("9894AA", die, fly, hoe);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		uuser.LoadOrder("9894AA");

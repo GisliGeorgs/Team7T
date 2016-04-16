@@ -48,7 +48,6 @@ public class searchCtrl {
 	private Object[] searchResults;
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*String destFrom = "Keflavik";
 		String destTo 	= "Dublin";
 		String dateFrom = "23/3/2016";
