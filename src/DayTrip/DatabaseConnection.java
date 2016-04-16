@@ -1,4 +1,5 @@
 package klasar;
+package DayTrip;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

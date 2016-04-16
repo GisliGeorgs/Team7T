@@ -2,6 +2,7 @@
  * Created by Gunnsteinn on 3/8/16.
  */
 package klasar;
+package DayTrip;
 
 import java.util.Date;
 

@@ -1,4 +1,5 @@
 package klasar;
+package DayTrip;
 
 public class Tourist {
 	private String name;

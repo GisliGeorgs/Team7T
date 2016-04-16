@@ -1,4 +1,5 @@
 package klasar;
+package DayTrip;
 
 import java.util.List;
 import java.util.ArrayList;

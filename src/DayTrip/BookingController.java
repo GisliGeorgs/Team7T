@@ -1,4 +1,5 @@
 package klasar;
+package DayTrip;
 
 import java.util.Date;
 
@@ -45,7 +46,7 @@ public class BookingController {
 			}
 		}
 		else {
-			System.out.println("Ekki löglegt veffang, kv gunnsteinn");
+			System.out.println("Ekki lï¿½glegt veffang, kv gunnsteinn");
 			return null;
 		}
 	}
