@@ -1,3 +1,4 @@
+package Flight;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class User {
 	 */
 	private String passport;
 	/**
-	 * unique id number (hlaupandi tala fengin úr DB)
+	 * unique id number (hlaupandi tala fengin ï¿½r DB)
 	 */
 	private int id;
 	public static void main(String[] args) {

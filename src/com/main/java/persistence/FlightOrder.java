@@ -1,38 +1,28 @@
 package com.main.java.persistence;
 
-import Flight.Flight;
+import Flight.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FlightOrder extends Order{
-    private List<Flight> flight;
-    
+    private Flight[] flight;
+
     public FlightOrder(){
-    	flight = new ArrayList<Flight>();        
+        flight = new Flight[2];
     }
-    public FlightOrder( List<Flight> flight ){
-    	this.flight = flight;
+    public FlightOrder( Flight[] flight ){
+        this.flight = flight;
     }
-    
-    public List<Flight> GetFlight(){
-    	return flight;
+
+    public Flight[] GetFlight(){
+        return flight;
     }
-    public void SetFlight( List<Flight> flight ){
-    	this.flight = flight;
+    public void SetFlight( Flight[] flight ){
+        this.flight = flight;
     }
-    public void AddFlight( Flight flight ){
-    	this.flight.add( flight );
-    }
-    public void RemoveFlight( Flight flight ){
-    	this.flight.remove( flight );
-    }
-    
-    public void CreateFlightOrder(){
-            
-    }
-    
-    public void EditFlightOrder(){
-        
-    }
+    public void SetOutFlight( Flight flight ){ this.flight[0] = flight; }
+    public void SetHomeFlight( Flight flight  ){ this.flight[1] = flight; }
+    public void RemoveOutFlight(){ this.flight[0] = null; }
+    public void RemoveHomeFlight(){ this.flight[1] = null; }
 }

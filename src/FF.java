@@ -267,21 +267,7 @@ public class FF extends JFrame {
 		contentPane.add(SearchTextfield);
 		SearchTextfield.setColumns(10);
 
-		
-		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
-		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage(); //$NON-NLS-1$
-		ButtonSearch.setIcon(new ImageIcon(imgSearch));
-		ButtonSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		ButtonSearch.setBounds(670, 42, 47, 25);
-		contentPane.add(ButtonSearch);
-		
-		JPanel panelResault = new JPanel();
-		panelResault.setBackground(new Color(176, 224, 230));
-		panelResault.setBounds(120, 89, 597, 437);
-		contentPane.add(panelResault);
+
 
 		JPanel panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
@@ -289,24 +275,13 @@ public class FF extends JFrame {
 		contentPane.add(panelResult);
 
 		
-		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
-		EnglishButton.setBackground(new Color(173, 216, 230));
-		Image imgEnglish = new ImageIcon(this.getClass().getResource("/britain.png")).getImage(); //$NON-NLS-1$
-		EnglishButton.setIcon(new ImageIcon(imgEnglish));
-		EnglishButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
-		EnglishButton.setBounds(691, 9, 34, 24);
-		contentPane.add(EnglishButton);
-
 		
-		JButton ButtonSearch1 = new JButton("");
-		Image imgSearch1 = new ImageIcon(this.getClass().getResource("/search.png")).getImage();
-		ButtonSearch1.setIcon(new ImageIcon(imgSearch1));
-		ButtonSearch1.addActionListener(new ActionListener() {
+		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
+		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage(); //$NON-NLS-1$
+		ButtonSearch.setIcon(new ImageIcon(imgSearch));
+		ButtonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("ButtonSeasrched1 clicked");
 				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
 				loc = txtLocation.getText();
 				dateFrom = dateChooser.getDate();
@@ -339,6 +314,30 @@ public class FF extends JFrame {
                         repaint();
                     }
                 }
+				
+			}
+		});
+		ButtonSearch.setBounds(670, 42, 47, 25);
+		contentPane.add(ButtonSearch);
+		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
+		EnglishButton.setBackground(new Color(173, 216, 230));
+		Image imgEnglish = new ImageIcon(this.getClass().getResource("/britain.png")).getImage(); //$NON-NLS-1$
+		EnglishButton.setIcon(new ImageIcon(imgEnglish));
+		EnglishButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		EnglishButton.setBounds(691, 9, 34, 24);
+		contentPane.add(EnglishButton);
+
+		
+		JButton ButtonSearch1 = new JButton("");
+		Image imgSearch1 = new ImageIcon(this.getClass().getResource("/search.png")).getImage();
+		ButtonSearch1.setIcon(new ImageIcon(imgSearch1));
+		ButtonSearch1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		ButtonSearch1.setBounds(670, 42, 47, 25);

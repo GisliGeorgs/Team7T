@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Random;
 
 public class CartController extends SearchController{
-    public HotelOrder hotelOrders;
 
 
     public FlightOrder flightOrders;
     public DayTripOrder dayTripOrders;
+    public HotelOrder hotelOrders;
     public User user;
 
     public CartController(){
@@ -44,9 +44,10 @@ public class CartController extends SearchController{
     	dayTripOrders.RemoveDayTrip( daytrip );
 	}
     public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
-    public void RemoveFlightFromBooking( Flight flight ){
-    	flightOrders.RemoveFlight( flight );
+    public void RemoveOutFlight( ){
+    	flightOrders.RemoveOutFlight();
     }
+    public void RemoveHomeFlight(){ flightOrders.RemoveHomeFlight(); }
 
 
     public FlightOrder getFlightOrders() {
