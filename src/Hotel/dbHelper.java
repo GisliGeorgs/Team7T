@@ -1,5 +1,5 @@
 import java.sql.*;
-
+package Hotel;
 /**
  * Created by Svava Hildur on 20/03/16.
  */

@@ -1,7 +1,8 @@
-
+package Hotel;
 /**
  * Created by Svava Hildur on 16/03/16.
  */
+
 public class Hotel {
     private Review[] reviews;
     private int id;

@@ -1,6 +1,6 @@
  import java.sql.*;
  import java.util.*;
-
+ package Hotel;
  /**
  * Created by Svava Hildur on 16/03/16.
  */

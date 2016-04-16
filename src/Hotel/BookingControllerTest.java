@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-
+package Hotel;
 public class BookingControllerTest {
 
     private BookingController bcontroller = new BookingController();

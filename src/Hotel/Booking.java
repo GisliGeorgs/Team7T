@@ -1,5 +1,5 @@
 import java.util.Date;
-
+package Hotel;
 /**
  * Created by arnorv on 16/03/16.
  */
