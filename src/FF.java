@@ -48,6 +48,8 @@ public class FF extends JFrame {
     CartController cart;
 
 	private ArrayList<String> search;
+	private JTextField TextFieldFlightFrom;
+	private JTextField TextFieldFlightTo;
 
 	/**
 	 * Launch the application.
@@ -280,12 +282,12 @@ public class FF extends JFrame {
 		
 		JPanel panelResault = new JPanel();
 		panelResault.setBackground(new Color(176, 224, 230));
-		panelResault.setBounds(120, 89, 597, 437);
+		panelResault.setBounds(119, 125, 598, 401);
 		contentPane.add(panelResault);
 
 		JPanel panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
-		panelResult.setBounds(120, 89, 597, 437);
+		panelResult.setBounds(119, 125, 598, 401);
 		contentPane.add(panelResult);
 
 		
@@ -438,6 +440,28 @@ public class FF extends JFrame {
 		labelPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
 		labelPrice.setBounds(14, 81, 77, 16);
 		contentPane.add(labelPrice);
+		
+		JLabel lblFlightFrom = new JLabel(Messages.getString("FF.lblFlightFrom.text")); //$NON-NLS-1$
+		lblFlightFrom.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFlightFrom.setBounds(120, 70, 97, 16);
+		contentPane.add(lblFlightFrom);
+		
+		TextFieldFlightFrom = new JTextField();
+		TextFieldFlightFrom.setText(Messages.getString("")); //$NON-NLS-1$
+		TextFieldFlightFrom.setBounds(120, 90, 241, 22);
+		contentPane.add(TextFieldFlightFrom);
+		TextFieldFlightFrom.setColumns(10);
+		
+		JLabel lblFlightTo = new JLabel(Messages.getString("FF.lblFlightTo.text")); //$NON-NLS-1$
+		lblFlightTo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFlightTo.setBounds(397, 70, 85, 16);
+		contentPane.add(lblFlightTo);
+		
+		TextFieldFlightTo = new JTextField();
+		TextFieldFlightTo.setText(Messages.getString("")); //$NON-NLS-1$
+		TextFieldFlightTo.setBounds(397, 90, 272, 22);
+		contentPane.add(TextFieldFlightTo);
+		TextFieldFlightTo.setColumns(10);
 	}
 
     private JPanel createJPanel( int type, Object object ){

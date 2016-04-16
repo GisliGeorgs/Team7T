@@ -51,7 +51,7 @@ public class Pay extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-<<<<<<< HEAD
+
 	public Pay() {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
@@ -170,14 +170,14 @@ public class Pay extends JFrame {
 		JMonthChooser monthChooser = new JMonthChooser();
 		monthChooser.setBounds(12, 132, 111, 22);
 		contentPane.add(monthChooser);
-=======
+
     public Pay(){
         Setup();
     }
 	public Pay( CartController cart ) {
         this.cart = cart;
         Setup();
->>>>>>> 95a8bd66a4fcfea064c2f27c7e54941138da8b76
+
 	}
     private void Setup(){
 
