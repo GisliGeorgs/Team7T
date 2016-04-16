@@ -1,5 +1,6 @@
-import java.sql.*;
+
 package Hotel;
+import java.sql.*;
 /**
  * Created by Svava Hildur on 20/03/16.
  */
@@ -14,7 +15,7 @@ public class dbHelper {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
                     .getConnection("jdbc:postgresql://localhost:5432/hotel",
-                            "postgres", "lalli");
+                            "postgres", "postgres");
             System.out.println("Opened database successfully");
 
             stmt = c.prepareStatement(queryStr);

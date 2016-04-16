@@ -1,3 +1,5 @@
+
+package Hotel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +8,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
-package Hotel;
 public class HotelControllerTest {
 
     private HotelController hcontroller;

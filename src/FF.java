@@ -41,6 +41,8 @@ public class FF extends JFrame {
 	private String loc;
 	private Date dateFrom;
 	private Date dateTo;
+    private String flightFrom;
+    private String flightTo;
 	private boolean roundTrip;
 	private int numPeople;
 	private int price;
@@ -283,17 +285,24 @@ public class FF extends JFrame {
 		ButtonSearch.setIcon(new ImageIcon(imgSearch));
 		ButtonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				panelResult.removeAll();
+                validate();
+                repaint();
 				System.out.println("ButtonSeasrched1 clicked");
 				search = new ArrayList<String> (Arrays.asList(SearchTextfield.getText().split("\\s*,\\s*")));
 				loc = txtLocation.getText();
 				dateFrom = dateChooser.getDate();
 				dateTo = dateChooser_1.getDate();
-				roundTrip = rdbtnBothWays.isSelected(); 
+				roundTrip = rdbtnBothWays.isSelected();
+                flightFrom = TextFieldFlightFrom.getText();
+                flightTo = TextFieldFlightTo.getText();
 				// TODO laga �etta
 				price = 1000000;//(Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
-				
-				List res = SearchController.Search( typeSelected, search, loc, dateFrom, dateTo, price, roundTrip, numPeople );
+
+                //The method Search(int, ArrayList<String>, String, Date, Date, int, boolean, int) in the type SearchController is not applicable for the arguments
+                //                  int, ArrayList<String>, String, String, String, Date, Date, int, boolean, int)
+				List res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople );
                 if( res.size() > 0 ){
                     JPanel[] resPanel = new JPanel[res.size()];
                     for ( int i = 0; i < res.size(); i++ ) {
@@ -482,7 +491,13 @@ public class FF extends JFrame {
     private JPanel flightPanel( Flight flight ){
         JPanel panel = new JPanel();
 
-        panel.add( new JLabel( "Flug .1.1.1." ) );
+        panel.add( new JLabel( flight.getAirline() ) );
+        panel.add( new JLabel( flight.getFlightNo() ) );
+        panel.add( new JLabel( "From: " + flight.getdestFrom() ) );
+		panel.add( new JLabel( "To: " + flight.getdestTo() ) );
+        panel.add( new JLabel( "Price: " + flight.getPrice() ) );
+        panel.add( new JLabel( "Departure: " + flight.getDeparture() ) );
+        panel.add( new JLabel( "Dep time: " + flight.getDepTime() ) );
 
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
@@ -507,6 +522,7 @@ public class FF extends JFrame {
                 cart.AddHotelToBooking( hotel );
             }
         });
+        panel.add( addToCart );
         return panel;
     }
 

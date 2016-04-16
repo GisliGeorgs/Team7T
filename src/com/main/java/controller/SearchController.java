@@ -22,7 +22,7 @@ public class SearchController{
     public static ArrayList<Flight> GetFlightHistory( int i ){ return null; }
     public ArrayList<DayTrip> GetDayTripHistory( int i ){ return null; }
     
-    public static List Search( int type, ArrayList<String> searchValues, String loc, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ){
+    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ){
     	/*GregorianCalendar gregFrom = new GregorianCalendar();
     	GregorianCalendar gregTo = new GregorianCalendar();
     	gregFrom.setTime( dateFrom );
@@ -30,7 +30,7 @@ public class SearchController{
         String[] keywords = searchValues.toArray( new String[0] );
 
     	if( type == 0 ){
-    		FindFlights( "Copenhagen", "Keflavik", dateFrom, dateTo, numPeople, price, true, roundTrip );
+    		FindFlights( flightFrom, flightTo, dateFrom, dateTo, numPeople, price, true, roundTrip );
             return GetFlightsFrom();
     	}
     	else if( type == 1 ){
@@ -93,7 +93,8 @@ public class SearchController{
 	*/
     public static ArrayList<Hotel> FindHotels( Date dateFrom, Date dateTo, int numPeople, String loc, float price, String[] keywords  ){
         // Ná í hótel frá hotel component
-        Hotel[] resArr = HotelSearchController.findHotelWithAvailableRooms( dateFrom, dateTo, numPeople, loc, 0, 1000000 );
+        HotelController ctrl = new HotelController();
+        Hotel[] resArr = ctrl.findHotelWithAvailableRooms( DateToString( dateFrom ), DateToString( dateTo ), numPeople, loc, 0, 1000000 );
         // Búa til lista úr þeim
         ArrayList<Hotel> mid = new ArrayList<>(Arrays.asList( resArr ) );
         // Niðurstöðu listi því
