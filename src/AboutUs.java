@@ -39,6 +39,9 @@ public class AboutUs extends JFrame {
 	 * Create the frame.
 	 */
 	public AboutUs() {
+		setIconImage(
+				new ImageIcon(getClass().getResource("/7.png")).getImage()
+			);
 		setTitle("Team 7T - About us");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 445, 519);

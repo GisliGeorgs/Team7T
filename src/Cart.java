@@ -55,6 +55,9 @@ public class Cart extends JFrame {
     }
     JPanel panelCart;
     private void Setup(){
+    	setIconImage(
+    			new ImageIcon(getClass().getResource("/7.png")).getImage()
+    		);
         setTitle("Team 7T - Cart");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 656, 557);
@@ -104,7 +107,12 @@ public class Cart extends JFrame {
         btngobacktoSearch.setBounds(334, 459, 174, 36);
         contentPane.add(btngobacktoSearch);
 
+<<<<<<< HEAD
+        JPanel panelCart = new JPanel();
+        panelCart.setBackground(new Color(176, 224, 230));
+=======
         panelCart = new JPanel();
+>>>>>>> 95a8bd66a4fcfea064c2f27c7e54941138da8b76
         panelCart.setBounds(65, 49, 510, 393);
         UpdateCart();
         contentPane.add(panelCart);

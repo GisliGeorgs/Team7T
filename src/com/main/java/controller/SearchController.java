@@ -208,6 +208,8 @@ public class SearchController{
 
 
     */
+    // searchCtrl ctrl = new searchCtrl( String from, String to, String dateFrom, String dateTo, int price, boolean flex, boolean roundTrip )
+    //
     //======================================================================================================================
     public static ArrayList<Flight> FindFlights( String from, String to, GregorianCalendar dateFrom, GregorianCalendar dateTo, int numTickets, boolean round ){
         FlightSearchCtrl search = new FlightSearchCtrl( from, to, dateFrom, dateTo, 1000000, true, round );
