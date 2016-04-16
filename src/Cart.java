@@ -118,21 +118,25 @@ public class Cart extends JFrame {
     }
 
     private void UpdateCart(){
-        panelCart.removeAll();
+        /*panelCart.removeAll();
         panelCart.revalidate();
-        panelCart.repaint();
-        if( cartController.getFlightOrders().GetFlight()[0] != null ){
+        panelCart.repaint();*/
+        System.out.println( "updatecart1" );
+        if( (cartController.getFlightOrders().GetFlight()[0] == null) ){
             panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[0], 0 ) );
         }
-        if( cartController.getFlightOrders().GetFlight()[1] != null ){
+        System.out.println( "updatecart2" );
+        if( !(cartController.getFlightOrders().GetFlight()[1] == null) ){        	
             panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[1], 1 ) );
         }
-        if( cartController.getHotelOrders().GetHotel().size() > 0 ){
+        System.out.println( "updatecart3" );
+        if( !(cartController.getHotelOrders().GetHotel() == null) && cartController.getHotelOrders().GetHotel().size() > 0 ){
             for ( int i = 0; i < cartController.getHotelOrders().GetHotel().size(); i++ ) {
                 panelCart.add( hotelPanel( cartController.getHotelOrders().GetHotel().get( i ) ) );
             }
         }
-        if( cartController.getDayTripOrders().GetDayTrip().size() > 0 ){
+        System.out.println( "updatecart4" );
+        if( !(cartController.getDayTripOrders().GetDayTrip() == null) && cartController.getDayTripOrders().GetDayTrip().size() > 0 ){
             for ( int i = 0; i < cartController.getDayTripOrders().GetDayTrip().size(); i++ ) {
                 panelCart.add( daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) ) );
             }
@@ -143,12 +147,19 @@ public class Cart extends JFrame {
 
 
 	private JPanel flightPanel( Flight flight, int index ){
-		JPanel panel = new JPanel();
+        JPanel panel = new JPanel();
+        
 
-		panel.add( new JLabel( "Flug .1.1.1." ) );
+        panel.add( new JLabel( flight.getAirline() ) );
+        panel.add( new JLabel( flight.getFlightNo() ) );
+        panel.add( new JLabel( "From: " + flight.getdestFrom() ) );
+		panel.add( new JLabel( "To: " + flight.getdestTo() ) );
+        panel.add( new JLabel( "Price: " + flight.getPrice() ) );
+        panel.add( new JLabel( "Departure: " + flight.getDeparture() ) );
+        panel.add( new JLabel( "Dep time: " + flight.getDepTime() ) );
 
-		JButton addToCart = new JButton( "Add to Cart" );
-		addToCart.addActionListener(new ActionListener() {
+		JButton removeFromCart = new JButton( "Remove from cart" );
+		removeFromCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if( index == 0 ){
 					cartController.RemoveOutFlight();
@@ -158,6 +169,7 @@ public class Cart extends JFrame {
 				}
 			}
 		});
+		panel.add( removeFromCart );
 		return panel;
 	}
 

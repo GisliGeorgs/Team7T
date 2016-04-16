@@ -1,5 +1,4 @@
 package Hotel;
-package Hotel;
 
 /**
  * Created by Gísli on 13/4/2016.

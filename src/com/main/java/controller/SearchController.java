@@ -5,6 +5,7 @@ import Flight.*;
 import Hotel.*;
 
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -22,11 +23,12 @@ public class SearchController{
     public static ArrayList<Flight> GetFlightHistory( int i ){ return null; }
     public ArrayList<DayTrip> GetDayTripHistory( int i ){ return null; }
     
-    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ){
+    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ) throws SQLException{
     	/*GregorianCalendar gregFrom = new GregorianCalendar();
     	GregorianCalendar gregTo = new GregorianCalendar();
     	gregFrom.setTime( dateFrom );
     	gregTo.setTime( dateTo );*/
+
         String[] keywords = searchValues.toArray( new String[0] );
 
     	if( type == 0 ){
@@ -34,7 +36,7 @@ public class SearchController{
             return GetFlightsFrom();
     	}
     	else if( type == 1 ){
-    		return FindHotels( dateFrom, dateTo, numPeople, loc, (float)price, keywords );
+    		return FindHotels( dateFrom, dateTo, numPeople, loc, price, keywords );
     	}
     	else if( type == 2 ){
     		return FindDayTrips( dateFrom, dateTo, loc, price, keywords );
@@ -91,16 +93,17 @@ public class SearchController{
         return res;
 	}
 	*/
-    public static ArrayList<Hotel> FindHotels( Date dateFrom, Date dateTo, int numPeople, String loc, float price, String[] keywords  ){
+    public static ArrayList<Hotel> FindHotels( Date dateFrom, Date dateTo, int numPeople, String loc, float price, String[] keywords  ) throws SQLException{
         // Ná í hótel frá hotel component
         HotelController ctrl = new HotelController();
-        Hotel[] resArr = ctrl.findHotelWithAvailableRooms( DateToString( dateFrom ), DateToString( dateTo ), numPeople, loc, 0, 1000000 );
+        Hotel[] resArr = ctrl.findHotelWithAvailableRooms(  DateToString( dateFrom ), DateToString( dateTo ), (double)0, (int)price, loc );
         // Búa til lista úr þeim
         ArrayList<Hotel> mid = new ArrayList<>(Arrays.asList( resArr ) );
         // Niðurstöðu listi því
         ArrayList<Hotel> res = new ArrayList<>();
         // Við þurfum að leita að keywords í lýsingu, nafni, tags, ... í hverju hóteli
-        for( int i = 0; i < res.size(); i++ ){
+        // TODO uncommenta �etta og l�ta virka r�tt
+        /*for( int i = 0; i < res.size(); i++ ){
             for( int j = 0; j < keywords.length; j++ ){
                 if( res.get(i).getName().contains( keywords[i] )){
                     res.add( res.get(i) );
@@ -112,8 +115,8 @@ public class SearchController{
                     res.add( res.get( i ) );
                 }
             }
-        }
-        return res;
+        }*/
+        return mid/*res*/;
     }
     //endregion
 

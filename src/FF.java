@@ -15,6 +15,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -258,7 +259,7 @@ public class FF extends JFrame {
 		btnAddToCart.setIcon(new ImageIcon(imgLogin));
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart AddtoCart=new Cart( cart );
+				Cart AddtoCart = new Cart( cart );
 				AddtoCart.setVisible(true);
 				//dispose();
 			}
@@ -301,29 +302,36 @@ public class FF extends JFrame {
 
                 //The method Search(int, ArrayList<String>, String, Date, Date, int, boolean, int) in the type SearchController is not applicable for the arguments
                 //                  int, ArrayList<String>, String, String, String, Date, Date, int, boolean, int)
-				List res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople );
-                if( res.size() > 0 ){
-                    JPanel[] resPanel = new JPanel[res.size()];
-                    for ( int i = 0; i < res.size(); i++ ) {
-                        resPanel[i] = createJPanel( typeSelected, res.get( i ) );
-                        panelResult.add( resPanel[i] );
-                        /*resPanel[i] = new JPanel();
-                        final int index = i;
-                        resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
-                        JButton addToCart = new JButton( "Add to Cart" );
-                        addToCart.addActionListener(new ActionListener() {
-                            public void actionPerformed(ActionEvent arg0) {
-                                if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
-                                if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
-                                if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
-                            }
-                        });
-                    resPanel[i].add( addToCart );
-                    */
-                        validate();
-                        repaint();
-                    }
-                }
+				List res;
+				try {
+					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople );
+
+	                if( res.size() > 0 ){
+	                    JPanel[] resPanel = new JPanel[res.size()];
+	                    for ( int i = 0; i < res.size(); i++ ) {
+	                        resPanel[i] = createJPanel( typeSelected, res.get( i ) );
+	                        panelResult.add( resPanel[i] );
+	                        /*resPanel[i] = new JPanel();
+	                        final int index = i;
+	                        resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
+	                        JButton addToCart = new JButton( "Add to Cart" );
+	                        addToCart.addActionListener(new ActionListener() {
+	                            public void actionPerformed(ActionEvent arg0) {
+	                                if( typeSelected == 0 ) cart.AddFlightToBooking( (Flight.Flight)res.get( index ) );
+	                                if( typeSelected == 1 ) cart.AddHotelToBooking( (Hotel.Hotel)res.get( index ) );
+	                                if( typeSelected == 2 ) cart.AddDayTripToBooking( (DayTrip) res.get( index ) );
+	                            }
+	                        });
+	                    resPanel[i].add( addToCart );
+	                    */
+	                        validate();
+	                        repaint();
+	                    }
+	                }
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 			}
 		});
@@ -490,7 +498,6 @@ public class FF extends JFrame {
     private JPanel flightPanel( Flight flight ){
         JPanel panel = new JPanel();
         
-        panel.setPreferredSize( new Dimension( panel.getParent().WIDTH , 40 ));
 
         panel.add( new JLabel( flight.getAirline() ) );
         panel.add( new JLabel( flight.getFlightNo() ) );
@@ -504,9 +511,17 @@ public class FF extends JFrame {
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 // TODO L�ta vera flug heim e�a �t?
-            	//cart.AddFlightToBooking( flight );
+            	if( flightFrom.equals( flight.getdestFrom() ) ){
+                	System.out.println( "Flight from" );
+                	cart.AddFlightOutToBooking( flight );
+            	}
+            	else if( flightTo.equals( flight.getdestTo() ) ){
+                	System.out.println( "Flight to" );
+            		cart.AddFlightHomeToBooking( flight );
+            	}
             }
         });
+        panel.add( addToCart );
         return panel;
     }
 
