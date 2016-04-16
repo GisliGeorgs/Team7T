@@ -38,12 +38,12 @@ public class FlightCtrl {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
-			//Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			//Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			String sql;
 			PreparedStatement pst;
 			if(!flex){
-				sql= "SELECT * FROM \"FlightFlight\""
+				sql= "SELECT * FROM flight"
 						+ " WHERE destfrom=?"
 						+ " AND destto=?"
 						+ " AND seatsleft>=?"
@@ -58,7 +58,7 @@ public class FlightCtrl {
 				pst.setDate(5, java.sql.Date.valueOf(departureDate));
 			}
 			else{
-				sql= "SELECT * FROM \"FlightFlight\" "
+				sql= "SELECT * FROM flight "
 						+ " WHERE destfrom=?"
 						+ " AND destto=?"
 						+ " AND seatsleft>=? "

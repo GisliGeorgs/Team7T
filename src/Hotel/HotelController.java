@@ -1,4 +1,6 @@
- import java.sql.*;
+package Hotel;
+
+import java.sql.*;
  import java.util.*;
 
  /**

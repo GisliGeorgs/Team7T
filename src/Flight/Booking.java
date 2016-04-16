@@ -35,8 +35,8 @@ public class Booking {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M")
-			//Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			//Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M")
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			ResultSet rs;
 			Statement st = con.createStatement();
 			int[] flightIds = new int[flights.length];
@@ -45,7 +45,7 @@ public class Booking {
 			for(int i=0;i<users.length;i++)
 				users[i].createUser();
 			for(int i=0;i<flights.length;i++){
-				sql = "select id from \"FlightFlight\" where flightno=? and departuredate = ?";
+				sql = "select id from flight where flightno=? and departuredate = ?";
 				pst= con.prepareStatement(sql);
 				pst.setString(1, this.flights[i].getFlightNo() );
 				pst.setString(2, this.flights[i].getDeparture());
@@ -61,7 +61,7 @@ public class Booking {
 				
 			}
 			if(flights.length==2){
-				sql = "insert into \"FlightBooking\"(flightid, returnflight) values (?,?)";
+				sql = "insert into booking (flightid, returnflight) values (?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1,flightIds[0]);
 				pst.setInt(2, flightIds[1]);
@@ -80,7 +80,7 @@ public class Booking {
 			}
 			
 			for(int i=0;i<users.length;i++){
-				sql="insert into \"FlightUserBooking\"(userid, booking_id) values (?,?)";
+				sql="insert into booking (userid, booking_id) values (?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, users[i].getId());
 				pst.setInt(2, referenceNumber);

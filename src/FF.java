@@ -489,6 +489,8 @@ public class FF extends JFrame {
 
     private JPanel flightPanel( Flight flight ){
         JPanel panel = new JPanel();
+        
+        panel.setPreferredSize( new Dimension( panel.getParent().WIDTH , 40 ));
 
         panel.add( new JLabel( flight.getAirline() ) );
         panel.add( new JLabel( flight.getFlightNo() ) );
