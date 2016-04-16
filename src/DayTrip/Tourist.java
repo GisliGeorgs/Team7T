@@ -1,4 +1,3 @@
-package klasar;
 package DayTrip;
 
 public class Tourist {

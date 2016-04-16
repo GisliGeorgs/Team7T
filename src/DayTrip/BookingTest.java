@@ -1,4 +1,3 @@
-package klasar;
 package DayTrip;
 
 import static org.junit.Assert.*;

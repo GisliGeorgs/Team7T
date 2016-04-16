@@ -1,4 +1,4 @@
-package klasar;
+
 package DayTrip;
 
 import java.util.Calendar;
