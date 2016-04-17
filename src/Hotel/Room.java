@@ -1,24 +1,19 @@
-package Hotel;
 /**
  * Created by Svava Hildur on 16/03/16.
  */
 public class Room {
     private int numberOfBeds;
-    private int hotelid;
     private double sizeOfRoom;
     private String typeOfBathroom;
     private int roomNumber;
     private int id;
     private int maxGuests;
     private String description;
-    private double roomPrice;
+    private int roomPrice;
 
-    public Room() {
+    public Room(int id) {
+        this.id = id;
     }
-
-    public void setId(int id) { this.id = id; }
-
-    public void setHotelId (int hotelid){ this.hotelid = hotelid;}
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -68,11 +63,11 @@ public class Room {
         this.description = description;
     }
 
-    public double getRoomPrice() {
+    public int getRoomPrice() {
         return roomPrice;
     }
 
-    public void setRoomPrice(double roomPrice) {
+    public void setRoomPrice(int roomPrice) {
         this.roomPrice = roomPrice;
     }
 

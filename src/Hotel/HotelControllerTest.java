@@ -1,8 +1,8 @@
-package Hotel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -17,42 +17,21 @@ public class HotelControllerTest {
     @Before
     public void setUp() throws Exception {
         hcontroller = new HotelController();
-        testing = new Hotel();
-        testing.setName("test");
-        testing.setAddress("test");
-        testing.setType("test");
-        testing.setAvgPrice(0.0);
-        testing.setCheckoutTime("test");
-        testing.setDescription("test");
-        testing.setPhoneNumber("test");
-        testing.setRating(0.0);
-        testing.setPlace("Reykjavík");
-        testing.setStarCount(0.0);
-        String[] tags = {"t","e","s","t"};
-        testing.setTags(tags);
-        testing = hcontroller.saveHotel(testing);
-        roomtest = new Room();
-        roomtest.setHotelId(testing.getId());
-        roomtest.setNumberOfBeds(2);
-        roomtest.setSizeOfRoom(3);
-        roomtest.setTypeOfBathroom("test");
-        roomtest.setRoomNumber(215);
-        roomtest.setMaxGuests(2);
-        roomtest.setDescription("test");
-        roomtest.setRoomPrice(5.0);
+        testing = new Hotel(7);
+        hcontroller.saveHotel(testing);
+        roomtest = new Room(1);
     }
 
     @After
     public void tearDown() throws Exception {
-
         hcontroller.deleteHotel(testing);
         hcontroller = null;
     }
 
-    @Test
+    @After
     public void testGetHotel() throws Exception {
-        Hotel test = hcontroller.getHotel("test");
-        assertEquals("test", test.getName());
+        Hotel hilton = hcontroller.getHotel("Hilton");
+        assertEquals("Hilton", hilton.getName());
     }
 
     //Tékka hvort það skili error fyrir of stutt input
@@ -72,7 +51,7 @@ public class HotelControllerTest {
     @Test
     public void testGiveReview() throws Exception {
         int oldNumber = testing.getReviews().length;
-        hcontroller.giveReview(testing, "pallim", "fínt hótel sko", 8.0, "2016-05-21");
+        hcontroller.giveReview(testing, "palli", "fínt hótel sko", 8);
         int newNumber = testing.getReviews().length;
         assertNotEquals(oldNumber, newNumber);
     }
@@ -87,19 +66,18 @@ public class HotelControllerTest {
 
     @Test
     public void testRemoveRoom() throws Exception {
-        roomtest = hcontroller.addRoom(testing, roomtest);
-        int oldNumber = testing.getRooms().length;
+        int oldNumber = testing.getNumberOfRooms();
         hcontroller.removeRoom(testing, roomtest);
-        int newNumber = testing.getRooms().length;
+        int newNumber = testing.getNumberOfRooms();
         assertNotEquals(oldNumber, newNumber);
     }
 
     @Test
     public void testFindHotelsWithAvailableRooms() throws Exception {
-        String start = "2020-05-09";
-        String end = "2020-05-11";
-        Hotel[] test = hcontroller.findHotelWithAvailableRooms(start, end, 1, 5000000, "Reykjavík");
-        assertNotNull(test[0]);
+        Date start = new Date(2020, 5, 19);
+        Date end = new Date(2020, 5, 20);
+        Hotel[] test = hcontroller.findHotelsWithAvailableRooms(start, end, 1, 1, 5000000);
+        assertNotNull(test);
     }
 
     @org.junit.Test
