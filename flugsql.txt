@@ -1,0 +1,68 @@
+CREATE TABLE flight
+(
+  flightno character varying(10),
+  destfrom character varying(40),
+  destto character varying(40),
+  seatsleft integer,
+  price integer,
+  airline character varying(50),
+  id serial NOT NULL,
+  departuretime character varying(20),
+  departuredate character varying(20),
+  CONSTRAINT pk_flight PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE flight
+  OWNER TO postgres;
+
+__________________________________________________________
+CREATE TABLE "user"
+(
+  id serial NOT NULL,
+  lastname character varying(30),
+  firstname character varying(30),
+  card character varying(16),
+  passport character varying(15),
+  CONSTRAINT pk_user PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE "user"
+  OWNER TO postgres;
+----------------------------------------------------------------
+CREATE TABLE booking
+(
+  id serial NOT NULL,
+  flightid integer,
+  returnflight integer,
+  CONSTRAINT pk_booking PRIMARY KEY (id),
+  CONSTRAINT fk_booking_flight FOREIGN KEY (flightid)
+      REFERENCES flight (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE booking
+  OWNER TO postgres;
+----------------------------------------------------------------
+CREATE TABLE user_booking
+(
+  userid integer NOT NULL,
+  booking_id integer NOT NULL,
+  CONSTRAINT pk_userbooking PRIMARY KEY (userid, booking_id),
+  CONSTRAINT fk_userbooking_booking FOREIGN KEY (booking_id)
+      REFERENCES booking (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_userbooking_user FOREIGN KEY (userid)
+      REFERENCES "user" (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE user_booking
+  OWNER TO postgres;
