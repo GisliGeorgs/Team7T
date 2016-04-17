@@ -60,8 +60,8 @@ public class YourOrderNumberIs extends JFrame {
 		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FF FrontFr=new FF();
-				FrontFr.setVisible(true);
+				//FF FrontFr=new FF();
+				//FrontFr.setVisible(true);
 				dispose();
 			}
 		});

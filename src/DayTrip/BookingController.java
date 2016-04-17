@@ -2,32 +2,31 @@ package DayTrip;
 
 import java.util.Date;
 
-import look.Booking;
-import look.BookingView;
+import DayTrip.*;
 
 public class BookingController {
 	private int bookingNumber;
 	private DatabaseConnection connection;
-	private Booking bookingView;
+	//private DayTrip.Booking bookingView;
 	private int groupSize;
 	
 	public BookingController() {
 		bookingNumber = 0;
 		connection = new DatabaseConnection();
-		bookingView = new Booking();
 	}
 	
 	public int book(Trip trip) {
 		if(trip==null) throw new IllegalArgumentException("Vantar trip");
 		Date[] tripDates = trip.getDate();
 		int tripID = connection.getTripID(trip.getDayTrip(), tripDates[0]);
-		Tourist tourist = getTourist();
+		// TODO laga þetta
+		Tourist tourist = new Tourist( "New User", "123@aol.com", "Iceland", 50 );
 		while(!connection.book(tripID, tourist.getEmail(), bookingNumber, groupSize))
 			System.out.println("Booking failed!");
 		System.out.println(bookingNumber);
 		return bookingNumber++;
 	}
-	
+	/*
 	public Tourist getTourist() {
 		bookingView.setVisible(true);
 		String touristEmail = bookingView.getInputEmail();
@@ -48,10 +47,10 @@ public class BookingController {
 			System.out.println("Ekki l�glegt veffang, kv gunnsteinn");
 			return null;
 		}
-	}
+	}*/
 	
 	public static void main(String[] args) {
-		BookingController b = new BookingController();
-		b.getTourist();
+		/*BookingController b = new BookingController();
+		b.getTourist();*/
 	}
 }

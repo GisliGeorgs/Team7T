@@ -62,7 +62,7 @@ public class User {
 			Class.forName("org.postgresql.Driver");
 			//Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
-			String sql= "select id from \"FlightUser\" where passport=?";
+			String sql= "select id from \"user\" where passport=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, this.passport);
 			ResultSet rs = pst.executeQuery();

@@ -7,6 +7,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -50,7 +51,7 @@ public class Cart extends JFrame {
         Setup();
 	}
     public Cart(){
-    	cartController = new CartController();
+    	//cartController = new CartController();
         Setup();
     }
     JPanel panelCart;
@@ -78,11 +79,10 @@ public class Cart extends JFrame {
         btnFinsihOrder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 User user = new User();
-                boolean UserExists = user.GetEmail().isEmpty();
-                if (UserExists ){
+                if( user.GetEmail() == null ){
                     Pay Payment=new Pay( cartController );
                     Payment.setVisible(true);
-                    dispose();
+                    dispose();                	
                 }
                 else{
                     UserInfoNew uin = new UserInfoNew( cartController );
@@ -108,11 +108,9 @@ public class Cart extends JFrame {
         contentPane.add(btngobacktoSearch);
 
 
-        JPanel panelCart = new JPanel();
-        panelCart.setBackground(new Color(176, 224, 230));
-
         panelCart = new JPanel();
         panelCart.setBounds(65, 49, 510, 393);
+        panelCart.setLayout( new GridLayout( 0, 1 ));
         UpdateCart();
         contentPane.add(panelCart);
     }
@@ -121,24 +119,45 @@ public class Cart extends JFrame {
         /*panelCart.removeAll();
         panelCart.revalidate();
         panelCart.repaint();*/
+    	JPanel toadd;
         System.out.println( "updatecart1" );
-        if( (cartController.getFlightOrders().GetFlight()[0] == null) ){
-            panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[0], 0 ) );
+        if( !(cartController.getFlightOrders().GetFlight()[0] == null) ){
+        	toadd = flightPanel( cartController.getFlightOrders().GetFlight()[0], 0 );
+            if( toadd != null ){
+            	panelCart.add( toadd );
+                panelCart.revalidate();
+                panelCart.repaint();
+            }            	
         }
         System.out.println( "updatecart2" );
         if( !(cartController.getFlightOrders().GetFlight()[1] == null) ){        	
-            panelCart.add( flightPanel( cartController.getFlightOrders().GetFlight()[1], 1 ) );
+            toadd = flightPanel( cartController.getFlightOrders().GetFlight()[1], 1 );
+            if( toadd != null ){
+            	panelCart.add( toadd );
+                panelCart.revalidate();
+                panelCart.repaint();            	
+            }
         }
         System.out.println( "updatecart3" );
         if( !(cartController.getHotelOrders().GetHotel() == null) && cartController.getHotelOrders().GetHotel().size() > 0 ){
             for ( int i = 0; i < cartController.getHotelOrders().GetHotel().size(); i++ ) {
-                panelCart.add( hotelPanel( cartController.getHotelOrders().GetHotel().get( i ) ) );
+            	toadd = hotelPanel( cartController.getHotelOrders().GetHotel().get( i ) );
+                if( toadd != null ){
+                	panelCart.add( toadd );
+                    panelCart.revalidate();
+                    panelCart.repaint();
+                }                	
             }
         }
         System.out.println( "updatecart4" );
         if( !(cartController.getDayTripOrders().GetDayTrip() == null) && cartController.getDayTripOrders().GetDayTrip().size() > 0 ){
             for ( int i = 0; i < cartController.getDayTripOrders().GetDayTrip().size(); i++ ) {
-                panelCart.add( daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) ) );
+                toadd =  daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) );
+                if( toadd != null ){
+                	panelCart.add( toadd );
+                    panelCart.revalidate();
+                    panelCart.repaint();
+                }                	
             }
         }
         panelCart.revalidate();
@@ -175,18 +194,19 @@ public class Cart extends JFrame {
 
 	private JPanel hotelPanel( Hotel hotel ){
 		JPanel panel = new JPanel();
-
+		System.out.println(hotel.getName() + hotel.getAddress() );
 		panel.add( new JLabel( hotel.getName() ) );
 		panel.add( new JLabel( hotel.getAddress() ) );
 		panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
 		panel.add( new JLabel( hotel.getDescription() ) );
-
-		JButton addToCart = new JButton( "Add to Cart" );
+		JButton addToCart = new JButton( "Remove" );
 		addToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
                 cartController.RemoveHotelFromBooking( hotel );
 			}
 		});
+		panel.add(addToCart);
 		return panel;
 	}
 

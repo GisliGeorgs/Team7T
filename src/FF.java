@@ -259,6 +259,10 @@ public class FF extends JFrame {
 		btnAddToCart.setIcon(new ImageIcon(imgLogin));
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println( "Daytrip size " + cart.getDayTripOrders().GetDayTrip().size() );
+				System.out.println( "Hotel size " + cart.getHotelOrders().GetHotel().size() );
+				//System.out.println( "Flight no 0 " + cart.getFlightOrders().GetFlight()[0].getFlightNo());
+				//System.out.println( "Flight no 1 " + cart.getFlightOrders().GetFlight()[1].getFlightNo());
 				Cart AddtoCart = new Cart( cart );
 				AddtoCart.setVisible(true);
 				//dispose();
@@ -536,6 +540,7 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+            	System.out.println( hotel.getName() );
                 cart.AddHotelToBooking( hotel );
             }
         });

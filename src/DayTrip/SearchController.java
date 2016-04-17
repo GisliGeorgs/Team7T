@@ -6,12 +6,12 @@ import java.util.Date;
 
 import java.util.List;
 
-import look.SearchView;
+//import look.SearchView;
 
 
 public class SearchController {
     private DatabaseConnection connection;
-    private SearchView searchView;
+    //private SearchView searchView;
     String print;
     Date date1;
     Date date2;
