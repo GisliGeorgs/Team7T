@@ -1,7 +1,5 @@
 package Hotel;
 
-import java.sql.SQLException;
-
 /**
  * Created by Svava Hildur on 16/03/16.
  */
@@ -117,7 +115,7 @@ public class Hotel {
     }
     public void getRoomsFromDB(){
     	HotelController ctrl = new HotelController();
-    	
+
     	try {
 			this.rooms = ctrl.getRooms( this );
 		} catch (SQLException e) {
