@@ -13,5 +13,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/junit-4.12.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/postgresql-9.4.1208.jre6.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.8.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

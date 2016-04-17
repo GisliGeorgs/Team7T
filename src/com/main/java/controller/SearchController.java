@@ -1,15 +1,13 @@
 package com.main.java.controller;
 
-import DayTrip.*;
+import DayTrip.klasar.*;
 import Flight.*;
 import Hotel.*;
 
-import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class SearchController{
@@ -32,8 +30,20 @@ public class SearchController{
         String[] keywords = searchValues.toArray( new String[0] );
 
     	if( type == 0 ){
+    		ArrayList<Flight> res = new ArrayList<Flight>();
     		FindFlights( flightFrom, flightTo, dateFrom, dateTo, numPeople, price, true, roundTrip );
-            return GetFlightsFrom();
+    		System.out.println(flightsFrom.size());
+    		for( int i = 0; i < flightsFrom.size(); i++ ){
+    			if( i < flightsFrom.size() ){
+    				System.out.println( "From " + flightsFrom.get(i).getFlightNo() );
+        			res.add( flightsFrom.get(i) );
+    			}
+    			if( i < flightsTo.size() ){
+    				System.out.println( "To " + flightsTo.get(i).getFlightNo() );
+        			res.add( flightsTo.get(i) );
+    			}
+    		}
+            return res;
     	}
     	else if( type == 1 ){
     		return FindHotels( dateFrom, dateTo, numPeople, loc, price, keywords );
@@ -102,7 +112,7 @@ public class SearchController{
         // Niðurstöðu listi því
         ArrayList<Hotel> res = new ArrayList<>();
         // Við þurfum að leita að keywords í lýsingu, nafni, tags, ... í hverju hóteli
-        // TODO uncommenta �etta og l�ta virka r�tt
+        // TODO uncommenta �etta og l�ta virka r�tt
         /*for( int i = 0; i < res.size(); i++ ){
             for( int j = 0; j < keywords.length; j++ ){
                 if( res.get(i).getName().contains( keywords[i] )){
@@ -162,9 +172,13 @@ public class SearchController{
     }*/
 
     public static ArrayList<DayTrip> FindDayTrips( Date dateFrom, Date dateTo, String loc, int price, String[] keywords ){
-        ArrayList<DayTrip> mid = DayTripSearchConnection.search( dateFrom, dateTo, "", "", 9999, price, loc );
+    	DatabaseConnection ctrl = new DatabaseConnection();
+    	
+    	ArrayList<DayTrip> mid = new ArrayList<DayTrip>(ctrl.search( dateFrom, dateTo, "", "", 0, price, 0, loc));
+    			
         ArrayList<DayTrip> res = new ArrayList<>();
-        for ( int i = 0; i < mid.size(); i++ ) {
+        // TODO L�ta �etta virka r�tt
+        /*for ( int i = 0; i < mid.size(); i++ ) {
             DayTrip daytrip = mid.get( i );
             for ( int j = 0; j < keywords.length; j++ ) {
                 String keyword = keywords[j];
@@ -178,7 +192,8 @@ public class SearchController{
                     res.add( daytrip );
                 }
             }
-        }
+        }*/
+        return res;
     }
     //endregion
 
@@ -226,6 +241,8 @@ public class SearchController{
 
         searchCtrl contr = new searchCtrl( from ,to, datefrom, dateto, numTickets, price, flex, round );
         Object[] obj = contr.search();
+        System.out.print( "obj 0: " + ((Flight[])obj[0]).length);
+        System.out.print( "obj 1: " + ((Flight[])obj[1]).length);
         Flight[] flightFrom = (Flight[])obj[0];
         Flight[] flightTo = (Flight[])obj[1];
         flightsFrom = new ArrayList<>(Arrays.asList( flightFrom ) );

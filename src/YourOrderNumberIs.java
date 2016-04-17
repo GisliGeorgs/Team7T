@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import com.main.java.form.User;
+
 public class YourOrderNumberIs extends JFrame {
 
 	private JPanel contentPane;
@@ -25,7 +27,7 @@ public class YourOrderNumberIs extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					YourOrderNumberIs frame = new YourOrderNumberIs();
+					YourOrderNumberIs frame = new YourOrderNumberIs( new User() );
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +39,7 @@ public class YourOrderNumberIs extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public YourOrderNumberIs() {
+	public YourOrderNumberIs( User user ) {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);

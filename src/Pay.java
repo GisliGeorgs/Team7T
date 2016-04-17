@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
@@ -23,12 +24,17 @@ import javax.swing.JRadioButton;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 
+import Hotel.Booking;
+import Hotel.BookingController;
+import com.main.java.form.User;
+
 public class Pay extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField Cardnum;
 	private JTextField CVCnum;
 
+	private User user;
 	private CartController cart;
     // TODO Fara í gegnum listana 3 og summa verð og birta.
     // TODO Actually að bóka hlutina í hinum componentunum.
@@ -54,6 +60,7 @@ public class Pay extends JFrame {
 
 	public Pay( CartController cart ) {
         this.cart = cart;
+        user = new User();
         Setup();
 	}
 	
@@ -82,7 +89,9 @@ public class Pay extends JFrame {
 		btnPay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				YourOrderNumberIs YONI=new YourOrderNumberIs();
+				cart.CreateCartOrder();
+				
+				YourOrderNumberIs YONI=new YourOrderNumberIs( user );
 				YONI.setVisible(true);
 				dispose();
 			}
@@ -178,14 +187,4 @@ public class Pay extends JFrame {
 		monthChooser.setBounds(12, 132, 111, 22);
 		contentPane.add(monthChooser);
 	}
-
-    public void BookFlights(){
-
-    }
-    public void BookHotels(){
-
-    }
-    public void BookDayTrips(){
-
-    }
 }

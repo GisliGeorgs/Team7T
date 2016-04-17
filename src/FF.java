@@ -5,9 +5,10 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
-import DayTrip.DayTrip;
+import DayTrip.klasar.*;
 import Flight.Flight;
 import Hotel.Hotel;
+import Hotel.Room;
 import com.main.java.controller.CartController;
 import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
@@ -54,6 +55,9 @@ public class FF extends JFrame {
 	private ArrayList<String> search;
 	private JTextField TextFieldFlightFrom;
 	private JTextField TextFieldFlightTo;
+	
+	private JDateChooser dateChooser;
+	private JDateChooser dateChooser_1;
 
 	/**
 	 * Launch the application.
@@ -239,7 +243,7 @@ public class FF extends JFrame {
 		lblDateFrom1.setBounds(14, 178, 99, 16);
 		contentPane.add(lblDateFrom1);
 		
-		JDateChooser dateChooser = new JDateChooser();
+		dateChooser = new JDateChooser();
 		dateChooser.setBounds(15, 194, 76, 22);
 		contentPane.add(dateChooser);
 		
@@ -253,7 +257,7 @@ public class FF extends JFrame {
 		lblDateTo1.setBounds(14, 213, 56, 16);
 		contentPane.add(lblDateTo1);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1 = new JDateChooser();
 		dateChooser_1.setBounds(14, 230, 76, 22);
 		contentPane.add(dateChooser_1);
 		
@@ -262,7 +266,7 @@ public class FF extends JFrame {
 		btnAddToCart.setIcon(new ImageIcon(imgLogin));
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println( "Daytrip size " + cart.getDayTripOrders().GetDayTrip().size() );
+				//System.out.println( "Daytrip size " + cart.getDayTripOrders().GetDayTrip().size() );
 				System.out.println( "Hotel size " + cart.getHotelOrders().GetHotel().size() );
 				//System.out.println( "Flight no 0 " + cart.getFlightOrders().GetFlight()[0].getFlightNo());
 				//System.out.println( "Flight no 1 " + cart.getFlightOrders().GetFlight()[1].getFlightNo());
@@ -283,9 +287,8 @@ public class FF extends JFrame {
 
 		JPanel panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
-		panelResult.setBounds(125, 134, 598, 401);
+		panelResult.setBounds(125, 123, 598, 412);
 		contentPane.add(panelResult);
-		//panelResult.setLayout(new GridLayout( 0,1 ));
 		
 		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
 		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage(); //$NON-NLS-1$
@@ -316,6 +319,7 @@ public class FF extends JFrame {
 	                    for ( int i = 0; i < res.size(); i++ ) {
 	                        resPanel[i] = createJPanel( typeSelected, res.get( i ) );
 	                        panelResult.add( resPanel[i] );
+	                        //scrollPane.add( resPanel[i]);
 	                        /*resPanel[i] = new JPanel();
 	                        final int index = i;
 	                        resPanel[i].add( new JLabel( ( "Hlutur " + typeSelected + " numer: " + i ) ) );
@@ -491,10 +495,10 @@ public class FF extends JFrame {
         }
         else if( type == 1 ){
             return hotelPanel( (Hotel)object );
-        }
+        }/*
         else if( type == 2 ){
             return daytripPanel( (DayTrip)object );
-        }
+        }*/
         else{
             return null;
         }
@@ -537,15 +541,37 @@ public class FF extends JFrame {
         panel.add( new JLabel( hotel.getAddress() ) );
         panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
         panel.add( new JLabel( hotel.getDescription() ) );
+
+        hotel.getRoomsFromDB();
+        JPanel[] rooms = new JPanel[ hotel.getRooms().length ];
+    	System.out.println( rooms.length );
         
+        for( int i = 0; i < rooms.length; i++ ){
+        	System.out.println( hotel.getRooms()[i].getRoomNumber() );
+            rooms[i] = roomPanel( hotel, hotel.getRooms()[i] );
+            panel.add( rooms[i] );
+        }
+        return panel;
+    }
+
+    private JPanel roomPanel( Hotel hotel, Room room ){
+        JPanel panel = new JPanel();
+
+        panel.add( new JLabel( Double.toString( room.getRoomPrice() ) ) );
+        panel.add( new JLabel( Double.toString( room.getMaxGuests() ) ) );
+        panel.add( new JLabel( Double.toString( room.getNumberOfBeds() ) ) );
+        panel.add( new JLabel( room.getDescription() ) );
+        panel.add( new JLabel( room.getTypeOfBathroom() ) );
 
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-            	System.out.println( hotel.getName() );
-                cart.AddHotelToBooking( hotel );
+                System.out.println( hotel.getName() );
+                cart.AddHotelToBooking( hotel, room );
+				cart.getHotelOrders().setDate( dateChooser.getDate(), dateChooser_1.getDate() );
             }
         });
+
         panel.add( addToCart );
         return panel;
     }

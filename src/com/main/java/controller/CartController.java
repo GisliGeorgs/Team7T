@@ -1,8 +1,12 @@
 package com.main.java.controller;
 
-import DayTrip.DayTrip;
+import DayTrip.klasar.*;
 import Flight.Flight;
+import Hotel.BookingController;
 import Hotel.Hotel;
+import Hotel.Room;
+import Hotel.Booking;
+import Hotel.BookingController;
 import com.main.java.persistence.*;
 import com.main.java.form.*;
 
@@ -50,7 +54,9 @@ public class CartController extends SearchController{
      * @param daytriporder
      */
     public void AddDayTripToBooking( DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }    
-    public void AddHotelToBooking( Hotel hotel ){ hotelOrders.AddHotel( hotel ); }    
+    public void AddHotelToBooking( Hotel hotel, Room room ){
+        hotelOrders.AddHotel( hotel, room );
+    }
     public void AddFlightHomeToBooking( Flight flight ){ flightOrders.SetHomeFlight(flight); }
     public void AddFlightOutToBooking( Flight flight ){ flightOrders.SetOutFlight(flight); }
 
@@ -111,18 +117,59 @@ public class CartController extends SearchController{
         	orderNum += a.substring( i2, i2+1 );
         }
         try {
-        	System.out.println(1111111);
-			user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
-		} catch (IOException e) {
+        	BookHotels();
+        	// TODO setja inn rétt
+			//user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
+		} catch (Exception e) {
 			// Auto-generated catch block
 			e.printStackTrace();
 		}      	
         return orderNum;
+    }
+
+
+    String flightBookingID;
+    // TODO Implement me
+    public void BookFlights(){
+    }
+    String hotelBookingID;
+    // TODO Finish implementing me
+    public void BookHotels(){
+		int length = getHotelOrders().GetHotel().size();
+		BookingController booker = new BookingController();
+		for( int i = 0; i < length; i++ ){
+			Hotel hotel = getHotelOrders().GetHotel().get( i );
+			
+			// TODO Laga book contructorinn
+			Booking book = new Booking( hotel, getHotelOrders().getRoom().get(i), "MyName", "my@aol.com", "MyPhone", DateToString(getHotelOrders().getDateFrom()), DateToString(getHotelOrders().getDateTo()), "MyCreditCard" );
+			try {
+				booker.saveBooking( book );
+				// TODO Save-a bókun
+				// user.save?
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+    }
+    String DayTripBookingID;
+    // TODO Færa þetta í CartController CreateCartOrder
+    public void BookDayTrips(){
+
     }
     /**
      * Nï¿½r ï¿½ UserInfo.
      */
     public void GetUser(){
         user = new User();
+    }
+    
+    private static String DateToString( Date date ){
+        String res = Integer.toString( date.getYear() + 1900 );
+        res += "-" + Integer.toString( date.getMonth() + 1 );
+        res += "-" + Integer.toString( date.getDate() );
+        return res;
     }
 }

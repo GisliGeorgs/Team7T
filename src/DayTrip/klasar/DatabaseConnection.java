@@ -34,6 +34,7 @@ public class DatabaseConnection {
 			conn = DriverManager.getConnection("jdbc:sqlite:"+currentDir+"\\src\\daytrips.db");
 			System.out.println("Tenging er komin �");
 		} catch (Exception e) {
+			System.out.println( e.getMessage() );
 			System.out.println("Ekki n��ist tenging vi� gagnagrunninn");
 			System.exit(0);
 		}	
@@ -169,12 +170,12 @@ public class DatabaseConnection {
 				searchTripQuery += " WHERE";
 				if(date1 != null) searchTripQuery += " startDate <= '" + new java.sql.Date(date1.getTime()) + "' AND";
 				if(date2 != null) searchTripQuery += " endDate >= '" + new java.sql.Date(date2.getTime()) + "' AND";
-				if(name != null) searchTripQuery += " name = '" + name + "' AND";
-				if(type != null) searchTripQuery += " type = '" + type + "' AND";
+				if(name != null || name != "") searchTripQuery += " name = '" + name + "' AND";
+				if(type != null || type != "") searchTripQuery += " type = '" + type + "' AND";
 				if(size != 0) searchTripQuery += " size <= " + size + " AND";
 				if(price != 0) searchTripQuery += " price <= " + price + " AND";
 				if(length != 0) searchTripQuery += " length <= " + length + " AND";
-				if(location != null) searchTripQuery += " location = '" + location + "' AND";
+				if(location != null || location!="") searchTripQuery += " location = '" + location + "' AND";
 				searchTripQuery = searchTripQuery.substring(0, searchTripQuery.lastIndexOf(" ")) + ";";
 				System.out.println(searchTripQuery);
 		}

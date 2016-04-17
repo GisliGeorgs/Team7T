@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import DayTrip.DayTrip;
+import DayTrip.klasar.*;
 import Flight.Flight;
 import Hotel.Hotel;
 import com.main.java.persistence.*;

@@ -21,6 +21,17 @@ public class Booking {
     public Booking() {
 
     }
+    public Booking( Hotel hotel, Room room, String name, String email, String phone, String dateFrom, String dateTo, String creditcard ){
+        this.hotel = hotel;
+        this.hotelId = hotel.getId();
+        this.customerName = name;
+        this.phoneNr = phone;
+        this.email = email;
+        this.startDate  = dateFrom;
+        this.endDate = dateTo;
+        this.creditCardNr = creditcard;
+        this.rooms = new Room[]{ room };
+    }
 
     public void setId(int id) {
         this.id = id;

@@ -2,8 +2,7 @@ package DayTrip.klasar;
 
 import java.util.Date;
 
-import look.Booking;
-import look.BookingView;
+import DayTrip.look.Booking;
 
 public class BookingController {
 	private int bookingNumber;
@@ -45,7 +44,7 @@ public class BookingController {
 			}
 		}
 		else {
-			System.out.println("Ekki löglegt veffang, kv gunnsteinn");
+			System.out.println("Ekki lï¿½glegt veffang, kv gunnsteinn");
 			return null;
 		}
 	}

@@ -1,5 +1,7 @@
 package Hotel;
 
+import java.sql.SQLException;
+
 /**
  * Created by Svava Hildur on 16/03/16.
  */
@@ -112,6 +114,16 @@ public class Hotel {
     public void setRating(double rating) {
 
         this.rating = rating;
+    }
+    public void getRoomsFromDB(){
+    	HotelController ctrl = new HotelController();
+    	
+    	try {
+			this.rooms = ctrl.getRooms( this );
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public Room[] getRooms() {

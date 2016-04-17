@@ -1,6 +1,6 @@
 package com.main.java.persistence;
 
-import DayTrip.DayTrip;
+import DayTrip.klasar.*;
 
 import java.util.ArrayList;
 import java.util.List;
