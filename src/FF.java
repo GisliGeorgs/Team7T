@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import java.awt.GridLayout;
 
 public class FF extends JFrame {
 
@@ -70,6 +71,8 @@ public class FF extends JFrame {
 		});
 	}
 
+	// TODO Add-a scrollbar i leitarnidurstöðulistann
+	// TODO Láta leitarniðurstöðurnar vera flottar.
 	/**
 	 * Create the frame.
 	 */
@@ -280,10 +283,9 @@ public class FF extends JFrame {
 
 		JPanel panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
-		panelResult.setBounds(119, 125, 598, 401);
+		panelResult.setBounds(125, 134, 598, 401);
 		contentPane.add(panelResult);
-
-		
+		//panelResult.setLayout(new GridLayout( 0,1 ));
 		
 		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
 		Image imgSearch = new ImageIcon(this.getClass().getResource("/search.png")).getImage(); //$NON-NLS-1$
@@ -309,7 +311,6 @@ public class FF extends JFrame {
 				List res;
 				try {
 					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople );
-
 	                if( res.size() > 0 ){
 	                    JPanel[] resPanel = new JPanel[res.size()];
 	                    for ( int i = 0; i < res.size(); i++ ) {
@@ -536,6 +537,7 @@ public class FF extends JFrame {
         panel.add( new JLabel( hotel.getAddress() ) );
         panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
         panel.add( new JLabel( hotel.getDescription() ) );
+        
 
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {

@@ -43,6 +43,8 @@ public class Cart extends JFrame {
 		});
 	}
 
+    // TODO Láta hlutina líta flott út.
+
 	/**
 	 * Create the frame.
 	 */
