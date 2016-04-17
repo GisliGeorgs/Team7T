@@ -1,4 +1,4 @@
-package look;
+package DayTrip.look;
 
 import java.awt.EventQueue;
 

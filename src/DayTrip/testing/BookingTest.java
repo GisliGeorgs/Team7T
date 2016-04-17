@@ -1,4 +1,4 @@
-package testing;
+package DayTrip.testing;
 
 import static org.junit.Assert.*;
 

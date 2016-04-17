@@ -1,4 +1,4 @@
-package look;
+package DayTrip.look;
 
 /**
  * Created by Gunnsteinn on 4/6/16.

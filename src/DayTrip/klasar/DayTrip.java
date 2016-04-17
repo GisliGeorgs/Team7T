@@ -1,4 +1,4 @@
-package klasar;
+package DayTrip.klasar;
 
 import java.util.List;
 import java.text.DateFormat;

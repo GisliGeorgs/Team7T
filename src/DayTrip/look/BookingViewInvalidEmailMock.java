@@ -1,4 +1,4 @@
-package look;
+package DayTrip.look;
 
 public class BookingViewInvalidEmailMock implements BookingView {
 
