@@ -1,3 +1,4 @@
+package Hotel;
 //import static org.junit.Assert.*;
 
 /**

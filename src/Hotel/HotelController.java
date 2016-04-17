@@ -1,4 +1,5 @@
- import java.util.Date;
+package Hotel;
+import java.util.Date;
  import java.sql.*;
  import java.util.*;
 

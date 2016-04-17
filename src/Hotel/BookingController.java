@@ -1,3 +1,4 @@
+package Hotel;
 import javax.xml.transform.Result;
 import java.util.Date;
 import java.sql.*;

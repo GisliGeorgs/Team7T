@@ -1,3 +1,4 @@
+package Hotel;
 import java.util.Date;
 
 /**
