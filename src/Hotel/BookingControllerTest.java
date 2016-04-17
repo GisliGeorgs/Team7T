@@ -1,69 +1,72 @@
-package Hotel;
-//import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
-/**
- * Created by Svava Hildur on 20.3.2016.
- */
 public class BookingControllerTest {
-/*
+
+    private BookingController bcontroller = new BookingController();
+    private HotelController hcontroller;
+    private Booking book;
+    private Booking testbooking;
+    private Hotel hotel;
+
     @org.junit.Before
     public void setUp() throws Exception {
-        BookingController bcontroller = new BookingController();
-        Booking book = new Booking(1);
+        hcontroller = new HotelController();
+        hotel = hcontroller.getHotel("Hilton");
+        book = new Booking();
         book.setEmail("palli@gmail.com");
+        book.setHotelId(hotel.getId());
+        book.setRoomId(20);
+        book.setPhoneNr("894-7896");
+        book.setCreditCardNr("4567894512345698");
         book.setCustomerName("palli");
-        book.setStartDate(Date(2016,05,19));
-        book.setEndDate(Date(2016,05,20));
-        bcontroller.saveBooking(book);
+        book.setStartDate("2016-05-19");
+        book.setEndDate("2016-05-20");
+        book = bcontroller.saveBooking(book);
     }
 
     @org.junit.After
     public void tearDown() throws Exception {
-        bcontroller.deleteBooking(book);
+        bcontroller.deleteBooking(book.getId());
         bcontroller = null;
-
     }
 
     @org.junit.Test(expected=IllegalArgumentException.class)
     public void testNoEmptyStringGetBooking() throws Exception {
-        Booking testbooking = bcontroller.getBooking("");
+        testbooking = bcontroller.getBooking(Integer.parseInt(""));
     }
 
     //ath hvort skili error ef við setjum inn streng með bókstöfum í getBooking
     @org.junit.Test(expected=IllegalArgumentException.class)
     public void testNoLettersGetBooking() throws Exception {
-        Booking testbooking = bcontroller.getBooking("a");
+        testbooking = bcontroller.getBooking(Integer.parseInt("a"));
     }
 
     //ath hvort skili error ef við setjum inn streng með táknum í getBooking
-    @org.junit.Test(expected=IllegalArgumentsException.class)
+    @org.junit.Test(expected=IllegalArgumentException.class)
     public void testNoSpecialCharsGetBooking() throws Exception {
-        Booking testbooking = bcontroller.getBooking(".-/");
+        testbooking = bcontroller.getBooking(Integer.parseInt(".-/"));
     }
 
     //ath hvort skili ekki error ef við setjum inn streng með tölum (aðferðin ætti að parsa það yfir í int)
     @org.junit.Test
     public void testIntStringGetBooking() throws Exception {
-        Booking testBooking = bcontroller.getBooking("1");
-        assertEquals(testBooking.getId(), 1);
+        String id = ""+book.getId();
+        testbooking = bcontroller.getBooking(id);
+        assertEquals(testbooking.getId(), book.getId());
     }
 
     @org.junit.Test
     public void testgetBooking() throws Exception {
-        Booking btest = bcontroller.getBooking(1);
+        Booking btest = bcontroller.getBooking(book.getId());
         assertNotNull(btest);
-        assertEquals(btest.getId(), 1);
-        assertEquals(btest.getCustomerName(),"palli");
-        assertEquals(btest.getEmail(),"palli@gmail.com");
-        assertEquals(btest.getStartDate(),Date(2016,05,19));
-        assertEquals(btest.getEndDate(),Date(2016,05,20));
+        assertEquals(btest.getId(), book.getId());
     }
 
     @org.junit.Test
     public void testgetBookings() throws Exception {
-        Booking[] bfylki = bcontroller.getBookings();
+        Booking[] bfylki = bcontroller.getBookings(hotel);
         assertNotNull(bfylki);
-        assertEqual(bfylki[0].getId(), 1);
+        assertEquals(bfylki[1].getId(), book.getId());
     }
 
     @org.junit.Test
@@ -71,5 +74,5 @@ public class BookingControllerTest {
         Booking[] pallibook = bcontroller.getBookingsByCustomer("palli");
         assertNotNull(pallibook);
         assertEquals(pallibook[0].getCustomerName(),"palli");
-    }*/
+    }
 }

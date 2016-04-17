@@ -1,4 +1,3 @@
-package Hotel;
 import java.util.Date;
 
 /**
@@ -10,25 +9,27 @@ public class Booking {
     private static String customerName;
     private static String email;
     private static String creditCardNr;
-    private static Date startDate;
-    private static Date endDate;
+    private static String startDate;
+    private static String endDate;
     private static Room[] rooms;
     private static Hotel hotel;
-    private int hotelId;
-    private int roomId;
-
-    //djöfull er halldóra fkn heimsk wow
+    private static int hotelId;
+    private static int roomId;
 
     //Smiður
-    public Booking( int id) {
-        this.id = id;
+    public Booking() {
+
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
+    public int getId(){ return id;}
+
     public void setHotelId(int id) {this.hotelId = id;}
+
+    public static int getHotelId() { return hotelId; }
 
     public static String getPhoneNr() {
         return phoneNr;
@@ -62,23 +63,25 @@ public class Booking {
         this.creditCardNr = creditCardNr;
     }
 
-    public static Date getStartDate() {
+    public static String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public static Date getEndDate() {
+    public static String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
     public void setRoomId(int id) {this.roomId = id;}
+
+    public static int getRoomId() { return roomId; }
 
     public static Room[] getRooms() {
         return rooms;

@@ -1,5 +1,4 @@
-package Hotel;
-import java.util.Date;
+
 /**
  * Created by Svava Hildur on 16/03/16.
  */
@@ -8,21 +7,23 @@ public class Hotel {
     private int id;
     private String name;
     private String address;
+    private String place;
     private String type;
     private String phoneNumber;
     private String description;
     private double starCount;
-    private double rating; //????
+    private double rating;
     private Room[] rooms;
-    private String tags;
+    private String[] tags;
     private double avgPrice;
-    private Date checkoutTime;
-    //private DayTrip[] dayTours;
+    private String checkoutTime;
 
-    public Hotel(int id) {
-
-        this.id = id;
+    public Hotel() {
+        reviews = new Review[0];
+        rooms = new Room[0];
     }
+
+    public void setId(int id) { this.id = id; }
 
     public Review[] getReviews() {
 
@@ -32,6 +33,7 @@ public class Hotel {
     public int getId() {
         return id;
     }
+
     public void setReviews(Review[] reviews) {
 
         this.reviews = reviews;
@@ -56,6 +58,10 @@ public class Hotel {
 
         this.address = address;
     }
+
+    public String getPlace() { return place; }
+
+    public void setPlace(String place) { this.place = place; }
 
     public String getType() {
 
@@ -122,7 +128,7 @@ public class Hotel {
         return rooms.length;
     }
 
-    public String getTags() {
+    public String[] getTags() {
 
         return tags;
     }
@@ -152,11 +158,8 @@ public class Hotel {
         this.checkoutTime = checkoutTime;
     }
 
-    //public DayTrip[] getDayTours() {
-    //    return dayTours;
-    //}
-
-    //public void setDayTours(DayTrip[] dayTours) {
-    //    this.dayTours = dayTours;
-    //}
+    public void updateRating(double newrating) {
+        int count = reviews.length;
+        rating = (rating+newrating)/(count+1);
+    }
 }

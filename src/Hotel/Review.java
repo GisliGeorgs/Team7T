@@ -1,18 +1,20 @@
-package Hotel;
 /**
  * Created by Svava Hildur on 16/03/16.
  */
 public class Review {
     private String user;
-    private int date;
+    private String date;
     private int helpfulCount;
     private String review;
     private double userRating;
     private int id;
+    private int hotelId;
 
-    public Review(int id) {
-        this.id = id;
+    public Review() {
+
     }
+
+    public void setId(int id) { this.id = id; }
 
     public String getUser() {
         return user;
@@ -22,11 +24,11 @@ public class Review {
         this.user = user;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -53,4 +55,8 @@ public class Review {
     public void setUserRating(double userRating) {
         this.userRating = userRating;
     }
+
+    public int getHotelId() { return hotelId; }
+
+    public void setHotelId(int hotelId) { this.hotelId = hotelId; }
 }
