@@ -1,5 +1,9 @@
-package Flight;
+
 public class Flight {
+	/**
+	 * identical id number of flight
+	 */
+	private int id;
 	/**
 	 * Flight number
 	 */
@@ -43,7 +47,8 @@ public class Flight {
 	 * @param departureTime
 	 * @param airlineName
 	 */
-	public Flight(String flightNumber, String depdest, String arrdest, int availSeats, int pricing, String departureDate,String departureTime, String airlineName){
+	public Flight(int id, String flightNumber, String depdest, String arrdest, int availSeats, int pricing, String departureDate,String departureTime, String airlineName){
+		this.id=id;
 		this.flightNo=flightNumber;
 		this.destFrom=depdest;
 		this.destTo=arrdest;
@@ -54,6 +59,9 @@ public class Flight {
 		this.departure=departureDate;
 		this.airline=airlineName;
 		this.departureTime = departureTime;
+	}
+	public int getId(){
+		return this.id;
 	}
 	/**
 	 * @return - Returns the flight number of this instance's Flight

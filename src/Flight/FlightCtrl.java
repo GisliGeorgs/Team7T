@@ -1,4 +1,4 @@
-package Flight;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -38,7 +38,7 @@ public class FlightCtrl {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			String sql;
 			PreparedStatement pst;
 			if(!flex){
@@ -82,7 +82,9 @@ public class FlightCtrl {
 			String flightno;
 			String airline;
 			String departureTime;
+			int id;
 			while(rs.next()){
+				id 		   = rs.getInt("id");
 				flightno   = rs.getString("flightno");
 				destFrom   = rs.getString("destfrom");
 				destTo     = rs.getString("destto");
@@ -91,12 +93,9 @@ public class FlightCtrl {
 				departureDate  = rs.getDate("departuredate").toString();
 				departureTime = rs.getString("departuretime");
 				airline    = rs.getString("airline");
-				flight[its]=new Flight(flightno,destFrom,destTo,noTickets,price,departureDate,departureTime,airline);
+				flight[its]=new Flight(id, flightno,destFrom,destTo,noTickets,price,departureDate,departureTime,airline);
 				its++;
 			}
-			rs.close();
-			pst.close();
-			con.close();
 		}
 		catch(Exception e)
 		{
@@ -118,8 +117,10 @@ public class FlightCtrl {
 	public int book(Flight[] flights, boolean confirm){
 		///int referencenumber;
 		Booking booking = new Booking(flights,this.users);
-		if(!confirm)
-			return booking.cancel();	
+		if(!confirm){
+			booking.cancel();
+			return -1;
+		}
 		return booking.confirm();
 	}
 	/**

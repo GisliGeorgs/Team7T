@@ -1,5 +1,3 @@
-package Flight;
-
 import java.util.Vector;
 public class searchCtrl {
 	/**
@@ -47,7 +45,13 @@ public class searchCtrl {
 	 */
 	private Object[] searchResults;
 	
+	/**
+	 * 
+	 */
+	private Booking booking;
+	
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		/*String destFrom = "Keflavik";
 		String destTo 	= "Dublin";
 		String dateFrom = "23/3/2016";
@@ -180,7 +184,7 @@ public class searchCtrl {
 			else {
 				flights[i]=((Flight[])this.searchResults[i])[indices[i]];
 			}
-		Booking booking = new Booking(flights,this.users);
+		this.booking = new Booking(flights,this.users);
 		return booking.confirm();
 	}
 	/**
@@ -269,7 +273,6 @@ public class searchCtrl {
 		else
 			throw new IllegalArgumentException("No credit card given");
 	}
-	
 
 	public boolean getRound(){
 		return this.roundTrip;
