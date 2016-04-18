@@ -145,29 +145,35 @@ public class User{
     	//Hotel
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
     	JSONObject object = SaveHotel(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	if(!hotelKey.isEmpty() && hotelKey != null){
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
 		
 		//Flight
-        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
-    	object = SaveFlight(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	if(!flightKey.isEmpty() && flightKey != null){
+	        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
+	    	object = SaveFlight(orderN, flightKey, name);
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
 		
 		//Trip
-		homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
-    	object = SaveTrip(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	if(!tripKey.isEmpty() && tripKey != null){
+			homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
+	    	object = SaveTrip(orderN, tripKey, name);
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
     }
     
     public void LoadOrder(String orderNum){
