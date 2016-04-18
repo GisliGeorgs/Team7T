@@ -346,18 +346,14 @@ public class FF extends JFrame {
 
 		JLabel lblLocation = new JLabel(Messages.getString("FF.Location")); //$NON-NLS-1$
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
-		lblLocation.setBounds(12, 70, 77, 16);
+		lblLocation.setBounds(16, 169, 77, 16);
 
-		JLabel lblLocation1 = new JLabel("Location:");
-		lblLocation1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblLocation1.setBounds(16, 167, 77, 16);
-
-		contentPane.add(lblLocation1);
+		contentPane.add(lblLocation);
 		
 		txtLocation = new JTextField();
-		txtLocation.setBounds(16, 185, 105, 25);
-		contentPane.add(txtLocation);
+		txtLocation.setBounds(16, 186, 105, 25);
 		txtLocation.setColumns(10);
+		contentPane.add(txtLocation);
 		
 		JSpinner spinnerPrice = new JSpinner();
 		spinnerPrice.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
@@ -411,7 +407,7 @@ public class FF extends JFrame {
 				roundTrip = rdbtnBothWays.isSelected();
                 flightFrom = TextFieldFlightFrom.getText();
                 flightTo = TextFieldFlightTo.getText();
-				price = 1000000;//(Integer)spinnerPrice.getValue();
+				price = (Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
 				flex = chckbxFlexibleDates.isSelected();
 				
@@ -462,10 +458,10 @@ public class FF extends JFrame {
         }
         else if( type == 1 ){
             return hotelPanel( (Hotel)object );
-        }/*
+        }
         else if( type == 2 ){
             return daytripPanel( (DayTrip)object );
-        }*/
+        }
         else{
             return null;
         }

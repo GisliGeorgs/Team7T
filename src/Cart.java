@@ -203,8 +203,7 @@ public class Cart extends JFrame {
 		panel.add( new JLabel( hotel.getDescription() ) );
 		JButton addToCart = new JButton( "Remove" );
 		addToCart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
+			public void actionPerformed(ActionEvent arg0) {				
                 cartController.RemoveHotelFromBooking( hotel );
 			}
 		});

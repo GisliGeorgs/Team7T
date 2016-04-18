@@ -28,6 +28,7 @@ public class SearchController{
     	gregTo.setTime( dateTo );*/
 
         String[] keywords = searchValues.toArray( new String[0] );
+        System.out.println("loc: '" + loc + "'");
 
     	if( type == 0 ){
     		ArrayList<Flight> res = new ArrayList<Flight>();
@@ -175,7 +176,8 @@ public class SearchController{
 
     public static ArrayList<DayTrip> FindDayTrips( Date dateFrom, Date dateTo, String loc, int price, String[] keywords ){
     	DatabaseConnection ctrl = new DatabaseConnection();
-    	
+    	System.out.println( loc );
+    	// TODO Breyta þessu
     	ArrayList<DayTrip> mid = new ArrayList<DayTrip>(ctrl.search( dateFrom, dateTo, "", "", 0, price, 0, loc));
     			
         ArrayList<DayTrip> res = new ArrayList<>();
@@ -195,6 +197,8 @@ public class SearchController{
                 }
             }
         }*/
+        // TODO Remove me
+        res = mid;
         return res;
     }
     //endregion

@@ -112,6 +112,7 @@ public class CartController extends SearchController{
         try {
         	BookHotels();
         	BookFlights();
+        	// TODO DayTrip bókun
         	// TODO setja inn rétt
 			//user.SaveOrder( orderNum, flightBookingID, hotelBookingID, DayTripBookingID );
 		} catch (Exception e) {

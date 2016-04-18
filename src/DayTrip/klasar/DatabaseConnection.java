@@ -35,8 +35,7 @@ public class DatabaseConnection {
 			System.out.println("Tenging er komin �");
 		} catch (Exception e) {
 			System.out.println( e.getMessage() );
-			System.out.println("Ekki n��ist tenging vi� gagnagrunninn");
-			System.exit(0);
+			System.out.println("DayTrip: Ekki n��ist tenging vi� gagnagrunninn");
 		}	
 	}
 	
@@ -166,19 +165,24 @@ public class DatabaseConnection {
 
 	public List<DayTrip> search(Date date1, Date date2, String name, String type, int size, int price, int length, String location) {
 		searchTripQuery = "SELECT * FROM dayTrips";
-		if(date1 != null || date2 != null || name != null || type != null || size != 0 || price != 0 || length != 0 || location != null) {
-				searchTripQuery += " WHERE";
-				if(date1 != null) searchTripQuery += " startDate <= '" + new java.sql.Date(date1.getTime()) + "' AND";
-				if(date2 != null) searchTripQuery += " endDate >= '" + new java.sql.Date(date2.getTime()) + "' AND";
-				if(name != null || name != "") searchTripQuery += " name = '" + name + "' AND";
-				if(type != null || type != "") searchTripQuery += " type = '" + type + "' AND";
-				if(size != 0) searchTripQuery += " size <= " + size + " AND";
-				if(price != 0) searchTripQuery += " price <= " + price + " AND";
-				if(length != 0) searchTripQuery += " length <= " + length + " AND";
-				if(location != null || location!="") searchTripQuery += " location = '" + location + "' AND";
-				searchTripQuery = searchTripQuery.substring(0, searchTripQuery.lastIndexOf(" ")) + ";";
-				System.out.println(searchTripQuery);
-		}
+		//if(date1 != null || date2 != null || name != null || type != null || size != 0 || price != 0 || length != 0 || location != null) {
+		System.out.println("loc: " + "'" + location + "'");
+			searchTripQuery += " WHERE";
+			if(date1 != null) searchTripQuery += " startDate <= '" + new java.sql.Date(date1.getTime()) + "' AND";
+			if(date2 != null) searchTripQuery += " endDate >= '" + new java.sql.Date(date2.getTime()) + "' AND";
+			if(name != null && name != "") searchTripQuery += " name = '" + name + "' AND";
+			if(type != null && type != "") searchTripQuery += " type = '" + type + "' AND";
+			if(size != 0) searchTripQuery += " size <= " + size + " AND";
+			if(price != 0) searchTripQuery += " price <= " + price + " AND";
+			if(length != 0) searchTripQuery += " length <= " + length + " AND";
+			System.out.println( searchTripQuery );
+			if(location != null && location != ""){
+				searchTripQuery += " location = '" + location + "' AND";
+			}
+			System.out.println( searchTripQuery );
+			searchTripQuery = searchTripQuery.substring(0, searchTripQuery.lastIndexOf(" ")) + ";";
+			System.out.println(searchTripQuery);
+		//}
 		List<DayTrip> daytrips = new ArrayList<DayTrip>();
 		try {
 			pstatement = conn.prepareStatement(searchTripQuery);
