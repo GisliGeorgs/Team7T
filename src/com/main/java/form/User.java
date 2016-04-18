@@ -21,9 +21,9 @@ public class User{
     private List<String> interests;
     private List<String> pastOrderNumbers;
     private String email;
-    public HotelOrder hotelOrder;
-    public FlightOrder flightOrder;
-    public DayTripOrder tripOrder;
+    public String hotelId;
+    public String flightId;
+    public String tripId;
         
     public User( ){
         LoadUser();
@@ -66,7 +66,6 @@ public class User{
 		try (FileWriter file = new FileWriter(homeLoc)) {
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
-			//System.out.println("\nJSON Object: " + obj);
 		}
     }
     public void LoadUser(){
@@ -141,54 +140,116 @@ public class User{
     }
     
     
-    public void SaveOrder( String orderN, DayTripOrder trip, FlightOrder flight, HotelOrder hotel ) throws IOException{
-        /* Vista breyturnar uppi í MyDocs? */  
-        String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
-    	JSONObject object = SaveHotels(orderN, hotel);
-        //Add stuff     
-        
-        //End of Add Stuff
-		// try-with-resources statement based on post comment below :)
+    public void SaveOrder( String orderN, String tripKey, String flightKey, String hotelKey, String name ) throws IOException{
+        /* Vista breyturnar i my docs*/  
+    	//Hotel
+        String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
+    	JSONObject object = SaveHotel(orderN, hotelKey, name);
+		try (FileWriter file = new FileWriter(homeLoc)) {
+			file.write(object.toJSONString());
+			System.out.println("Successfully Copied JSON Object to File...");
+			pastOrderNumbers.add(orderN);
+		}
+		
+		//Flight
+        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
+    	object = SaveFlight(orderN, hotelKey, name);
+		try (FileWriter file = new FileWriter(homeLoc)) {
+			file.write(object.toJSONString());
+			System.out.println("Successfully Copied JSON Object to File...");
+			pastOrderNumbers.add(orderN);
+		}
+		
+		//Trip
+		homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
+    	object = SaveTrip(orderN, hotelKey, name);
 		try (FileWriter file = new FileWriter(homeLoc)) {
 			file.write(object.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
 			pastOrderNumbers.add(orderN);
 		}
     }
+    
     public void LoadOrder(String orderNum){
-        /* Lesa fæl úr MyDocs? */
-    	hotelOrder = new HotelOrder();
-        String homeLoc = System.getProperty("user.home") + "/readme2.txt";    	
+       LoadHotel(orderNum);        
+       LoadFlight(orderNum);        
+       LoadTrip(orderNum);        
+    }
+    
+    private void LoadHotel(String orderNum)
+    {
+    	String homeLoc = System.getProperty("user.home") + "/readme1.txt";    	
+        File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {     	 
+	        try {	    
+		    	JSONParser parser = new JSONParser();
+	            Object obj = parser.parse(new FileReader(homeLoc));	 
+	            JSONObject jsonObject = (JSONObject) obj;	            
+	            //Hotel
+	            hotelId = (String) jsonObject.get(orderNum);
+	            }
+	            	            	 
+        	catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }
+    }
+    
+    private void LoadFlight(String orderNum)
+    {
+    	String homeLoc = System.getProperty("user.home") + "/readme2.txt";    	
         File f = new File(homeLoc);
         if(f.exists() && !f.isDirectory()) {     	 
 	        try {	    
 		    	JSONParser parser = new JSONParser();
 	            Object obj = parser.parse(new FileReader(homeLoc));	 
 	            JSONObject jsonObject = (JSONObject) obj;
-	            
-	            //Hotels
-	            HotelOrder hotelorderMini = new HotelOrder();
-	            ArrayList hotelObject = (ArrayList) jsonObject.get(orderNum + "H");
-	            for(int i = 0; i < hotelObject.size(); i++){
-	            	ArrayList temp = (ArrayList) hotelObject.get(i);
-	            	double fff = (double) temp.get(7);
-	            	float kkk = (float) fff;
-	            	JSONArray hola = (JSONArray) temp.get(8);
-	            	String[] arr = hola.toString().replace("},{", " ,").split(" ");
-	            	GregorianCalendar greg = new GregorianCalendar(Integer.parseInt(temp.get(2).toString()), Integer.parseInt(temp.get(1).toString()), Integer.parseInt(temp.get(0).toString()));
-	            	GregorianCalendar greg2 = new GregorianCalendar(Integer.parseInt(temp.get(5).toString()), Integer.parseInt(temp.get(4).toString()), Integer.parseInt(temp.get(3).toString()));
-	            	Hotel hoe = new Hotel((String) temp.get(6), greg, greg2, kkk, arr);
-	            	hotelOrder.AddHotel(hoe);
-	            	//public Hotel( String loc,GregorianCalendar dateFrom, Calendar dateTo, Float price, String[] keywords )
-	            }
-	            	            	 
-        	} catch (Exception e) {
+	            //Flight
+	            flightId = (String) jsonObject.get(orderNum);
+	            }	            	            	 
+        	catch (Exception e) {
             	e.printStackTrace();
         	}
         }
     }
     
-    private JSONObject SaveHotels(String Ordernumr, HotelOrder hotel){    
+    private void LoadTrip(String orderNum)
+    {
+    	String homeLoc = System.getProperty("user.home") + "/readme3.txt";    	
+        File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {     	 
+	        try {	    
+		    	JSONParser parser = new JSONParser();
+	            Object obj = parser.parse(new FileReader(homeLoc));	 
+	            JSONObject jsonObject = (JSONObject) obj;
+	            //Trips
+	            tripId = (String) jsonObject.get(orderNum);
+	            }
+	            	            	 
+        	catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }
+    }
+    
+    private JSONObject SaveHotel(String Ordernumr, String key, String name){    
+    	JSONObject obj = new JSONObject();
+        String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
+    	File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {	 
+	            Object obje = parser.parse(new FileReader(homeLoc));	 
+	            obj = (JSONObject) obje;	 	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }	
+		obj.put(Ordernumr, key);
+		return obj;
+    }
+    
+    private JSONObject SaveFlight(String Ordernumr, String key, String name){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
     	File f = new File(homeLoc);
@@ -200,30 +261,28 @@ public class User{
         	} catch (Exception e) {
             	e.printStackTrace();
         	}
-        }
-		JSONArray jHotels = new JSONArray();
-		for(int k = 0; k < hotel.GetHotel().size() ; k++)
-		{
-			JSONArray jHotel = new JSONArray();
-			jHotel.add(hotel.GetHotel().get(k).getDateFrom().MONTH);
-			jHotel.add(hotel.GetHotel().get(k).getDateFrom().DATE);
-			jHotel.add(hotel.GetHotel().get(k).getDateFrom().YEAR);
-			jHotel.add(hotel.GetHotel().get(k).getDateTo().MONTH);
-			jHotel.add(hotel.GetHotel().get(k).getDateTo().DATE);
-			jHotel.add(hotel.GetHotel().get(k).getDateTo().YEAR);
-			jHotel.add(hotel.GetHotel().get(k).getLocation());
-			jHotel.add(hotel.GetHotel().get(k).getPrice());
-			JSONArray jKeywords = new JSONArray();
-			for(int i = 0; i < hotel.GetHotel().get(k).getKeywords().length; i++ ){
-				jKeywords.add(hotel.GetHotel().get(k).getKeywords()[i]);
-			}
-			jHotel.add(jKeywords);
-			jHotels.add(jHotel);
-		}
-		obj.put(Ordernumr + "H", jHotels);
+        }	
+		obj.put(Ordernumr, key);
 		return obj;
     }
+
     
+    private JSONObject SaveTrip(String Ordernumr, String key, String name){    
+    	JSONObject obj = new JSONObject();
+        String homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
+    	File f = new File(homeLoc);
+        if(f.exists() && !f.isDirectory()) {        
+	    	JSONParser parser = new JSONParser();	 
+	        try {	 
+	            Object obje = parser.parse(new FileReader(homeLoc));	 
+	            obj = (JSONObject) obje;	 	 
+        	} catch (Exception e) {
+            	e.printStackTrace();
+        	}
+        }	
+		obj.put(Ordernumr, key);
+		return obj;
+    }
     
     
 }
