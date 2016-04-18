@@ -534,7 +534,6 @@ public class FF extends JFrame {
 				cart.getHotelOrders().setDate( dateChooser.getDate(), dateChooser_1.getDate() );
             }
         });
-
         panel.add( addToCart );
         return panel;
     }
@@ -549,8 +548,12 @@ public class FF extends JFrame {
 
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) { cart.AddDayTripToBooking( daytrip ); }
+            public void actionPerformed(ActionEvent arg0) {
+				Date enddate = new Date(dateChooser.getDate().getYear(), dateChooser.getDate().getMonth(), dateChooser.getDate() + daytrip.getLength() - 1 );
+				cart.AddTripToBooking( new Trip( daytrip.getName(), dateChooser.getDate(), enddate, numPeople, 0 ) );
+			}
         });
+        panel.add( addToCart );
         return panel;
     }
 }

@@ -31,6 +31,7 @@ public class DatabaseConnection {
 	
 		try {
 			Class.forName("org.sqlite.JDBC");
+			// TODO Breyta í localhost dótið
 			conn = DriverManager.getConnection("jdbc:sqlite:"+currentDir+"\\src\\daytrips.db");
 			System.out.println("Tenging er komin �");
 		} catch (Exception e) {

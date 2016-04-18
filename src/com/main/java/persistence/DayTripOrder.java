@@ -6,11 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DayTripOrder extends Order{
-    /**
-     *
-     */
     private List<DayTrip> dayTrip;
-    
+    private List<Trip> trips;
+
     public DayTripOrder(){
     	dayTrip = new ArrayList<DayTrip>();
     }
@@ -31,12 +29,15 @@ public class DayTripOrder extends Order{
     public void RemoveDayTrip( DayTrip daytrip){
     	this.dayTrip.remove( daytrip );
     }
-    
-    public void CreateDayTriprder(){
-            
+
+    public void AddTrip( Trip trip ){
+        this.trips.add( trip );
     }
-    
-    public void EditDayTripOrder(){
-        
+    public void RemoveTrip( Trip trip ){
+        this.trips.remove( trip );
     }
+    public List<Trip> getTrips(){
+        return trips;
+    }
+
 }

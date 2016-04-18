@@ -219,12 +219,13 @@ public class Cart extends JFrame {
 		panel.add( new JLabel( daytrip.getType() ) );
 		panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
 
-		JButton addToCart = new JButton( "Add to Cart" );
-		addToCart.addActionListener(new ActionListener() {
+		JButton removeFromCart = new JButton( "Remove" );
+		removeFromCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
                 cartController.RemoveDayTripFromBooking( daytrip );
             }
 		});
+		panel.add( removeFromCart );
 		return panel;
 	}
 }

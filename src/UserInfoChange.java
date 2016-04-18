@@ -23,6 +23,8 @@ public class UserInfoChange extends JFrame {
 	private JPanel contentPane;
 	private JTextField email;
 	private JTextField age;
+	
+	private com.main.java.form.User user;
 
 	/**
 	 * Launch the application.
@@ -44,6 +46,7 @@ public class UserInfoChange extends JFrame {
 	 * Create the frame.
 	 */
 	public UserInfoChange() {
+		user = new com.main.java.form.User();
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
