@@ -539,13 +539,15 @@ public class FF extends JFrame {
 
     private JPanel daytripPanel( DayTrip daytrip ){
         JPanel panel = new JPanel();
+        // Sýna daytrip sem þú getur valið
+        // DayTrip valinn -> Birta allar trips sem eru undir 
 
         panel.add( new JLabel( daytrip.getName() ) );
         panel.add( new JLabel( daytrip.getLocation() ) );
         panel.add( new JLabel( daytrip.getType() ) );
         panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
 
-        JButton addToCart = new JButton( "Add to Cart" );
+        JButton addToCart = new JButton( "Select this type" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 				Date enddate = new Date(dateChooser.getDate().getYear(), dateChooser.getDate().getMonth(), dateChooser.getDate() + daytrip.getLength() - 1 );
