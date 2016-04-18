@@ -8,7 +8,7 @@ CREATE TABLE flight
   airline character varying(50),
   id serial NOT NULL,
   departuretime character varying(20),
-  departuredate character varying(20),
+  departuredate date,
   CONSTRAINT pk_flight PRIMARY KEY (id)
 )
 WITH (

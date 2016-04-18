@@ -24,7 +24,7 @@ public class DatabaseConnection {
 	private ResultSet tresult;
 	private String currentDir;
 	DateFormat formatter;
-	
+
 	public DatabaseConnection() {
 		currentDir = System.getProperty("user.dir");
 		formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -166,8 +166,8 @@ public class DatabaseConnection {
 
 	public List<DayTrip> search(Date date1, Date date2, String name, String type, int size, int price, int length, String location) {
 		searchTripQuery = "SELECT * FROM dayTrips";
-		//if(date1 != null || date2 != null || name != null || type != null || size != 0 || price != 0 || length != 0 || location != null) {
-		System.out.println("loc: " + "'" + location + "'");
+		if(date1 != null || date2 != null || name != null || type != null || size != 0 || price != 0 || length != 0 || location != null) {
+		//System.out.println("loc: " + "'" + location + "'");
 			searchTripQuery += " WHERE";
 			if(date1 != null) searchTripQuery += " startDate <= '" + new java.sql.Date(date1.getTime()) + "' AND";
 			if(date2 != null) searchTripQuery += " endDate >= '" + new java.sql.Date(date2.getTime()) + "' AND";
@@ -176,14 +176,11 @@ public class DatabaseConnection {
 			if(size != 0) searchTripQuery += " size <= " + size + " AND";
 			if(price != 0) searchTripQuery += " price <= " + price + " AND";
 			if(length != 0) searchTripQuery += " length <= " + length + " AND";
-			System.out.println( searchTripQuery );
-			if(location != null && location != ""){
-				searchTripQuery += " location = '" + location + "' AND";
-			}
+			if(location != null && location != "") searchTripQuery += " location = '" + location + "' AND";
 			System.out.println( searchTripQuery );
 			searchTripQuery = searchTripQuery.substring(0, searchTripQuery.lastIndexOf(" ")) + ";";
 			System.out.println(searchTripQuery);
-		//}
+		}
 		List<DayTrip> daytrips = new ArrayList<DayTrip>();
 		try {
 			pstatement = conn.prepareStatement(searchTripQuery);

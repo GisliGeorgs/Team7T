@@ -35,6 +35,7 @@ public class Booking {
 			return this.referenceNumber;
 		try 
 		{
+			System.out.print("FlightConfirm1");
 			Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			ResultSet rs;
@@ -96,6 +97,7 @@ public class Booking {
 		}
 		catch(Exception e)
 		{
+			System.out.print("FlightConfirm Error");
 			e.printStackTrace();
 		}
 		return this.referenceNumber;
@@ -110,7 +112,7 @@ public class Booking {
 			this.flights=null;
 			return;
 		}
-		
+
 		try{
 			Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
@@ -122,15 +124,15 @@ public class Booking {
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.referenceNumber);
 				pst.executeUpdate();
-				
+
 				System.out.println(pst.toString());
-				
+
 				sql = " UPDATE flight SET seatsleft = seatsleft + ? WHERE id in (?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.users.length);
 				pst.setInt(2, this.flights[0].getId());
 				pst.setInt(3, this.flights[1].getId());
-				pst.executeUpdate();			
+				pst.executeUpdate();
 				System.out.println(pst.toString());
 			}
 			else{
@@ -139,7 +141,7 @@ public class Booking {
 				pst.setInt(1, this.referenceNumber);
 				pst.executeUpdate();
 				System.out.println(pst.toString());
-				
+
 				sql = " UPDATE flight SET seatsleft = seatsleft + ? WHERE id in (?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.users.length);

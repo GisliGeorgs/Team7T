@@ -1,3 +1,4 @@
+package Flight;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,11 +23,10 @@ public class User {
 	 */
 	private String passport;
 	/**
-	 * unique id number (hlaupandi tala fengin úr DB)
+	 * unique id number (hlaupandi tala fengin ï¿½r DB)
 	 */
 	private int id;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 	}
 	/**
@@ -80,7 +80,8 @@ public class User {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			//Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			String sql= "select id from \"user\" where passport=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, this.passport);
@@ -89,7 +90,7 @@ public class User {
 				this.id=(Integer.parseInt(rs.getString("id")));
 				return Integer.parseInt(rs.getString("id"));
 			}
-			sql = "insert into \"user\"(firstname, lastname, card, passport) values (?,?,?,?)";
+			sql = "insert into \"user\" (firstname, lastname, card, passport) values (?,?,?,?)";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, this.firstName);
 			pst.setString(2, this.lastName);

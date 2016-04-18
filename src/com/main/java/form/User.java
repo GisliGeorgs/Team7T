@@ -144,30 +144,36 @@ public class User{
         /* Vista breyturnar i my docs*/  
     	//Hotel
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
-    	JSONObject object = SaveHotel(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	JSONObject object = SaveHotel(orderN, hotelKey);
+    	if(!hotelKey.isEmpty() && hotelKey != null){
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
 		
 		//Flight
-        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
-    	object = SaveFlight(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	if(!flightKey.isEmpty() && flightKey != null){
+	        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
+	    	object = SaveFlight(orderN, flightKey);
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
 		
 		//Trip
-		homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
-    	object = SaveTrip(orderN, hotelKey, name);
-		try (FileWriter file = new FileWriter(homeLoc)) {
-			file.write(object.toJSONString());
-			System.out.println("Successfully Copied JSON Object to File...");
-			pastOrderNumbers.add(orderN);
-		}
+    	if(!tripKey.isEmpty() && tripKey != null){
+			homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
+	    	object = SaveTrip(orderN, tripKey);
+			try (FileWriter file = new FileWriter(homeLoc)) {
+				file.write(object.toJSONString());
+				System.out.println("Successfully Copied JSON Object to File...");
+				pastOrderNumbers.add(orderN);
+			}
+    	}
     }
     
     public void LoadOrder(String orderNum){
@@ -232,7 +238,7 @@ public class User{
         }
     }
     
-    private JSONObject SaveHotel(String Ordernumr, String key, String name){    
+    private JSONObject SaveHotel(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
     	File f = new File(homeLoc);
@@ -249,7 +255,7 @@ public class User{
 		return obj;
     }
     
-    private JSONObject SaveFlight(String Ordernumr, String key, String name){    
+    private JSONObject SaveFlight(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
     	File f = new File(homeLoc);
@@ -267,7 +273,7 @@ public class User{
     }
 
     
-    private JSONObject SaveTrip(String Ordernumr, String key, String name){    
+    private JSONObject SaveTrip(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
     	File f = new File(homeLoc);
