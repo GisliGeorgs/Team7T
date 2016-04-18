@@ -491,7 +491,7 @@ public class FF extends JFrame {
                 	System.out.println( "Flight from" );
                 	cart.AddFlightOutToBooking( flight );
             	}
-            	else if( flightTo.equals( flight.getdestTo() ) ){
+            	else if( flightTo.equals( flight.getdestFrom() ) ){
                 	System.out.println( "Flight to" );
             		cart.AddFlightHomeToBooking( flight );
             	}

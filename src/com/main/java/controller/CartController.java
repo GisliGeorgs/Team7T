@@ -1,7 +1,6 @@
 package com.main.java.controller;
 
 import DayTrip.klasar.*;
-import Flight.Flight;
 import Hotel.BookingController;
 import Hotel.Hotel;
 import Hotel.Room;
@@ -21,7 +20,7 @@ public class CartController extends SearchController{
     public FlightOrder flightOrders;
     public DayTripOrder dayTripOrders;
     public HotelOrder hotelOrders;
-    public User user;
+    public com.main.java.form.User user;
 
     public CartController(){
         GetUser();
@@ -57,8 +56,8 @@ public class CartController extends SearchController{
     public void AddHotelToBooking( Hotel hotel, Room room ){
         hotelOrders.AddHotel( hotel, room );
     }
-    public void AddFlightHomeToBooking( Flight flight ){ flightOrders.SetHomeFlight(flight); }
-    public void AddFlightOutToBooking( Flight flight ){ flightOrders.SetOutFlight(flight); }
+    public void AddFlightHomeToBooking( Flight.Flight flight ){ flightOrders.SetHomeFlight(flight); }
+    public void AddFlightOutToBooking( Flight.Flight flight ){ flightOrders.SetOutFlight(flight); }
 
     public FlightOrder getFlightOrders() {
         return flightOrders;
@@ -95,7 +94,7 @@ public class CartController extends SearchController{
         user.LoadOrder( orderId );
     	return null;//user.GetHotelOrders;
     }
-    public List<Flight> GetFlightOrder( String orderId ){
+    public List<Flight.Flight> GetFlightOrder( String orderId ){
         user.LoadOrder( orderId );
         return null;//user.GetFlightOrders();
     }
@@ -112,8 +111,9 @@ public class CartController extends SearchController{
     	String orderNum = GenerateID();
         try {
         	BookHotels();
+        	BookFlights();
         	// TODO setja inn rétt
-			//user.SaveOrder( orderNum, dayTripOrders, flightOrders, hotelOrders );
+			//user.SaveOrder( orderNum, flightBookingID, hotelBookingID, DayTripBookingID );
 		} catch (Exception e) {
 			// Auto-generated catch block
 			e.printStackTrace();
@@ -135,7 +135,16 @@ public class CartController extends SearchController{
     String flightBookingID;
     // TODO Implement me
     public void BookFlights(){
+    	// TODO Flug user fyrir hverja manneskju sem er í numPeople
+    	Flight.User fluguser = new Flight.User( "FirstName", "LastName", "01189998819991197253", "01189998819991197253" );
+    	Flight.Booking book = new Flight.Booking( getFlightOrders().GetFlight(), new Flight.User[]{ fluguser } );
+    	int id = book.confirm();
+    	System.out.println("Flight Booking ID: " + id);
+    	if( id != 0 ){
+        	flightBookingID = Integer.toString( id );
+    	}
     }
+    
     String hotelBookingID;
     // TODO Finish implementing me
     public void BookHotels(){

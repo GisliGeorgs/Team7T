@@ -34,16 +34,21 @@ public class Booking {
 		int referenceNumber = 0;
 		try 
 		{
+			System.out.print("FlightConfirm1");
 			Class.forName("org.postgresql.Driver");
-			//Connection con = DriverManager.getConnection( "jdbc:postgresql://ec2-54-225-103-29.compute-1.amazonaws.com:5432/d4smhu9p4oq75g?sslmode=require&user=ssslrghrzfpjnu&password=tqT0v2HZHynlHRwYxZ1fz2ZL7M");//, "ssslrghrzfpjnu", "tqT0v2HZHynlHRwYxZ1fz2ZL7M")
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			System.out.print("FlightConfirm1");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			
+			System.out.print("\nFlightConfirm2");
 			ResultSet rs;
 			Statement st = con.createStatement();
 			int[] flightIds = new int[flights.length];
 			PreparedStatement pst;
 			String sql;
-			for(int i=0;i<users.length;i++)
-				users[i].createUser();
+			for(int i=0;i<users.length;i++){
+				users[i].createUser();				
+			}
+			System.out.print("FlightConfirm2");
 			for(int i=0;i<flights.length;i++){
 				sql = "select id from flight where flightno=? and departuredate = ?";
 				pst= con.prepareStatement(sql);
@@ -92,6 +97,7 @@ public class Booking {
 		}
 		catch(Exception e)
 		{
+			System.out.print("FlightConfirm Error");
 			e.printStackTrace();
 		}
 		return referenceNumber;

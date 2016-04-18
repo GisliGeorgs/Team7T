@@ -124,7 +124,7 @@ public class Cart extends JFrame {
         panelCart.repaint();*/
     	JPanel toadd;
         System.out.println( "updatecart1" );
-        if( !(cartController.getFlightOrders().GetFlight()[0] == null) ){
+        if( cartController.getFlightOrders().GetFlight()[0] != null ){
         	toadd = flightPanel( cartController.getFlightOrders().GetFlight()[0], 0 );
             if( toadd != null ){
             	panelCart.add( toadd );
@@ -133,7 +133,7 @@ public class Cart extends JFrame {
             }            	
         }
         System.out.println( "updatecart2" );
-        if( !(cartController.getFlightOrders().GetFlight()[1] == null) ){        	
+        if( cartController.getFlightOrders().GetFlight()[1] != null ){        	
             toadd = flightPanel( cartController.getFlightOrders().GetFlight()[1], 1 );
             if( toadd != null ){
             	panelCart.add( toadd );
@@ -169,8 +169,7 @@ public class Cart extends JFrame {
 
 
 	private JPanel flightPanel( Flight flight, int index ){
-        JPanel panel = new JPanel();
-        
+        JPanel panel = new JPanel();        
 
         panel.add( new JLabel( flight.getAirline() ) );
         panel.add( new JLabel( flight.getFlightNo() ) );
