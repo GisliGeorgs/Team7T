@@ -470,7 +470,6 @@ public class FF extends JFrame {
     private JPanel flightPanel( Flight flight ){
         JPanel panel = new JPanel();
         
-
         panel.add( new JLabel( flight.getAirline() ) );
         panel.add( new JLabel( flight.getFlightNo() ) );
         panel.add( new JLabel( "From: " + flight.getdestFrom() ) );

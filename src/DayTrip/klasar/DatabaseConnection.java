@@ -24,7 +24,7 @@ public class DatabaseConnection {
 	private ResultSet tresult;
 	private String currentDir;
 	DateFormat formatter;
-	
+
 	public DatabaseConnection() {
 		currentDir = System.getProperty("user.dir");
 		formatter = new SimpleDateFormat("yyyy-MM-dd");

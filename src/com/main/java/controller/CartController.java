@@ -116,7 +116,7 @@ public class CartController extends SearchController{
         	BookFlights();
         	// TODO DayTrip b�kun
         	// TODO setja inn r�tt
-			//user.SaveOrder( orderNum, flightBookingID, hotelBookingID, DayTripBookingID );
+			user.SaveOrder( orderNum, flightBookingID, hotelBookingID, DayTripBookingID, user.GetEmail() );
 		} catch (Exception e) {
 			// Auto-generated catch block
 			e.printStackTrace();
@@ -139,7 +139,7 @@ public class CartController extends SearchController{
     // TODO Implement me
     public void BookFlights(){
     	// TODO Flug user fyrir hverja manneskju sem er � numPeople
-    	Flight.User fluguser = new Flight.User( "FirstName", "LastName", "01189998819991197253", "01189998819991197253" );
+    	Flight.User fluguser = new Flight.User( "FirstName", "LastName", "123", "123" );
     	Flight.Booking book = new Flight.Booking( getFlightOrders().GetFlight(), new Flight.User[]{ fluguser } );
     	int id = book.confirm();
     	System.out.println("Flight Booking ID: " + id);

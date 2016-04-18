@@ -53,7 +53,7 @@ public class Booking {
 				sql = "select id from flight where flightno=? and departuredate = ?";
 				pst= con.prepareStatement(sql);
 				pst.setString(1, this.flights[i].getFlightNo() );
-				pst.setString(2, this.flights[i].getDeparture());
+				pst.setDate(2, java.sql.Date.valueOf(this.flights[i].getDeparture()));
 				//System.out.println(pst.toString());
 				rs = pst.executeQuery();
 				int flightId =-1;
@@ -85,7 +85,7 @@ public class Booking {
 			}
 			
 			for(int i=0;i<users.length;i++){
-				sql="insert into booking (userid, booking_id) values (?,?)";
+				sql="insert into user_booking (userid, booking_id) values (?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, users[i].getId());
 				pst.setInt(2, referenceNumber);
