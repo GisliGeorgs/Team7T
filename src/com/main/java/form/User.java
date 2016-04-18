@@ -144,7 +144,7 @@ public class User{
         /* Vista breyturnar i my docs*/  
     	//Hotel
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
-    	JSONObject object = SaveHotel(orderN, hotelKey, name);
+    	JSONObject object = SaveHotel(orderN, hotelKey);
     	if(!hotelKey.isEmpty() && hotelKey != null){
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
@@ -156,7 +156,7 @@ public class User{
 		//Flight
     	if(!flightKey.isEmpty() && flightKey != null){
 	        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
-	    	object = SaveFlight(orderN, flightKey, name);
+	    	object = SaveFlight(orderN, flightKey);
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
 				System.out.println("Successfully Copied JSON Object to File...");
@@ -167,7 +167,7 @@ public class User{
 		//Trip
     	if(!tripKey.isEmpty() && tripKey != null){
 			homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
-	    	object = SaveTrip(orderN, tripKey, name);
+	    	object = SaveTrip(orderN, tripKey);
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
 				System.out.println("Successfully Copied JSON Object to File...");
@@ -238,7 +238,7 @@ public class User{
         }
     }
     
-    private JSONObject SaveHotel(String Ordernumr, String key, String name){    
+    private JSONObject SaveHotel(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
     	File f = new File(homeLoc);
@@ -255,7 +255,7 @@ public class User{
 		return obj;
     }
     
-    private JSONObject SaveFlight(String Ordernumr, String key, String name){    
+    private JSONObject SaveFlight(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
     	File f = new File(homeLoc);
@@ -273,7 +273,7 @@ public class User{
     }
 
     
-    private JSONObject SaveTrip(String Ordernumr, String key, String name){    
+    private JSONObject SaveTrip(String Ordernumr, String key){    
     	JSONObject obj = new JSONObject();
         String homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
     	File f = new File(homeLoc);
