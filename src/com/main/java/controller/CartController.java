@@ -109,13 +109,7 @@ public class CartController extends SearchController{
      * @return Master order id
      */
     public String CreateCartOrder( /*List<DayTripOrder> dayTripOrders, List<FlightOrder> flightOrders, List<HotelOrder> hotelOrders*/ ){
-        String orderNum = "";
-        String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for( int i = 0; i < 9; i++ ){
-        	Random rand = new Random();
-        	int i2 = rand.nextInt(a.length());
-        	orderNum += a.substring( i2, i2+1 );
-        }
+    	String orderNum = GenerateID();
         try {
         	BookHotels();
         	// TODO setja inn rétt
@@ -126,7 +120,17 @@ public class CartController extends SearchController{
 		}      	
         return orderNum;
     }
-
+    
+    private String GenerateID(){
+        String orderNum = "";
+        String a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for( int i = 0; i < 9; i++ ){
+        	Random rand = new Random();
+        	int i2 = rand.nextInt(a.length());
+        	orderNum += a.substring( i2, i2+1 );
+        }
+        return orderNum;    	
+    }
 
     String flightBookingID;
     // TODO Implement me

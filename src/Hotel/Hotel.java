@@ -115,10 +115,9 @@ public class Hotel {
     }
     public void getRoomsFromDB(){
     	HotelController ctrl = new HotelController();
-
     	try {
 			this.rooms = ctrl.getRooms( this );
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

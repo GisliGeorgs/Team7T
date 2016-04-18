@@ -21,7 +21,7 @@ public class SearchController{
     public static ArrayList<Flight> GetFlightHistory( int i ){ return null; }
     public ArrayList<DayTrip> GetDayTripHistory( int i ){ return null; }
     
-    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople ) throws SQLException{
+    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople, boolean flex ) throws SQLException{
     	/*GregorianCalendar gregFrom = new GregorianCalendar();
     	GregorianCalendar gregTo = new GregorianCalendar();
     	gregFrom.setTime( dateFrom );
@@ -31,17 +31,19 @@ public class SearchController{
 
     	if( type == 0 ){
     		ArrayList<Flight> res = new ArrayList<Flight>();
-    		FindFlights( flightFrom, flightTo, dateFrom, dateTo, numPeople, price, true, roundTrip );
+    		FindFlights( flightFrom, flightTo, dateFrom, dateTo, numPeople, price, flex, roundTrip );
     		System.out.println(flightsFrom.size());
     		for( int i = 0; i < flightsFrom.size(); i++ ){
     			if( i < flightsFrom.size() ){
     				System.out.println( "From " + flightsFrom.get(i).getFlightNo() );
         			res.add( flightsFrom.get(i) );
     			}
-    			if( i < flightsTo.size() ){
-    				System.out.println( "To " + flightsTo.get(i).getFlightNo() );
-        			res.add( flightsTo.get(i) );
-    			}
+    		}
+    		for( int i = 0; i < flightsFrom.size(); i++ ){
+				if( i < flightsTo.size() ){
+					System.out.println( "To " + flightsTo.get(i).getFlightNo() );
+	    			res.add( flightsTo.get(i) );
+				}
     		}
             return res;
     	}
