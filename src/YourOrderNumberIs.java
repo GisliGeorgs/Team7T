@@ -47,7 +47,7 @@ public class YourOrderNumberIs extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 430, 255);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

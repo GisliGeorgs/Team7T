@@ -23,6 +23,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
 
 public class HotelFF extends JFrame {
 
@@ -180,7 +181,7 @@ public class HotelFF extends JFrame {
 		rdbtnRelaxation.setBounds(360, 195, 127, 25);
 		contentPane.add(rdbtnRelaxation);
 		
-		JRadioButton rdbtnFamilyFriendly = new JRadioButton("Family friendly");
+		JCheckBox rdbtnFamilyFriendly = new JCheckBox("Family friendly");
 		rdbtnFamilyFriendly.setBackground(new Color(173, 216, 230));
 		rdbtnFamilyFriendly.setBounds(360, 225, 127, 25);
 		contentPane.add(rdbtnFamilyFriendly);
@@ -196,5 +197,9 @@ public class HotelFF extends JFrame {
 		});
 		btnFinish.setBounds(288, 372, 97, 25);
 		contentPane.add(btnFinish);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("New check box");
+		chckbxNewCheckBox.setBounds(53, 360, 113, 25);
+		contentPane.add(chckbxNewCheckBox);
 	}
 }

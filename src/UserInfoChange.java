@@ -56,7 +56,7 @@ public class UserInfoChange extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 445, 456);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -75,12 +75,12 @@ public class UserInfoChange extends JFrame {
 		contentPane.add(btnSaveUser);
 		
 		JRadioButton rdbtnMale = new JRadioButton("Male");
-		rdbtnMale.setBackground(new Color(173, 216, 230));
+		rdbtnMale.setBackground(new Color(248, 248, 255));
 		rdbtnMale.setBounds(45, 237, 127, 25);
 		contentPane.add(rdbtnMale);
 		
 		JRadioButton rdbtnFemale = new JRadioButton("Female");
-		rdbtnFemale.setBackground(new Color(173, 216, 230));
+		rdbtnFemale.setBackground(new Color(248, 248, 255));
 		rdbtnFemale.setBounds(45, 267, 127, 25);
 		contentPane.add(rdbtnFemale);
 		

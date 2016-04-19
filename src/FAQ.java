@@ -51,7 +51,7 @@ public class FAQ extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 545, 483);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -69,7 +69,7 @@ public class FAQ extends JFrame {
 				dispose();
 			}
 		});
-		btnHome.setBounds(211, 398, 97, 25);
+		btnHome.setBounds(211, 390, 110, 33);
 		contentPane.add(btnHome);
 		
 		JLabel lblHereIsA = new JLabel("Here is a question");

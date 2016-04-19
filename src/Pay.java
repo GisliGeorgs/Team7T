@@ -73,7 +73,7 @@ public class Pay extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 505, 358);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -154,12 +154,12 @@ public class Pay extends JFrame {
 		});
 		
 		JRadioButton rdbtnVisa = new JRadioButton("");
-		rdbtnVisa.setBackground(new Color(173, 216, 230));
+		rdbtnVisa.setBackground(new Color(248, 248, 255));
 		rdbtnVisa.setBounds(259, 39, 25, 25);
 		contentPane.add(rdbtnVisa);
 		
 		JRadioButton rdbtnMastercard = new JRadioButton("");
-		rdbtnMastercard.setBackground(new Color(173, 216, 230));
+		rdbtnMastercard.setBackground(new Color(248, 248, 255));
 		rdbtnMastercard.setBounds(259, 100, 25, 25);
 		contentPane.add(rdbtnMastercard);
 		
