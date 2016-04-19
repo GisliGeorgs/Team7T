@@ -62,7 +62,7 @@ public class Cart extends JFrame {
     	setIconImage(
     			new ImageIcon(getClass().getResource("/7.png")).getImage()
     		);
-        setTitle("Team 7T - Cart");
+        setTitle("Cart");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 656, 557);
         contentPane = new JPanel();

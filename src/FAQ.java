@@ -47,7 +47,7 @@ public class FAQ extends JFrame {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
-		setTitle("Team 7T - FAQ");
+		setTitle("FAQ");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 545, 483);
 		contentPane = new JPanel();
@@ -66,8 +66,6 @@ public class FAQ extends JFrame {
 		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FF Front=new FF();
-				Front.setVisible(true);
 				dispose();
 			}
 		});
