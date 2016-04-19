@@ -88,7 +88,7 @@ public class Cart extends JFrame {
                     dispose();                	
                 }
                 else{
-                    UserInfoNew uin = new UserInfoNew( cartController );
+                    UserInfoChange uin = new UserInfoChange( cartController );
                     uin.setVisible( true );
                     dispose();
                 }
