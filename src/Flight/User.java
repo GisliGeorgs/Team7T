@@ -1,3 +1,4 @@
+package Flight;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class User {
 	 */
 	private String passport;
 	/**
-	 * unique id number (hlaupandi tala fengin úr DB)
+	 * unique id number (hlaupandi tala fengin ï¿½r DB)
 	 */
 	private int id;
 	public static void main(String[] args) {
@@ -52,7 +53,7 @@ public class User {
 		this.id=id;
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			String sql = "select * from \"user\" where id = ?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -80,7 +81,7 @@ public class User {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			String sql= "select id from \"user\" where passport=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, this.passport);

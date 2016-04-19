@@ -21,14 +21,14 @@ public class User{
     private List<String> interests;
     private List<String> pastOrderNumbers;
     private String email;
-    public String hotelId;
+
+	public String hotelId;
+	public String flightId;
+    public String tripId;
 
 	public String getHotelId() { return hotelId; }
 	public String getFlightId() { return flightId; }
 	public String getTripId() { return tripId; }
-
-	public String flightId;
-    public String tripId;
         
     public User( ){
         LoadUser();

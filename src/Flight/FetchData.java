@@ -1,3 +1,4 @@
+package Flight;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,7 +33,7 @@ public class FetchData {
 			try 
 			{
 				Class.forName("org.postgresql.Driver");
-				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 				String date;
 				String flightNo;
 				String airline;
@@ -88,7 +89,7 @@ public class FetchData {
 			try 
 			{
 				Class.forName("org.postgresql.Driver");
-				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");				
+				Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 				String date;
 				String flightNo;
 				String airline;

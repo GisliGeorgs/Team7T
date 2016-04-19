@@ -1,4 +1,5 @@
 import com.main.java.controller.CartController;
+import  com.main.java.form.User;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,6 +14,7 @@ import javax.swing.JRadioButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -21,7 +23,8 @@ import java.awt.Font;
 public class OrderNumber extends JFrame {
 
 	private JPanel contentPane;
-    // TODO Birta bara eina pöntun og alla hluti hennar í staðinn fyrir að birta bara öll pöntunarnúmer. Það er væntanlega auðveldara að cancela einum hlut í einu en að cancela heilli master pöntun.
+	User user;
+    // TODO Birta bara eina pÃ¶ntun og alla hluti hennar Ã­ staÃ°inn fyrir aÃ° birta bara Ã¶ll pÃ¶ntunarnÃºmer. ÃžaÃ° er vÃ¦ntanlega auÃ°veldara aÃ° cancela einum hlut Ã­ einu en aÃ° cancela heilli master pÃ¶ntun.
     //
 	/**
 	 * Launch the application.
@@ -30,7 +33,7 @@ public class OrderNumber extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OrderNumber OrderN = new OrderNumber();
+					OrderNumber OrderN = new OrderNumber( new User() );
 					OrderN.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +45,9 @@ public class OrderNumber extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OrderNumber() {
+	JPanel panelOrders;
+	public OrderNumber( User user ) {
+		this.user = user;
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
@@ -95,10 +100,98 @@ public class OrderNumber extends JFrame {
 		btnUser.setBounds(608, 10, 116, 39);
 		contentPane.add(btnUser);
 		
-		JPanel PanelSeeYourOrders = new JPanel();
-		PanelSeeYourOrders.setBackground(new Color(176, 224, 230));
-		PanelSeeYourOrders.setBounds(80, 74, 571, 329);
-		contentPane.add(PanelSeeYourOrders);
+		panelOrders = new JPanel();
+		panelOrders.setBackground(new Color(176, 224, 230));
+		panelOrders.setBounds(80, 74, 571, 329);
+		contentPane.add(panelOrders);
+		
+		String hotelid = user.getHotelId();
+		String flightid = user.getFlightId();
+		String tripid = user.getTripId();
+		
+		if( hotelid != null && hotelid != "" ){
+			Hotel.BookingController contr = new Hotel.BookingController();
+			Hotel.Booking book;
+			try {
+				book = contr.getBooking( hotelid );
+				panelOrders.add( hotelPanel( book ) );
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		if( flightid != null && flightid != "" ){
+			Flight.Booking book = new Flight.Booking( Integer.parseInt(flightid ) );
+			JPanel flights = new JPanel();
+			for( int i = 0; i < 2; i++ ){
+				if( null != book.getFlights()[i]){
+					flights.add( flightPanel( book, i ));
+				}				
+			}
+	        JButton remove = new JButton( "Cancel" );
+	        remove.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent arg0) {
+	            	book.cancel();
+	            }
+	        });
+	        flights.add( remove );
+						
+			panelOrders.add(flights);
+		}	
+		// TODO implement me.
+		if( tripid != null && tripid != "" ){	
+			
+		}
+	}
+    private JPanel flightPanel( Flight.Booking book, int index ){
+    	Flight.Flight flight = book.getFlights()[index];
+        JPanel panel = new JPanel();
+        
+        panel.add( new JLabel( book.getUsers()[0].getFirst() + " " + book.getUsers()[0].getLast() ) );
+        
+        panel.add( new JLabel( flight.getAirline() ) );
+        panel.add( new JLabel( flight.getFlightNo() ) );
+        panel.add( new JLabel( "From: " + flight.getdestFrom() ) );
+		panel.add( new JLabel( "To: " + flight.getdestTo() ) );
+        panel.add( new JLabel( "Price: " + flight.getPrice() ) );
+        panel.add( new JLabel( "Departure: " + flight.getDeparture() ) );
+        panel.add( new JLabel( "Dep time: " + flight.getDepTime() ) );
+        return panel;
+    }
+	
+	private JPanel hotelPanel( Hotel.Booking book ){
+		JPanel panel = new JPanel();
+
+        panel.add( new JLabel( book.getCustomerName() ) );
+
+        panel.add( new JLabel( book.getStartDate() ) );
+        panel.add( new JLabel( book.getEndDate() ) );
+        panel.add( new JLabel( book.getCustomerName() ) );
+				
+        panel.add( new JLabel( book.getHotel().getName() ) );
+        panel.add( new JLabel( book.getHotel().getAddress() ) );
+        panel.add( new JLabel( book.getHotel().getDescription() ) );
+        panel.add( new JLabel( book.getHotel().getType() ) );
+        panel.add( new JLabel( Double.toString( book.getHotel().getRating() ) ) );
+        for( int i = 0; i < book.getHotel().getRooms().length; i++ ){
+        	JPanel roomp = new JPanel();
+        	Hotel.Room room = book.getHotel().getRooms()[i];
+        	roomp.add( new JLabel( room.getDescription() ) );
+        	roomp.add( new JLabel( room.getTypeOfBathroom() ) );
+        	roomp.add( new JLabel( Integer.toString( room.getNumberOfBeds() ) ) );
+        	roomp.add( new JLabel( Double.toString( room.getRoomPrice() ) ) ); 
+        	panel.add(roomp);
+        }        
+        JButton cancel = new JButton( "Cancel" );
+        cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Hotel.BookingController contr = new Hotel.BookingController();
+				contr.deleteBooking( book.getId() );
+			}
+        });
+        panel.add(cancel);
+		return panel;
 	}
 
 }
