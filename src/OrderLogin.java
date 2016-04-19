@@ -23,6 +23,7 @@ public class OrderLogin extends JFrame {
 	private JTextField textField;
 	private JTextField inputOrderNumber;
 
+	com.main.java.form.User user;
 	/**
 	 * Launch the application.
 	 */
@@ -43,6 +44,7 @@ public class OrderLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public OrderLogin() {
+		user = new com.main.java.form.User();
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
@@ -87,9 +89,12 @@ public class OrderLogin extends JFrame {
 		JButton LoginOrderButton = new JButton("Login");
 		LoginOrderButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OrderNumber YourOrders = new OrderNumber();
-				YourOrders.setVisible(true);
-				dispose();
+				user.LoadOrder( inputOrderNumber.getText() );
+				if( user.getFlightId() != null || user.getHotelId() != null || user.getTripId() != null ){
+					OrderNumber YourOrders = new OrderNumber( user );					
+					YourOrders.setVisible(true);
+					dispose();					
+				}
 			}
 		});
 		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();

@@ -22,7 +22,12 @@ public class User{
     private List<String> pastOrderNumbers;
     private String email;
     public String hotelId;
-    public String flightId;
+
+	public String getHotelId() { return hotelId; }
+	public String getFlightId() { return flightId; }
+	public String getTripId() { return tripId; }
+
+	public String flightId;
     public String tripId;
         
     public User( ){
@@ -144,7 +149,7 @@ public class User{
     public void SaveOrder( String orderN, String tripKey, String flightKey, String hotelKey, String name ) throws IOException{
         /* Vista breyturnar i my docs*/  
     	//Hotel
-        String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
+        String homeLoc = System.getProperty("user.home") + "/readme1.txt";
     	JSONObject object = SaveHotel(orderN, hotelKey);
     	if(hotelKey != null && !hotelKey.isEmpty()){
 			try (FileWriter file = new FileWriter(homeLoc)) {

@@ -1,4 +1,4 @@
-package Flight;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,9 +13,10 @@ public class Booking {
 	/**
 	 * The users to go on the flight
 	 */
-	User[] users;
-    private int referenceNumber;
+	private User[] users;
+	private int referenceNumber;
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 	}
 	/**
@@ -26,7 +27,84 @@ public class Booking {
 	public Booking(Flight[] currentFlights, User[] currentUsers){
 		this.flights = currentFlights;
 		this.users = currentUsers;
-        referenceNumber = -1;
+		this.referenceNumber = -1;
+	}
+	/**
+	 * Constructor for retrieving old bookings
+	 * @param referenceId - referenceId of an already booked flight
+	 */
+	public Booking(int referenceId){
+		this.referenceNumber = referenceId;
+		try{
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			ResultSet rs;
+			PreparedStatement pst;
+			String sql = "SELECT * FROM booking WHERE id = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1,referenceId);
+			rs = pst.executeQuery();
+			int[] flightIDs;
+			int count = 0;
+			int flightid=-1;
+			int returnflight=-1;
+			if(rs.next()){
+				if(rs.getString("flightid")!=null&&rs.getString("flightid")!=""){
+					flightid = Integer.parseInt(rs.getString("flightid"));
+					count++;
+				}
+				if(rs.getString("returnflight")!=null&&rs.getString("returnflight")!=""){
+					returnflight = Integer.parseInt(rs.getString("returnflight"));
+					count++;
+				}
+				flightIDs=new int[count];
+				if(flightid != -1)
+					flightIDs[0]=flightid;
+				if(flightid != -1 && returnflight != -1)
+					flightIDs[1]=returnflight;
+				else if(returnflight!=-1)
+					flightIDs[0]=returnflight;
+				ResultSet subrs;
+				this.flights = new Flight[flightIDs.length];
+				
+				for(int i = 0; i < flightIDs.length; i++){
+					sql = "SELECT * FROM flight WHERE id = ?";
+					pst = con.prepareStatement(sql);
+					pst.setInt(1,flightIDs[i]);
+					subrs = pst.executeQuery();
+					while(subrs.next()){
+						flights[i]=new Flight(
+								flightIDs[i],
+								subrs.getString("flightno"),
+								subrs.getString("destfrom"),
+								subrs.getString("destto"),
+								subrs.getInt("seatsleft"),
+								subrs.getInt("price"),
+								subrs.getString("departuredate"),
+								subrs.getString("departuretime"),
+								subrs.getString("airline")
+								);
+					}
+				}
+				sql = "SELECT userid from user_booking where booking_id = ?";
+				pst=con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				pst.setInt(1, referenceId);
+				subrs = pst.executeQuery();
+				subrs.last();
+				count=subrs.getRow();
+				subrs.beforeFirst();
+				this.users=new User[count];
+				int i = 0;
+				while(subrs.next()){
+					users[i]=new User(subrs.getInt("userid"));
+					i++;
+				}
+			}
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * Confirms the booking and commits to database.
@@ -37,10 +115,8 @@ public class Booking {
 			return this.referenceNumber;
 		try 
 		{
-			System.out.print("FlightConfirm1");
 			Class.forName("org.postgresql.Driver");
-            // TODO Muna að breyta passwordum
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			ResultSet rs;
 			Statement st = con.createStatement();
 			int[] flightIds = new int[flights.length];
@@ -100,7 +176,6 @@ public class Booking {
 		}
 		catch(Exception e)
 		{
-			System.out.print("FlightConfirm Error");
 			e.printStackTrace();
 		}
 		return this.referenceNumber;
@@ -115,10 +190,10 @@ public class Booking {
 			this.flights=null;
 			return;
 		}
-
+		
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			PreparedStatement pst;
 			//ResultSet rs;
 			String sql;
@@ -127,15 +202,15 @@ public class Booking {
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.referenceNumber);
 				pst.executeUpdate();
-
+				
 				System.out.println(pst.toString());
-
+				
 				sql = " UPDATE flight SET seatsleft = seatsleft + ? WHERE id in (?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.users.length);
 				pst.setInt(2, this.flights[0].getId());
 				pst.setInt(3, this.flights[1].getId());
-				pst.executeUpdate();
+				pst.executeUpdate();			
 				System.out.println(pst.toString());
 			}
 			else{
@@ -144,7 +219,7 @@ public class Booking {
 				pst.setInt(1, this.referenceNumber);
 				pst.executeUpdate();
 				System.out.println(pst.toString());
-
+				
 				sql = " UPDATE flight SET seatsleft = seatsleft + ? WHERE id in (?)";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, this.users.length);

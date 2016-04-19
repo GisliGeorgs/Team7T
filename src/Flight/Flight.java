@@ -1,4 +1,4 @@
-package Flight;
+
 public class Flight {
 	/**
 	 * identical id number of flight

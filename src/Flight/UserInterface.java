@@ -1,4 +1,3 @@
-package Flight;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,7 +22,7 @@ public class UserInterface {
 	
 	public static void main(String[] args) {
 		UserInterface ui= new UserInterface();
-		String[] fs=new String[] {"Pï¿½tur"};
+		String[] fs=new String[] {"Pétur"};
 		String[] ls=new String[] {"Pabbason"};
 		String[] cc=new String[] {"4564564578914567"};
 		String[] pp=new String[] {"A2198576"};
@@ -53,41 +52,41 @@ public class UserInterface {
 		Flight[] departingFlight = (Flight[])searchctrl.search()[0];
 		int n = departingFlight.length;
 		if(n==0)
-			System.out.println("ï¿½vï¿½ miï¿½ur fundust engin flug frï¿½ "+searchctrl.getDepartureLocation()+" til "+searchctrl.getArrivalLocation());
+			System.out.println("Því miður fundust engin flug frá "+searchctrl.getDepartureLocation()+" til "+searchctrl.getArrivalLocation());
 		else{
-			System.out.println("Eftirfarandi flug fundust frï¿½ "+
+			System.out.println("Eftirfarandi flug fundust frá "+
 		searchctrl.getDepartureLocation()+" til "+searchctrl.getArrivalLocation());
 			System.out.println("----------------");
 			for(int i=0;i<n;i++)
 			{
-				System.out.println("Indexnï¿½mer flugs: "+i);
+				System.out.println("Indexnúmer flugs: "+i);
 				System.out.println("ID number: "+departingFlight[i].getId());
 				System.out.println("Dagsetning: "+departingFlight[i].getDeparture());
-				System.out.println("Tï¿½mi: "+departingFlight[i].getDepTime());
-				System.out.println("Flugnï¿½mer: "+departingFlight[i].getFlightNo());
+				System.out.println("Tími: "+departingFlight[i].getDepTime());
+				System.out.println("Flugnúmer: "+departingFlight[i].getFlightNo());
 				System.out.println("Remaining seats: "+departingFlight[i].getRemSeats());
-				System.out.println("Verï¿½: "+departingFlight[i].getPrice());
-				System.out.println("Flugfï¿½lag: "+departingFlight[i].getAirline());
+				System.out.println("Verð: "+departingFlight[i].getPrice());
+				System.out.println("Flugfélag: "+departingFlight[i].getAirline());
 				System.out.println("----------------");
 			}
 		}
 		Flight[] returnFlight= (Flight[])searchctrl.search()[1];
 		int m = returnFlight.length;
 		if(m==0)
-			System.out.println("ï¿½vï¿½ miï¿½ur fundust engin flug frï¿½ "+searchctrl.getArrivalLocation()+" til "+searchctrl.getDepartureLocation()+"\n");
+			System.out.println("Því miður fundust engin flug frá "+searchctrl.getArrivalLocation()+" til "+searchctrl.getDepartureLocation()+"\n");
 		else {
-			System.out.println("Eftirfarandi flug fundust frï¿½ "+searchctrl.getArrivalLocation()+" til "+searchctrl.getDepartureLocation());
+			System.out.println("Eftirfarandi flug fundust frá "+searchctrl.getArrivalLocation()+" til "+searchctrl.getDepartureLocation());
 			System.out.println("----------------");
 			for(int i=0;i<m;i++)
 			{
-				System.out.println("Indexnï¿½mer flugs: "+i);
+				System.out.println("Indexnúmer flugs: "+i);
 				System.out.println("ID number: "+returnFlight[i].getId());
 				System.out.println("Dagsetning: "+returnFlight[i].getDeparture());
-				System.out.println("Tï¿½mi: "+returnFlight[i].getDepTime());
-				System.out.println("Flugnï¿½mer: "+returnFlight[i].getFlightNo());
+				System.out.println("Tími: "+returnFlight[i].getDepTime());
+				System.out.println("Flugnúmer: "+returnFlight[i].getFlightNo());
 				System.out.println("Remaining seats: "+returnFlight[i].getRemSeats());
-				System.out.println("Verï¿½: "+returnFlight[i].getPrice());
-				System.out.println("Flugfï¿½lag: "+returnFlight[i].getAirline());
+				System.out.println("Verð: "+returnFlight[i].getPrice());
+				System.out.println("Flugfélag: "+returnFlight[i].getAirline());
 				System.out.println("----------------\n");
 			}
 		}
@@ -143,8 +142,8 @@ public class UserInterface {
 			referencenumber = -1;
 		}
 		if(referencenumber == -1)
-			System.out.println("\nHï¿½tt var viï¿½ bï¿½kun");
-		else System.out.println("\nBï¿½kun staï¿½fest.\nBï¿½kunarnï¿½mer ï¿½itt er "+referencenumber);
+			System.out.println("\nHætt var við bókun");
+		else System.out.println("\nBókun staðfest.\nBókunarnúmer þitt er "+referencenumber);
 		
 		StdOut.println("Viltu eyda bokun nr "+referencenumber+"?");
 		if(StdIn.readInt()!=0){

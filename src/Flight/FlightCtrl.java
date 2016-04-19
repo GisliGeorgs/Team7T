@@ -1,4 +1,3 @@
-package Flight;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,7 +38,7 @@ public class FlightCtrl {
 		try 
 		{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
 			String sql;
 			PreparedStatement pst;
 			if(!flex){
