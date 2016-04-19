@@ -76,10 +76,10 @@ public class Cart extends JFrame {
         lblYourCart.setBounds(256, 13, 138, 25);
         contentPane.add(lblYourCart);
 
-        JButton btnFinsihOrder = new JButton("Finnish Order");
+        JButton btnFinishOrder = new JButton("Finish Order");
         Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
-        btnFinsihOrder.setIcon(new ImageIcon(imgLogin));
-        btnFinsihOrder.addActionListener(new ActionListener() {
+        btnFinishOrder.setIcon(new ImageIcon(imgLogin));
+        btnFinishOrder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 User user = new User();
                 if( user.GetEmail() == null ){
@@ -88,14 +88,14 @@ public class Cart extends JFrame {
                     dispose();                	
                 }
                 else{
-                    UserInfoNew uin = new UserInfoNew( cartController );
+                    UserInfoChange uin = new UserInfoChange( cartController );
                     uin.setVisible( true );
                     dispose();
                 }
             }
         });
-        btnFinsihOrder.setBounds(148, 458, 174, 39);
-        contentPane.add(btnFinsihOrder);
+        btnFinishOrder.setBounds(148, 458, 174, 39);
+        contentPane.add(btnFinishOrder);
 
         JButton btngobacktoSearch = new JButton("Go back to search");
         Image imgLogin2 = new ImageIcon(this.getClass().getResource("/home.png")).getImage();

@@ -21,6 +21,8 @@ import javax.swing.JTextArea;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
+
+import com.main.java.controller.CartController;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 
@@ -37,6 +39,8 @@ public class UserInfoChange extends JFrame {
 	private JTextField CardNumber;
 	private JTextField CVCtextfield;
 	private JTextField txtPassportnumber;
+	
+	private CartController thisCart;
 
 	/**
 	 * Launch the application.
@@ -53,11 +57,23 @@ public class UserInfoChange extends JFrame {
 			}
 		});
 	}
+	
+	public UserInfoChange()
+	{
+		SetUpInfo();
+	}
+	
+	public UserInfoChange( CartController cart )
+	{
+		user = cart.user;
+		thisCart = cart;
+		SetUpInfo();
+	}
 
 	/**
 	 * Create the frame.
 	 */
-	public UserInfoChange() {
+	public void SetUpInfo() {
 		user = new com.main.java.form.User();
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
