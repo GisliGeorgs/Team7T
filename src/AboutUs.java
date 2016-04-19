@@ -42,7 +42,7 @@ public class AboutUs extends JFrame {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
-		setTitle("Team 7T - About us");
+		setTitle("About us");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 445, 519);
 		contentPane = new JPanel();
@@ -92,8 +92,8 @@ public class AboutUs extends JFrame {
 		btnHome.setIcon(new ImageIcon(imgLogin2));
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FF FrontF=new FF();
-				FrontF.setVisible(true);
+				//FF FrontF=new FF();
+				//FrontF.setVisible(true);
 				dispose();
 			}
 		});

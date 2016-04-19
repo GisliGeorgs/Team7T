@@ -59,15 +59,17 @@ public class FF extends JFrame {
 	
 	private JDateChooser dateChooser;
 	private JDateChooser dateChooser_1;
+	
+	static FF frame;
 
 	/**
 	 * Launch the application.
-	 */
+	*/
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FF frame = new FF();
+					frame = new FF();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -85,6 +87,7 @@ public class FF extends JFrame {
 		setIconImage(
 			new ImageIcon(getClass().getResource("/7.png")).getImage()
 		);
+		setTitle("Home");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 801, 672);
 		
@@ -388,7 +391,8 @@ public class FF extends JFrame {
 		TextFieldFlightTo.setColumns(10);
 		
 		JCheckBox chckbxFlexibleDates = new JCheckBox(Messages.getString("FF.chckbxFlexibleDates.text")); //$NON-NLS-1$
-		chckbxFlexibleDates.setBounds(18, 292, 97, 23);
+		chckbxFlexibleDates.setBackground(new Color(173, 216, 230));
+		chckbxFlexibleDates.setBounds(12, 294, 113, 23);
 		contentPane.add(chckbxFlexibleDates);
 		
 		JButton ButtonSearch = new JButton(""); //$NON-NLS-1$
@@ -449,6 +453,32 @@ public class FF extends JFrame {
 		});
 		ButtonSearch.setBounds(670, 42, 47, 25);
 		contentPane.add(ButtonSearch);
+		
+		JButton btnSpecificHotelSearch = new JButton(Messages.getString("FF.btnSpecificHotelSearch.text")); //$NON-NLS-1$
+		btnSpecificHotelSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				HotelFF HotelSpec = new HotelFF( frame );
+				HotelSpec.setVisible(true);
+				//dispose();
+			}
+		});
+		btnSpecificHotelSearch.setBounds(12, 565, 162, 29);
+		contentPane.add(btnSpecificHotelSearch);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"River Rafting", "Sightseeing", "Hiking"}));
+		comboBox.setBounds(16, 495, 97, 22);
+		contentPane.add(comboBox);
+		
+		JLabel lblForDayTrip = new JLabel(Messages.getString("FF.lblForDayTrip.text")); //$NON-NLS-1$
+		lblForDayTrip.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblForDayTrip.setBounds(16, 473, 81, 16);
+		contentPane.add(lblForDayTrip);
+		
+		JLabel lblForHotel = new JLabel(Messages.getString("FF.lblForHotel.text")); //$NON-NLS-1$
+		lblForHotel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblForHotel.setBounds(16, 547, 77, 16);
+		contentPane.add(lblForHotel);
 
 	}
 

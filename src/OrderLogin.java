@@ -48,7 +48,7 @@ public class OrderLogin extends JFrame {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
-		setTitle("Team 7T - Order Number");
+		setTitle("Order Number");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 418, 240);
 		contentPane = new JPanel();
