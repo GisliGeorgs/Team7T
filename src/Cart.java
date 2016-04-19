@@ -155,7 +155,7 @@ public class Cart extends JFrame {
         System.out.println( "updatecart4" );
         if( !(cartController.getDayTripOrders().GetDayTrip() == null) && cartController.getDayTripOrders().GetDayTrip().size() > 0 ){
             for ( int i = 0; i < cartController.getDayTripOrders().GetDayTrip().size(); i++ ) {
-                toadd =  daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ) );
+                toadd =  daytripPanel( cartController.getDayTripOrders().GetDayTrip().get( i ), cartController.getDayTripOrders().getTrips().get(i) );
                 if( toadd != null ){
                 	panelCart.add( toadd );
                     panelCart.revalidate();
@@ -211,16 +211,22 @@ public class Cart extends JFrame {
 		return panel;
 	}
 
-	private JPanel daytripPanel( Trip daytrip  ){
+	private JPanel daytripPanel( DayTrip daytrip, Trip trip  ){
 		JPanel panel = new JPanel();
 
-		panel.add( new JLabel( daytrip.getDayTrip() ) );
-		//panel.add( new JLabel( daytrip. ) );
-		panel.add( new JLabel( Integer.toString( daytrip. ) ) );
+		panel.add( new JLabel( daytrip.getName() ) );
+        panel.add( new JLabel( daytrip.getTravelAgency() ) );
+		panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
+        String datefrom =  trip.getDate()[0].getYear() + "-"+ trip.getDate()[0].getMonth()+1+"-"+ trip.getDate()[0].getDate();
+        String dateto =  trip.getDate()[0].getYear() + "-"+ trip.getDate()[0].getMonth()+1+"-"+ trip.getDate()[0].getDate();
+
+        panel.add( new JLabel( datefrom ) );
+        panel.add( new JLabel( dateto ) );
 
 		JButton removeFromCart = new JButton( "Remove" );
 		removeFromCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+                cartController.RemoveTripFromBooking( trip );
                 cartController.RemoveDayTripFromBooking( daytrip );
             }
 		});

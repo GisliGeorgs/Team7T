@@ -610,14 +610,14 @@ public class FF extends JFrame {
     	List<DayTrip.klasar.Trip> trips = search.oneDayTrip( daytrip );
     	System.out.println(trips.size());
     	for( int i = 0; i < trips.size(); i++ ){
-    		panelResult.add( tripPanel(trips.get(i)) );
+    		panelResult.add( tripPanel( daytrip, trips.get(i)) );
     	}
     	validate();
         repaint();
 
     }
 
-    private JPanel tripPanel( DayTrip.klasar.Trip trip ){
+    private JPanel tripPanel( DayTrip.klasar.DayTrip daytrip, DayTrip.klasar.Trip trip ){
     	JPanel panel = new JPanel();
 
     	panel.add( new JLabel( trip.getDayTrip() ));
@@ -633,8 +633,8 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-            	System.out.println(trip.getDayTrip());
-            	cart.AddTripToBooking( trip );
+            	cart.AddDayTripToBooking( daytrip );
+				cart.AddTripToBooking( trip );
             }
         });
         panel.add( addToCart );
