@@ -117,14 +117,14 @@ public class Pay extends JFrame {
 		lblCardNumber.setBounds(12, 42, 100, 16);
 		contentPane.add(lblCardNumber);
 		
-		JLabel lblExpirationDate = new JLabel("expiration date:");
+		JLabel lblExpirationDate = new JLabel("Expiration date:");
 		lblExpirationDate.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblExpirationDate.setBounds(12, 103, 116, 16);
+		lblExpirationDate.setBounds(12, 109, 116, 16);
 		contentPane.add(lblExpirationDate);
 		
 		JLabel lblCvc = new JLabel("CVC:");
 		lblCvc.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCvc.setBounds(12, 160, 56, 16);
+		lblCvc.setBounds(12, 167, 56, 16);
 		contentPane.add(lblCvc);
 		
 		Cardnum = new JTextField();

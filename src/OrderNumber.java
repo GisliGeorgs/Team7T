@@ -55,7 +55,7 @@ public class OrderNumber extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 754, 559);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -101,7 +101,7 @@ public class OrderNumber extends JFrame {
 		contentPane.add(btnUser);
 		
 		panelOrders = new JPanel();
-		panelOrders.setBackground(new Color(176, 224, 230));
+		panelOrders.setBackground(new Color(240, 240, 240));
 		panelOrders.setBounds(80, 74, 571, 329);
 		contentPane.add(panelOrders);
 		

@@ -67,7 +67,7 @@ public class YourOrderNumberIs extends JFrame {
 				dispose();
 			}
 		});
-		btnHome.setBounds(158, 149, 97, 25);
+		btnHome.setBounds(141, 145, 104, 33);
 		contentPane.add(btnHome);
 		
 		JLabel lblOrderNumber = new JLabel( ordernum );
