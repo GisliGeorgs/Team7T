@@ -53,7 +53,10 @@ public class CartController extends SearchController{
      * @param daytriporder
      */
     public void AddDayTripToBooking( DayTrip.klasar.DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }
-    public void AddTripToBooking( DayTrip.klasar.Trip trip ){ dayTripOrders.AddTrip( trip ); }
+    public void AddTripToBooking( DayTrip.klasar.Trip trip ){ 
+    	System.out.println(trip.getDayTrip());
+    	dayTripOrders.AddTrip( trip ); 
+    }
     public void AddHotelToBooking( Hotel hotel, Room room ){
         hotelOrders.AddHotel( hotel, room );
     }
