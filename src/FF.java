@@ -633,6 +633,7 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+            	System.out.println(trip.getDayTrip());
             	cart.AddTripToBooking( trip );
             }
         });

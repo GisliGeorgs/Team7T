@@ -11,6 +11,7 @@ public class DayTripOrder extends Order{
 
     public DayTripOrder(){
     	dayTrip = new ArrayList<DayTrip>();
+    	trips = new ArrayList<Trip>();
     }
     public DayTripOrder( List<DayTrip> dayTrip ){
     	this.dayTrip = dayTrip;
@@ -31,7 +32,7 @@ public class DayTripOrder extends Order{
     }
 
     public void AddTrip( Trip trip ){
-        this.trips.add( trip );
+    	this.trips.add( trip );
     }
     public void RemoveTrip( Trip trip ){
         this.trips.remove( trip );
