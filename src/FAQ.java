@@ -49,7 +49,7 @@ public class FAQ extends JFrame {
 			);
 		setTitle("FAQ");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 545, 483);
+		setBounds(100, 100, 535, 343);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,7 +69,7 @@ public class FAQ extends JFrame {
 				dispose();
 			}
 		});
-		btnHome.setBounds(211, 390, 110, 33);
+		btnHome.setBounds(196, 249, 110, 33);
 		contentPane.add(btnHome);
 		
 		JLabel lblHereIsA = new JLabel("Here is a question");
@@ -83,11 +83,11 @@ public class FAQ extends JFrame {
 		
 		JLabel lblHereIsA_1 = new JLabel("Here is a common question");
 		lblHereIsA_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblHereIsA_1.setBounds(32, 210, 199, 16);
+		lblHereIsA_1.setBounds(37, 166, 199, 16);
 		contentPane.add(lblHereIsA_1);
 		
 		JLabel lblHereIsA_2 = new JLabel("Here is a really good answer to the question");
-		lblHereIsA_2.setBounds(32, 239, 289, 16);
+		lblHereIsA_2.setBounds(37, 195, 289, 16);
 		contentPane.add(lblHereIsA_2);
 	}
 }

@@ -90,7 +90,7 @@ public class FF extends JFrame {
 		);
 		setTitle("Home");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 801, 672);
+		setBounds(100, 100, 951, 702);
 		
 		typeSelected = 0;
 		cart = new CartController();
@@ -251,11 +251,11 @@ public class FF extends JFrame {
 				//dispose();
 			}
 		});
-		btnAddToCart.setBounds(347, 565, 162, 33);
+		btnAddToCart.setBounds(406, 563, 162, 33);
 		contentPane.add(btnAddToCart);
 		
 		SearchTextfield = new JTextField();
-		SearchTextfield.setBounds(120, 43, 549, 25);
+		SearchTextfield.setBounds(120, 43, 696, 25);
 		contentPane.add(SearchTextfield);
 		SearchTextfield.setColumns(10);
 
@@ -263,7 +263,7 @@ public class FF extends JFrame {
 
 		panelResult = new JPanel();
 		panelResult.setBackground(new Color(240, 240, 240));
-		panelResult.setBounds(125, 123, 598, 431);
+		panelResult.setBounds(125, 123, 750, 431);
 		contentPane.add(panelResult);
 
 		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
@@ -275,7 +275,7 @@ public class FF extends JFrame {
 				
 			}
 		});
-		EnglishButton.setBounds(691, 9, 34, 24);
+		EnglishButton.setBounds(841, 9, 34, 24);
 		contentPane.add(EnglishButton);
 
 		
@@ -288,7 +288,7 @@ public class FF extends JFrame {
 				
 			}
 		});
-		IcelandicButton.setBounds(737, 9, 34, 24);
+		IcelandicButton.setBounds(887, 9, 34, 24);
 		contentPane.add(IcelandicButton);
 		
 
@@ -327,7 +327,7 @@ public class FF extends JFrame {
 		rdbtnHotel1.setFont(new Font("Tahoma", Font.BOLD, 16));
 
 		rdbtnHotel1.setBackground(new Color(248, 248, 255));
-		rdbtnHotel1.setBounds(324, 9, 127, 25);
+		rdbtnHotel1.setBounds(441, 9, 127, 25);
 		contentPane.add(rdbtnHotel1);
 		
 
@@ -345,7 +345,7 @@ public class FF extends JFrame {
 
 		rdbtnDaytrip1.setBackground(new Color(248, 248, 255));
 		rdbtnDaytrip1.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
-		rdbtnDaytrip1.setBounds(485, 9, 127, 25);
+		rdbtnDaytrip1.setBounds(689, 9, 127, 25);
 		contentPane.add(rdbtnDaytrip1);
 		
 
@@ -377,18 +377,18 @@ public class FF extends JFrame {
 		
 		TextFieldFlightFrom = new JTextField();
 		TextFieldFlightFrom.setText(Messages.getString("")); //$NON-NLS-1$
-		TextFieldFlightFrom.setBounds(120, 90, 241, 22);
+		TextFieldFlightFrom.setBounds(120, 90, 325, 22);
 		contentPane.add(TextFieldFlightFrom);
 		TextFieldFlightFrom.setColumns(10);
 		
 		JLabel lblFlightTo = new JLabel(Messages.getString("FF.lblFlightTo.text")); //$NON-NLS-1$
 		lblFlightTo.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblFlightTo.setBounds(397, 70, 85, 16);
+		lblFlightTo.setBounds(549, 70, 85, 16);
 		contentPane.add(lblFlightTo);
 		
 		TextFieldFlightTo = new JTextField();
 		TextFieldFlightTo.setText(Messages.getString("")); //$NON-NLS-1$
-		TextFieldFlightTo.setBounds(397, 90, 272, 22);
+		TextFieldFlightTo.setBounds(550, 90, 325, 22);
 		contentPane.add(TextFieldFlightTo);
 		TextFieldFlightTo.setColumns(10);
 		
@@ -453,7 +453,7 @@ public class FF extends JFrame {
 				
 			}
 		});
-		ButtonSearch.setBounds(670, 42, 47, 25);
+		ButtonSearch.setBounds(828, 43, 47, 25);
 		contentPane.add(ButtonSearch);
 
 		JButton btnSpecificHotelSearch = new JButton(Messages.getString("FF.btnSpecificHotelSearch.text")); //$NON-NLS-1$
