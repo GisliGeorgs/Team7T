@@ -148,7 +148,7 @@ public class OrderNumber extends JFrame {
     	Flight.Flight flight = book.getFlights()[index];
         JPanel panel = new JPanel();
         
-        panel.add( new JLabel( book.getUsers()[0].getFirst() + " " + book.getUsers()[0].getLast() ) );
+        //panel.add( new JLabel( book.getUsers()[0].getFirst() + " " + book.getUsers()[0].getLast() ) );
         
         panel.add( new JLabel( flight.getAirline() ) );
         panel.add( new JLabel( flight.getFlightNo() ) );
@@ -163,11 +163,10 @@ public class OrderNumber extends JFrame {
 	private JPanel hotelPanel( Hotel.Booking book ){
 		JPanel panel = new JPanel();
 
-        panel.add( new JLabel( book.getCustomerName() ) );
+        //panel.add( new JLabel( book.getCustomerName() ) );
 
         panel.add( new JLabel( book.getStartDate() ) );
         panel.add( new JLabel( book.getEndDate() ) );
-        panel.add( new JLabel( book.getCustomerName() ) );
 				
         panel.add( new JLabel( book.getHotel().getName() ) );
         panel.add( new JLabel( book.getHotel().getAddress() ) );
@@ -193,5 +192,7 @@ public class OrderNumber extends JFrame {
         panel.add(cancel);
 		return panel;
 	}
+	
+	// TODO Daytrip
 
 }

@@ -11,6 +11,7 @@ public class DayTripOrder extends Order{
 
     public DayTripOrder(){
     	dayTrip = new ArrayList<DayTrip>();
+        trips = new ArrayList<Trip>();
     }
     public DayTripOrder( List<DayTrip> dayTrip ){
     	this.dayTrip = dayTrip;

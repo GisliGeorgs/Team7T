@@ -42,7 +42,8 @@ public class CartController extends SearchController{
      * Hendir dagsfer� �r b�kuninni.
      * @param daytrip Dagsfer�in sem � a� henda.
      */
-    public void RemoveDayTripFromBooking( DayTrip.klasar.DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); } 
+    public void RemoveDayTripFromBooking( DayTrip.klasar.DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); }
+    public void RemoveTripFromBooking( DayTrip.klasar.Trip trip ){ dayTripOrders.RemoveTrip( trip ); }
     public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
     public void RemoveOutFlight( ){ flightOrders.RemoveOutFlight(); }
     public void RemoveHomeFlight(){ flightOrders.RemoveHomeFlight(); }
