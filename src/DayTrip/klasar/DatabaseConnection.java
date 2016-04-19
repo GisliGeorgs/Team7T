@@ -114,13 +114,14 @@ public class DatabaseConnection {
 	public List<Trip> getTrips(DayTrip daytrip) {
 		int id = 0;
 		List<Trip> trips = new ArrayList<Trip>();
-		getTripsQuery = "SELECT * from trips where dayTrip = " + id;
 		try {
 			pstatement = conn.prepareStatement("SELECT id FROM dayTrips WHERE name = '" + daytrip.getName() + "'");
 			rs = pstatement.executeQuery();
 			while(rs.next()) {
 				id = rs.getInt("id");
 			}
+
+			getTripsQuery = "SELECT * from trips where dayTrip = " + id;
 			pstatement = conn.prepareStatement(getTripsQuery);
 			rs = pstatement.executeQuery();
 			while(rs.next()) {
@@ -176,7 +177,7 @@ public class DatabaseConnection {
 			if(size != 0) searchTripQuery += " size <= " + size + " AND";
 			if(price != 0) searchTripQuery += " price <= " + price + " AND";
 			if(length != 0) searchTripQuery += " length <= " + length + " AND";
-			if(location != null && location != "") searchTripQuery += " location = '" + location + "' AND";
+			if(location != null && location.length() != 0) searchTripQuery += " location = '" + location + "' AND";
 			System.out.println( searchTripQuery );
 			searchTripQuery = searchTripQuery.substring(0, searchTripQuery.lastIndexOf(" ")) + ";";
 			System.out.println(searchTripQuery);

@@ -5,8 +5,6 @@ import Hotel.Hotel;
 import Hotel.Room;
 import Hotel.Booking;
 import Hotel.BookingController;
-import DayTrip.klasar.Trip;
-import DayTrip.klasar.DayTrip;
 import com.main.java.persistence.*;
 import com.main.java.form.*;
 
@@ -44,7 +42,7 @@ public class CartController extends SearchController{
      * Hendir dagsfer� �r b�kuninni.
      * @param daytrip Dagsfer�in sem � a� henda.
      */
-    public void RemoveDayTripFromBooking( DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); } 
+    public void RemoveDayTripFromBooking( DayTrip.klasar.DayTrip daytrip ){ dayTripOrders.RemoveDayTrip( daytrip ); } 
     public void RemoveHotelFromBooking( Hotel hotel ){ hotelOrders.RemoveHotel( hotel); }
     public void RemoveOutFlight( ){ flightOrders.RemoveOutFlight(); }
     public void RemoveHomeFlight(){ flightOrders.RemoveHomeFlight(); }
@@ -100,7 +98,7 @@ public class CartController extends SearchController{
         user.LoadOrder( orderId );
         return null;//user.GetFlightOrders();
     }
-    public List<DayTrip> GetDayTripOrder( String orderId ){
+    public List<DayTrip.klasar.DayTrip> GetDayTripOrder( String orderId ){
         user.LoadOrder( orderId );
         return null;//user.getDayTripOrders();
     }
@@ -177,8 +175,7 @@ public class CartController extends SearchController{
         Date date = getDayTripOrders().getDateFrom();
         DayTrip.klasar.BookingController book = new DayTrip.klasar.BookingController();
         for ( int i = 0; i < length; i++ ) {
-            //DayTrip
-            //DayTrip.klasar.Trip trip = new DayTrip.klasar.Trip(  )
+        	
         }
 
     }

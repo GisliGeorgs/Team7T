@@ -178,6 +178,10 @@ public class SearchController{
     	DatabaseConnection ctrl = new DatabaseConnection();
     	System.out.println( loc );
     	// TODO Breyta þessu
+    	System.out.println( loc.length() );
+    	if( loc != null && loc != "" && loc.length() != 0 ){
+    		System.out.println("loc ernull ");
+    	}
     	ArrayList<DayTrip> mid = new ArrayList<DayTrip>(ctrl.search( dateFrom, dateTo, "", "", 0, price, 0, loc));
     			
         ArrayList<DayTrip> res = new ArrayList<>();

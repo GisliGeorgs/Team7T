@@ -67,7 +67,7 @@ public class SearchController {
         return daytrips;
     }
 
-    public void oneDayTrip(DayTrip daytrip){
+    public List<Trip> oneDayTrip(DayTrip daytrip){
 
         //searchView.setVisible(true);
         String getName = daytrip.getName();
@@ -101,6 +101,7 @@ public class SearchController {
 
 
         System.out.println(print);
+        return trips;
     }
 
 
