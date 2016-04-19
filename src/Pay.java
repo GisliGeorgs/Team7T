@@ -112,17 +112,17 @@ public class Pay extends JFrame {
 		btnCancel.setBounds(271, 257, 116, 25);
 		contentPane.add(btnCancel);
 		
-		JLabel lblCardNumber = new JLabel("Card number:");
+		JLabel lblCardNumber = new JLabel("Card number");
 		lblCardNumber.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblCardNumber.setBounds(12, 42, 100, 16);
 		contentPane.add(lblCardNumber);
 		
-		JLabel lblExpirationDate = new JLabel("Expiration date:");
+		JLabel lblExpirationDate = new JLabel("Expiration date");
 		lblExpirationDate.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblExpirationDate.setBounds(12, 109, 116, 16);
 		contentPane.add(lblExpirationDate);
 		
-		JLabel lblCvc = new JLabel("CVC:");
+		JLabel lblCvc = new JLabel("CVC");
 		lblCvc.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblCvc.setBounds(12, 167, 56, 16);
 		contentPane.add(lblCvc);

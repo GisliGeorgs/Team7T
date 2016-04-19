@@ -214,7 +214,7 @@ public class FF extends JFrame {
 		lblDateFrom.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblDateFrom.setBounds(12, 122, 99, 16);
 
-		JLabel lblDateFrom1 = new JLabel("Date from:");
+		JLabel lblDateFrom1 = new JLabel(Messages.getString("FF.lblDateFrom1.text")); //$NON-NLS-1$
 		lblDateFrom1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblDateFrom1.setBounds(16, 211, 99, 16);
 		contentPane.add(lblDateFrom1);
@@ -228,7 +228,7 @@ public class FF extends JFrame {
 		lblDateTo.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblDateTo.setBounds(12, 173, 56, 16);
 
-		JLabel lblDateTo1 = new JLabel("Date to:");
+		JLabel lblDateTo1 = new JLabel(Messages.getString("FF.lblDateTo1.text")); //$NON-NLS-1$
 		lblDateTo1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblDateTo1.setBounds(16, 246, 56, 16);
 		contentPane.add(lblDateTo1);

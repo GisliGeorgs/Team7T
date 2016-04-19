@@ -52,7 +52,7 @@ public class YourOrderNumberIs extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblYourOrderNumber = new JLabel("Your Order Number is:");
+		JLabel lblYourOrderNumber = new JLabel("Your Order Number is");
 		lblYourOrderNumber.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
 		lblYourOrderNumber.setBounds(24, 25, 264, 39);
 		contentPane.add(lblYourOrderNumber);

@@ -134,7 +134,7 @@ public class UserInfoChange extends JFrame {
 		contentPane.add(email);
 		email.setColumns(10);
 		
-		JLabel lblEmail = new JLabel("Email:");
+		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblEmail.setBounds(31, 180, 56, 16);
 		contentPane.add(lblEmail);
@@ -144,7 +144,7 @@ public class UserInfoChange extends JFrame {
 		lblGender.setBounds(31, 228, 56, 16);
 		contentPane.add(lblGender);
 		
-		JLabel lblAge = new JLabel("Age:");
+		JLabel lblAge = new JLabel("Age");
 		lblAge.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblAge.setBounds(31, 124, 56, 16);
 		contentPane.add(lblAge);
@@ -154,7 +154,7 @@ public class UserInfoChange extends JFrame {
 		lblUserInformation.setBounds(115, 13, 253, 33);
 		contentPane.add(lblUserInformation);
 		
-		JLabel lblFirstName = new JLabel("First name:");
+		JLabel lblFirstName = new JLabel("First name");
 		lblFirstName.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblFirstName.setBounds(31, 73, 86, 16);
 		contentPane.add(lblFirstName);
@@ -164,7 +164,7 @@ public class UserInfoChange extends JFrame {
 		contentPane.add(txtFirstName);
 		txtFirstName.setColumns(10);
 		
-		JLabel lblLastName = new JLabel("Last name:");
+		JLabel lblLastName = new JLabel("Last name");
 		lblLastName.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblLastName.setBounds(194, 73, 105, 16);
 		contentPane.add(lblLastName);
@@ -179,7 +179,7 @@ public class UserInfoChange extends JFrame {
 		Agespinner.setBounds(31, 141, 49, 22);
 		contentPane.add(Agespinner);
 		
-		JLabel lblCountry = new JLabel("Country:");
+		JLabel lblCountry = new JLabel("Country");
 		lblCountry.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblCountry.setBounds(194, 125, 75, 16);
 		contentPane.add(lblCountry);
@@ -189,7 +189,7 @@ public class UserInfoChange extends JFrame {
 		contentPane.add(txtCountry);
 		txtCountry.setColumns(10);
 		
-		JLabel lblPhoneNumber = new JLabel("Phone number:");
+		JLabel lblPhoneNumber = new JLabel("Phone number");
 		lblPhoneNumber.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblPhoneNumber.setBounds(194, 181, 139, 16);
 		contentPane.add(lblPhoneNumber);
