@@ -230,6 +230,7 @@ public class HotelFF extends JFrame {
 							ff.AddCheckbox( buttons.get(i).getText() );
 						}					
 					}
+					ff.AddCheckbox( (String)comboBox.getSelectedItem());
 					ff.ChangeToArray();						
 					
 					dispose();

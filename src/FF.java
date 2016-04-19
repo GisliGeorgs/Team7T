@@ -417,12 +417,13 @@ public class FF extends JFrame {
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
 				flex = chckbxFlexibleDates.isSelected();
 				
+				
 
                 //The method Search(int, ArrayList<String>, String, Date, Date, int, boolean, int) in the type SearchController is not applicable for the arguments
                 //                  int, ArrayList<String>, String, String, String, Date, Date, int, boolean, int)
 				List res;
 				try {
-					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople, flex );
+					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople, flex  );
 	                if( res.size() > 0 ){
 	                    JPanel[] resPanel = new JPanel[res.size()];
 	                    for ( int i = 0; i < res.size(); i++ ) {
