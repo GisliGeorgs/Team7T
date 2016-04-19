@@ -5,13 +5,14 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
-import DayTrip.klasar.*;
 import Flight.Flight;
 import Hotel.Hotel;
 import Hotel.Room;
 import com.main.java.controller.CartController;
 import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
+
+import DayTrip.klasar.Trip;
 
 import java.awt.Font;
 import java.awt.Image;
@@ -60,12 +61,13 @@ public class FF extends JFrame {
 	
 	private JDateChooser dateChooser;
 	private JDateChooser dateChooser_1;
-	
+
 	static FF frame;
+	private JPanel panelResult;
 
 	/**
 	 * Launch the application.
-	*/
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -260,7 +262,7 @@ public class FF extends JFrame {
 
 
 
-		JPanel panelResult = new JPanel();
+		panelResult = new JPanel();
 		panelResult.setBackground(new Color(176, 224, 230));
 		panelResult.setBounds(125, 123, 598, 431);
 		contentPane.add(panelResult);
@@ -454,7 +456,7 @@ public class FF extends JFrame {
 		});
 		ButtonSearch.setBounds(670, 42, 47, 25);
 		contentPane.add(ButtonSearch);
-		
+
 		JButton btnSpecificHotelSearch = new JButton(Messages.getString("FF.btnSpecificHotelSearch.text")); //$NON-NLS-1$
 		btnSpecificHotelSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -465,17 +467,17 @@ public class FF extends JFrame {
 		});
 		btnSpecificHotelSearch.setBounds(12, 565, 162, 29);
 		contentPane.add(btnSpecificHotelSearch);
-		
+
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"River Rafting", "Sightseeing", "Hiking"}));
 		comboBox.setBounds(16, 495, 97, 22);
 		contentPane.add(comboBox);
-		
+
 		JLabel lblForDayTrip = new JLabel(Messages.getString("FF.lblForDayTrip.text")); //$NON-NLS-1$
 		lblForDayTrip.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblForDayTrip.setBounds(16, 473, 81, 16);
 		contentPane.add(lblForDayTrip);
-		
+
 		JLabel lblForHotel = new JLabel(Messages.getString("FF.lblForHotel.text")); //$NON-NLS-1$
 		lblForHotel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblForHotel.setBounds(16, 547, 77, 16);
@@ -570,7 +572,7 @@ public class FF extends JFrame {
 
     private JPanel daytripPanel( DayTrip daytrip ){
         JPanel panel = new JPanel();
-        // Sýna daytrip sem þú getur valið
+        // Sï¿½na daytrip sem ï¿½ï¿½ getur valiï¿½
         // DayTrip valinn -> Birta allar trips sem eru undir 
 
         panel.add( new JLabel( daytrip.getName() ) );
@@ -581,8 +583,8 @@ public class FF extends JFrame {
         JButton addToCart = new JButton( "Select this type" );
         addToCart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-				Date enddate = new Date(dateChooser.getDate().getYear(), dateChooser.getDate().getMonth(), dateChooser.getDate() + daytrip.getLength() - 1 );
-				cart.AddTripToBooking( new Trip( daytrip.getName(), dateChooser.getDate(), enddate, numPeople, 0 ) );
+
+				tripPanels( daytrip );
 			}
         });
         panel.add( addToCart );
@@ -599,5 +601,45 @@ public class FF extends JFrame {
     	for(int i = 0; i < interestss.size(); i++){
     		interests[i] = interestss.get(i);
     	}
+    }
+
+    private void tripPanels( DayTrip.klasar.DayTrip daytrip ){
+
+		panelResult.removeAll();
+        validate();
+        repaint();
+    	DayTrip.klasar.SearchController search = new DayTrip.klasar.SearchController();
+    	List<DayTrip.klasar.Trip> trips = search.oneDayTrip( daytrip );
+    	System.out.println(trips.size());
+    	for( int i = 0; i < trips.size(); i++ ){
+    		panelResult.add( tripPanel(trips.get(i)) );
+    	}
+    	validate();
+        repaint();
+
+    }
+
+    private JPanel tripPanel( DayTrip.klasar.Trip trip ){
+    	JPanel panel = new JPanel();
+
+    	panel.add( new JLabel( trip.getDayTrip() ));
+    	Date datefrom = trip.getDate()[0];
+    	String date1 = datefrom.getYear()+"-"+(datefrom.getMonth()+1)+"-"+datefrom.getDate();
+    	Date dateto = trip.getDate()[1];
+    	String date2 = dateto.getYear()+"-"+(dateFrom.getMonth()+1)+"-"+dateto.getDate();
+
+    	panel.add( new JLabel( date1 ) );
+    	panel.add( new JLabel( date2 ) );
+    	panel.add( new JLabel( "Size: " + trip.getSize() ) );
+
+        JButton addToCart = new JButton( "Add to Cart" );
+        addToCart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+            	cart.AddTripToBooking( trip );
+            }
+        });
+        panel.add( addToCart );
+
+    	return panel;
     }
 }
