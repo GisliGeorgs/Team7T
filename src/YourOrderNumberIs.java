@@ -39,7 +39,7 @@ public class YourOrderNumberIs extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public YourOrderNumberIs( User user ) {
+	public YourOrderNumberIs( User user, String ordernum ) {
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
@@ -67,8 +67,12 @@ public class YourOrderNumberIs extends JFrame {
 				dispose();
 			}
 		});
-		btnHome.setBounds(162, 170, 97, 25);
+		btnHome.setBounds(158, 149, 97, 25);
 		contentPane.add(btnHome);
+		
+		JLabel lblOrderNumber = new JLabel( ordernum );
+		lblOrderNumber.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblOrderNumber.setBounds(110, 75, 276, 44);
+		contentPane.add(lblOrderNumber);
 	}
-
 }

@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46d0f34f-31c1-47db-baae-1d3ccea9b731" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/YourOrderNumberIs$1.class" afterPath="$PROJECT_DIR$/bin/YourOrderNumberIs$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/YourOrderNumberIs$2.class" afterPath="$PROJECT_DIR$/bin/YourOrderNumberIs$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/YourOrderNumberIs.class" afterPath="$PROJECT_DIR$/bin/YourOrderNumberIs.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/Booking.java" afterPath="$PROJECT_DIR$/src/Flight/Booking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/FetchData.java" afterPath="$PROJECT_DIR$/src/Flight/FetchData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/Flight.java" afterPath="$PROJECT_DIR$/src/Flight/Flight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/FlightCtrl.java" afterPath="$PROJECT_DIR$/src/Flight/FlightCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/SearchCtrlTest.java" afterPath="$PROJECT_DIR$/src/Flight/SearchCtrlTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/StdIn.java" afterPath="$PROJECT_DIR$/src/Flight/StdIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/User.java" afterPath="$PROJECT_DIR$/src/Flight/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/UserInterface.java" afterPath="$PROJECT_DIR$/src/Flight/UserInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Flight/searchCtrl.java" afterPath="$PROJECT_DIR$/src/Flight/searchCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hotel/Booking.java" afterPath="$PROJECT_DIR$/src/Hotel/Booking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hotel/BookingController.java" afterPath="$PROJECT_DIR$/src/Hotel/BookingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hotel/HotelController.java" afterPath="$PROJECT_DIR$/src/Hotel/HotelController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/main/java/controller/CartController.java" afterPath="$PROJECT_DIR$/src/com/main/java/controller/CartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/main/java/form/User.java" afterPath="$PROJECT_DIR$/src/com/main/java/form/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pay.java" afterPath="$PROJECT_DIR$/src/Pay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/YourOrderNumberIs.java" afterPath="$PROJECT_DIR$/src/YourOrderNumberIs.java" />
     </list>
     <list id="b2d8c4a8-e4ea-44a1-b111-c4a0f84858c2" name="New changelist" comment="" />
     <list id="3276e380-d3f8-4c8b-a37f-e1938cd8317e" name="Failed commit: Default" comment="Laga FlightOrder" />
@@ -49,50 +40,40 @@
     <favorites_list name="Team7T" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44947916">
+    <splitter split-orientation="horizontal" split-proportion="0.40264902">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.4275862">
-          <split-first>
-            <leaf>
-              <file leaf-file-name="Booking.java" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/Flight/Booking.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.074074075">
-                      <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-                      <folding>
-                        <element signature="imports" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="CartController.java" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/com/main/java/controller/CartController.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-1.6666666">
-                      <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-                      <folding>
-                        <element signature="imports" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf>
+          <file leaf-file-name="CartController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/main/java/controller/CartController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.537037">
+                  <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/main/java/form/User.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2777778">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="145" column="15" selection-start-line="145" selection-start-column="15" selection-end-line="145" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="YourOrderNumberIs.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/YourOrderNumberIs.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5555556">
+                  <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -159,6 +140,8 @@
         <option value="$PROJECT_DIR$/src/Flight/User.java" />
         <option value="$PROJECT_DIR$/src/Flight/FetchData.java" />
         <option value="$PROJECT_DIR$/src/Flight/Booking.java" />
+        <option value="$PROJECT_DIR$/src/Pay.java" />
+        <option value="$PROJECT_DIR$/src/YourOrderNumberIs.java" />
       </list>
     </option>
   </component>
@@ -236,42 +219,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team7Tera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team7Tera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team7Tera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team7Tera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Flight" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -773,7 +720,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460900708033</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Happy dance.">
+      <created>1461028502713</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1461028502713</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -801,7 +754,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18287526" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29583332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34038055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -869,7 +822,8 @@
     <MESSAGE value="Cart virkar" />
     <MESSAGE value="Todos" />
     <MESSAGE value="Gerði package úr nýju hotel klösunum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gerði package úr nýju hotel klösunum" />
+    <MESSAGE value="Happy dance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Happy dance." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -896,14 +850,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DayTrip/klasar/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1036,17 +982,6 @@
           <caret line="239" column="48" selection-start-line="239" selection-start-column="48" selection-end-line="239" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="173" column="33" selection-start-line="173" selection-start-column="33" selection-end-line="173" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1460910208792" expanded="true" signature="5815:5816" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1287,16 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/main/java/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6666666">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Flight/Booking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.074074075">
@@ -1307,11 +1232,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5925926">
+          <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+          <folding>
+            <marker date="1461028757098" expanded="true" signature="5843:5844" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/main/java/form/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2777778">
+        <state vertical-scroll-proportion="0.0">
           <caret line="145" column="15" selection-start-line="145" selection-start-column="15" selection-end-line="145" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/YourOrderNumberIs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/main/java/controller/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.537037">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

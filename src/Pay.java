@@ -89,9 +89,9 @@ public class Pay extends JFrame {
 		btnPay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				cart.CreateCartOrder();
+				String ordernum = cart.CreateCartOrder();
 				
-				YourOrderNumberIs YONI=new YourOrderNumberIs( user );
+				YourOrderNumberIs YONI=new YourOrderNumberIs( user, ordernum );
 				YONI.setVisible(true);
 				dispose();
 			}
