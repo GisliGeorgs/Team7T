@@ -21,7 +21,7 @@ public class SearchController{
     public static ArrayList<Flight> GetFlightHistory( int i ){ return null; }
     public ArrayList<DayTrip> GetDayTripHistory( int i ){ return null; }
     
-    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople, boolean flex ) throws SQLException{
+    public static List Search( int type, ArrayList<String> searchValues, String loc, String flightFrom, String flightTo, Date dateFrom, Date dateTo, int price, boolean roundTrip, int numPeople, boolean flex, String tripType, String[] tagList ) throws SQLException{
     	/*GregorianCalendar gregFrom = new GregorianCalendar();
     	GregorianCalendar gregTo = new GregorianCalendar();
     	gregFrom.setTime( dateFrom );
@@ -49,7 +49,15 @@ public class SearchController{
             return res;
     	}
     	else if( type == 1 ){
-    		return FindHotels( dateFrom, dateTo, numPeople, loc, price, keywords );
+    		if(tagList.length == 0){
+    			return FindHotels( dateFrom, dateTo, numPeople, loc, price, keywords );
+    		}
+    		else{
+    			HotelController ctrl2 = new HotelController();
+    	        Hotel[] resArr2 = ctrl2.findHotelByTags(tagList);
+    	        ArrayList<Hotel> mid2 = new ArrayList<>(Arrays.asList( resArr2 ) );    			
+    			return mid2;
+    		}
     	}
     	else if( type == 2 ){
     		return FindDayTrips( dateFrom, dateTo, loc, price, keywords );

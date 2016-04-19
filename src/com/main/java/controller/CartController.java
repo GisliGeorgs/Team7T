@@ -119,6 +119,7 @@ public class CartController extends SearchController{
         try {
         	BookHotels();
         	BookFlights();
+        	BookDayTrips();
         	// TODO DayTrip b�kun
         	// TODO setja inn r�tt
 			user.SaveOrder( orderNum, DayTripBookingID, flightBookingID, hotelBookingID, user.GetEmail() );
