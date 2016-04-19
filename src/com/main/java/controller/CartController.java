@@ -6,6 +6,9 @@ import Hotel.Room;
 import Hotel.Booking;
 import Hotel.BookingController;
 import com.main.java.persistence.*;
+
+import DayTrip.klasar.BookingController2;
+
 import com.main.java.form.*;
 
 import java.io.IOException;
@@ -177,11 +180,12 @@ public class CartController extends SearchController{
     public void BookDayTrips(){
         int length = getDayTripOrders().GetDayTrip().size();
         Date date = getDayTripOrders().getDateFrom();
-        DayTrip.klasar.BookingController book = new DayTrip.klasar.BookingController();
+        BookingController2 booki = new BookingController2();
         for ( int i = 0; i < length; i++ ) {
-        	
+        	DayTrip.klasar.Trip trip = getDayTripOrders().getTrips().get(i);
+        	int temp = booki.book(trip, user.GetEmail(), 1);
+        	DayTripBookingID = Integer.toString(temp);
         }
-
     }
     /**
      * N�r � UserInfo.
