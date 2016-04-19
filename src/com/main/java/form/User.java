@@ -27,6 +27,7 @@ public class User{
         
     public User( ){
         LoadUser();
+        if( pastOrderNumbers == null ) pastOrderNumbers = new ArrayList<String>();
     }
     
     public User( String email, String gender, int age, List<String> interests ){
@@ -145,35 +146,32 @@ public class User{
     	//Hotel
         String homeLoc = System.getProperty("user.home") + "/readme1.txt"; 
     	JSONObject object = SaveHotel(orderN, hotelKey);
-    	if(!hotelKey.isEmpty() && hotelKey != null){
+    	if(hotelKey != null && !hotelKey.isEmpty()){
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
-				System.out.println("Successfully Copied JSON Object to File...");
-				pastOrderNumbers.add(orderN);
+				System.out.println("Successfully Copied (Hotel)JSON Object to File...");
 			}
-    	}
-		
+    	}		
 		//Flight
-    	if(!flightKey.isEmpty() && flightKey != null){
+    	if(  flightKey != null && !flightKey.isEmpty() ){
 	        homeLoc = System.getProperty("user.home") + "/readme2.txt"; 
 	    	object = SaveFlight(orderN, flightKey);
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
-				System.out.println("Successfully Copied JSON Object to File...");
-				pastOrderNumbers.add(orderN);
+				System.out.println("Successfully Copied (Flight)JSON Object to File...");
 			}
-    	}
-		
+    	}		
 		//Trip
-    	if(!tripKey.isEmpty() && tripKey != null){
+    	if( tripKey != null && !tripKey.isEmpty()){
 			homeLoc = System.getProperty("user.home") + "/readme3.txt"; 
 	    	object = SaveTrip(orderN, tripKey);
 			try (FileWriter file = new FileWriter(homeLoc)) {
 				file.write(object.toJSONString());
-				System.out.println("Successfully Copied JSON Object to File...");
-				pastOrderNumbers.add(orderN);
+				System.out.println("Successfully Copied (DayTrip)JSON Object to File...");
 			}
     	}
+    	System.out.println(orderN);
+		pastOrderNumbers.add(orderN);
     }
     
     public void LoadOrder(String orderNum){

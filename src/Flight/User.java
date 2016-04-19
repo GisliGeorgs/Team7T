@@ -52,7 +52,7 @@ public class User {
 		this.id=id;
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			String sql = "select * from \"user\" where id = ?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setInt(1, id);

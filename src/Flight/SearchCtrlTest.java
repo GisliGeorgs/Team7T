@@ -1,3 +1,4 @@
+package Flight;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -27,7 +28,7 @@ public class SearchCtrlTest{
 		ctrl2=null;
 	}
 	
-	// Matti gerði (athuga hvort það sé að throwa fyrir lögleg tilfelli líka!!!!!!)
+	// Matti gerï¿½i (athuga hvort ï¿½aï¿½ sï¿½ aï¿½ throwa fyrir lï¿½gleg tilfelli lï¿½ka!!!!!!)
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void setUsers_test_IntegerNames()
@@ -61,7 +62,7 @@ public class SearchCtrlTest{
 				new String[]{"A2198576","A3215315"});
 	}
 	
-	// Matti gerði ekki
+	// Matti gerï¿½i ekki
 	
 	
 	@Test(expected=IndexOutOfBoundsException.class)

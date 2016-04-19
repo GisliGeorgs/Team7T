@@ -1,3 +1,4 @@
+package Hotel;
 import java.util.ArrayList;
 import java.sql.*;
 
@@ -7,18 +8,18 @@ import java.sql.*;
 public class BookingController {
     private Booking[] bookings;
     private dbHelper dbh;
-    //klasi sem sér um tenginu við gagnagrunn
+    //klasi sem sï¿½r um tenginu viï¿½ gagnagrunn
 
     public BookingController() {
         dbh = new dbHelper();
     }
 
-    //leitar að bókun eftir id og skilar henni sem fylki.
+    //leitar aï¿½ bï¿½kun eftir id og skilar henni sem fylki.
 
     /**
-     * Finnur bókun eftir id númeri
+     * Finnur bï¿½kun eftir id nï¿½meri
      * @param id
-     * @return Booking með réttum upplýsingum
+     * @return Booking meï¿½ rï¿½ttum upplï¿½singum
      * @throws SQLException
      */
     public Booking getBooking(int id) throws SQLException {
@@ -35,9 +36,9 @@ public class BookingController {
     }
 
     /**
-     * Finnur bókun eftir id númeri
-     * @param id strengur sem er parsaður yfir í int
-     * @return Booking með öllum réttum upplýsingum
+     * Finnur bï¿½kun eftir id nï¿½meri
+     * @param id strengur sem er parsaï¿½ur yfir ï¿½ int
+     * @return Booking meï¿½ ï¿½llum rï¿½ttum upplï¿½singum
      * @throws SQLException
      */
     public Booking getBooking(String id) throws SQLException {
@@ -45,7 +46,7 @@ public class BookingController {
     }
 
     /**
-     * Eyðir bókun eftir id
+     * Eyï¿½ir bï¿½kun eftir id
      * @param id
      */
     public void deleteBooking(int id) {
@@ -53,9 +54,9 @@ public class BookingController {
         dbh.runQuery("DELETE FROM booking WHERE id=?", params);
     }
     /**
-     * Finnur allar bókanir sem eru skráðir á ákveðinn viðskiptavin
+     * Finnur allar bï¿½kanir sem eru skrï¿½ï¿½ir ï¿½ ï¿½kveï¿½inn viï¿½skiptavin
      * @param customerName
-     * @return Booking fylki með bókunum viðskiptavinar
+     * @return Booking fylki meï¿½ bï¿½kunum viï¿½skiptavinar
      * @throws SQLException
      */
     public Booking[] getBookingsByCustomer(String customerName) throws SQLException {
@@ -85,9 +86,9 @@ public class BookingController {
 
 
     /**
-     * Finnur allar bókanir eins hótels
+     * Finnur allar bï¿½kanir eins hï¿½tels
      * @param hotel
-     * @return Booking fylki með bókunum eins hótels
+     * @return Booking fylki meï¿½ bï¿½kunum eins hï¿½tels
      * @throws SQLException
      */
     public Booking[] getBookings(Hotel hotel) throws SQLException {
@@ -114,28 +115,30 @@ public class BookingController {
         }
         return bookings;
     }
-    // vistar nýja bókun, þarf að taka inn allar upplýsingar um bókunina, sbr dbh.runQuery
-    // ef herbergið er þegar bókað, skilar aðferðin null. Annars skilar hún bókunarhlut sem inniheldur
-    // allar réttar upplýsingar.
+    // vistar nï¿½ja bï¿½kun, ï¿½arf aï¿½ taka inn allar upplï¿½singar um bï¿½kunina, sbr dbh.runQuery
+    // ef herbergiï¿½ er ï¿½egar bï¿½kaï¿½, skilar aï¿½ferï¿½in null. Annars skilar hï¿½n bï¿½kunarhlut sem inniheldur
+    // allar rï¿½ttar upplï¿½singar.
 
     /**
-     * Vistar bókun í gagnagrunni
+     * Vistar bï¿½kun ï¿½ gagnagrunni
      * @param booking
-     * @return Booking hlut sem hefur allar réttar upplýsingar. Ef herbergið er nú þegar bókað, skilar aðferðin null
+     * @return Booking hlut sem hefur allar rï¿½ttar upplï¿½singar. Ef herbergiï¿½ er nï¿½ ï¿½egar bï¿½kaï¿½, skilar aï¿½ferï¿½in null
      * @throws Exception
      */
     public Booking saveBooking(Booking booking) throws Exception {
-        //Object[] param = {booking.getHotelId(), booking.getRoomId(), booking.getStartDate(), booking.getEndDate(), booking.getStartDate(), booking.getEndDate()};
-        Object[] param = {1};
+        java.sql.Date start = java.sql.Date.valueOf(booking.getStartDate());
+        java.sql.Date end = java.sql.Date.valueOf(booking.getEndDate());
+        Object[] param = {booking.getHotelId(), booking.getRoomId(), start, end, start, end};
+        //Object[] param = {1};
         ResultSet result = dbh.runQuery("SELECT * FROM booking WHERE hotelid = ? AND roomid = ? "
-                +"AND ((startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?) AND 1 = ?)", param);
+                +"AND ((startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?))", param);
         while(result.next()) {
             if(result.getString(1)!=null) {
-                System.out.println("Þetta herbergi er nú þegar bókað");
+                System.out.println("ï¿½etta herbergi er nï¿½ ï¿½egar bï¿½kaï¿½");
                 return null;
             }
         }
-
+        System.out.println( "HÃ©r er Ã©g" );
         Object[] params = {booking.getHotelId(), booking.getRoomId(), booking.getPhoneNr(), booking.getCustomerName(),
                 booking.getEmail(), booking.getCreditCardNr(), java.sql.Date.valueOf(booking.getStartDate()),
                 java.sql.Date.valueOf(booking.getEndDate())};
@@ -143,6 +146,7 @@ public class BookingController {
                 "email, creditcardnumber, startdate, enddate) " +
                 "VALUES (?,?,?,?,?,?,?,?)", params);
 
+        System.out.println( "Ekki er Ã©g" );
 
         Object[] par = {booking.getHotelId(), booking.getRoomId(), java.sql.Date.valueOf(booking.getStartDate())};
         ResultSet dbresults = dbh.runQuery("SELECT id FROM booking WHERE hotelid = ? AND roomid = ? AND startdate = ?", par);

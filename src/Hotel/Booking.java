@@ -31,6 +31,7 @@ public class Booking {
         this.endDate = dateTo;
         this.creditCardNr = creditcard;
         this.rooms = new Room[]{ room };
+        this.roomId = room.getId();
     }
 
     public void setId(int id) {

@@ -1,4 +1,5 @@
- import java.sql.*;
+package Hotel;
+import java.sql.*;
  import java.util.*;
 
  /**
@@ -6,16 +7,16 @@
  */
 
 public class HotelController {
-     // klasi sem sér um tengingu við gagnagrunn
+     // klasi sem sï¿½r um tengingu viï¿½ gagnagrunn
      private dbHelper dbh;
 
-    // Nær í hótel með nafninu name. Ef fleiri en eitt hótel hafa sama nafn (ætti ekki að gerast),
-    // fæst fyrsta með því nafni
+    // Nï¿½r ï¿½ hï¿½tel meï¿½ nafninu name. Ef fleiri en eitt hï¿½tel hafa sama nafn (ï¿½tti ekki aï¿½ gerast),
+    // fï¿½st fyrsta meï¿½ ï¿½vï¿½ nafni
 
      /**
-      * Leitar að hóteli eftir nafni, og skilar fyrsta sem finnst í gagnagrunni sem passar
+      * Leitar aï¿½ hï¿½teli eftir nafni, og skilar fyrsta sem finnst ï¿½ gagnagrunni sem passar
       * @param name
-      * @return Hoteli úr gagnagrunni með nafninu name
+      * @return Hoteli ï¿½r gagnagrunni meï¿½ nafninu name
       * @throws SQLException
       */
     public Hotel getHotel(String name) throws SQLException {
@@ -40,11 +41,11 @@ public class HotelController {
 
     }
 
-     // nær í öll hótel úr gagnagrunni, þægilegt að nota til að birta lista yfir öll hótelin
+     // nï¿½r ï¿½ ï¿½ll hï¿½tel ï¿½r gagnagrunni, ï¿½ï¿½gilegt aï¿½ nota til aï¿½ birta lista yfir ï¿½ll hï¿½telin
 
      /**
-      * Nær í öll hótel úr gagnagrunninum
-      * @return fylki með Hotel hlutum, öllum hótelum úr gagnagrunninum
+      * Nï¿½r ï¿½ ï¿½ll hï¿½tel ï¿½r gagnagrunninum
+      * @return fylki meï¿½ Hotel hlutum, ï¿½llum hï¿½telum ï¿½r gagnagrunninum
       * @throws SQLException
       */
     public Hotel[] getAllHotels() throws SQLException {
@@ -77,12 +78,12 @@ public class HotelController {
         return hotels;
     }
 
-    // vistar hótel í gagnagrunni, og skilar sama hóteli sem Hotel hlut þar sem allar breytur innihalda rétt gildi
+    // vistar hï¿½tel ï¿½ gagnagrunni, og skilar sama hï¿½teli sem Hotel hlut ï¿½ar sem allar breytur innihalda rï¿½tt gildi
 
      /**
-      * Vistar hótel í gagnagrunni og býr til hótel hlut með réttum tilviksbreytum
+      * Vistar hï¿½tel ï¿½ gagnagrunni og bï¿½r til hï¿½tel hlut meï¿½ rï¿½ttum tilviksbreytum
       * @param hotel
-      * @return Hotel sem inniheldur allar réttar upplýsingar um hótelið sem var tekið inn
+      * @return Hotel sem inniheldur allar rï¿½ttar upplï¿½singar um hï¿½teliï¿½ sem var tekiï¿½ inn
       * @throws SQLException
       */
     public Hotel saveHotel(Hotel hotel) throws SQLException {
@@ -107,7 +108,7 @@ public class HotelController {
 
 
      /**
-      * Eyðir hóteli úr gagnagrunni
+      * Eyï¿½ir hï¿½teli ï¿½r gagnagrunni
       * @param hotel
       */
     public void deleteHotel(Hotel hotel) {
@@ -119,13 +120,13 @@ public class HotelController {
     }
 
      /**
-      * Vistar umsögn um hótel, bæði í gagnagrunni og viðeigandi tilviksbreytu Hotel hlutar
+      * Vistar umsï¿½gn um hï¿½tel, bï¿½ï¿½i ï¿½ gagnagrunni og viï¿½eigandi tilviksbreytu Hotel hlutar
       * @param hotel
       * @param user username/nafn
       * @param reviewtext texti umsagnar
-      * @param userRating einkunn notanda um hótel
-      * @param date dagsetning sem það var skrifað
-      * @return Review hlut sem inniheldur allar upplýsingar um umsögnina sem var vistuð
+      * @param userRating einkunn notanda um hï¿½tel
+      * @param date dagsetning sem ï¿½aï¿½ var skrifaï¿½
+      * @return Review hlut sem inniheldur allar upplï¿½singar um umsï¿½gnina sem var vistuï¿½
       * @throws SQLException
       */
     public Review giveReview(Hotel hotel, String user, String reviewtext, double userRating, String date) throws SQLException {
@@ -160,13 +161,13 @@ public class HotelController {
         return review;
     }
 
-     // bætir herbergi í gagnagrunn, og viðeigandi tilviksbreytu Hotel hlutar
+     // bï¿½tir herbergi ï¿½ gagnagrunn, og viï¿½eigandi tilviksbreytu Hotel hlutar
 
      /**
-      * Bætir herbergi í gagnagrunn, og viðeigandi tilviksbreytu Hotel hlutar
+      * Bï¿½tir herbergi ï¿½ gagnagrunn, og viï¿½eigandi tilviksbreytu Hotel hlutar
       * @param hotel
       * @param room
-      * @return skilar Room hlut með öllum réttum upplýsingum
+      * @return skilar Room hlut meï¿½ ï¿½llum rï¿½ttum upplï¿½singum
       * @throws SQLException
       */
     public Room addRoom(Hotel hotel, Room room) throws SQLException {
@@ -187,7 +188,7 @@ public class HotelController {
     }
 
      /**
-      * Eyðir herbergi úr gagnagrunni og viðeigandi tilviksbreytu Hotel hlutar
+      * Eyï¿½ir herbergi ï¿½r gagnagrunni og viï¿½eigandi tilviksbreytu Hotel hlutar
       * @param hotel
       * @param room
       * @throws SQLException
@@ -199,18 +200,18 @@ public class HotelController {
         hotel.setRooms(rooms);
     }
 
-     // Finnur öll hótel sem hafa laus herbergi á tímabilinu startDate-endDate, með lágmarksfjölda stjarna minimumStars
-     // og hámarksverð maxPrice
+     // Finnur ï¿½ll hï¿½tel sem hafa laus herbergi ï¿½ tï¿½mabilinu startDate-endDate, meï¿½ lï¿½gmarksfjï¿½lda stjarna minimumStars
+     // og hï¿½marksverï¿½ maxPrice
 
      /**
-      * FInnur öll hótel sem hafa laus herbergi á tímabilinu startdate-enddate, með lágmarksfjölda stjarna minimum stars,
-      * hámarksverð maxPrice og staðsett í location
+      * FInnur ï¿½ll hï¿½tel sem hafa laus herbergi ï¿½ tï¿½mabilinu startdate-enddate, meï¿½ lï¿½gmarksfjï¿½lda stjarna minimum stars,
+      * hï¿½marksverï¿½ maxPrice og staï¿½sett ï¿½ location
       * @param startDate
       * @param endDate
       * @param minimumStars
       * @param maxPrice
       * @param place
-      * @return skilar hóteli sem passar við skilyrðin
+      * @return skilar hï¿½teli sem passar viï¿½ skilyrï¿½in
       * @throws SQLException
       */
     public Hotel[] findHotelWithAvailableRooms(String startDate, String endDate, double minimumStars, int maxPrice, String place) throws SQLException {
@@ -250,9 +251,9 @@ public class HotelController {
     }
 
      /**
-      * FInnur hótel sem passar við öll tögin í fylkinu tags
-      * @param tags fylki af tögum
-      * @return skilar fylki af hótelum sem passa við öll tögin
+      * FInnur hï¿½tel sem passar viï¿½ ï¿½ll tï¿½gin ï¿½ fylkinu tags
+      * @param tags fylki af tï¿½gum
+      * @return skilar fylki af hï¿½telum sem passa viï¿½ ï¿½ll tï¿½gin
       * @throws SQLException
       */
      public Hotel[] findHotelByTags(String[] tags) throws SQLException {
@@ -293,8 +294,8 @@ public class HotelController {
 
 
      /**
-      * Skilar einhverju handahófskenndu hóteli
-      * @return Hotel af handahófi
+      * Skilar einhverju handahï¿½fskenndu hï¿½teli
+      * @return Hotel af handahï¿½fi
       * @throws SQLException
       */
     public Hotel getRandomHotelOfTheWeek() throws SQLException {
@@ -305,16 +306,16 @@ public class HotelController {
     }
 
      /**
-      * smiður
+      * smiï¿½ur
       */
     public HotelController() {
         dbh = new dbHelper();
     }
 
-     // skilar fylki með öllum umsögnum hótelsins hotel
+     // skilar fylki meï¿½ ï¿½llum umsï¿½gnum hï¿½telsins hotel
 
      /**
-      * Nær í allar umsagnir viðeigandi hótels
+      * Nï¿½r ï¿½ allar umsagnir viï¿½eigandi hï¿½tels
       * @param hotel
       * @return Review fylki
       * @throws SQLException
@@ -349,10 +350,10 @@ public class HotelController {
         return reviews;
     }
 
-     // skilar fylki með öllum herbergjum hótelsins hotel
+     // skilar fylki meï¿½ ï¿½llum herbergjum hï¿½telsins hotel
 
      /**
-      * FInnur öll herbergi tiltekins hótels
+      * FInnur ï¿½ll herbergi tiltekins hï¿½tels
       * @param hotel
       * @return Room fylki
       * @throws SQLException
@@ -390,9 +391,9 @@ public class HotelController {
      }
 
      /**
-      * Raðar hótelum eftir verði í hækkandi röð
+      * Raï¿½ar hï¿½telum eftir verï¿½i ï¿½ hï¿½kkandi rï¿½ï¿½
       * @param hotels
-      * @return fylki af Hotel með verð í hækkandi röð
+      * @return fylki af Hotel meï¿½ verï¿½ ï¿½ hï¿½kkandi rï¿½ï¿½
       */
      public Hotel[] sortByPrice(Hotel[] hotels) {
          for (int i=1; i<hotels.length; i++) {
@@ -406,12 +407,12 @@ public class HotelController {
          return hotels;
      }
 
-     // skilar öllum hótelum af sömu týpu
+     // skilar ï¿½llum hï¿½telum af sï¿½mu tï¿½pu
 
      /**
-      * Nær í öll hótel af týpunni type
+      * Nï¿½r ï¿½ ï¿½ll hï¿½tel af tï¿½punni type
       * @param type
-      * @return Fylki af hótelum með sömu type
+      * @return Fylki af hï¿½telum meï¿½ sï¿½mu type
       * @throws SQLException
       */
      public Hotel[] getHotelsByType( String type) throws SQLException {

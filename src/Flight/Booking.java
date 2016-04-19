@@ -14,6 +14,7 @@ public class Booking {
 	 * The users to go on the flight
 	 */
 	User[] users;
+    private int referenceNumber;
 	public static void main(String[] args) {
 
 	}
@@ -25,6 +26,7 @@ public class Booking {
 	public Booking(Flight[] currentFlights, User[] currentUsers){
 		this.flights = currentFlights;
 		this.users = currentUsers;
+        referenceNumber = -1;
 	}
 	/**
 	 * Confirms the booking and commits to database.
@@ -37,7 +39,8 @@ public class Booking {
 		{
 			System.out.print("FlightConfirm1");
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+            // TODO Muna að breyta passwordum
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			ResultSet rs;
 			Statement st = con.createStatement();
 			int[] flightIds = new int[flights.length];
@@ -115,7 +118,7 @@ public class Booking {
 
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","admin");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/throun7f","postgres","postgres");
 			PreparedStatement pst;
 			//ResultSet rs;
 			String sql;

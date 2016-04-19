@@ -116,7 +116,7 @@ public class CartController extends SearchController{
         	BookFlights();
         	// TODO DayTrip b�kun
         	// TODO setja inn r�tt
-			user.SaveOrder( orderNum, flightBookingID, hotelBookingID, DayTripBookingID, user.GetEmail() );
+			user.SaveOrder( orderNum, DayTripBookingID, flightBookingID, hotelBookingID, user.GetEmail() );
 		} catch (Exception e) {
 			// Auto-generated catch block
 			e.printStackTrace();
@@ -159,9 +159,9 @@ public class CartController extends SearchController{
 			// TODO Laga book contructorinn
 			Booking book = new Booking( hotel, getHotelOrders().getRoom().get(i), "MyName", "my@aol.com", "MyPhone", DateToString(getHotelOrders().getDateFrom()), DateToString(getHotelOrders().getDateTo()), "MyCreditCard" );
 			try {
-				booker.saveBooking( book );
+				Booking retBook = booker.saveBooking( book );
+                hotelBookingID = Integer.toString( retBook.getId());
 				// TODO Save-a b�kun
-				// user.save?
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -177,8 +177,8 @@ public class CartController extends SearchController{
         Date date = getDayTripOrders().getDateFrom();
         DayTrip.klasar.BookingController book = new DayTrip.klasar.BookingController();
         for ( int i = 0; i < length; i++ ) {
-            DayTrip
-            DayTrip.klasar.Trip trip = new DayTrip.klasar.Trip(  )
+            //DayTrip
+            //DayTrip.klasar.Trip trip = new DayTrip.klasar.Trip(  )
         }
 
     }
