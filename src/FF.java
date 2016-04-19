@@ -194,7 +194,7 @@ public class FF extends JFrame {
 		lblChildrens.setFont(new Font("Tahoma", Font.BOLD, 14)); //$NON-NLS-1$
 		lblChildrens.setBounds(12, 344, 77, 16);
 		
-		JLabel lblChildrens1 = new JLabel("Childrens:");
+		JLabel lblChildrens1 = new JLabel(Messages.getString("FF.lblChildrens1.text")); //$NON-NLS-1$
 		lblChildrens1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblChildrens1.setBounds(16, 362, 77, 16);
 		contentPane.add(lblChildrens1);
