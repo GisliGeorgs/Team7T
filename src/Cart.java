@@ -211,13 +211,12 @@ public class Cart extends JFrame {
 		return panel;
 	}
 
-	private JPanel daytripPanel( DayTrip daytrip  ){
+	private JPanel daytripPanel( Trip daytrip  ){
 		JPanel panel = new JPanel();
 
-		panel.add( new JLabel( daytrip.getName() ) );
-		panel.add( new JLabel( daytrip.getLocation() ) );
-		panel.add( new JLabel( daytrip.getType() ) );
-		panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
+		panel.add( new JLabel( daytrip.getDayTrip() ) );
+		//panel.add( new JLabel( daytrip. ) );
+		panel.add( new JLabel( Integer.toString( daytrip. ) ) );
 
 		JButton removeFromCart = new JButton( "Remove" );
 		removeFromCart.addActionListener(new ActionListener() {
