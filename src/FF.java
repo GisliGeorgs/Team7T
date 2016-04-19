@@ -50,6 +50,7 @@ public class FF extends JFrame {
 	private int numPeople;
 	private int price;
 	private String[] interests = new String[]{ "Golfing", "Relaxing", "Party", "Sunshine", "Shopping" };
+	private ArrayList<String> interestss;
 	private boolean flex;
     CartController cart;
 
@@ -586,5 +587,17 @@ public class FF extends JFrame {
         });
         panel.add( addToCart );
         return panel;
+    }
+    
+    public void AddCheckbox( String s ){
+    	this.interestss.add( s );
+    }
+    
+    public void ChangeToArray()
+    {
+    	interests = new String[]{};
+    	for(int i = 0; i < interestss.size(); i++){
+    		interests[i] = interestss.get(i);
+    	}
     }
 }
