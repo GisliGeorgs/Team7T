@@ -12,8 +12,6 @@ import com.main.java.controller.CartController;
 import com.main.java.controller.SearchController;
 import com.toedter.calendar.JDateChooser;
 
-import DayTrip.klasar.Trip;
-
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -493,7 +491,7 @@ public class FF extends JFrame {
             return hotelPanel( (Hotel)object );
         }
         else if( type == 2 ){
-            return daytripPanel( (DayTrip)object );
+            return daytripPanel( (DayTrip.klasar.DayTrip)object );
         }
         else{
             return null;
@@ -570,7 +568,7 @@ public class FF extends JFrame {
         return panel;
     }
 
-    private JPanel daytripPanel( DayTrip daytrip ){
+    private JPanel daytripPanel( DayTrip.klasar.DayTrip daytrip ){
         JPanel panel = new JPanel();
         // S�na daytrip sem �� getur vali�
         // DayTrip valinn -> Birta allar trips sem eru undir 

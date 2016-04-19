@@ -51,8 +51,8 @@ public class CartController extends SearchController{
      * B�tir vi� dagsfer�arp�ntun � Cart-i�
      * @param daytriporder
      */
-    public void AddDayTripToBooking( DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }
-    public void AddTripToBooking( Trip trip ){ dayTripOrders.AddTrip( trip ); }
+    public void AddDayTripToBooking( DayTrip.klasar.DayTrip daytrip ){ dayTripOrders.AddDayTrip( daytrip ); }
+    public void AddTripToBooking( DayTrip.klasar.Trip trip ){ dayTripOrders.AddTrip( trip ); }
     public void AddHotelToBooking( Hotel hotel, Room room ){
         hotelOrders.AddHotel( hotel, room );
     }
