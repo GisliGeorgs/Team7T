@@ -51,10 +51,13 @@ public class HotelFF extends JFrame {
 	 * Create the frame.
 	 */
 	public HotelFF(FF ff ){
+		this.ff = ff;
+		buttons = new ArrayList<JCheckBox>();
 		SetUp();
 	}
 	
 	public HotelFF(){
+		buttons = new ArrayList<JCheckBox>();
 		SetUp();
 	}
 	
@@ -67,91 +70,91 @@ public class HotelFF extends JFrame {
 			setBounds(100, 100, 706, 457);
 			setTitle("Hotel specific search");
 			contentPane = new JPanel();
-			contentPane.setBackground(new Color(173, 216, 230));
+			contentPane.setBackground(new Color(248, 248, 255));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
 			
 			JCheckBox rdbtnWheelchairAccess = new JCheckBox("wheelchair access");
-			rdbtnWheelchairAccess.setBackground(new Color(173, 216, 230));
+			rdbtnWheelchairAccess.setBackground(new Color(248, 248, 255));
 			rdbtnWheelchairAccess.setBounds(39, 316, 138, 25);
 			contentPane.add(rdbtnWheelchairAccess);
 			buttons.add(rdbtnWheelchairAccess);
 			
 			JCheckBox rdbtnWifi = new JCheckBox("Wifi");
-			rdbtnWifi.setBackground(new Color(173, 216, 230));
+			rdbtnWifi.setBackground(new Color(248, 248, 255));
 			rdbtnWifi.setBounds(193, 225, 127, 25);
 			contentPane.add(rdbtnWifi);
 			buttons.add(rdbtnWifi);
 			
 			JCheckBox rdbtnTv = new JCheckBox("TV");
-			rdbtnTv.setBackground(new Color(173, 216, 230));
+			rdbtnTv.setBackground(new Color(248, 248, 255));
 			rdbtnTv.setBounds(193, 255, 127, 25);
 			contentPane.add(rdbtnTv);
 			buttons.add(rdbtnTv);
 			
 			JCheckBox rdbtnMinibar = new JCheckBox("Mini-bar");
-			rdbtnMinibar.setBackground(new Color(173, 216, 230));
+			rdbtnMinibar.setBackground(new Color(248, 248, 255));
 			rdbtnMinibar.setBounds(193, 105, 127, 25);
 			contentPane.add(rdbtnMinibar);
 			buttons.add(rdbtnMinibar);
 			
 			JCheckBox rdbtnSafetyDepositBox = new JCheckBox("Safety deposit box");
-			rdbtnSafetyDepositBox.setBackground(new Color(173, 216, 230));
+			rdbtnSafetyDepositBox.setBackground(new Color(248, 248, 255));
 			rdbtnSafetyDepositBox.setBounds(193, 135, 138, 25);
 			contentPane.add(rdbtnSafetyDepositBox);
 			buttons.add(rdbtnSafetyDepositBox);
 			
 			JCheckBox rdbtnRoomService = new JCheckBox("Room service");
-			rdbtnRoomService.setBackground(new Color(173, 216, 230));
+			rdbtnRoomService.setBackground(new Color(248, 248, 255));
 			rdbtnRoomService.setBounds(193, 165, 138, 25);
 			contentPane.add(rdbtnRoomService);
 			buttons.add(rdbtnRoomService);
 			
 			JCheckBox rdbtnSmoking = new JCheckBox("Smoking");
-			rdbtnSmoking.setBackground(new Color(173, 216, 230));
+			rdbtnSmoking.setBackground(new Color(248, 248, 255));
 			rdbtnSmoking.setBounds(193, 195, 127, 25);
 			contentPane.add(rdbtnSmoking);
 			buttons.add(rdbtnSmoking);
 			
 			JCheckBox rdbtnGym = new JCheckBox("Gym");
-			rdbtnGym.setBackground(new Color(173, 216, 230));
+			rdbtnGym.setBackground(new Color(248, 248, 255));
 			rdbtnGym.setBounds(39, 105, 127, 25);
 			contentPane.add(rdbtnGym);
 			buttons.add(rdbtnGym);
 			
 			JCheckBox rdbtnBar = new JCheckBox("Bar");
-			rdbtnBar.setBackground(new Color(173, 216, 230));
+			rdbtnBar.setBackground(new Color(248, 248, 255));
 			rdbtnBar.setBounds(39, 135, 127, 25);
 			contentPane.add(rdbtnBar);
 			buttons.add(rdbtnBar);
 			
 			JCheckBox rdbtnSpa = new JCheckBox("Spa");
-			rdbtnSpa.setBackground(new Color(173, 216, 230));
+			rdbtnSpa.setBackground(new Color(248, 248, 255));
 			rdbtnSpa.setBounds(39, 165, 127, 25);
 			contentPane.add(rdbtnSpa);
 			buttons.add(rdbtnSpa);
 			
 			JCheckBox rdbtnBreakfast = new JCheckBox("Breakfast");
-			rdbtnBreakfast.setBackground(new Color(173, 216, 230));
+			rdbtnBreakfast.setBackground(new Color(248, 248, 255));
 			rdbtnBreakfast.setBounds(39, 195, 127, 25);
 			contentPane.add(rdbtnBreakfast);
 			buttons.add(rdbtnBreakfast);
 			
 			JCheckBox rdbtnVegan = new JCheckBox("Vegan");
-			rdbtnVegan.setBackground(new Color(173, 216, 230));
+			rdbtnVegan.setBackground(new Color(248, 248, 255));
 			rdbtnVegan.setBounds(39, 255, 127, 25);
 			contentPane.add(rdbtnVegan);
 			buttons.add(rdbtnVegan);
 			
 			JCheckBox rdbtnNoCancellationFee = new JCheckBox("No cancellation fee");
-			rdbtnNoCancellationFee.setBackground(new Color(173, 216, 230));
+			rdbtnNoCancellationFee.setBackground(new Color(248, 248, 255));
 			rdbtnNoCancellationFee.setBounds(39, 225, 150, 25);
 			contentPane.add(rdbtnNoCancellationFee);
 			buttons.add(rdbtnNoCancellationFee);
 			
 			JCheckBox rdbtnConferenceRoom = new JCheckBox("Conference room");
-			rdbtnConferenceRoom.setBackground(new Color(173, 216, 230));
+			rdbtnConferenceRoom.setBackground(new Color(248, 248, 255));
 			rdbtnConferenceRoom.setBounds(39, 286, 127, 25);
 			contentPane.add(rdbtnConferenceRoom);
 			buttons.add(rdbtnConferenceRoom);
@@ -187,31 +190,31 @@ public class HotelFF extends JFrame {
 			contentPane.add(comboBox);
 			
 			JCheckBox rdbtnYouth = new JCheckBox("Youth");
-			rdbtnYouth.setBackground(new Color(173, 216, 230));
+			rdbtnYouth.setBackground(new Color(248, 248, 255));
 			rdbtnYouth.setBounds(360, 105, 127, 25);
 			contentPane.add(rdbtnYouth);
 			buttons.add(rdbtnYouth);
 			
 			JCheckBox rdbtnBusiness = new JCheckBox("Business");
-			rdbtnBusiness.setBackground(new Color(173, 216, 230));
+			rdbtnBusiness.setBackground(new Color(248, 248, 255));
 			rdbtnBusiness.setBounds(360, 135, 127, 25);
 			contentPane.add(rdbtnBusiness);
 			buttons.add(rdbtnBusiness);
 			
 			JCheckBox rdbtnRomantic = new JCheckBox("Romantic");
-			rdbtnRomantic.setBackground(new Color(173, 216, 230));
+			rdbtnRomantic.setBackground(new Color(248, 248, 255));
 			rdbtnRomantic.setBounds(360, 165, 127, 25);
 			contentPane.add(rdbtnRomantic);
 			buttons.add(rdbtnRomantic);
 			
 			JCheckBox rdbtnRelaxation = new JCheckBox("Relaxation");
-			rdbtnRelaxation.setBackground(new Color(173, 216, 230));
+			rdbtnRelaxation.setBackground(new Color(248, 248, 255));
 			rdbtnRelaxation.setBounds(360, 195, 127, 25);
 			contentPane.add(rdbtnRelaxation);
 			buttons.add(rdbtnRelaxation);
 			
 			JCheckBox rdbtnFamilyFriendly = new JCheckBox("Family friendly");
-			rdbtnFamilyFriendly.setBackground(new Color(173, 216, 230));
+			rdbtnFamilyFriendly.setBackground(new Color(248, 248, 255));
 			rdbtnFamilyFriendly.setBounds(360, 225, 127, 25);
 			contentPane.add(rdbtnFamilyFriendly);
 			buttons.add(rdbtnFamilyFriendly);
@@ -223,10 +226,12 @@ public class HotelFF extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					for( int i = 0; i < buttons.size(); i++ ){
 						if( buttons.get(i).isSelected() ){
+							System.out.println(buttons.get(i).getText());
 							ff.AddCheckbox( buttons.get(i).getText() );
 						}					
 					}
-					ff.ChangeToArray();
+					ff.ChangeToArray();						
+					
 					dispose();
 				}
 			});

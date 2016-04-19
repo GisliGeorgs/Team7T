@@ -48,7 +48,7 @@ public class FF extends JFrame {
 	private boolean roundTrip;
 	private int numPeople;
 	private int price;
-	private String[] interests = new String[]{ "Golfing", "Relaxing", "Party", "Sunshine", "Shopping" };
+	private String[] interests;
 	private ArrayList<String> interestss;
 	private boolean flex;
     CartController cart;
@@ -94,6 +94,7 @@ public class FF extends JFrame {
 		
 		typeSelected = 0;
 		cart = new CartController();
+		interestss = new ArrayList<String>();
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -148,7 +149,7 @@ public class FF extends JFrame {
 		});
 		menuBar.add(mntmUser);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(173, 216, 230));
+		contentPane.setBackground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -165,12 +166,12 @@ public class FF extends JFrame {
 		contentPane.add(lblForFlight1);
 		
 		JRadioButton rdbtnOneWay = new JRadioButton(Messages.getString("FF.OneWay")); //$NON-NLS-1$
-		rdbtnOneWay.setBackground(new Color(173, 216, 230));
+		rdbtnOneWay.setBackground(new Color(248, 248, 255));
 		rdbtnOneWay.setBounds(16, 425, 97, 25);
 		contentPane.add(rdbtnOneWay);
 		
 		JRadioButton rdbtnBothWays = new JRadioButton(Messages.getString("FF.BothWays")); //$NON-NLS-1$
-		rdbtnBothWays.setBackground(new Color(173, 216, 230));
+		rdbtnBothWays.setBackground(new Color(248, 248, 255));
 		rdbtnBothWays.setBounds(16, 447, 105, 25);
 		contentPane.add(rdbtnBothWays);
 		
@@ -261,12 +262,12 @@ public class FF extends JFrame {
 
 
 		panelResult = new JPanel();
-		panelResult.setBackground(new Color(176, 224, 230));
+		panelResult.setBackground(new Color(240, 240, 240));
 		panelResult.setBounds(125, 123, 598, 431);
 		contentPane.add(panelResult);
 
 		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
-		EnglishButton.setBackground(new Color(173, 216, 230));
+		EnglishButton.setBackground(new Color(248, 248, 255));
 		Image imgEnglish = new ImageIcon(this.getClass().getResource("/britain.png")).getImage(); //$NON-NLS-1$
 		EnglishButton.setIcon(new ImageIcon(imgEnglish));
 		EnglishButton.addActionListener(new ActionListener() {
@@ -279,7 +280,7 @@ public class FF extends JFrame {
 
 		
 		JButton IcelandicButton = new JButton(""); //$NON-NLS-1$
-		IcelandicButton.setBackground(new Color(173, 216, 230));
+		IcelandicButton.setBackground(new Color(248, 248, 255));
 		Image imgIcelandic = new ImageIcon(this.getClass().getResource("/Icelandic.png")).getImage(); //$NON-NLS-1$
 		IcelandicButton.setIcon(new ImageIcon(imgIcelandic));
 		IcelandicButton.addActionListener(new ActionListener() {
@@ -305,7 +306,7 @@ public class FF extends JFrame {
 		radioButtonGroupType.add(rdbtnFlight1);
 		rdbtnFlight1.setFont(new Font("Tahoma", Font.BOLD, 16));
 
-		rdbtnFlight1.setBackground(new Color(173, 216, 230));
+		rdbtnFlight1.setBackground(new Color(248, 248, 255));
 		rdbtnFlight1.setBounds(153, 9, 127, 25);
 		rdbtnFlight1.setSelected(true);
 		contentPane.add(rdbtnFlight1);
@@ -325,7 +326,7 @@ public class FF extends JFrame {
 		radioButtonGroupType.add(rdbtnHotel1);
 		rdbtnHotel1.setFont(new Font("Tahoma", Font.BOLD, 16));
 
-		rdbtnHotel1.setBackground(new Color(173, 216, 230));
+		rdbtnHotel1.setBackground(new Color(248, 248, 255));
 		rdbtnHotel1.setBounds(324, 9, 127, 25);
 		contentPane.add(rdbtnHotel1);
 		
@@ -342,7 +343,7 @@ public class FF extends JFrame {
 		});
 		radioButtonGroupType.add(rdbtnDaytrip1);
 
-		rdbtnDaytrip1.setBackground(new Color(173, 216, 230));
+		rdbtnDaytrip1.setBackground(new Color(248, 248, 255));
 		rdbtnDaytrip1.setFont(new Font("Tahoma", Font.BOLD, 16)); //$NON-NLS-1$
 		rdbtnDaytrip1.setBounds(485, 9, 127, 25);
 		contentPane.add(rdbtnDaytrip1);
@@ -392,7 +393,7 @@ public class FF extends JFrame {
 		TextFieldFlightTo.setColumns(10);
 		
 		JCheckBox chckbxFlexibleDates = new JCheckBox(Messages.getString("FF.chckbxFlexibleDates.text")); //$NON-NLS-1$
-		chckbxFlexibleDates.setBackground(new Color(173, 216, 230));
+		chckbxFlexibleDates.setBackground(new Color(248, 248, 255));
 		chckbxFlexibleDates.setBounds(12, 294, 113, 23);
 		contentPane.add(chckbxFlexibleDates);
 		
@@ -458,6 +459,7 @@ public class FF extends JFrame {
 		JButton btnSpecificHotelSearch = new JButton(Messages.getString("FF.btnSpecificHotelSearch.text")); //$NON-NLS-1$
 		btnSpecificHotelSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				interestss = new ArrayList<String>();
 				HotelFF HotelSpec = new HotelFF( frame );
 				HotelSpec.setVisible(true);
 				//dispose();
@@ -467,7 +469,7 @@ public class FF extends JFrame {
 		contentPane.add(btnSpecificHotelSearch);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"River Rafting", "Sightseeing", "Hiking"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Sightseeing", "Hiking", "River Rafting"}));
 		comboBox.setBounds(16, 495, 97, 22);
 		contentPane.add(comboBox);
 
@@ -590,14 +592,16 @@ public class FF extends JFrame {
     }
     
     public void AddCheckbox( String s ){
+    	System.out.println(s);
     	this.interestss.add( s );
     }
     
     public void ChangeToArray()
     {
-    	interests = new String[]{};
-    	for(int i = 0; i < interestss.size(); i++){
+    	interests = new String[ interestss.size() ];
+    	for( int i = 0; i < interests.length; i++ ){
     		interests[i] = interestss.get(i);
+    		System.out.println(interests[i]);
     	}
     }
 
