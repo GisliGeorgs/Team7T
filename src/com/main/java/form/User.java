@@ -16,12 +16,23 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class User{
-    private String gender;
-    private int age;
-    private List<String> interests;
-    private List<String> pastOrderNumbers;
-    private String email;
-
+	private String firstname;
+	private String lastname;
+	private int age;
+	private String country;    		
+	private String email;
+	private String phone;
+	private String gender;
+	private String creditcard;
+	private int month;
+	private int year;
+	private int cvc;
+	private String passport;
+	
+	private ArrayList<String> interests;
+	
+	private ArrayList<String> pastOrderNumbers;
+	
 	public String hotelId;
 	public String flightId;
     public String tripId;
@@ -35,12 +46,40 @@ public class User{
         if( pastOrderNumbers == null ) pastOrderNumbers = new ArrayList<String>();
     }
     
-    public User( String email, String gender, int age, List<String> interests ){
-        this.email = email;
-        this.gender = gender;
-        this.age = age;
-        this.interests = interests;
+    public User( 
+    		String firstname,
+    		String lastname,
+    		int age, 
+    		String country,    		
+    		String email, 
+    		String phone,
+    		String gender,
+    		String creditcard,
+    		int month,
+    		int year,
+    		int cvc,
+    		String passport
+    ){
+    	this.firstname = firstname;
+    	this.lastname = lastname;
+    	this.age = age;
+    	this.country = country;
+    	this.email = email;
+    	this.phone = phone;
+    	this.gender = gender;
+    	this.creditcard = creditcard;
+    	this.month = month;
+    	this.year = year;
+    	this.cvc = cvc;
+    	this.passport = passport;
         this.pastOrderNumbers = new ArrayList<String>(){};
+        this.interests = new ArrayList<String>();
+        try {
+			SaveUser();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     /**
      * Saver userinn

@@ -27,6 +27,7 @@ public class Cart extends JFrame {
 
 	private JPanel contentPane;
     CartController cartController;
+    private User user;
 
 	/**
 	 * Launch the application.
@@ -49,15 +50,19 @@ public class Cart extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Cart( CartController cart ) {
+	public Cart( CartController cart, User user ) {
         cartController = cart;
+        this.user = user;
         Setup();
 	}
     public Cart(){
     	//cartController = new CartController();
         Setup();
     }
-    JPanel panelCart;
+    JPanel panelCart; 
+    JLabel lblYourCart;
+    JButton btnFinishOrder;
+    JButton btngobacktoSearch;
     private void Setup(){
     	setIconImage(
     			new ImageIcon(getClass().getResource("/7.png")).getImage()
@@ -71,24 +76,24 @@ public class Cart extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel lblYourCart = new JLabel("Your Cart");
+        lblYourCart = new JLabel("Your Cart");
         lblYourCart.setFont(new Font("Tahoma", Font.BOLD, 16));
         lblYourCart.setBounds(256, 13, 138, 25);
         contentPane.add(lblYourCart);
 
-        JButton btnFinishOrder = new JButton("Finish Order");
+        btnFinishOrder = new JButton("Finish Order");
         Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
         btnFinishOrder.setIcon(new ImageIcon(imgLogin));
         btnFinishOrder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 User user = new User();
                 if( user.GetEmail() == null ){
-                    Pay Payment=new Pay( cartController );
+                    Pay Payment=new Pay( cartController, user );
                     Payment.setVisible(true);
                     dispose();                	
                 }
                 else{
-                    UserInfoChange uin = new UserInfoChange( cartController );
+                    UserInfoChange uin = new UserInfoChange( cartController, 1 );
                     uin.setVisible( true );
                     dispose();
                 }
@@ -97,7 +102,7 @@ public class Cart extends JFrame {
         btnFinishOrder.setBounds(148, 458, 174, 39);
         contentPane.add(btnFinishOrder);
 
-        JButton btngobacktoSearch = new JButton("Go back to search");
+        btngobacktoSearch = new JButton("Go back to search");
         Image imgLogin2 = new ImageIcon(this.getClass().getResource("/home.png")).getImage();
         btngobacktoSearch.setIcon(new ImageIcon(imgLogin2));
         btngobacktoSearch.addActionListener(new ActionListener() {
