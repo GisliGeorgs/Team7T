@@ -14,7 +14,7 @@ public class dbHelper {
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/hotel",
+                    .getConnection("jdbc:postgresql://localhost:5432/Hotel",
                             "postgres", "postgres");
             System.out.println("Opened database successfully");
 
@@ -42,7 +42,6 @@ public class dbHelper {
             c.close();
         } catch ( Exception e ) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
         }
         return result;
     }

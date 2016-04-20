@@ -90,7 +90,7 @@ public class User{
 		obj.put("Gender", gender);
 		obj.put("Age", age);
 		obj.put("Email", email);
- 
+		System.out.println("Saved1");
 		JSONArray jInterest = new JSONArray();
 		for(int k = 0; k < interests.size(); k++)
 		{
@@ -109,9 +109,11 @@ public class User{
  
 		// try-with-resources statement based on post comment below :)
 		try (FileWriter file = new FileWriter(homeLoc)) {
+			System.out.println("Saved1");
 			file.write(obj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
 		}
+		
     }
     public void LoadUser(){
         String homeLoc = System.getProperty("user.home") + "/SuperSecret.txt";
@@ -235,6 +237,7 @@ public class User{
 	            JSONObject jsonObject = (JSONObject) obj;	            
 	            //Hotel
 	            hotelId = (String) jsonObject.get(orderNum);
+	            System.out.println(hotelId);
 	            }
 	            	            	 
         	catch (Exception e) {

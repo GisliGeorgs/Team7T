@@ -62,6 +62,8 @@ public class FF extends JFrame {
 	private JDateChooser dateChooser;
 	private JDateChooser dateChooser_1;
 
+	DayTrip.klasar.SearchController DayTripsearch;
+	
 	static FF frame;
 	private JPanel panelResult;
 
@@ -246,9 +248,10 @@ public class FF extends JFrame {
 		btnAddToCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//System.out.println( "Daytrip size " + cart.getDayTripOrders().GetDayTrip().size() );
-				System.out.println( "Hotel size " + cart.getHotelOrders().GetHotel().size() );
+				//System.out.println( "Hotel size " + cart.getHotelOrders().GetHotel().size() );
 				//System.out.println( "Flight no 0 " + cart.getFlightOrders().GetFlight()[0].getFlightNo());
 				//System.out.println( "Flight no 1 " + cart.getFlightOrders().GetFlight()[1].getFlightNo());
+				DayTripsearch = null;
 				Cart AddtoCart = new Cart( cart );
 				AddtoCart.setVisible(true);
 				//dispose();
@@ -267,6 +270,7 @@ public class FF extends JFrame {
 		panelResult = new JPanel();
 		panelResult.setBackground(new Color(240, 240, 240));
 		panelResult.setBounds(125, 123, 750, 431);
+		panelResult.setLayout(new GridLayout( 0, 1 ));
 		contentPane.add(panelResult);
 
 		JButton EnglishButton = new JButton(""); //$NON-NLS-1$
@@ -379,7 +383,7 @@ public class FF extends JFrame {
 		contentPane.add(lblFlightFrom);
 		
 		TextFieldFlightFrom = new JTextField();
-		TextFieldFlightFrom.setText(Messages.getString("")); //$NON-NLS-1$
+		//TextFieldFlightFrom.setText(""); //$NON-NLS-1$
 		TextFieldFlightFrom.setBounds(120, 90, 325, 22);
 		contentPane.add(TextFieldFlightFrom);
 		TextFieldFlightFrom.setColumns(10);
@@ -390,7 +394,7 @@ public class FF extends JFrame {
 		contentPane.add(lblFlightTo);
 		
 		TextFieldFlightTo = new JTextField();
-		TextFieldFlightTo.setText(Messages.getString("")); //$NON-NLS-1$
+		//TextFieldFlightTo.setText(Messages.getString("")); //$NON-NLS-1$
 		TextFieldFlightTo.setBounds(550, 90, 325, 22);
 		contentPane.add(TextFieldFlightTo);
 		TextFieldFlightTo.setColumns(10);
@@ -539,8 +543,14 @@ public class FF extends JFrame {
 
         panel.add( new JLabel( hotel.getName() ) );
         panel.add( new JLabel( hotel.getAddress() ) );
-        panel.add( new JLabel( Double.toString( hotel.getRating() ) ) );
+        panel.add( new JLabel( hotel.getPlace() ) );
+        panel.add( new JLabel( "Star: " + Double.toString( hotel.getStarCount() ) ) );
+        panel.add( new JLabel( "Rating: " + Double.toString( hotel.getRating() ) ) );
         panel.add( new JLabel( hotel.getDescription() ) );
+        panel.add( new JLabel( hotel.getCheckoutTime() ) );
+        panel.add( new JLabel( hotel.getPhoneNumber() ) );
+        panel.add( new JLabel( hotel.getPlace() ) );
+        
 
         hotel.getRoomsFromDB();
         JPanel[] rooms = new JPanel[ hotel.getRooms().length ];
@@ -557,11 +567,11 @@ public class FF extends JFrame {
     private JPanel roomPanel( Hotel hotel, Room room ){
         JPanel panel = new JPanel();
 
-        panel.add( new JLabel( Double.toString( room.getRoomPrice() ) ) );
-        panel.add( new JLabel( Double.toString( room.getMaxGuests() ) ) );
-        panel.add( new JLabel( Double.toString( room.getNumberOfBeds() ) ) );
-        panel.add( new JLabel( room.getDescription() ) );
-        panel.add( new JLabel( room.getTypeOfBathroom() ) );
+        panel.add( new JLabel( "Price: " + Double.toString( room.getRoomPrice() ) ) );
+        panel.add( new JLabel( "Max Guests: " + Double.toString( room.getMaxGuests() ) ) );
+        panel.add( new JLabel( "Bed Count " + Double.toString( room.getNumberOfBeds() ) ) );
+        panel.add( new JLabel( "Room Desc " + room.getDescription() ) );
+        panel.add( new JLabel( "Type of Bath " + room.getTypeOfBathroom() ) );
 
         JButton addToCart = new JButton( "Add to Cart" );
         addToCart.addActionListener(new ActionListener() {
@@ -580,10 +590,10 @@ public class FF extends JFrame {
         // S�na daytrip sem �� getur vali�
         // DayTrip valinn -> Birta allar trips sem eru undir 
 
-        panel.add( new JLabel( daytrip.getName() ) );
-        panel.add( new JLabel( daytrip.getLocation() ) );
-        panel.add( new JLabel( daytrip.getType() ) );
-        panel.add( new JLabel( Integer.toString( daytrip.getPrice() ) ) );
+        panel.add( new JLabel( "Name: " + daytrip.getName() ) );
+        panel.add( new JLabel( "Loccation: " + daytrip.getLocation() ) );
+        panel.add( new JLabel( "Type: " + daytrip.getType() ) );
+        panel.add( new JLabel( "Price: " + Integer.toString( daytrip.getPrice() ) ) );
 
         JButton addToCart = new JButton( "Select this type" );
         addToCart.addActionListener(new ActionListener() {
@@ -615,8 +625,8 @@ public class FF extends JFrame {
 		panelResult.removeAll();
         validate();
         repaint();
-    	DayTrip.klasar.SearchController search = new DayTrip.klasar.SearchController();
-    	List<DayTrip.klasar.Trip> trips = search.oneDayTrip( daytrip );
+        DayTripsearch = new DayTrip.klasar.SearchController();
+    	List<DayTrip.klasar.Trip> trips = DayTripsearch.oneDayTrip( daytrip );
     	System.out.println(trips.size());
     	for( int i = 0; i < trips.size(); i++ ){
     		panelResult.add( tripPanel( daytrip, trips.get(i)) );
@@ -629,14 +639,14 @@ public class FF extends JFrame {
     private JPanel tripPanel( DayTrip.klasar.DayTrip daytrip, DayTrip.klasar.Trip trip ){
     	JPanel panel = new JPanel();
 
-    	panel.add( new JLabel( trip.getDayTrip() ));
+    	panel.add( new JLabel( "Name: " + trip.getDayTrip() ));
     	Date datefrom = trip.getDate()[0];
     	String date1 = datefrom.getYear()+"-"+(datefrom.getMonth()+1)+"-"+datefrom.getDate();
     	Date dateto = trip.getDate()[1];
     	String date2 = dateto.getYear()+"-"+(dateFrom.getMonth()+1)+"-"+dateto.getDate();
 
-    	panel.add( new JLabel( date1 ) );
-    	panel.add( new JLabel( date2 ) );
+    	panel.add( new JLabel( "Start: " + date1 ) );
+    	panel.add( new JLabel( "End: " + date2 ) );
     	panel.add( new JLabel( "Size: " + trip.getSize() ) );
 
         JButton addToCart = new JButton( "Add to Cart" );

@@ -52,6 +52,7 @@ public class Cart extends JFrame {
 	 */
 	public Cart( CartController cart ){
 		this.cartController = cart;
+		Setup();
 	}
 	public Cart( CartController cart, User user ) {
         cartController = cart;
@@ -72,7 +73,7 @@ public class Cart extends JFrame {
     		);
         setTitle("Cart");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 656, 557);
+        setBounds(100, 100, 982, 545);
         contentPane = new JPanel();
         contentPane.setBackground(new Color(248, 248, 255));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,7 +82,7 @@ public class Cart extends JFrame {
 
         lblYourCart = new JLabel("Your Cart");
         lblYourCart.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblYourCart.setBounds(256, 13, 138, 25);
+        lblYourCart.setBounds(425, 13, 138, 25);
         contentPane.add(lblYourCart);
 
         btnFinishOrder = new JButton("Finish Order");
@@ -102,7 +103,7 @@ public class Cart extends JFrame {
                 }
             }
         });
-        btnFinishOrder.setBounds(148, 458, 174, 39);
+        btnFinishOrder.setBounds(168, 456, 174, 39);
         contentPane.add(btnFinishOrder);
 
         btngobacktoSearch = new JButton("Go back to search");
@@ -115,12 +116,12 @@ public class Cart extends JFrame {
                 dispose();
             }
         });
-        btngobacktoSearch.setBounds(334, 459, 174, 36);
+        btngobacktoSearch.setBounds(616, 457, 174, 36);
         contentPane.add(btngobacktoSearch);
 
 
         panelCart = new JPanel();
-        panelCart.setBounds(65, 49, 510, 393);
+        panelCart.setBounds(65, 49, 842, 379);
         panelCart.setLayout( new GridLayout( 0, 1 ));
         UpdateCart();
         contentPane.add(panelCart);

@@ -258,7 +258,7 @@ public class UserInfoChange extends JFrame {
 		txtPassportnumber.setColumns(10);
 		txtPassportnumber.addKeyListener(new java.awt.event.KeyAdapter() {
 		    public void keyTyped(java.awt.event.KeyEvent evt) {
-		        if(txtPassportnumber.getText().length()>=3&&!(evt.getKeyChar()==KeyEvent.VK_DELETE||evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)) {
+		        if(txtPassportnumber.getText().length()>=16&&!(evt.getKeyChar()==KeyEvent.VK_DELETE||evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)) {
 		            getToolkit().beep();
 		            evt.consume();
 		         }

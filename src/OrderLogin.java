@@ -91,7 +91,7 @@ public class OrderLogin extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				user.LoadOrder( inputOrderNumber.getText() );
 				if( user.getFlightId() != null || user.getHotelId() != null || user.getTripId() != null ){
-					OrderNumber YourOrders = new OrderNumber( user );					
+					OrderNumber YourOrders = new OrderNumber( user, inputOrderNumber.getText() );					
 					YourOrders.setVisible(true);
 					dispose();					
 				}
@@ -107,8 +107,6 @@ public class OrderLogin extends JFrame {
 		CancelLoginButton.setIcon(new ImageIcon(imgCancel));
 		CancelLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FF Front=new FF();
-				Front.setVisible(true);
 				dispose();
 			}
 		});

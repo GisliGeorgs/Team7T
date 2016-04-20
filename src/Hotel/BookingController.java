@@ -138,7 +138,6 @@ public class BookingController {
                 return null;
             }
         }
-        System.out.println( "Hér er ég" );
         Object[] params = {booking.getHotelId(), booking.getRoomId(), booking.getPhoneNr(), booking.getCustomerName(),
                 booking.getEmail(), booking.getCreditCardNr(), java.sql.Date.valueOf(booking.getStartDate()),
                 java.sql.Date.valueOf(booking.getEndDate())};
@@ -146,7 +145,6 @@ public class BookingController {
                 "email, creditcardnumber, startdate, enddate) " +
                 "VALUES (?,?,?,?,?,?,?,?)", params);
 
-        System.out.println( "Ekki er ég" );
 
         Object[] par = {booking.getHotelId(), booking.getRoomId(), java.sql.Date.valueOf(booking.getStartDate())};
         ResultSet dbresults = dbh.runQuery("SELECT id FROM booking WHERE hotelid = ? AND roomid = ? AND startdate = ?", par);

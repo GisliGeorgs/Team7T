@@ -41,6 +41,7 @@ public class DatabaseConnection {
 	}
 	
 	public boolean book(int tripID, String touristEmail, int bookingnumber, int groupSize) {
+		//int bookings = 0;
 		try {
 			addBookingQuery = "INSERT INTO bookings values(?,?,?)";
 			pstatement = conn.prepareStatement(addBookingQuery);
@@ -48,6 +49,11 @@ public class DatabaseConnection {
 			pstatement.setInt(2, tripID);
 			pstatement.setInt(3, bookingnumber);
 			pstatement.executeUpdate();
+
+			//rs.close();
+			
+			//pstatement.close();
+			//conn.close();
 			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -67,6 +73,7 @@ public class DatabaseConnection {
 			}
 			rs.close();
 			pstatement.close();
+			//conn.close();
 		} catch(Exception e){
 			e.printStackTrace();
 			System.out.println("Fann ekki t�ristann");
@@ -84,6 +91,11 @@ public class DatabaseConnection {
 			pstatement.setString(3, country);
 			pstatement.setInt(4, age);
 			pstatement.executeUpdate();
+
+			//rs.close();
+			//pstatement.close();
+
+			//conn.close();
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -103,10 +115,10 @@ public class DatabaseConnection {
 			}
 			rs.close();
 			pstatement.close();
+			//conn.close();
 		} catch(SQLException e) {
 			e.printStackTrace();
 			System.out.println("Virka�i ekki");
-			System.exit(0);
 		}
 		return id;
 	}
@@ -133,6 +145,7 @@ public class DatabaseConnection {
 			}
 			pstatement.close();
 			rs.close();
+			//conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -156,6 +169,7 @@ public class DatabaseConnection {
 			}
 			rs.close();
 			pstatement.close();
+			//conn.close();
 			Tourist tourist = new Tourist(name, email1, country, age);
 			return tourist;
 		} catch(Exception e) {
@@ -205,6 +219,7 @@ public class DatabaseConnection {
 			}
 			rs.close();
 			pstatement.close();
+			conn.close();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -231,9 +246,9 @@ public class DatabaseConnection {
 			}
 			rs.close();
 			pstatement.close();
+			//conn.close();
 		} catch(Exception e) {
 			e.printStackTrace();
-			System.exit(0);
 		}
 
 		return festivals;
@@ -255,5 +270,6 @@ public class DatabaseConnection {
 		System.out.println(found.get(0).getName());
 		List<DayTrip> founddt = connect.search(null, null, "Geysir", null, 0, 0, 0, null);
 		System.out.println(founddt.get(0).getTravelAgency());
+		
 	}
 }

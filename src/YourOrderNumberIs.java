@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -27,7 +28,7 @@ public class YourOrderNumberIs extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					YourOrderNumberIs frame = new YourOrderNumberIs( new User() );
+					YourOrderNumberIs frame = new YourOrderNumberIs( new User(), "" );
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -70,9 +71,10 @@ public class YourOrderNumberIs extends JFrame {
 		btnHome.setBounds(141, 145, 104, 33);
 		contentPane.add(btnHome);
 		
-		JLabel lblOrderNumber = new JLabel( ordernum );
+		JTextField lblOrderNumber = new JTextField( ordernum );
 		lblOrderNumber.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblOrderNumber.setBounds(110, 75, 276, 44);
+		lblOrderNumber.setEditable(false);
 		contentPane.add(lblOrderNumber);
 	}
 }

@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GridLayout;
 
 public class OrderNumber extends JFrame {
 
@@ -33,7 +34,7 @@ public class OrderNumber extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OrderNumber OrderN = new OrderNumber( new User() );
+					OrderNumber OrderN = new OrderNumber( new User(), "" );
 					OrderN.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,8 +47,9 @@ public class OrderNumber extends JFrame {
 	 * Create the frame.
 	 */
 	JPanel panelOrders;
-	public OrderNumber( User user ) {
+	public OrderNumber( User user, String orderNum ) {
 		this.user = user;
+		user.LoadOrder(orderNum);
 		setIconImage(
 				new ImageIcon(getClass().getResource("/7.png")).getImage()
 			);
@@ -76,8 +78,6 @@ public class OrderNumber extends JFrame {
 		DoneViewingOrder.setIcon(new ImageIcon(imgLogin));
 		DoneViewingOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FF FrontF=new FF();
-				FrontF.setVisible(true);
 				dispose();
 			}
 		});
@@ -103,6 +103,8 @@ public class OrderNumber extends JFrame {
 		panelOrders = new JPanel();
 		panelOrders.setBackground(new Color(240, 240, 240));
 		panelOrders.setBounds(80, 74, 571, 329);
+
+		panelOrders.setLayout(new GridLayout( 0, 1 ));
 		contentPane.add(panelOrders);
 		
 		String hotelid = user.getHotelId();
@@ -114,7 +116,10 @@ public class OrderNumber extends JFrame {
 			Hotel.Booking book;
 			try {
 				book = contr.getBooking( hotelid );
-				panelOrders.add( hotelPanel( book ) );
+				if( book.getId() != 0 ){
+
+					panelOrders.add( hotelPanel( book ) );					
+				}
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

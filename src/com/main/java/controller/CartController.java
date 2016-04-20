@@ -145,12 +145,16 @@ public class CartController extends SearchController{
     // TODO Implement me
     public void BookFlights(){
     	// TODO Flug user fyrir hverja manneskju sem er � numPeople
-    	Flight.User fluguser = new Flight.User( "FirstName", "LastName", "123", "123" );
-    	Flight.Booking book = new Flight.Booking( getFlightOrders().GetFlight(), new Flight.User[]{ fluguser } );
-    	int id = book.confirm();
-    	System.out.println("Flight Booking ID: " + id);
-    	if( id != 0 ){
-        	flightBookingID = Integer.toString( id );
+    	if( getFlightOrders().GetFlight()[0] != null || getFlightOrders().GetFlight()[1] != null ){
+
+        	Flight.User fluguser = new Flight.User( "FirstName", "LastName", "123", "123" );
+        	Flight.Booking book = new Flight.Booking( getFlightOrders().GetFlight(), new Flight.User[]{ fluguser } );
+        	
+        	int id = book.confirm();
+        	System.out.println("Flight Booking ID: " + id);
+        	if( id != 0 ){
+            	flightBookingID = Integer.toString( id );
+        	}	
     	}
     }
     
@@ -185,7 +189,8 @@ public class CartController extends SearchController{
         for ( int i = 0; i < length; i++ ) {
         	DayTrip.klasar.Trip trip = getDayTripOrders().getTrips().get(i);
         	int temp = booki.book(trip, user.GetEmail(), 1);
-        	DayTripBookingID = Integer.toString(temp);
+        	if( temp != -1 ) DayTripBookingID = Integer.toString(temp);
+        	else DayTripBookingID = "0";
         }
     }
     /**

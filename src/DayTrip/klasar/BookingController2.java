@@ -1,6 +1,7 @@
 package DayTrip.klasar;
 
 import java.util.Date;
+import java.util.Random;
 
 import DayTrip.look.Booking;
 
@@ -11,7 +12,8 @@ public class BookingController2 {
 	private int groupSize;
 	
 	public BookingController2() {
-		bookingNumber = 0;
+		Random rand = new Random();
+		bookingNumber = rand.nextInt(Integer.MAX_VALUE - 100000) + 1;
 		connection = new DatabaseConnection();
 		bookingView = new Booking();
 	}
@@ -21,10 +23,21 @@ public class BookingController2 {
 		Date[] tripDates = trip.getDate();
 		int tripID = connection.getTripID(trip.getDayTrip(), tripDates[0]);
 		//Tourist tourist = getTourist();
-		while(!connection.book(tripID, email, bookingNumber, numPeople))
-			System.out.println("Booking failed!");
-		System.out.println(bookingNumber);
+		int i = 0;
+		//boolean res = connection.book(tripID, email, bookingNumber, numPeople);
+		while(!connection.book(tripID, email, bookingNumber, numPeople)){
+			if( i < 3 ){
+				System.out.println("Booking failed!");	
+				i++;
+			}
+			else{
+				break;
+			}
+		}
 		return bookingNumber++;
+		/*if( res ) return bookingNumber;
+		else return -1;*/
+		
 	}
 	
 	public Tourist getTourist() {
