@@ -63,9 +63,12 @@ public class UserInfoChange extends JFrame {
 		SetUpInfo();
 	}
 	
-	public UserInfoChange( CartController cart )
+	
+	private int index;
+	public UserInfoChange( CartController cart, int index )
 	{
 		user = cart.user;
+		this.index = index;
 		thisCart = cart;
 		SetUpInfo();
 	}
@@ -89,18 +92,6 @@ public class UserInfoChange extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnSaveUser = new JButton("Save");
-		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
-		btnSaveUser.setIcon(new ImageIcon(imgLogin));
-		btnSaveUser.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//OrderNumber OrderN=new OrderNumber();
-				//OrderN.setVisible(true);
-				dispose();
-			}
-		});
-		btnSaveUser.setBounds(65, 578, 127, 33);
-		contentPane.add(btnSaveUser);
 		
 		JRadioButton rdbtnMale = new JRadioButton("Male");
 		rdbtnMale.setBackground(new Color(248, 248, 255));
@@ -273,5 +264,48 @@ public class UserInfoChange extends JFrame {
 		         }
 		     }
 		});
+		
+
+		JButton btnSaveUser = new JButton("Save");
+		Image imgLogin = new ImageIcon(this.getClass().getResource("/Ok-icon.png")).getImage();
+		btnSaveUser.setIcon(new ImageIcon(imgLogin));
+		btnSaveUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean male = rdbtnMale.isSelected();
+				boolean female = rdbtnFemale.isSelected();
+				String gender;
+				if( male ){
+					gender = "Male";
+				}else if( female ){
+					gender = "Female";
+				}else{
+					gender = "Female";
+				}
+				user = new com.main.java.form.User( 
+						txtFirstName.getText(),
+						txtLastname.getText(),
+						(int)Agespinner.getValue(),
+						txtCountry.getText(),
+						email.getText(),
+						txtPhonenumber.getText(),
+						gender,
+						CardNumber.getText(),
+						1,
+						2016,
+						580,
+						txtPassportnumber.getText()
+						);
+				if( index == 1 ){
+					Pay pay= new Pay( thisCart, user );
+					pay.setVisible(true);
+					dispose();
+				}
+				else{
+					dispose();
+				}
+			}
+		});
+		btnSaveUser.setBounds(65, 578, 127, 33);
+		contentPane.add(btnSaveUser);
 	}
 }

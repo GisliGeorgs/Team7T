@@ -45,7 +45,7 @@ public class Pay extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Pay frame = new Pay( new CartController() );
+					Pay frame = new Pay( );
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,10 +57,15 @@ public class Pay extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public Pay(){
+		this.cart = new CartController();
+		this.user = new User();
+		Setup();
+	}
 
-	public Pay( CartController cart ) {
+	public Pay( CartController cart, User user ) {
         this.cart = cart;
-        user = new User();
+        this.user = user;
         Setup();
 	}
 	
@@ -104,7 +109,7 @@ public class Pay extends JFrame {
 		btnCancel.setIcon(new ImageIcon(imgLogin2));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart BacktoCart=new Cart( cart );
+				Cart BacktoCart=new Cart( cart, user );
 				BacktoCart.setVisible(true);
 				dispose();
 			}
