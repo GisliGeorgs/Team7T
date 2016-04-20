@@ -1,6 +1,7 @@
 package DayTrip.klasar;
 import java.sql.*;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -252,6 +253,79 @@ public class DatabaseConnection {
 		}
 
 		return festivals;
+	}
+    /**
+	 * Finnur bókun í gagnagrunningum sem á þetta bókunarnúmer. 
+	 * @param currentBooking bókunarnúmer í gagnagrunni
+	 * @return Object fylki þar sem fyrra stakið er Trip og seinna stakið er Tourist.
+	*/
+	public Object[] getBooking(int currentBooking) {
+		Object[] info = new Object[2];
+		int tripID = 0;
+		String touristemail = "";
+		String searchBookingQuery = "SELECT * FROM bookings WHERE bookingnumber = " + currentBooking;
+		try {
+			pstatement = conn.prepareStatement(searchBookingQuery);	
+			rs = pstatement.executeQuery();
+			while(rs.next()) {
+				touristemail = rs.getString("tourist");
+				tripID = rs.getInt("trip");
+			}
+			Trip trip = getTripInfo(tripID);
+			Tourist tourist = getTourist(touristemail);
+			info[0] = trip;
+			info[1] = tourist;
+			
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return info;
+	}
+	
+	/**
+	 * Finnur Trip í gagnagrunninum og skila því sem Trip hlut
+	 * @param tripID lykill fyrir trip í gagnagrunni
+	 * @return Trip hlutur sem hefur þetta ID
+	 */
+	public Trip getTripInfo(int tripID) {
+		int dayTripID = 0;
+		Date startDate = null;
+		Date endDate = null;
+		int maxSize = 0;
+		int booked = 0;
+		String dtName = "";
+		String getTripQuery = "SELECT * FROM trips WHERE id = " + tripID;		
+		try {
+			pstatement = conn.prepareStatement(getTripQuery);
+			rs = pstatement.executeQuery();
+			System.out.println("daytripgettrip");
+			while(rs.next()) {
+				startDate = formatter.parse(rs.getString("startdate"));
+				endDate = formatter.parse(rs.getString("enddate"));
+				maxSize = rs.getInt("maxsize");
+				booked = rs.getInt("bookings");
+				dayTripID = rs.getInt("dayTrip");
+			}
+			System.out.println(startDate.toString());
+			getTripQuery = "SELECT name FROM dayTrips WHERE id = " + dayTripID;
+			pstatement = conn.prepareStatement(getTripQuery);
+			rs = pstatement.executeQuery();
+
+			System.out.println("daytripgettrip");
+			while(rs.next()) {
+				dtName = rs.getString("name");
+			}
+		}
+		catch (SQLException e) {
+			System.out.println("Bokun ekki til.");
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		Trip trip = new Trip(dtName, startDate, endDate, maxSize, booked);		return trip;
 	}
 
 	public static void main(String[] args) {

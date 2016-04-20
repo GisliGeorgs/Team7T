@@ -29,10 +29,19 @@ public class BookingController {
         while(dbresults.next()) {
             for(int j=1; j<=9; j++) {
                 results[j-1] = dbresults.getString(j);
+                System.out.println( results[j-1] );
             }
         }
-        Booking book = createBooking(results);
-        return book;
+        if( results[0] != null && results[0] != "" ){
+
+            Booking book = createBooking(results);
+            return book;	
+        }
+        else{
+        	Booking book = new Booking();
+        	book.setId(0);
+        	return book;
+        }
     }
 
     /**

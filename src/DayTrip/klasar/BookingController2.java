@@ -62,6 +62,20 @@ public class BookingController2 {
 		}
 	}
 	
+	/**
+	 * Nær í bókanir miðað viðeigandi bókunarnúmer.
+	 * 
+	 * @param currentBooking bókunarnúmer sem á að finna
+	 * @return Object fylki þar sem fyrra stakið er viðeigandi Trip og það seinna er Tourist.
+	 */
+	public Object[] getBooking(int currentBooking) {
+		if(currentBooking < 0) return null;
+		
+		Object[] info = connection.getBooking(currentBooking);
+		System.out.println(info.length);
+		return info;
+	}
+	
 	public static void main(String[] args) {
 		BookingController2 b = new BookingController2();
 		b.getTourist();

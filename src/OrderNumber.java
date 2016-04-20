@@ -62,12 +62,13 @@ public class OrderNumber extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnCancel = new JButton("Cancel");
+		JButton btnCancel = new JButton("Close");
 		Image imgCancel = new ImageIcon(this.getClass().getResource("/Close-2-icon.png")).getImage();
 		btnCancel.setIcon(new ImageIcon(imgCancel));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Your Order has been canceled!","Message", JOptionPane.ERROR_MESSAGE);
+				//JOptionPane.showMessageDialog(null, "Your Order has been canceled!","Message", JOptionPane.ERROR_MESSAGE);
+				dispose();
 			}
 		});
 		btnCancel.setBounds(399, 416, 176, 49);
@@ -117,8 +118,10 @@ public class OrderNumber extends JFrame {
 			try {
 				book = contr.getBooking( hotelid );
 				if( book.getId() != 0 ){
-
-					panelOrders.add( hotelPanel( book ) );					
+					if( book.getHotel() != null ){
+					System.out.println(book.getId());
+					panelOrders.add( hotelPanel( book ) );
+					}					
 				}
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -126,28 +129,37 @@ public class OrderNumber extends JFrame {
 			}
 		}
 		
-		if( flightid != null && flightid != "" ){
+		if( flightid != null && flightid != "0" ){
 			Flight.Booking book = new Flight.Booking( Integer.parseInt(flightid ) );
 			JPanel flights = new JPanel();
-			for( int i = 0; i < 2; i++ ){
-				if( null != book.getFlights()[i]){
-					flights.add( flightPanel( book, i ));
-				}				
-			}
-	        JButton remove = new JButton( "Cancel" );
-	        remove.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent arg0) {
-	            	book.cancel();
-	            }
-	        });
-	        flights.add( remove );
-						
-			panelOrders.add(flights);
+			//int len = book.getFlights().length;
+			if( book.getFlights() != null ){
+				for( int i = 0; i < 2; i++ ){
+					if( book.getFlights()[i] != null ){
+						flights.add( flightPanel( book, i ));
+					}				
+				}
+		        JButton remove = new JButton( "Cancel" );
+		        remove.addActionListener(new ActionListener() {
+		            public void actionPerformed(ActionEvent arg0) {
+		            	book.cancel();
+		            }
+		        });
+		        flights.add( remove );
+
+				panelOrders.add(flights);
+			}						
 		}	
 		// TODO implement me.
-		if( tripid != null && tripid != "" ){	
+		/*if( tripid != null && tripid != "" ){
+			DayTrip.klasar.BookingController2 book = new DayTrip.klasar.BookingController2();
+			DayTrip.klasar.Trip trip = (DayTrip.klasar.Trip)book.getBooking(Integer.parseInt(tripid))[0];
+			//book = null;
 			
-		}
+			if( trip != null ){
+				panelOrders.add( tripPanel(trip) );
+			}
+		}*/
 	}
     private JPanel flightPanel( Flight.Booking book, int index ){
     	Flight.Flight flight = book.getFlights()[index];
@@ -199,5 +211,23 @@ public class OrderNumber extends JFrame {
 	}
 	
 	// TODO Daytrip
+	private JPanel tripPanel( DayTrip.klasar.Trip trip ){
+		JPanel panel = new JPanel();
+		System.out.println( trip.getDayTrip() );
+		panel.add( new JLabel( trip.getDayTrip() ));
+		panel.add( new JLabel( trip.getDate()[0].toString() ) );
+		panel.add( new JLabel( trip.getDate()[1].toString() ) );
+		panel.add( new JLabel( Integer.toString( trip.getSize() ) ) );
+		
+
+        JButton cancel = new JButton( "Cancel" );
+        cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+        });
+				
+		return panel;
+	}
 
 }
