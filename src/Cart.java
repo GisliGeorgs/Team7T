@@ -50,6 +50,9 @@ public class Cart extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public Cart( CartController cart ){
+		this.cartController = cart;
+	}
 	public Cart( CartController cart, User user ) {
         cartController = cart;
         this.user = user;
