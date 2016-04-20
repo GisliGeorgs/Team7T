@@ -31,6 +31,7 @@ public class FF extends JFrame {
 	private JPanel contentPane;
 	private JTextField SearchTextfield;
 	private JTextField txtLocation;
+	private JComboBox comboBox;
 	private final ButtonGroup radioButtonGroupType = new ButtonGroup();
 	
 	/**
@@ -51,6 +52,7 @@ public class FF extends JFrame {
 	private String[] interests;
 	private ArrayList<String> interestss;
 	private boolean flex;
+	private String daytriptype;
     CartController cart;
 
 	private ArrayList<String> search;
@@ -95,6 +97,7 @@ public class FF extends JFrame {
 		typeSelected = 0;
 		cart = new CartController();
 		interestss = new ArrayList<String>();
+		interests = new String[0];
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -416,6 +419,7 @@ public class FF extends JFrame {
 				price = (Integer)spinnerPrice.getValue();
 				numPeople = (Integer)spinner.getValue() + (Integer)spinner_1.getValue();
 				flex = chckbxFlexibleDates.isSelected();
+				daytriptype = (String) comboBox.getSelectedItem();
 				
 				
 
@@ -423,7 +427,7 @@ public class FF extends JFrame {
                 //                  int, ArrayList<String>, String, String, String, Date, Date, int, boolean, int)
 				List res;
 				try {
-					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople, flex  );
+					res = SearchController.Search( typeSelected, search, loc, flightFrom, flightTo, dateFrom, dateTo, price, roundTrip, numPeople, flex, daytriptype, interests );
 	                if( res.size() > 0 ){
 	                    JPanel[] resPanel = new JPanel[res.size()];
 	                    for ( int i = 0; i < res.size(); i++ ) {
@@ -469,8 +473,8 @@ public class FF extends JFrame {
 		btnSpecificHotelSearch.setBounds(12, 565, 162, 29);
 		contentPane.add(btnSpecificHotelSearch);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Sightseeing", "Hiking", "River Rafting"}));
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Sightseeing", "Hiking", "River Rafting"}));
 		comboBox.setBounds(16, 495, 97, 22);
 		contentPane.add(comboBox);
 
